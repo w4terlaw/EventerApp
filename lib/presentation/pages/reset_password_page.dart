@@ -4,7 +4,7 @@ import '/common/localization.dart';
 import '/presentation/widgets/button_widgets.dart';
 import '/presentation/widgets/input_field_widgets.dart';
 import '/presentation/widgets/space_widgets.dart';
-import '/presentation/widgets/text_widgets.dart';
+import '../../common/custom_text.dart';
 
 class ResetPasswordPage extends StatelessWidget {
   const ResetPasswordPage({super.key});
@@ -66,11 +66,11 @@ class ResetPassword extends StatelessWidget {
       children: <Widget>[
         Row(
           children: <Text>[
-            titleText(LRus.resetPassword),
+            CustomText.headline4(LRus.resetPassword),
           ],
         ),
         const VerticalSpace(12),
-        infoText(LRus.resetPasswordDescription),
+        CustomText.body2(LRus.resetPasswordDescription, height: 2.0),
       ],
     );
   }

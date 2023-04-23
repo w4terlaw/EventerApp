@@ -19,4 +19,5 @@ class LRus {
   static const resetPasswordDescription = 'Пожалуйста, введите свой адрес электронной почты, чтобы запросить сброс пароля';
   static const send = 'Отправить';
   static const sendUpperCase = 'ОТПРАВИТЬ';
+  static const search = 'Поиск...';
 }

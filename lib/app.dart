@@ -20,7 +20,8 @@ class App extends StatelessWidget {
       builder: (context, child) {
         return MaterialApp(
           theme: ThemeData(
-            scaffoldBackgroundColor: AppColors.whiteColor,
+            scaffoldBackgroundColor: Colors.white,
+
             // brightness: Brightness.light,
             // textTheme: Theme.of(context).textTheme.apply(
             //   bodyColor: AppColors.mainColor,
@@ -33,7 +34,8 @@ class App extends StatelessWidget {
           // ),
           themeMode: ThemeMode.system,
           debugShowCheckedModeBanner: false,
-          home: HomePage(),
+          // home: HomePage(),
+          initialRoute: '/home',
           routes: {
             '/login': (context) => const LoginPage(),
             '/home': (context) => HomePage(),
@@ -42,6 +44,16 @@ class App extends StatelessWidget {
           },
         );
       },
+    );
+  }
+}
+
+extension CustomStyles on TextTheme {
+  TextStyle get error {
+    return const TextStyle(
+      fontSize: 18.0,
+      color: Colors.red,
+      fontWeight: FontWeight.bold,
     );
   }
 }

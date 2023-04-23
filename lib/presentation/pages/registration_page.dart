@@ -1,4 +1,5 @@
 
+import 'package:eventer_app/common/app_colors.dart';
 import 'package:flutter/material.dart';
 
 // import '/common/app_colors.dart';
@@ -6,7 +7,7 @@ import '/common/localization.dart';
 import '/presentation/widgets/button_widgets.dart';
 import '/presentation/widgets/input_field_widgets.dart';
 import '/presentation/widgets/space_widgets.dart';
-import '/presentation/widgets/text_widgets.dart';
+import '../../common/custom_text.dart';
 
 class RegistrationPage extends StatelessWidget {
   const RegistrationPage({Key? key}) : super(key: key);
@@ -67,7 +68,7 @@ class SignUp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: <Text>[
-        titleText(LRus.registration),
+        CustomText.headline4(LRus.registration),
       ],
     );
   }
@@ -118,15 +119,15 @@ class OtherActions extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        secondaryText(LRus.or),
+        CustomText.title2(LRus.or),
         const VerticalSpace(20),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            mainText(LRus.haveAnAccount),
+            CustomText.body2(LRus.haveAnAccount),
             const HorizontalSpace(5),
             GestureDetector(
-              child: activeText(LRus.signIn),
+              child: CustomText.body2(LRus.signIn, color: AppColors.secondaryColor),
               onTap: () {
                 Navigator.pop(context);
               },

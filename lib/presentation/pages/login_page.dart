@@ -6,7 +6,7 @@ import '/presentation/widgets/button_widgets.dart';
 import '/presentation/widgets/space_widgets.dart';
 import '/presentation/widgets/input_field_widgets.dart';
 import '/presentation/widgets/switch_toggle_widget.dart';
-import '/presentation/widgets/text_widgets.dart';
+import '../../common/custom_text.dart';
 import '/common/app_colors.dart';
 import '/common/localization.dart';
 
@@ -70,7 +70,7 @@ class SignIn extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: <Text>[
-        titleText(LRus.signIn),
+        CustomText.headline4(LRus.signIn),
       ],
     );
   }
@@ -112,11 +112,11 @@ class AfterInputs extends StatelessWidget {
               onToggle: (value) => debugPrint("Switch status: $value"),
             ),
             const HorizontalSpace(10),
-            mainText(LRus.rememberMe),
+            CustomText.body3(LRus.rememberMe),
           ],
         ),
         GestureDetector(
-          child: mainText(LRus.forgotPassword),
+          child: CustomText.body3(LRus.forgotPassword),
           onTap: () {
             Navigator.pushNamed(context, '/reset_password');
           },
@@ -133,15 +133,15 @@ class OtherActions extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        secondaryText(LRus.or),
+        CustomText.title2(LRus.or),
         const VerticalSpace(20),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            mainText(LRus.notAccount),
+            CustomText.body2(LRus.notAccount),
             const HorizontalSpace(5),
             GestureDetector(
-              child: activeText(LRus.signUp),
+              child: CustomText.body2(LRus.signUp, color: AppColors.secondaryColor),
               onTap: () {
                 Navigator.pushNamed(context, '/registration');
               },
