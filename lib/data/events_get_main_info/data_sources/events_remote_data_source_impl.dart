@@ -5,17 +5,13 @@ import 'package:eventer_app/data/events_get_main_info/models/event.dart';
 
 import '../../../common/constants.dart';
 import '../../../core/error/exception.dart';
+import 'events_remote_data_source.dart';
 
-abstract class EventsRemoteDataSourceInterface {
-  /// endpoint /event?page=1&name=string
-  /// Error [ServerException]
-  Future<List<Event>> getEvents(int page, String name);
-}
 
-class EventsRemoteDataSource implements EventsRemoteDataSourceInterface {
+class EventsRemoteDataSourceImpl implements EventsRemoteDataSource {
   final http.Client client;
 
-  EventsRemoteDataSource({required this.client});
+  EventsRemoteDataSourceImpl({required this.client});
 
   @override
   Future<List<Event>> getEvents(int page, String name) =>

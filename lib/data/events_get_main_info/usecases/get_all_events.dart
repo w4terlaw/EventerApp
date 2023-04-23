@@ -7,7 +7,7 @@ import '/core/usecases/usecase.dart';
 import '../repository/events_repository.dart';
 
 class GetEvents extends UseCase<List<Event>, PageEventParams> {
-  final EventsRepositoryInterface eventsRepositoryInterface;
+  final EventsRepository eventsRepositoryInterface;
 
   GetEvents(this.eventsRepositoryInterface);
 
