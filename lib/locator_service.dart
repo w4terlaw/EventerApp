@@ -23,17 +23,16 @@ Future<void> init() async {
     () => EventsRepositoryImpl(eventsRemoteDataSource: sl(), networkInfo: sl()),
   );
 
-
   sl.registerLazySingleton<EventsRemoteDataSource>(
     () => EventsRemoteDataSourceImpl(client: sl(), sharedPreferences: sl()),
   );
 
   sl.registerLazySingleton<AuthRepository>(
-        () => AuthLoginRepositoryIml(authRemoteDataSource: sl(), networkInfo: sl()),
+    () => AuthLoginRepositoryIml(authRemoteDataSource: sl(), networkInfo: sl()),
   );
 
   sl.registerLazySingleton<AuthRemoteDataSource>(
-        () => AuthRemoteDataSourceImpl(client: sl(), sharedPreferences: sl()),
+    () => AuthRemoteDataSourceImpl(client: sl(), sharedPreferences: sl()),
   );
 
 // Core
@@ -45,6 +44,4 @@ Future<void> init() async {
   sl.registerLazySingleton(() => sharedPreferences);
   sl.registerLazySingleton(() => http.Client());
   sl.registerLazySingleton(() => InternetConnectionChecker());
-
-
 }
