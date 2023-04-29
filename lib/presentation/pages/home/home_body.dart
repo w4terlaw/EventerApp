@@ -1,4 +1,5 @@
 import 'package:eventer_app/presentation/bloc/events_bloc/events_bloc.dart';
+// import 'package:eventer_app/presentation/pages/login/login_page.dart';
 import 'package:eventer_app/presentation/widgets/event_card_widgets.dart';
 import 'package:eventer_app/presentation/widgets/loading_widget.dart';
 import 'package:eventer_app/presentation/widgets/search_widget.dart';
@@ -28,7 +29,7 @@ class _HomeBodyState extends State<HomeBody> {
         Padding(
           padding: const EdgeInsets.only(left: 12.0, right: 16.0, top: 16.0),
           child: MySearchWidget(
-            onChanged: (value) {
+            onSubmitted: (value) {
               context
                   .read<EventsBloc>()
                   .add(EventsEvent.fetch(page: 1, name: value));
@@ -36,12 +37,17 @@ class _HomeBodyState extends State<HomeBody> {
           ),
         ),
         Expanded(
-          child: state.when(
-            loading: () {
-              return const Center(child: LoadingWidget());
-            },
-            loaded: (events) {
-              return ListView.separated(
+          child: state.when(loading: () {
+            return const Center(child: LoadingWidget());
+          }, loaded: (events) {
+            return RefreshIndicator(
+              onRefresh: () {
+                context.read<EventsBloc>().add(
+                  const EventsEvent.fetch(page: 1, name: ''),
+                );
+                return Future.value();
+              },
+              child: ListView.separated(
                 separatorBuilder: (_, index) => const VerticalSpace(16.0),
                 itemCount: events.length,
                 itemBuilder: (context, index) {
@@ -55,26 +61,25 @@ class _HomeBodyState extends State<HomeBody> {
                     ),
                   );
                 },
-              );
-            },
-            error: (message) {
-              return Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  // crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text(message),
-                    TextButton(
-                      onPressed: () => context.read<EventsBloc>().add(
-                            const EventsEvent.fetch(page: 1, name: ''),
-                          ),
-                      child: const Text('Попробовать ещё раз'),
-                    )
-                  ],
-                ),
-              );
-            },
-          ),
+              ),
+            );
+          }, error: (message) {
+            return Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                // crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(message),
+                  TextButton(
+                    onPressed: () => context.read<EventsBloc>().add(
+                          const EventsEvent.fetch(page: 1, name: ''),
+                        ),
+                    child: const Text('Попробовать ещё раз'),
+                  )
+                ],
+              ),
+            );
+          }),
         ),
       ],
     );

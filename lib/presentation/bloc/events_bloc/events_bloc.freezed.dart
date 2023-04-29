@@ -36,17 +36,17 @@ mixin _$EventsEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(EventsEventFetch value) fetch,
+    required TResult Function(_EventsEventFetch value) fetch,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(EventsEventFetch value)? fetch,
+    TResult? Function(_EventsEventFetch value)? fetch,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(EventsEventFetch value)? fetch,
+    TResult Function(_EventsEventFetch value)? fetch,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -95,22 +95,22 @@ class _$EventsEventCopyWithImpl<$Res, $Val extends EventsEvent>
 }
 
 /// @nodoc
-abstract class _$$EventsEventFetchCopyWith<$Res>
+abstract class _$$_EventsEventFetchCopyWith<$Res>
     implements $EventsEventCopyWith<$Res> {
-  factory _$$EventsEventFetchCopyWith(
-          _$EventsEventFetch value, $Res Function(_$EventsEventFetch) then) =
-      __$$EventsEventFetchCopyWithImpl<$Res>;
+  factory _$$_EventsEventFetchCopyWith(
+          _$_EventsEventFetch value, $Res Function(_$_EventsEventFetch) then) =
+      __$$_EventsEventFetchCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int page, String name});
 }
 
 /// @nodoc
-class __$$EventsEventFetchCopyWithImpl<$Res>
-    extends _$EventsEventCopyWithImpl<$Res, _$EventsEventFetch>
-    implements _$$EventsEventFetchCopyWith<$Res> {
-  __$$EventsEventFetchCopyWithImpl(
-      _$EventsEventFetch _value, $Res Function(_$EventsEventFetch) _then)
+class __$$_EventsEventFetchCopyWithImpl<$Res>
+    extends _$EventsEventCopyWithImpl<$Res, _$_EventsEventFetch>
+    implements _$$_EventsEventFetchCopyWith<$Res> {
+  __$$_EventsEventFetchCopyWithImpl(
+      _$_EventsEventFetch _value, $Res Function(_$_EventsEventFetch) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -119,7 +119,7 @@ class __$$EventsEventFetchCopyWithImpl<$Res>
     Object? page = null,
     Object? name = null,
   }) {
-    return _then(_$EventsEventFetch(
+    return _then(_$_EventsEventFetch(
       page: null == page
           ? _value.page
           : page // ignore: cast_nullable_to_non_nullable
@@ -134,8 +134,8 @@ class __$$EventsEventFetchCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$EventsEventFetch implements EventsEventFetch {
-  const _$EventsEventFetch({required this.page, required this.name});
+class _$_EventsEventFetch implements _EventsEventFetch {
+  const _$_EventsEventFetch({required this.page, required this.name});
 
   @override
   final int page;
@@ -151,7 +151,7 @@ class _$EventsEventFetch implements EventsEventFetch {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$EventsEventFetch &&
+            other is _$_EventsEventFetch &&
             (identical(other.page, page) || other.page == page) &&
             (identical(other.name, name) || other.name == name));
   }
@@ -162,8 +162,8 @@ class _$EventsEventFetch implements EventsEventFetch {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$EventsEventFetchCopyWith<_$EventsEventFetch> get copyWith =>
-      __$$EventsEventFetchCopyWithImpl<_$EventsEventFetch>(this, _$identity);
+  _$$_EventsEventFetchCopyWith<_$_EventsEventFetch> get copyWith =>
+      __$$_EventsEventFetchCopyWithImpl<_$_EventsEventFetch>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -196,7 +196,7 @@ class _$EventsEventFetch implements EventsEventFetch {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(EventsEventFetch value) fetch,
+    required TResult Function(_EventsEventFetch value) fetch,
   }) {
     return fetch(this);
   }
@@ -204,7 +204,7 @@ class _$EventsEventFetch implements EventsEventFetch {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(EventsEventFetch value)? fetch,
+    TResult? Function(_EventsEventFetch value)? fetch,
   }) {
     return fetch?.call(this);
   }
@@ -212,7 +212,7 @@ class _$EventsEventFetch implements EventsEventFetch {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(EventsEventFetch value)? fetch,
+    TResult Function(_EventsEventFetch value)? fetch,
     required TResult orElse(),
   }) {
     if (fetch != null) {
@@ -222,10 +222,10 @@ class _$EventsEventFetch implements EventsEventFetch {
   }
 }
 
-abstract class EventsEventFetch implements EventsEvent {
-  const factory EventsEventFetch(
+abstract class _EventsEventFetch implements EventsEvent {
+  const factory _EventsEventFetch(
       {required final int page,
-      required final String name}) = _$EventsEventFetch;
+      required final String name}) = _$_EventsEventFetch;
 
   @override
   int get page;
@@ -233,7 +233,7 @@ abstract class EventsEventFetch implements EventsEvent {
   String get name;
   @override
   @JsonKey(ignore: true)
-  _$$EventsEventFetchCopyWith<_$EventsEventFetch> get copyWith =>
+  _$$_EventsEventFetchCopyWith<_$_EventsEventFetch> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -263,23 +263,23 @@ mixin _$EventsState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(EventsStateLoading value) loading,
-    required TResult Function(EventsStateLoaded value) loaded,
-    required TResult Function(EventsStateError value) error,
+    required TResult Function(_EventsStateLoading value) loading,
+    required TResult Function(_EventsStateLoaded value) loaded,
+    required TResult Function(_EventsStateError value) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(EventsStateLoading value)? loading,
-    TResult? Function(EventsStateLoaded value)? loaded,
-    TResult? Function(EventsStateError value)? error,
+    TResult? Function(_EventsStateLoading value)? loading,
+    TResult? Function(_EventsStateLoaded value)? loaded,
+    TResult? Function(_EventsStateError value)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(EventsStateLoading value)? loading,
-    TResult Function(EventsStateLoaded value)? loaded,
-    TResult Function(EventsStateError value)? error,
+    TResult Function(_EventsStateLoading value)? loading,
+    TResult Function(_EventsStateLoaded value)? loaded,
+    TResult Function(_EventsStateError value)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -304,25 +304,25 @@ class _$EventsStateCopyWithImpl<$Res, $Val extends EventsState>
 }
 
 /// @nodoc
-abstract class _$$EventsStateLoadingCopyWith<$Res> {
-  factory _$$EventsStateLoadingCopyWith(_$EventsStateLoading value,
-          $Res Function(_$EventsStateLoading) then) =
-      __$$EventsStateLoadingCopyWithImpl<$Res>;
+abstract class _$$_EventsStateLoadingCopyWith<$Res> {
+  factory _$$_EventsStateLoadingCopyWith(_$_EventsStateLoading value,
+          $Res Function(_$_EventsStateLoading) then) =
+      __$$_EventsStateLoadingCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$EventsStateLoadingCopyWithImpl<$Res>
-    extends _$EventsStateCopyWithImpl<$Res, _$EventsStateLoading>
-    implements _$$EventsStateLoadingCopyWith<$Res> {
-  __$$EventsStateLoadingCopyWithImpl(
-      _$EventsStateLoading _value, $Res Function(_$EventsStateLoading) _then)
+class __$$_EventsStateLoadingCopyWithImpl<$Res>
+    extends _$EventsStateCopyWithImpl<$Res, _$_EventsStateLoading>
+    implements _$$_EventsStateLoadingCopyWith<$Res> {
+  __$$_EventsStateLoadingCopyWithImpl(
+      _$_EventsStateLoading _value, $Res Function(_$_EventsStateLoading) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$EventsStateLoading implements EventsStateLoading {
-  const _$EventsStateLoading();
+class _$_EventsStateLoading implements _EventsStateLoading {
+  const _$_EventsStateLoading();
 
   @override
   String toString() {
@@ -332,7 +332,7 @@ class _$EventsStateLoading implements EventsStateLoading {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$EventsStateLoading);
+        (other.runtimeType == runtimeType && other is _$_EventsStateLoading);
   }
 
   @override
@@ -375,9 +375,9 @@ class _$EventsStateLoading implements EventsStateLoading {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(EventsStateLoading value) loading,
-    required TResult Function(EventsStateLoaded value) loaded,
-    required TResult Function(EventsStateError value) error,
+    required TResult Function(_EventsStateLoading value) loading,
+    required TResult Function(_EventsStateLoaded value) loaded,
+    required TResult Function(_EventsStateError value) error,
   }) {
     return loading(this);
   }
@@ -385,9 +385,9 @@ class _$EventsStateLoading implements EventsStateLoading {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(EventsStateLoading value)? loading,
-    TResult? Function(EventsStateLoaded value)? loaded,
-    TResult? Function(EventsStateError value)? error,
+    TResult? Function(_EventsStateLoading value)? loading,
+    TResult? Function(_EventsStateLoaded value)? loaded,
+    TResult? Function(_EventsStateError value)? error,
   }) {
     return loading?.call(this);
   }
@@ -395,9 +395,9 @@ class _$EventsStateLoading implements EventsStateLoading {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(EventsStateLoading value)? loading,
-    TResult Function(EventsStateLoaded value)? loaded,
-    TResult Function(EventsStateError value)? error,
+    TResult Function(_EventsStateLoading value)? loading,
+    TResult Function(_EventsStateLoaded value)? loaded,
+    TResult Function(_EventsStateError value)? error,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -407,25 +407,25 @@ class _$EventsStateLoading implements EventsStateLoading {
   }
 }
 
-abstract class EventsStateLoading implements EventsState {
-  const factory EventsStateLoading() = _$EventsStateLoading;
+abstract class _EventsStateLoading implements EventsState {
+  const factory _EventsStateLoading() = _$_EventsStateLoading;
 }
 
 /// @nodoc
-abstract class _$$EventsStateLoadedCopyWith<$Res> {
-  factory _$$EventsStateLoadedCopyWith(
-          _$EventsStateLoaded value, $Res Function(_$EventsStateLoaded) then) =
-      __$$EventsStateLoadedCopyWithImpl<$Res>;
+abstract class _$$_EventsStateLoadedCopyWith<$Res> {
+  factory _$$_EventsStateLoadedCopyWith(_$_EventsStateLoaded value,
+          $Res Function(_$_EventsStateLoaded) then) =
+      __$$_EventsStateLoadedCopyWithImpl<$Res>;
   @useResult
   $Res call({List<Event> events});
 }
 
 /// @nodoc
-class __$$EventsStateLoadedCopyWithImpl<$Res>
-    extends _$EventsStateCopyWithImpl<$Res, _$EventsStateLoaded>
-    implements _$$EventsStateLoadedCopyWith<$Res> {
-  __$$EventsStateLoadedCopyWithImpl(
-      _$EventsStateLoaded _value, $Res Function(_$EventsStateLoaded) _then)
+class __$$_EventsStateLoadedCopyWithImpl<$Res>
+    extends _$EventsStateCopyWithImpl<$Res, _$_EventsStateLoaded>
+    implements _$$_EventsStateLoadedCopyWith<$Res> {
+  __$$_EventsStateLoadedCopyWithImpl(
+      _$_EventsStateLoaded _value, $Res Function(_$_EventsStateLoaded) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -433,7 +433,7 @@ class __$$EventsStateLoadedCopyWithImpl<$Res>
   $Res call({
     Object? events = null,
   }) {
-    return _then(_$EventsStateLoaded(
+    return _then(_$_EventsStateLoaded(
       events: null == events
           ? _value._events
           : events // ignore: cast_nullable_to_non_nullable
@@ -444,8 +444,8 @@ class __$$EventsStateLoadedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$EventsStateLoaded implements EventsStateLoaded {
-  const _$EventsStateLoaded({required final List<Event> events})
+class _$_EventsStateLoaded implements _EventsStateLoaded {
+  const _$_EventsStateLoaded({required final List<Event> events})
       : _events = events;
 
   final List<Event> _events;
@@ -465,7 +465,7 @@ class _$EventsStateLoaded implements EventsStateLoaded {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$EventsStateLoaded &&
+            other is _$_EventsStateLoaded &&
             const DeepCollectionEquality().equals(other._events, _events));
   }
 
@@ -476,8 +476,9 @@ class _$EventsStateLoaded implements EventsStateLoaded {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$EventsStateLoadedCopyWith<_$EventsStateLoaded> get copyWith =>
-      __$$EventsStateLoadedCopyWithImpl<_$EventsStateLoaded>(this, _$identity);
+  _$$_EventsStateLoadedCopyWith<_$_EventsStateLoaded> get copyWith =>
+      __$$_EventsStateLoadedCopyWithImpl<_$_EventsStateLoaded>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -516,9 +517,9 @@ class _$EventsStateLoaded implements EventsStateLoaded {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(EventsStateLoading value) loading,
-    required TResult Function(EventsStateLoaded value) loaded,
-    required TResult Function(EventsStateError value) error,
+    required TResult Function(_EventsStateLoading value) loading,
+    required TResult Function(_EventsStateLoaded value) loaded,
+    required TResult Function(_EventsStateError value) error,
   }) {
     return loaded(this);
   }
@@ -526,9 +527,9 @@ class _$EventsStateLoaded implements EventsStateLoaded {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(EventsStateLoading value)? loading,
-    TResult? Function(EventsStateLoaded value)? loaded,
-    TResult? Function(EventsStateError value)? error,
+    TResult? Function(_EventsStateLoading value)? loading,
+    TResult? Function(_EventsStateLoaded value)? loaded,
+    TResult? Function(_EventsStateError value)? error,
   }) {
     return loaded?.call(this);
   }
@@ -536,9 +537,9 @@ class _$EventsStateLoaded implements EventsStateLoaded {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(EventsStateLoading value)? loading,
-    TResult Function(EventsStateLoaded value)? loaded,
-    TResult Function(EventsStateError value)? error,
+    TResult Function(_EventsStateLoading value)? loading,
+    TResult Function(_EventsStateLoaded value)? loaded,
+    TResult Function(_EventsStateError value)? error,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -548,31 +549,31 @@ class _$EventsStateLoaded implements EventsStateLoaded {
   }
 }
 
-abstract class EventsStateLoaded implements EventsState {
-  const factory EventsStateLoaded({required final List<Event> events}) =
-      _$EventsStateLoaded;
+abstract class _EventsStateLoaded implements EventsState {
+  const factory _EventsStateLoaded({required final List<Event> events}) =
+      _$_EventsStateLoaded;
 
   List<Event> get events;
   @JsonKey(ignore: true)
-  _$$EventsStateLoadedCopyWith<_$EventsStateLoaded> get copyWith =>
+  _$$_EventsStateLoadedCopyWith<_$_EventsStateLoaded> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$EventsStateErrorCopyWith<$Res> {
-  factory _$$EventsStateErrorCopyWith(
-          _$EventsStateError value, $Res Function(_$EventsStateError) then) =
-      __$$EventsStateErrorCopyWithImpl<$Res>;
+abstract class _$$_EventsStateErrorCopyWith<$Res> {
+  factory _$$_EventsStateErrorCopyWith(
+          _$_EventsStateError value, $Res Function(_$_EventsStateError) then) =
+      __$$_EventsStateErrorCopyWithImpl<$Res>;
   @useResult
   $Res call({String message});
 }
 
 /// @nodoc
-class __$$EventsStateErrorCopyWithImpl<$Res>
-    extends _$EventsStateCopyWithImpl<$Res, _$EventsStateError>
-    implements _$$EventsStateErrorCopyWith<$Res> {
-  __$$EventsStateErrorCopyWithImpl(
-      _$EventsStateError _value, $Res Function(_$EventsStateError) _then)
+class __$$_EventsStateErrorCopyWithImpl<$Res>
+    extends _$EventsStateCopyWithImpl<$Res, _$_EventsStateError>
+    implements _$$_EventsStateErrorCopyWith<$Res> {
+  __$$_EventsStateErrorCopyWithImpl(
+      _$_EventsStateError _value, $Res Function(_$_EventsStateError) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -580,7 +581,7 @@ class __$$EventsStateErrorCopyWithImpl<$Res>
   $Res call({
     Object? message = null,
   }) {
-    return _then(_$EventsStateError(
+    return _then(_$_EventsStateError(
       message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -591,8 +592,8 @@ class __$$EventsStateErrorCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$EventsStateError implements EventsStateError {
-  const _$EventsStateError({required this.message});
+class _$_EventsStateError implements _EventsStateError {
+  const _$_EventsStateError({required this.message});
 
   @override
   final String message;
@@ -606,7 +607,7 @@ class _$EventsStateError implements EventsStateError {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$EventsStateError &&
+            other is _$_EventsStateError &&
             (identical(other.message, message) || other.message == message));
   }
 
@@ -616,8 +617,8 @@ class _$EventsStateError implements EventsStateError {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$EventsStateErrorCopyWith<_$EventsStateError> get copyWith =>
-      __$$EventsStateErrorCopyWithImpl<_$EventsStateError>(this, _$identity);
+  _$$_EventsStateErrorCopyWith<_$_EventsStateError> get copyWith =>
+      __$$_EventsStateErrorCopyWithImpl<_$_EventsStateError>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -656,9 +657,9 @@ class _$EventsStateError implements EventsStateError {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(EventsStateLoading value) loading,
-    required TResult Function(EventsStateLoaded value) loaded,
-    required TResult Function(EventsStateError value) error,
+    required TResult Function(_EventsStateLoading value) loading,
+    required TResult Function(_EventsStateLoaded value) loaded,
+    required TResult Function(_EventsStateError value) error,
   }) {
     return error(this);
   }
@@ -666,9 +667,9 @@ class _$EventsStateError implements EventsStateError {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(EventsStateLoading value)? loading,
-    TResult? Function(EventsStateLoaded value)? loaded,
-    TResult? Function(EventsStateError value)? error,
+    TResult? Function(_EventsStateLoading value)? loading,
+    TResult? Function(_EventsStateLoaded value)? loaded,
+    TResult? Function(_EventsStateError value)? error,
   }) {
     return error?.call(this);
   }
@@ -676,9 +677,9 @@ class _$EventsStateError implements EventsStateError {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(EventsStateLoading value)? loading,
-    TResult Function(EventsStateLoaded value)? loaded,
-    TResult Function(EventsStateError value)? error,
+    TResult Function(_EventsStateLoading value)? loading,
+    TResult Function(_EventsStateLoaded value)? loaded,
+    TResult Function(_EventsStateError value)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -688,12 +689,12 @@ class _$EventsStateError implements EventsStateError {
   }
 }
 
-abstract class EventsStateError implements EventsState {
-  const factory EventsStateError({required final String message}) =
-      _$EventsStateError;
+abstract class _EventsStateError implements EventsState {
+  const factory _EventsStateError({required final String message}) =
+      _$_EventsStateError;
 
   String get message;
   @JsonKey(ignore: true)
-  _$$EventsStateErrorCopyWith<_$EventsStateError> get copyWith =>
+  _$$_EventsStateErrorCopyWith<_$_EventsStateError> get copyWith =>
       throw _privateConstructorUsedError;
 }

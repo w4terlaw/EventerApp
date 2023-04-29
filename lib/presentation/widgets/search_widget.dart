@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class MySearchWidget extends StatelessWidget {
-  final Function(String) onChanged;
+  final Function(String) onSubmitted;
 
-  const MySearchWidget({Key? key, required this.onChanged}) : super(key: key);
+  const MySearchWidget({Key? key, required this.onSubmitted}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -35,14 +35,14 @@ class MySearchWidget extends StatelessWidget {
             onPressed: null,
           ),
         ),
-        hintText: LRus.search,
+        hintText: L10n.search,
         hintStyle: const TextStyle(
           fontSize: 24.0,
           fontWeight: FontWeight.w300,
           color: AppColors.secondaryTextColor,
         ),
       ),
-      onChanged: (value) => onChanged(value),
+      onSubmitted: (value) => onSubmitted(value),
     );
   }
 }

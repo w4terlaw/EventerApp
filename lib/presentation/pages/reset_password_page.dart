@@ -33,7 +33,7 @@ class ResetPasswordBody extends StatelessWidget {
           const VerticalSpace(25),
           const Inputs(),
           const VerticalSpace(40),
-          MyElevatedButton(LRus.sendUpperCase, onPressed: () {})
+          MyElevatedButton(L10n.sendUpperCase, onPressed: () {})
         ],
       ),
     );
@@ -66,11 +66,11 @@ class ResetPassword extends StatelessWidget {
       children: <Widget>[
         Row(
           children: <Text>[
-            CustomText.headline4(LRus.resetPassword),
+            CustomText.headline4(L10n.resetPassword),
           ],
         ),
         const VerticalSpace(12),
-        CustomText.body2(LRus.resetPasswordDescription, height: 2.0),
+        CustomText.body2(L10n.resetPasswordDescription, height: 2.0),
       ],
     );
   }
@@ -82,7 +82,7 @@ class Inputs extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MyInputField(
-      hintText: LRus.email,
+      hintText: L10n.email,
       prefixIcon: 'assets/icons/mail.png',
     );
   }

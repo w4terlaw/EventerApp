@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../../../locator_service.dart';
 import '/data/events_get_main_info/repository/events_repository.dart';
-import 'body.dart';
+import 'home_body.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({Key? key}) : super(key: key);
@@ -12,9 +12,10 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(),
       body: SafeArea(
         child: BlocProvider<EventsBloc>(
-          create: (context) => EventsBloc(usecaseGetEvents: sl()),
+          create: (context) => EventsBloc(getEventsUsecase: sl()),
           child: HomeBody(),
         ),
       ),

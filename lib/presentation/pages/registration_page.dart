@@ -36,7 +36,7 @@ class RegisterBody extends StatelessWidget {
           const VerticalSpace(20),
           const Inputs(),
           const VerticalSpace(40),
-          MyElevatedButton(LRus.signUpUpperCase, onPressed: () {}),
+          MyElevatedButton(L10n.signUpUpperCase, onPressed: () {}),
           const VerticalSpace(20),
           const OtherActions(),
         ],
@@ -68,7 +68,7 @@ class SignUp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: <Text>[
-        CustomText.headline4(LRus.registration),
+        CustomText.headline4(L10n.registration),
       ],
     );
   }
@@ -82,28 +82,28 @@ class Inputs extends StatelessWidget {
     return Column(
       children: const <Widget>[
         MyInputField(
-          hintText: LRus.firstName,
+          hintText: L10n.firstName,
           prefixIcon: 'assets/icons/profile.png',
         ),
         VerticalSpace(20),
         MyInputField(
-          hintText: LRus.lastName,
+          hintText: L10n.lastName,
           prefixIcon: 'assets/icons/profile.png',
         ),
         VerticalSpace(20),
         MyInputField(
-          hintText: LRus.email,
+          hintText: L10n.email,
           prefixIcon: 'assets/icons/mail.png',
         ),
         VerticalSpace(20),
         MyInputPasswordField(
-          hintText: LRus.password,
+          hintText: L10n.password,
           prefixIcon: 'assets/icons/lock.png',
           suffixIcon: 'assets/icons/hidden.png',
         ),
         VerticalSpace(20),
         MyInputPasswordField(
-          hintText: LRus.confirmPassword,
+          hintText: L10n.confirmPassword,
           prefixIcon: 'assets/icons/lock.png',
           suffixIcon: 'assets/icons/hidden.png',
         ),
@@ -119,15 +119,15 @@ class OtherActions extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        CustomText.title2(LRus.or),
+        CustomText.title2(L10n.or),
         const VerticalSpace(20),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            CustomText.body2(LRus.haveAnAccount),
+            CustomText.body2(L10n.haveAnAccount),
             const HorizontalSpace(5),
             GestureDetector(
-              child: CustomText.body2(LRus.signIn, color: AppColors.secondaryColor),
+              child: CustomText.body2(L10n.signIn, color: AppColors.secondaryColor),
               onTap: () {
                 Navigator.pop(context);
               },

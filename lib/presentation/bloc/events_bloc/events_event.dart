@@ -5,5 +5,5 @@ class EventsEvent with _$EventsEvent {
   const factory EventsEvent.fetch ({
     required int page,
     required String name,
-  }) = EventsEventFetch;
+  }) = _EventsEventFetch;
 }

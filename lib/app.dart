@@ -1,10 +1,11 @@
+import 'package:eventer_app/presentation/bloc/user_auth/user_auth_bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '/common/app_colors.dart';
-
+import 'locator_service.dart';
 import 'presentation/pages/home/home_page.dart';
-import 'presentation/pages/login_page.dart';
+import 'presentation/pages/login/login_page.dart';
 import 'presentation/pages/registration_page.dart';
 import 'presentation/pages/reset_password_page.dart';
 
@@ -18,30 +19,41 @@ class App extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
-        return MaterialApp(
-          theme: ThemeData(
-            scaffoldBackgroundColor: Colors.white,
+        return MultiBlocProvider(
+          providers: [
+            BlocProvider(
+              create: (context) =>
+                  UserAuthBloc(userLoginUsecase: sl(), sharedPreferences: sl()),
+            )
+          ],
+          child: MaterialApp(
+            theme: ThemeData(
 
-            // brightness: Brightness.light,
-            // textTheme: Theme.of(context).textTheme.apply(
-            //   bodyColor: AppColors.mainColor,
-            //   displayColor: Colors.red,
+              fontFamily: 'Iceland'
+
+              // scaffoldBackgroundColor: Colors.white,
+
+              // brightness: Brightness.light,
+              // textTheme: Theme.of(context).textTheme.apply(
+              //   bodyColor: AppColors.mainColor,
+              //   displayColor: Colors.red,
+              // ),
+              /* light theme settings */
+            ),
+            // darkTheme: ThemeData(
+            //   brightness: Brightness.dark,
             // ),
-            /* light theme settings */
+            themeMode: ThemeMode.system,
+            debugShowCheckedModeBanner: false,
+            // home: HomePage(),
+            initialRoute: '/login',
+            routes: {
+              '/login': (context) => LoginPage(),
+              '/home': (context) => HomePage(),
+              '/registration': (context) => const RegistrationPage(),
+              '/reset_password': (context) => const ResetPasswordPage(),
+            },
           ),
-          // darkTheme: ThemeData(
-          //   brightness: Brightness.dark,
-          // ),
-          themeMode: ThemeMode.system,
-          debugShowCheckedModeBanner: false,
-          // home: HomePage(),
-          initialRoute: '/home',
-          routes: {
-            '/login': (context) => const LoginPage(),
-            '/home': (context) => HomePage(),
-            '/registration': (context) => const RegistrationPage(),
-            '/reset_password': (context) => const ResetPasswordPage(),
-          },
         );
       },
     );

@@ -9,12 +9,14 @@ class MyInputField extends StatelessWidget {
   final String hintText;
   final String prefixIcon;
   final bool obscureText;
+  final TextEditingController? controller;
 
   const MyInputField({
     super.key,
     required this.hintText,
     required this.prefixIcon,
     this.obscureText = false,
+    this.controller,
   });
 
   @override
@@ -22,6 +24,7 @@ class MyInputField extends StatelessWidget {
     return SizedBox(
       height: 58,
       child: TextField(
+        controller: controller,
         obscureText: obscureText,
         decoration: InputDecoration(
           hintText: hintText,
@@ -62,12 +65,14 @@ class MyInputPasswordField extends StatefulWidget {
   final String hintText;
   final String prefixIcon;
   final String suffixIcon;
+  final TextEditingController? controller;
 
   const MyInputPasswordField({
     super.key,
     required this.hintText,
     required this.prefixIcon,
     required this.suffixIcon,
+    this.controller,
   });
 
   @override
@@ -82,6 +87,7 @@ class _MyInputPasswordFieldState extends State<MyInputPasswordField> {
     return SizedBox(
       height: 58,
       child: TextField(
+        controller: widget.controller,
         obscureText: _hidePass,
         decoration: InputDecoration(
           hintText: widget.hintText,

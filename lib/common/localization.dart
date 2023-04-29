@@ -1,4 +1,4 @@
-class LRus {
+class L10n {
   static const email = 'abc@gmail.com';
   static const password = 'Пароль';
   static const confirmPassword = 'Подтвердить пароль';
