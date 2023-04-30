@@ -28,27 +28,31 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
 
     print(authLoginUrl);
     try {
-    final response = await client.post(
-      Uri.parse(authLoginUrl),
-      body: json.encode({
-        "email": email,
-        "password": password,
-      }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    );
-    print(response.body);
-    if (response.statusCode == 200) {
-      final authResponse = json.decode(response.body);
-      await sharedPreferences.setString(CacheConstants.CACHED_ACCESS_TOKEN,
-          '${authResponse['token_type']} ${authResponse['access_token']}');
-      await sharedPreferences.setString(
-          CacheConstants.CACHED_USER_ID, '${authResponse['user_id']}');
-      return Auth.fromJson(authResponse);
-    } else {
-      throw ServerException();
-    }
+      final response = await client.post(
+        Uri.parse(authLoginUrl),
+        body: json.encode({
+          "email": email,
+          "password": password,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      );
+      print(response.statusCode);
+      if (response.statusCode == 200) {
+        final authResponse = json.decode(response.body);
+        await sharedPreferences.setString(CacheConstants.CACHED_ACCESS_TOKEN,
+            '${authResponse['token_type']} ${authResponse['access_token']}');
+        await sharedPreferences.setString(
+            CacheConstants.CACHED_USER_ID, '${authResponse['user_id']}');
+        return Auth.fromJson(authResponse);
+      } else if (response.statusCode == 404) {
+        throw NotFoundException();
+      } else if (response.statusCode == 401) {
+        throw UnauthorizedException();
+      } else {
+        throw ServerException();
+      }
     } on SocketException {
       throw NetworkException();
     } on TimeoutException {
@@ -57,8 +61,6 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
       throw ServerException();
     } on http.ClientException {
       throw NetworkException();
-    } catch (e) {
-      throw ServerException();
     }
   }
 

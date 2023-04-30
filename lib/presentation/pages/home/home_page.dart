@@ -1,9 +1,8 @@
+import 'package:eventer_app/locator_service.dart';
 import 'package:eventer_app/presentation/bloc/events_bloc/events_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
 
-import '../../../locator_service.dart';
-import '/data/events_get_main_info/repository/events_repository.dart';
 import 'home_body.dart';
 
 class HomePage extends StatelessWidget {

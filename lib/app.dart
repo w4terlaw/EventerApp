@@ -1,9 +1,12 @@
-import 'package:eventer_app/presentation/bloc/user_auth/user_auth_bloc.dart';
+import 'package:eventer_app/common/app_colors.dart';
+import 'package:eventer_app/locator_service.dart';
+import 'package:eventer_app/presentation/bloc/authentication_bloc/authentication_bloc.dart';
+import 'package:eventer_app/presentation/bloc/user_login_bloc/user_login_bloc.dart';
+import 'package:eventer_app/presentation/widgets/loading_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'locator_service.dart';
 import 'presentation/pages/home/home_page.dart';
 import 'presentation/pages/login/login_page.dart';
 import 'presentation/pages/registration_page.dart';
@@ -22,33 +25,23 @@ class App extends StatelessWidget {
         return MultiBlocProvider(
           providers: [
             BlocProvider(
-              create: (context) =>
-                  UserAuthBloc(userLoginUsecase: sl(), sharedPreferences: sl()),
+              create: (context) => AuthenticationBloc(sharedPreferences: sl()),
+            ),
+            BlocProvider(
+              create: (context) => UserLoginBloc(userLoginUsecase: sl()),
             )
           ],
           child: MaterialApp(
             theme: ThemeData(
-
-              fontFamily: 'Iceland'
-
-              // scaffoldBackgroundColor: Colors.white,
-
-              // brightness: Brightness.light,
-              // textTheme: Theme.of(context).textTheme.apply(
-              //   bodyColor: AppColors.mainColor,
-              //   displayColor: Colors.red,
-              // ),
-              /* light theme settings */
+              scaffoldBackgroundColor: Colors.white,
+              brightness: Brightness.light,
             ),
-            // darkTheme: ThemeData(
-            //   brightness: Brightness.dark,
-            // ),
-            themeMode: ThemeMode.system,
+            themeMode: ThemeMode.light,
             debugShowCheckedModeBanner: false,
-            // home: HomePage(),
-            initialRoute: '/login',
+            home: const AppView(),
+            // initialRoute: '/login',
             routes: {
-              '/login': (context) => LoginPage(),
+              '/login': (context) => const LoginPage(),
               '/home': (context) => HomePage(),
               '/registration': (context) => const RegistrationPage(),
               '/reset_password': (context) => const ResetPasswordPage(),
@@ -60,12 +53,24 @@ class App extends StatelessWidget {
   }
 }
 
-extension CustomStyles on TextTheme {
-  TextStyle get error {
-    return const TextStyle(
-      fontSize: 18.0,
-      color: Colors.red,
-      fontWeight: FontWeight.bold,
+class AppView extends StatelessWidget {
+  const AppView({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<AuthenticationBloc, AuthenticationState>(
+      bloc: context.watch<AuthenticationBloc>(),
+      builder: (context, state) {
+        if (state is AuthenticationLoadedState) {
+          return HomePage();
+        } else if (state is AuthenticationEmptyState) {
+          return const LoginPage();
+        } else {
+          return Container(
+              color: Colors.white,
+              child: const Center(child: MyPrgoresIndicatorWidget()));
+        }
+      },
     );
   }
 }

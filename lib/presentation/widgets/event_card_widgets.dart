@@ -62,7 +62,7 @@ class EventCompactCard extends StatelessWidget {
                 imageUrl: previewUrl,
                 fit: BoxFit.cover,
                 placeholder: (context, url) => const Center(
-                  child: LoadingWidget(size: 30),
+                  child: MyPrgoresIndicatorWidget(size: 30),
                 ),
                 errorWidget: (context, url, error) =>
                     const Center(child: Icon(Icons.error)),

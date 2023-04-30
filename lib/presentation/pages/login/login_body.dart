@@ -1,11 +1,9 @@
 import 'package:eventer_app/common/app_colors.dart';
 import 'package:eventer_app/common/custom_text.dart';
 import 'package:eventer_app/common/localization.dart';
-import 'package:eventer_app/presentation/bloc/user_auth/user_auth_bloc.dart';
-import 'package:eventer_app/presentation/pages/home/home_page.dart';
+import 'package:eventer_app/presentation/bloc/user_login_bloc/user_login_bloc.dart';
 import 'package:eventer_app/presentation/widgets/button_widgets.dart';
 import 'package:eventer_app/presentation/widgets/input_field_widgets.dart';
-import 'package:eventer_app/presentation/widgets/loading_widget.dart';
 import 'package:eventer_app/presentation/widgets/space_widgets.dart';
 import 'package:eventer_app/presentation/widgets/switch_toggle_widget.dart';
 import 'package:flutter/material.dart';
@@ -13,53 +11,46 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class LoginBody extends StatelessWidget {
-  const LoginBody({Key? key}) : super(key: key);
+  final String? error;
+  const LoginBody({Key? key, this.error}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final emailController = TextEditingController();
     final passwordController = TextEditingController();
-    final state = context.watch<UserAuthBloc>().state;
     // print(MediaQuery.of(context).size);
-    return state.when(
-        userLoading: () => const Center(child: LoadingWidget()),
-        userLoginSuccess: () {
-          return HomePage();
-        },
-        userLoginFailed: () {
-          return SingleChildScrollView(
-            padding: const EdgeInsets.all(30),
-            child: Column(
-              children: <Widget>[
-                const Logo(),
-                const VerticalSpace(30),
-                const SignIn(),
-                const VerticalSpace(20),
-                Inputs(
-                  emailController: emailController,
-                  passwordController: passwordController,
-                ),
-                const VerticalSpace(20),
-                const AfterInputs(),
-                const VerticalSpace(40),
-                MyElevatedButton(
-                  L10n.signInUpperCase,
-                  onPressed: () {
-                    context.read<UserAuthBloc>().add(
-                          UserAuthEvent.userLogin(
-                            email: emailController.text,
-                            password: passwordController.text,
-                          ),
-                        );
-                  },
-                ),
-                const VerticalSpace(20),
-                const OtherActions(),
-              ],
-            ),
-          );
-        },
-        userError: (message) => Text(message));
+    return SingleChildScrollView(
+      padding: const EdgeInsets.all(30),
+      child: Column(
+        children: <Widget>[
+          const Logo(),
+          Text(error ?? ''),
+          const VerticalSpace(30),
+          const SignIn(),
+          const VerticalSpace(20),
+          Inputs(
+            emailController: emailController,
+            passwordController: passwordController,
+          ),
+          const VerticalSpace(20),
+          const AfterInputs(),
+          const VerticalSpace(40),
+          MyElevatedButton(
+            L10n.signInUpperCase,
+            onPressed: () {
+              context.read<UserLoginBloc>().add(
+                    UserLoginEvent.userLogin(
+                      email: emailController.text,
+                      password: passwordController.text,
+                    ),
+                  );
+            },
+          ),
+          const VerticalSpace(20),
+          const OtherActions(),
+        ],
+      ),
+    );
   }
 }
 

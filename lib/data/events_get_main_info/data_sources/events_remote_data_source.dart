@@ -36,7 +36,7 @@ class EventsRemoteDataSourceImpl implements EventsRemoteDataSource {
       final events = json.decode(response.body);
       return (events as List).map((event) => Event.fromJson(event)).toList();
     } else if (response.statusCode == 401) {
-      sharedPreferences.remove(CacheConstants.CACHED_ACCESS_TOKEN);
+      // sharedPreferences.remove(CacheConstants.CACHED_ACCESS_TOKEN);
       throw UnauthorizedException();
     } else {
       throw ServerException();

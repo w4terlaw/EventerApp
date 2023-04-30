@@ -8,6 +8,8 @@ class ServerException implements Exception {}
 
 class UnauthorizedException implements Exception {}
 
+class NotFoundException implements Exception {}
+
 class NetworkException implements Exception {}
 
 class CacheException implements Exception {}

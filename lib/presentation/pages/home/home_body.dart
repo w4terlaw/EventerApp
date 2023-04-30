@@ -38,7 +38,7 @@ class _HomeBodyState extends State<HomeBody> {
         ),
         Expanded(
           child: state.when(loading: () {
-            return const Center(child: LoadingWidget());
+            return const Center(child: MyPrgoresIndicatorWidget());
           }, loaded: (events) {
             return RefreshIndicator(
               onRefresh: () {
