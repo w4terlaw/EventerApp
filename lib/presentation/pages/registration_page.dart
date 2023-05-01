@@ -1,4 +1,3 @@
-
 import 'package:eventer_app/common/app_colors.dart';
 import 'package:flutter/material.dart';
 
@@ -36,7 +35,10 @@ class RegisterBody extends StatelessWidget {
           const VerticalSpace(20),
           const Inputs(),
           const VerticalSpace(40),
-          MyElevatedButton(L10n.signUpUpperCase, onPressed: () {}),
+          MyElevatedButton(
+            widget: CustomText.title2(L10n.signUpUpperCase, letterSpacing: 1),
+            onPressed: () {},
+          ),
           const VerticalSpace(20),
           const OtherActions(),
         ],
@@ -127,7 +129,8 @@ class OtherActions extends StatelessWidget {
             CustomText.body2(L10n.haveAnAccount),
             const HorizontalSpace(5),
             GestureDetector(
-              child: CustomText.body2(L10n.signIn, color: AppColors.secondaryColor),
+              child: CustomText.body2(L10n.signIn,
+                  color: AppColors.secondaryColor),
               onTap: () {
                 Navigator.pop(context);
               },

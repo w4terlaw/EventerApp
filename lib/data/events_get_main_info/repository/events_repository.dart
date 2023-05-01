@@ -31,9 +31,9 @@ class EventsRepositoryImpl implements EventsRepository {
       try {
         final remoteEvents = await getEvents();
         return Right(remoteEvents);
-      } on ServerException {
+      } on ServerError {
         return Left(ServerFailure());
-      } on UnauthorizedException {
+      } on UnauthorizedError {
 
         return Left(UnauthorizedFailure());
       }

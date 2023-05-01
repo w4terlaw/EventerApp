@@ -33,7 +33,7 @@ class ResetPasswordBody extends StatelessWidget {
           const VerticalSpace(25),
           const Inputs(),
           const VerticalSpace(40),
-          MyElevatedButton(L10n.sendUpperCase, onPressed: () {})
+          MyElevatedButton(widget: CustomText.title2(L10n.sendUpperCase, letterSpacing: 1), onPressed: () {})
         ],
       ),
     );

@@ -267,7 +267,7 @@ mixin _$UserLoginState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(userLoginInitial value) userLoginInitial,
+    required TResult Function(UserLoginInitial value) userLoginInitial,
     required TResult Function(UserLoginLoading value) userLoginLoading,
     required TResult Function(UserLoginSuccess value) userLoginSuccess,
     required TResult Function(UserLoginError value) userLoginError,
@@ -275,7 +275,7 @@ mixin _$UserLoginState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(userLoginInitial value)? userLoginInitial,
+    TResult? Function(UserLoginInitial value)? userLoginInitial,
     TResult? Function(UserLoginLoading value)? userLoginLoading,
     TResult? Function(UserLoginSuccess value)? userLoginSuccess,
     TResult? Function(UserLoginError value)? userLoginError,
@@ -283,7 +283,7 @@ mixin _$UserLoginState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(userLoginInitial value)? userLoginInitial,
+    TResult Function(UserLoginInitial value)? userLoginInitial,
     TResult Function(UserLoginLoading value)? userLoginLoading,
     TResult Function(UserLoginSuccess value)? userLoginSuccess,
     TResult Function(UserLoginError value)? userLoginError,
@@ -311,25 +311,25 @@ class _$UserLoginStateCopyWithImpl<$Res, $Val extends UserLoginState>
 }
 
 /// @nodoc
-abstract class _$$userLoginInitialCopyWith<$Res> {
-  factory _$$userLoginInitialCopyWith(
-          _$userLoginInitial value, $Res Function(_$userLoginInitial) then) =
-      __$$userLoginInitialCopyWithImpl<$Res>;
+abstract class _$$UserLoginInitialCopyWith<$Res> {
+  factory _$$UserLoginInitialCopyWith(
+          _$UserLoginInitial value, $Res Function(_$UserLoginInitial) then) =
+      __$$UserLoginInitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$userLoginInitialCopyWithImpl<$Res>
-    extends _$UserLoginStateCopyWithImpl<$Res, _$userLoginInitial>
-    implements _$$userLoginInitialCopyWith<$Res> {
-  __$$userLoginInitialCopyWithImpl(
-      _$userLoginInitial _value, $Res Function(_$userLoginInitial) _then)
+class __$$UserLoginInitialCopyWithImpl<$Res>
+    extends _$UserLoginStateCopyWithImpl<$Res, _$UserLoginInitial>
+    implements _$$UserLoginInitialCopyWith<$Res> {
+  __$$UserLoginInitialCopyWithImpl(
+      _$UserLoginInitial _value, $Res Function(_$UserLoginInitial) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$userLoginInitial implements userLoginInitial {
-  const _$userLoginInitial();
+class _$UserLoginInitial implements UserLoginInitial {
+  const _$UserLoginInitial();
 
   @override
   String toString() {
@@ -339,7 +339,7 @@ class _$userLoginInitial implements userLoginInitial {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$userLoginInitial);
+        (other.runtimeType == runtimeType && other is _$UserLoginInitial);
   }
 
   @override
@@ -385,7 +385,7 @@ class _$userLoginInitial implements userLoginInitial {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(userLoginInitial value) userLoginInitial,
+    required TResult Function(UserLoginInitial value) userLoginInitial,
     required TResult Function(UserLoginLoading value) userLoginLoading,
     required TResult Function(UserLoginSuccess value) userLoginSuccess,
     required TResult Function(UserLoginError value) userLoginError,
@@ -396,7 +396,7 @@ class _$userLoginInitial implements userLoginInitial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(userLoginInitial value)? userLoginInitial,
+    TResult? Function(UserLoginInitial value)? userLoginInitial,
     TResult? Function(UserLoginLoading value)? userLoginLoading,
     TResult? Function(UserLoginSuccess value)? userLoginSuccess,
     TResult? Function(UserLoginError value)? userLoginError,
@@ -407,7 +407,7 @@ class _$userLoginInitial implements userLoginInitial {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(userLoginInitial value)? userLoginInitial,
+    TResult Function(UserLoginInitial value)? userLoginInitial,
     TResult Function(UserLoginLoading value)? userLoginLoading,
     TResult Function(UserLoginSuccess value)? userLoginSuccess,
     TResult Function(UserLoginError value)? userLoginError,
@@ -420,8 +420,8 @@ class _$userLoginInitial implements userLoginInitial {
   }
 }
 
-abstract class userLoginInitial implements UserLoginState {
-  const factory userLoginInitial() = _$userLoginInitial;
+abstract class UserLoginInitial implements UserLoginState {
+  const factory UserLoginInitial() = _$UserLoginInitial;
 }
 
 /// @nodoc
@@ -499,7 +499,7 @@ class _$UserLoginLoading implements UserLoginLoading {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(userLoginInitial value) userLoginInitial,
+    required TResult Function(UserLoginInitial value) userLoginInitial,
     required TResult Function(UserLoginLoading value) userLoginLoading,
     required TResult Function(UserLoginSuccess value) userLoginSuccess,
     required TResult Function(UserLoginError value) userLoginError,
@@ -510,7 +510,7 @@ class _$UserLoginLoading implements UserLoginLoading {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(userLoginInitial value)? userLoginInitial,
+    TResult? Function(UserLoginInitial value)? userLoginInitial,
     TResult? Function(UserLoginLoading value)? userLoginLoading,
     TResult? Function(UserLoginSuccess value)? userLoginSuccess,
     TResult? Function(UserLoginError value)? userLoginError,
@@ -521,7 +521,7 @@ class _$UserLoginLoading implements UserLoginLoading {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(userLoginInitial value)? userLoginInitial,
+    TResult Function(UserLoginInitial value)? userLoginInitial,
     TResult Function(UserLoginLoading value)? userLoginLoading,
     TResult Function(UserLoginSuccess value)? userLoginSuccess,
     TResult Function(UserLoginError value)? userLoginError,
@@ -613,7 +613,7 @@ class _$UserLoginSuccess implements UserLoginSuccess {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(userLoginInitial value) userLoginInitial,
+    required TResult Function(UserLoginInitial value) userLoginInitial,
     required TResult Function(UserLoginLoading value) userLoginLoading,
     required TResult Function(UserLoginSuccess value) userLoginSuccess,
     required TResult Function(UserLoginError value) userLoginError,
@@ -624,7 +624,7 @@ class _$UserLoginSuccess implements UserLoginSuccess {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(userLoginInitial value)? userLoginInitial,
+    TResult? Function(UserLoginInitial value)? userLoginInitial,
     TResult? Function(UserLoginLoading value)? userLoginLoading,
     TResult? Function(UserLoginSuccess value)? userLoginSuccess,
     TResult? Function(UserLoginError value)? userLoginError,
@@ -635,7 +635,7 @@ class _$UserLoginSuccess implements UserLoginSuccess {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(userLoginInitial value)? userLoginInitial,
+    TResult Function(UserLoginInitial value)? userLoginInitial,
     TResult Function(UserLoginLoading value)? userLoginLoading,
     TResult Function(UserLoginSuccess value)? userLoginSuccess,
     TResult Function(UserLoginError value)? userLoginError,
@@ -753,7 +753,7 @@ class _$UserLoginError implements UserLoginError {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(userLoginInitial value) userLoginInitial,
+    required TResult Function(UserLoginInitial value) userLoginInitial,
     required TResult Function(UserLoginLoading value) userLoginLoading,
     required TResult Function(UserLoginSuccess value) userLoginSuccess,
     required TResult Function(UserLoginError value) userLoginError,
@@ -764,7 +764,7 @@ class _$UserLoginError implements UserLoginError {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(userLoginInitial value)? userLoginInitial,
+    TResult? Function(UserLoginInitial value)? userLoginInitial,
     TResult? Function(UserLoginLoading value)? userLoginLoading,
     TResult? Function(UserLoginSuccess value)? userLoginSuccess,
     TResult? Function(UserLoginError value)? userLoginError,
@@ -775,7 +775,7 @@ class _$UserLoginError implements UserLoginError {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(userLoginInitial value)? userLoginInitial,
+    TResult Function(UserLoginInitial value)? userLoginInitial,
     TResult Function(UserLoginLoading value)? userLoginLoading,
     TResult Function(UserLoginSuccess value)? userLoginSuccess,
     TResult Function(UserLoginError value)? userLoginError,

@@ -7,7 +7,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 abstract class EventsRemoteDataSource {
   /// endpoint /event?page=1&name=string
-  /// Error [ServerException]
+  /// Error [ServerError]
   Future<List<Event>> getEvents(int page, String name);
 }
 
@@ -37,9 +37,9 @@ class EventsRemoteDataSourceImpl implements EventsRemoteDataSource {
       return (events as List).map((event) => Event.fromJson(event)).toList();
     } else if (response.statusCode == 401) {
       // sharedPreferences.remove(CacheConstants.CACHED_ACCESS_TOKEN);
-      throw UnauthorizedException();
+      throw UnauthorizedError();
     } else {
-      throw ServerException();
+      throw ServerError();
     }
   }
 }

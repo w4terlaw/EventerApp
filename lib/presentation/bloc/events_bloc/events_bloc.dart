@@ -21,12 +21,12 @@ class EventsBloc extends Bloc<EventsEvent, EventsState> {
     required this.getEventsUsecase,
   }) : super(const EventsState.loading()) {
     on<_EventsEventFetch>(_eventsFetch);
-    _init();
+    // _init();
   }
 
-  void _init() {
-    add(const EventsEvent.fetch(page: 1, name: ''));
-  }
+  // void _init() {
+  //   add(const EventsEvent.fetch(page: 1, name: ''));
+  // }
 
   FutureOr<void> _eventsFetch(
       _EventsEventFetch event, Emitter<EventsState> emit) async {

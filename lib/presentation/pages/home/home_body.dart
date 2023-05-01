@@ -3,21 +3,22 @@ import 'package:eventer_app/presentation/bloc/events_bloc/events_bloc.dart';
 import 'package:eventer_app/presentation/widgets/event_card_widgets.dart';
 import 'package:eventer_app/presentation/widgets/loading_widget.dart';
 import 'package:eventer_app/presentation/widgets/search_widget.dart';
+import 'package:eventer_app/presentation/widgets/skeleton_widgets.dart';
 import 'package:eventer_app/presentation/widgets/space_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class HomeBody extends StatefulWidget {
-  const HomeBody({Key? key}) : super(key: key);
+class SearchPageBody extends StatefulWidget {
+  const SearchPageBody({Key? key}) : super(key: key);
 
   @override
-  State<HomeBody> createState() => _HomeBodyState();
+  State<SearchPageBody> createState() => _SearchPageBodyState();
 }
 
-class _HomeBodyState extends State<HomeBody> {
+class _SearchPageBodyState extends State<SearchPageBody> {
   @override
   void initState() {
-    // context.read<EventsBloc>().add(const EventsEvent.fetch(page: 1, name: ''));
+    context.read<EventsBloc>().add(const EventsEvent.fetch(page: 1, name: ''));
     super.initState();
   }
 
@@ -38,8 +39,9 @@ class _HomeBodyState extends State<HomeBody> {
         ),
         Expanded(
           child: state.when(loading: () {
-            return const Center(child: MyPrgoresIndicatorWidget());
+            return const SkeletonEventCompactCard();
           }, loaded: (events) {
+            // return const SkeletonEventCompactCard();
             return RefreshIndicator(
               onRefresh: () {
                 context.read<EventsBloc>().add(

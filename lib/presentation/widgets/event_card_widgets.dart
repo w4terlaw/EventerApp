@@ -2,10 +2,12 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:eventer_app/app.dart';
 import 'package:eventer_app/common/app_colors.dart';
 import 'package:eventer_app/presentation/widgets/loading_widget.dart';
+import 'package:eventer_app/presentation/widgets/skeleton_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:intl/intl.dart';
+import 'package:skeletons/skeletons.dart';
 
 import '/common/date_format.dart';
 import '/presentation/widgets/space_widgets.dart';
@@ -61,9 +63,7 @@ class EventCompactCard extends StatelessWidget {
               child: CachedNetworkImage(
                 imageUrl: previewUrl,
                 fit: BoxFit.cover,
-                placeholder: (context, url) => const Center(
-                  child: MyPrgoresIndicatorWidget(size: 30),
-                ),
+                placeholder: (context, url) => const SkeletonImage(),
                 errorWidget: (context, url, error) =>
                     const Center(child: Icon(Icons.error)),
               ),

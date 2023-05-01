@@ -47,20 +47,20 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
             CacheConstants.CACHED_USER_ID, '${authResponse['user_id']}');
         return Auth.fromJson(authResponse);
       } else if (response.statusCode == 404) {
-        throw NotFoundException();
+        throw NotFoundError();
       } else if (response.statusCode == 401) {
-        throw UnauthorizedException();
+        throw UnauthorizedError();
       } else {
-        throw ServerException();
+        throw ServerError();
       }
-    } on SocketException {
-      throw NetworkException();
+    } on SocketError {
+      throw NetworkError();
     } on TimeoutException {
-      throw NetworkException();
+      throw NetworkError();
     } on FormatException {
-      throw ServerException();
+      throw ServerError();
     } on http.ClientException {
-      throw NetworkException();
+      throw NetworkError();
     }
   }
 

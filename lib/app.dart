@@ -1,7 +1,5 @@
-import 'package:eventer_app/common/app_colors.dart';
 import 'package:eventer_app/locator_service.dart';
 import 'package:eventer_app/presentation/bloc/authentication_bloc/authentication_bloc.dart';
-import 'package:eventer_app/presentation/bloc/user_login_bloc/user_login_bloc.dart';
 import 'package:eventer_app/presentation/widgets/loading_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -27,9 +25,6 @@ class App extends StatelessWidget {
             BlocProvider(
               create: (context) => AuthenticationBloc(sharedPreferences: sl()),
             ),
-            BlocProvider(
-              create: (context) => UserLoginBloc(userLoginUsecase: sl()),
-            )
           ],
           child: MaterialApp(
             theme: ThemeData(
@@ -42,7 +37,7 @@ class App extends StatelessWidget {
             // initialRoute: '/login',
             routes: {
               '/login': (context) => const LoginPage(),
-              '/home': (context) => HomePage(),
+              '/home': (context) => const SearchPage(),
               '/registration': (context) => const RegistrationPage(),
               '/reset_password': (context) => const ResetPasswordPage(),
             },
@@ -58,17 +53,18 @@ class AppView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bloc = context.watch<AuthenticationBloc>();
     return BlocBuilder<AuthenticationBloc, AuthenticationState>(
-      bloc: context.watch<AuthenticationBloc>(),
+      bloc: bloc,
       builder: (context, state) {
         if (state is AuthenticationLoadedState) {
-          return HomePage();
+          return const SearchPage();
         } else if (state is AuthenticationEmptyState) {
           return const LoginPage();
         } else {
           return Container(
               color: Colors.white,
-              child: const Center(child: MyPrgoresIndicatorWidget()));
+              child: const Center(child: MyLoadingWidget()));
         }
       },
     );

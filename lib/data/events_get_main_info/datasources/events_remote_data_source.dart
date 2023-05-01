@@ -30,7 +30,7 @@ class EventsRemoteDataSource {
       final events = json.decode(response.body);
       return (events as List).map((event) => Event.fromJson(event)).toList();
     } else {
-      throw ServerException();
+      throw ServerError();
     }
   }
 }

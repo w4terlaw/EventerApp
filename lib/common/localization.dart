@@ -20,4 +20,9 @@ class L10n {
   static const send = 'Отправить';
   static const sendUpperCase = 'ОТПРАВИТЬ';
   static const search = 'Поиск...';
+  static const myProfile = 'Мой профиль';
+  static const calendar = 'Календарь';
+  static const settings = 'Настройки';
+  static const helpFAQs = 'Помощь и FAQs';
+  static const logOut = 'Выйти';
 }

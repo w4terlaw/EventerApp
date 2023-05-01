@@ -44,11 +44,11 @@ class CustomText {
     );
   }
 
-  static Text title1(text, {double size = 18.0, double? height}) {
+  static Text title1(text, {double size = 18.0, double? height, int? maxLines}) {
     return Text(
       text,
       softWrap: true,
-      maxLines: 2,
+      maxLines: maxLines,
       style: TextStyle(
         color: AppColors.mainTextColor,
         height: height,
@@ -59,13 +59,14 @@ class CustomText {
     );
   }
 
-  static Text title2(text, {double size = 16.0, double? height}) {
+  static Text title2(text, {double size = 16.0, double? height, double? letterSpacing, Color color = AppColors.secondaryTextColor}) {
     return Text(
       text,
       softWrap: true,
       maxLines: 2,
       style: TextStyle(
-        color: AppColors.secondaryTextColor,
+        color: color,
+        letterSpacing: letterSpacing,
         height: height,
         fontSize: size.sp,
         overflow: TextOverflow.ellipsis,

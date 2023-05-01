@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import '/common/app_colors.dart';
 
 class MyElevatedButton extends StatelessWidget {
-  final String text;
+  final Widget widget;
   final VoidCallback? onPressed;
 
-  const MyElevatedButton(
-    this.text, {
+  const MyElevatedButton({
     super.key,
+    required this.widget,
     this.onPressed,
   });
 
@@ -28,14 +28,7 @@ class MyElevatedButton extends StatelessWidget {
               borderRadius: BorderRadius.circular(15),
             ),
           ),
-          child: Text(
-            text,
-            style: const TextStyle(
-              color: AppColors.whiteColor,
-              fontSize: 16,
-              letterSpacing: 1,
-            ),
-          ),
+          child: widget,
         ),
       ),
     );
