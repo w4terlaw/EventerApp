@@ -2,13 +2,11 @@ import 'package:dartz/dartz.dart';
 import 'package:eventer_app/core/error/failure.dart';
 import 'package:eventer_app/core/error/exception.dart';
 import 'package:eventer_app/core/platform/network_info.dart';
-import 'package:eventer_app/data/authentication/data_sources/auth_remote_data_source.dart';
-import 'package:eventer_app/data/authentication/models/auth.dart';
+import 'package:eventer_app/data/user_auth/auth_remote_datasource.dart';
+import 'package:eventer_app/data/user_auth/models/auth.dart';
 
 abstract class AuthRepository {
   Future<Either<Failure, Auth>> userLogin(String email, String password);
-
-  Future<Either<Failure, Auth>> userRegistration();
 }
 
 class AuthLoginRepositoryIml implements AuthRepository {
@@ -27,11 +25,6 @@ class AuthLoginRepositoryIml implements AuthRepository {
     });
   }
 
-  @override
-  Future<Either<Failure, Auth>> userRegistration() {
-    // TODO: implement authRegistration
-    throw UnimplementedError();
-  }
 
   Future<Either<Failure, Auth>> _userAuth(
       Future<Auth> Function() authLogin) async {

@@ -1,10 +1,9 @@
 import 'dart:async';
 
 import 'package:eventer_app/core/error/failure.dart';
-import 'package:eventer_app/data/authentication/usecases/user_login.dart';
+import 'package:eventer_app/data/user_auth/usecases/user_login.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 part 'user_login_event.dart';
 

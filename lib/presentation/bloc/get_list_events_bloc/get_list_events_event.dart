@@ -1,4 +1,4 @@
-part of 'events_bloc.dart';
+part of 'get_list_events_bloc.dart';
 
 @freezed
 class EventsEvent with _$EventsEvent {

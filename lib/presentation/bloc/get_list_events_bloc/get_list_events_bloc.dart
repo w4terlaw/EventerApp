@@ -1,21 +1,21 @@
 import 'dart:async';
 
 import 'package:eventer_app/core/error/failure.dart';
-import 'package:eventer_app/data/events_get_main_info/models/event.dart';
-import 'package:eventer_app/data/events_get_main_info/usecases/get_all_events.dart';
+import 'package:eventer_app/data/get_list_events/models/event.dart';
+import 'package:eventer_app/data/get_list_events/usecases/get_list_events.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 
-part 'events_event.dart';
+part 'get_list_events_event.dart';
 
-part 'events_state.dart';
+part 'get_list_events_state.dart';
 
-part 'events_bloc.freezed.dart';
+part 'get_list_events_bloc.freezed.dart';
 
 class EventsBloc extends Bloc<EventsEvent, EventsState> {
-  final GetEvents getEventsUsecase;
+  final GetListEvents getEventsUsecase;
 
   EventsBloc({
     required this.getEventsUsecase,

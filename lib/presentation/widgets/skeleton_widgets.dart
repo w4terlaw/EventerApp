@@ -39,7 +39,7 @@ class SkeletonEventCompactCard extends StatelessWidget {
           //       offset: const Offset(0, 8),
           //     ),
           //   ],
-    // ),
+          // ),
           child: SkeletonItem(
             child: Column(
               children: [
@@ -60,7 +60,7 @@ class SkeletonEventCompactCard extends StatelessWidget {
                           spacing: 20,
                           lineStyle: SkeletonLineStyle(
                             randomLength: true,
-                            height: 10,
+                            // height: 10,
                             borderRadius: BorderRadius.circular(8),
                             minLength: MediaQuery.of(context).size.width / 8,
                             maxLength: MediaQuery.of(context).size.width / 2,

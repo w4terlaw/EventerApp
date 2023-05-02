@@ -1,14 +1,17 @@
 import 'dart:convert';
+
 import 'package:eventer_app/common/constants.dart';
 import 'package:eventer_app/core/error/exception.dart';
+import 'package:eventer_app/data/get_list_events/models/event.dart';
 import 'package:http/http.dart' as http;
-import 'package:eventer_app/data/events_get_main_info/models/event.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 abstract class EventsRemoteDataSource {
-  /// endpoint /event?page=1&name=string
-  /// Error [ServerError]
-  Future<List<Event>> getEvents(int page, String name);
+  /// GET - /event?page=<int>&name=<string>
+  Future<List<Event>> getListEvents(int page, String name);
+
+  /// GET - /event/<int>
+  Future<Event> getEvent(int id);
 }
 
 class EventsRemoteDataSourceImpl implements EventsRemoteDataSource {
@@ -19,10 +22,21 @@ class EventsRemoteDataSourceImpl implements EventsRemoteDataSource {
       {required this.client, required this.sharedPreferences});
 
   @override
-  Future<List<Event>> getEvents(int page, String name) => _getEventFromUrl(
-      '${ApiConstants.API_URL}${ApiConstants.EVENTS_EP}?page=${page.toString()}&name=$name');
+  Future<List<Event>> getListEvents(int page, String name) async{
+    final events = await _getEventFromUrl(
+        '${ApiConstants.API_URL}${ApiConstants.EVENT}?page=${page
+            .toString()}&name=$name');
+    return (events as List).map((event) => Event.fromJson(event)).toList();
+  }
 
-  Future<List<Event>> _getEventFromUrl(String url) async {
+  @override
+  Future<Event> getEvent(int id) async {
+    final event = await _getEventFromUrl(
+        '${ApiConstants.API_URL}${ApiConstants.EVENT}/$id');
+    return Event.fromJson(event);
+  }
+
+  Future<T> _getEventFromUrl<T>(String url) async {
     print(url);
     final jwt = sharedPreferences.getString(CacheConstants.CACHED_ACCESS_TOKEN);
     final response = await client.get(
@@ -33,8 +47,7 @@ class EventsRemoteDataSourceImpl implements EventsRemoteDataSource {
       },
     );
     if (response.statusCode == 200) {
-      final events = json.decode(response.body);
-      return (events as List).map((event) => Event.fromJson(event)).toList();
+      return json.decode(response.body);
     } else if (response.statusCode == 401) {
       // sharedPreferences.remove(CacheConstants.CACHED_ACCESS_TOKEN);
       throw UnauthorizedError();

@@ -1,8 +1,6 @@
 import 'package:eventer_app/common/app_colors.dart';
 import 'package:eventer_app/common/localization.dart';
-import 'package:eventer_app/presentation/bloc/events_bloc/events_bloc.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 class MySearchWidget extends StatelessWidget {
   final Function(String) onSubmitted;

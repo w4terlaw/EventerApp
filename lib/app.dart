@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'presentation/pages/event/event_page.dart';
 import 'presentation/pages/home/home_page.dart';
 import 'presentation/pages/login/login_page.dart';
 import 'presentation/pages/registration_page.dart';
@@ -40,6 +41,13 @@ class App extends StatelessWidget {
               '/home': (context) => const SearchPage(),
               '/registration': (context) => const RegistrationPage(),
               '/reset_password': (context) => const ResetPasswordPage(),
+            },
+            onGenerateRoute: (settings) {
+              switch (settings.name) {
+                case '/event_details':
+                  int id = settings.arguments as int;
+                  return MaterialPageRoute(builder: (context) => EventDetailPage(id: id));
+              }
             },
           ),
         );

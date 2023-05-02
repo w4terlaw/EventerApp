@@ -9,6 +9,7 @@ part of 'event.dart';
 _$_Events _$$_EventsFromJson(Map<String, dynamic> json) => _$_Events(
       id: json['id'] as int,
       name: json['name'] as String,
+      description: json['description'] as String,
       eventDates: (json['eventDates'] as List<dynamic>)
           .map((e) => EventDates.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -20,6 +21,7 @@ _$_Events _$$_EventsFromJson(Map<String, dynamic> json) => _$_Events(
 Map<String, dynamic> _$$_EventsToJson(_$_Events instance) => <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
+      'description': instance.description,
       'eventDates': instance.eventDates,
       'venues': instance.venues,
     };

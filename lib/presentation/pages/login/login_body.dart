@@ -12,7 +12,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class LoginBody extends StatelessWidget {
-  // final String? error;
   const LoginBody({Key? key}) : super(key: key);
 
   @override
@@ -52,7 +51,7 @@ class LoginBody extends StatelessWidget {
                       )
                     : CustomText.title2(
                         L10n.signInUpperCase,
-                  color: AppColors.whiteColor,
+                        color: AppColors.whiteColor,
                         letterSpacing: 1,
                       ),
                 onPressed: (state is UserLoginLoading)

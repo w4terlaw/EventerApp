@@ -22,6 +22,7 @@ Event _$EventFromJson(Map<String, dynamic> json) {
 mixin _$Event {
   int get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
+  String get description => throw _privateConstructorUsedError;
   List<EventDates> get eventDates => throw _privateConstructorUsedError;
   List<Venues> get venues => throw _privateConstructorUsedError;
 
@@ -36,7 +37,11 @@ abstract class $EventCopyWith<$Res> {
       _$EventCopyWithImpl<$Res, Event>;
   @useResult
   $Res call(
-      {int id, String name, List<EventDates> eventDates, List<Venues> venues});
+      {int id,
+      String name,
+      String description,
+      List<EventDates> eventDates,
+      List<Venues> venues});
 }
 
 /// @nodoc
@@ -54,6 +59,7 @@ class _$EventCopyWithImpl<$Res, $Val extends Event>
   $Res call({
     Object? id = null,
     Object? name = null,
+    Object? description = null,
     Object? eventDates = null,
     Object? venues = null,
   }) {
@@ -65,6 +71,10 @@ class _$EventCopyWithImpl<$Res, $Val extends Event>
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      description: null == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
               as String,
       eventDates: null == eventDates
           ? _value.eventDates
@@ -85,7 +95,11 @@ abstract class _$$_EventsCopyWith<$Res> implements $EventCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {int id, String name, List<EventDates> eventDates, List<Venues> venues});
+      {int id,
+      String name,
+      String description,
+      List<EventDates> eventDates,
+      List<Venues> venues});
 }
 
 /// @nodoc
@@ -99,6 +113,7 @@ class __$$_EventsCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res, _$_Events>
   $Res call({
     Object? id = null,
     Object? name = null,
+    Object? description = null,
     Object? eventDates = null,
     Object? venues = null,
   }) {
@@ -110,6 +125,10 @@ class __$$_EventsCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res, _$_Events>
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      description: null == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
               as String,
       eventDates: null == eventDates
           ? _value._eventDates
@@ -129,6 +148,7 @@ class _$_Events implements _Events {
   const _$_Events(
       {required this.id,
       required this.name,
+      required this.description,
       required final List<EventDates> eventDates,
       required final List<Venues> venues})
       : _eventDates = eventDates,
@@ -141,6 +161,8 @@ class _$_Events implements _Events {
   final int id;
   @override
   final String name;
+  @override
+  final String description;
   final List<EventDates> _eventDates;
   @override
   List<EventDates> get eventDates {
@@ -159,7 +181,7 @@ class _$_Events implements _Events {
 
   @override
   String toString() {
-    return 'Event(id: $id, name: $name, eventDates: $eventDates, venues: $venues)';
+    return 'Event(id: $id, name: $name, description: $description, eventDates: $eventDates, venues: $venues)';
   }
 
   @override
@@ -169,6 +191,8 @@ class _$_Events implements _Events {
             other is _$_Events &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
             const DeepCollectionEquality()
                 .equals(other._eventDates, _eventDates) &&
             const DeepCollectionEquality().equals(other._venues, _venues));
@@ -180,6 +204,7 @@ class _$_Events implements _Events {
       runtimeType,
       id,
       name,
+      description,
       const DeepCollectionEquality().hash(_eventDates),
       const DeepCollectionEquality().hash(_venues));
 
@@ -201,6 +226,7 @@ abstract class _Events implements Event {
   const factory _Events(
       {required final int id,
       required final String name,
+      required final String description,
       required final List<EventDates> eventDates,
       required final List<Venues> venues}) = _$_Events;
 
@@ -210,6 +236,8 @@ abstract class _Events implements Event {
   int get id;
   @override
   String get name;
+  @override
+  String get description;
   @override
   List<EventDates> get eventDates;
   @override

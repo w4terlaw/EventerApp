@@ -19,6 +19,7 @@ class Event with _$Event {
   const factory Event({
     required int id,
     required String name,
+    required String description,
     required List<EventDates> eventDates,
     required List<Venues> venues,
   }) = _Events;

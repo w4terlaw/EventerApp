@@ -3,14 +3,12 @@ import 'dart:convert';
 
 import 'package:eventer_app/common/constants.dart';
 import 'package:eventer_app/core/error/exception.dart';
-import 'package:eventer_app/data/authentication/models/auth.dart';
+import 'package:eventer_app/data/user_auth/models/auth.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
 abstract class AuthRemoteDataSource {
   Future<Auth> userLogin(String email, String password);
-
-  Future<Auth> userRegistration();
 }
 
 class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
@@ -24,7 +22,7 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
 
   @override
   Future<Auth> userLogin(String email, String password) async {
-    const authLoginUrl = ApiConstants.API_URL + ApiConstants.AUTH_EP;
+    const authLoginUrl = ApiConstants.API_URL + ApiConstants.AUTH_LOGIN;
 
     print(authLoginUrl);
     try {
@@ -38,7 +36,6 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
           "Content-Type": "application/json",
         },
       );
-      print(response.statusCode);
       if (response.statusCode == 200) {
         final authResponse = json.decode(response.body);
         await sharedPreferences.setString(CacheConstants.CACHED_ACCESS_TOKEN,
@@ -64,9 +61,4 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
     }
   }
 
-  @override
-  Future<Auth> userRegistration() {
-    // TODO: implement userRegistration
-    throw UnimplementedError();
-  }
 }

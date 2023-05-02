@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
-import 'package:eventer_app/data/authentication/models/auth.dart';
-import 'package:eventer_app/data/authentication/repository/authentication_repository.dart';
+import 'package:eventer_app/data/user_auth/models/auth.dart';
+import 'package:eventer_app/data/user_auth/auth_repository.dart';
 
 import '/core/error/failure.dart';
 import '/core/usecases/usecase.dart';
