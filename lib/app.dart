@@ -46,7 +46,9 @@ class App extends StatelessWidget {
               switch (settings.name) {
                 case '/event_details':
                   int id = settings.arguments as int;
-                  return MaterialPageRoute(builder: (context) => EventDetailPage(id: id));
+                  return MaterialPageRoute(
+                      builder: (context) => EventDetailPage(id: id));
+
               }
             },
           ),

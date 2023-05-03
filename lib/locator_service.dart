@@ -1,3 +1,4 @@
+import 'package:eventer_app/service/dio_config.dart';
 import 'package:get_it/get_it.dart';
 import 'package:http/http.dart' as http;
 import 'package:internet_connection_checker/internet_connection_checker.dart';
@@ -32,7 +33,7 @@ Future<void> init() async {
     () => AuthLoginRepositoryIml(authRemoteDataSource: sl(), networkInfo: sl()),
   );
   sl.registerLazySingleton<AuthRemoteDataSource>(
-    () => AuthRemoteDataSourceImpl(client: sl(), sharedPreferences: sl()),
+    () => AuthRemoteDataSourceImpl(dioClient: sl(), sharedPreferences: sl()),
   );
 
 // Core
@@ -43,5 +44,6 @@ Future<void> init() async {
 
   sl.registerLazySingleton(() => sharedPreferences);
   sl.registerLazySingleton(() => http.Client());
+  sl.registerLazySingleton(() => DioClient(sharedPreferences: sl()));
   sl.registerLazySingleton(() => InternetConnectionChecker());
 }
