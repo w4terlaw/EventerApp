@@ -30,23 +30,21 @@ class UserLoginBloc extends Bloc<UserLoginEvent, UserLoginState> {
 
     failureOrSuccess.fold(
       (failure) =>
-          emit(UserLoginState.userLoginError(message: _mapFailure(failure))),
+          emit(UserLoginState.userLoginError(message: failure.getError())),
       (events) => emit(const UserLoginState.userLoginSuccess()),
     );
   }
 
-  String _mapFailure(Failure failure) {
-    switch (failure.runtimeType) {
-      case ServerFailure:
-        return 'Не удалось подключиться к серверу';
-      case SocketFailure:
-        return 'Нет соединение с интернетом';
-      case NotFoundFailure:
-        return 'Пользователь с таким email не существует';
-      case UnauthorizedFailure:
-        return 'Неверный логин или пароль';
-      default:
-        return 'Unexpected Error';
-    }
-  }
+  // String _mapFailure(Failure failure) {
+  //   switch (failure.runtimeType) {
+  //     case ServerFailure:
+  //       return 'Не удалось подключиться к серверу';
+  //     case SocketFailure:
+  //       return 'Нет соединение с интернетом';
+  //     case UnauthorizedFailure:
+  //       return 'Неверный логин или пароль';
+  //     default:
+  //       return 'Unexpected Error';
+  //   }
+  // }
 }

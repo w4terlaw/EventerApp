@@ -1,9 +1,8 @@
-import 'dart:convert';
-
+import 'package:dio/dio.dart';
 import 'package:eventer_app/common/constants.dart';
 import 'package:eventer_app/core/error/exception.dart';
 import 'package:eventer_app/data/get_list_events/models/event.dart';
-import 'package:http/http.dart' as http;
+import 'package:eventer_app/service/dio/dio_client.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 abstract class EventsRemoteDataSource {
@@ -15,44 +14,52 @@ abstract class EventsRemoteDataSource {
 }
 
 class EventsRemoteDataSourceImpl implements EventsRemoteDataSource {
-  final http.Client client;
+  final DioClient dioClient;
   final SharedPreferences sharedPreferences;
 
   EventsRemoteDataSourceImpl(
-      {required this.client, required this.sharedPreferences});
+      {required this.dioClient, required this.sharedPreferences});
 
   @override
-  Future<List<Event>> getListEvents(int page, String name) async{
+  Future<List<Event>> getListEvents(int page, String name) async {
     final events = await _getEventFromUrl(
-        '${ApiConstants.API_URL}${ApiConstants.EVENT}?page=${page
-            .toString()}&name=$name');
+      ApiConstants.EVENT,
+      queryParameters: {
+        'page': page,
+        'name': name,
+      },
+    );
     return (events as List).map((event) => Event.fromJson(event)).toList();
   }
 
   @override
   Future<Event> getEvent(int id) async {
     final event = await _getEventFromUrl(
-        '${ApiConstants.API_URL}${ApiConstants.EVENT}/$id');
+      "${ApiConstants.EVENT}/$id",
+    );
     return Event.fromJson(event);
   }
 
-  Future<T> _getEventFromUrl<T>(String url) async {
-    print(url);
-    final jwt = sharedPreferences.getString(CacheConstants.CACHED_ACCESS_TOKEN);
-    final response = await client.get(
-      Uri.parse(url),
-      headers: {
-        'Authorization': jwt!,
-        'Content-Type': 'application/json',
-      },
-    );
-    if (response.statusCode == 200) {
-      return json.decode(response.body);
-    } else if (response.statusCode == 401) {
-      // sharedPreferences.remove(CacheConstants.CACHED_ACCESS_TOKEN);
-      throw UnauthorizedError();
-    } else {
+  Future<dynamic> _getEventFromUrl(String endpoint,
+      {Map<String, dynamic>? queryParameters}) async {
+    try {
+      final response = await dioClient.dio.get(
+        endpoint,
+        queryParameters: queryParameters,
+      );
+      return response.data;
+    } on DioError catch (e) {
+      // if (e.response?.statusCode == 401) {
+      //   throw UnauthorizedError();
+      // } else {
       throw ServerError();
+      // }
+      // } else if (response.statusCode == 401) {
+      //   // sharedPreferences.remove(CacheConstants.CACHED_ACCESS_TOKEN);
+      //   throw UnauthorizedError();
+      // } else {
+      //   throw ServerError();
+      // }
     }
   }
 }

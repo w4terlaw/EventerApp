@@ -4,7 +4,7 @@ import 'package:dio/dio.dart';
 import 'package:eventer_app/common/constants.dart';
 import 'package:eventer_app/core/error/exception.dart';
 import 'package:eventer_app/data/user_auth/models/auth.dart';
-import 'package:eventer_app/service/dio_config.dart';
+import 'package:eventer_app/service/dio/dio_client.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 abstract class AuthRemoteDataSource {
@@ -22,9 +22,6 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
 
   @override
   Future<Auth> userLogin(String email, String password) async {
-    // const authLoginUrl = ApiConstants.API_URL + ApiConstants.AUTH_LOGIN;
-
-    // print(authLoginUrl);
     try {
       final response = await dioClient.dio.post(
         ApiConstants.AUTH_LOGIN,
@@ -33,35 +30,30 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
           "password": password,
         },
       );
-      // if (response.statusCode == 200) {
       final authResponse = response.data;
-      await sharedPreferences.setString(CacheConstants.CACHED_ACCESS_TOKEN,
-          '${authResponse['token_type']} ${authResponse['access_token']}');
+
       await sharedPreferences.setString(
-          CacheConstants.CACHED_USER_ID, '${authResponse['user_id']}');
+          CacheConstants.CACHED_ACCESS_TOKEN, '${authResponse['accessToken']}');
+      await sharedPreferences.setString(CacheConstants.CACHED_REFRESH_TOKEN,
+          '${authResponse['refreshToken']}');
+
       return Auth.fromJson(authResponse);
-      // } else if (response.statusCode == 404) {
-      //   throw NotFoundError();
-      // } else if (response.statusCode == 401) {
-      //   throw UnauthorizedError();
-      // } else {
-      //   throw ServerError();
-      // }
     } on DioError catch (e) {
       if (e.response?.statusCode == 401 || e.response?.statusCode == 404) {
-        throw UnauthorizedError();
+        throw EmailAndPassError();
       } else {
         throw ServerError();
+        // }
+        // } on SocketError {
+        //   throw NetworkError();
+        // } on TimeoutException {
+        //   throw NetworkError();
+        // } on FormatException {
+        //   throw ServerError();
+        // } on http.ClientException {
+        //   throw NetworkError();
+        // }
       }
-      // } on SocketError {
-      //   throw NetworkError();
-      // } on TimeoutException {
-      //   throw NetworkError();
-      // } on FormatException {
-      //   throw ServerError();
-      // } on http.ClientException {
-      //   throw NetworkError();
-      // }
     }
   }
 }

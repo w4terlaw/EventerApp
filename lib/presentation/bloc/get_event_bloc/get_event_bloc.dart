@@ -23,7 +23,7 @@ class GetEventBloc extends Bloc<GetEventEvent, GetEventState> {
       _GetEventById event, Emitter<GetEventState> emit) async {
     final eventOrFailure = await getEventUsecase(PageEventParams(id: event.id));
     eventOrFailure.fold(
-      (error) => emit(GetEventError(error: error.toString())),
+      (failure) => emit(GetEventError(error: failure.getError())),
       (event) => emit(GetEventLoaded(event: event)),
     );
   }

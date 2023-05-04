@@ -1,6 +1,6 @@
 import 'package:eventer_app/locator_service.dart';
 import 'package:eventer_app/presentation/bloc/get_event_bloc/get_event_bloc.dart';
-import 'package:eventer_app/presentation/pages/event/event_body.dart';
+import 'package:eventer_app/presentation/pages/event_details/event_details_body.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

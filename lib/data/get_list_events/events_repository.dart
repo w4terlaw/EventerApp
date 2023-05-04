@@ -43,8 +43,8 @@ class EventsRepositoryImpl implements EventsRepository {
         return Right(remoteEvents);
       } on ServerError {
         return Left(ServerFailure());
-      } on UnauthorizedError {
-        return Left(UnauthorizedFailure());
+      // } on UnauthorizedError {
+      //   return Left(UnauthorizedFailure());
       }
     } else {
       return Left(SocketFailure());

@@ -28,8 +28,6 @@ class AuthenticationBloc
       CheckAuthenticationEvent event, Emitter<AuthenticationState> emit) async {
     if (sharedPreferences.getString(CacheConstants.CACHED_ACCESS_TOKEN) !=
         null) {
-      print('UserLOADEDDD');
-      print(sharedPreferences.getString(CacheConstants.CACHED_ACCESS_TOKEN));
       emit(AuthenticationLoadedState());
     } else {
       emit(AuthenticationEmptyState());

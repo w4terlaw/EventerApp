@@ -7,13 +7,11 @@ part of 'auth.dart';
 // **************************************************************************
 
 _$_Auth _$$_AuthFromJson(Map<String, dynamic> json) => _$_Auth(
-      access_token: json['access_token'] as String,
-      token_type: json['token_type'] as String,
-      user_id: json['user_id'] as int,
+      accessToken: json['accessToken'] as String,
+      refreshToken: json['refreshToken'] as String,
     );
 
 Map<String, dynamic> _$$_AuthToJson(_$_Auth instance) => <String, dynamic>{
-      'access_token': instance.access_token,
-      'token_type': instance.token_type,
-      'user_id': instance.user_id,
+      'accessToken': instance.accessToken,
+      'refreshToken': instance.refreshToken,
     };

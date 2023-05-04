@@ -36,7 +36,7 @@ class EventsBloc extends Bloc<EventsEvent, EventsState> {
         PageEventParams(page: event.page, name: event.name));
     failureOrEvents.fold(
       (failure) {
-        emit(EventsState.error(message: _mapFailure(failure)));
+        emit(EventsState.error(message: failure.getError()));
       },
       (events) {
         emit(EventsState.loaded(events: events));
@@ -44,16 +44,16 @@ class EventsBloc extends Bloc<EventsEvent, EventsState> {
     );
   }
 
-  String _mapFailure(Failure failure) {
-    switch (failure.runtimeType) {
-      case ServerFailure:
-        return 'Не удалось подключиться к серверу';
-      case SocketFailure:
-        return 'Не удалось подключиться к серверу /socket';
-      case UnauthorizedFailure:
-        return 'Token has been expired';
-      default:
-        return 'Unexpected Error';
-    }
-  }
+  // String _mapFailure(Failure failure) {
+  //   switch (failure.runtimeType) {
+  //     case ServerFailure:
+  //       return 'Не удалось подключиться к серверу';
+  //     case SocketFailure:
+  //       return 'Не удалось подключиться к серверу /socket';
+  //     // case UnauthorizedFailure:
+  //     //   return 'Token has been expired';
+  //     default:
+  //       return 'Unexpected Error';
+  //   }
+  // }
 }

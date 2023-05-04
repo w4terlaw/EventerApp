@@ -12,48 +12,50 @@ abstract class Error implements Exception {
 class ServerError implements Error {
   @override
   getFailure() {
-    // TODO: implement getFailure
-    throw UnimplementedError();
+    return ServerFailure();
   }
 }
 
 class UnauthorizedError implements Error {
   @override
   getFailure() {
-    // TODO: implement getFailure
-    throw UnimplementedError();
+    return UnauthorizedFailure();
+  }
+}
+
+class EmailAndPassError implements Error {
+  @override
+  getFailure() {
+    return EmailAndPassFailure();
   }
 }
 
 class NotFoundError implements Error {
   @override
   getFailure() {
-    // TODO: implement getFailure
-    throw UnimplementedError();
+    return NotFoundFailure();
   }
 }
 
 class NetworkError implements Error {
   @override
   getFailure() {
-    // TODO: implement getFailure
-    throw UnimplementedError();
+    return NetworkFailure();
   }
 }
 
-class CacheError implements Error {
-  @override
-  getFailure() {
-    // TODO: implement getFailure
-    throw UnimplementedError();
-  }
-}
+// class CacheError implements Error {
+//   @override
+//   getFailure() {
+//     // TODO: implement getFailure
+//     throw UnimplementedError();
+//   }
+// }
 
 class SocketError implements Error {
 
   @override
   getFailure() {
-    // TODO: implement getFailure
-    throw UnimplementedError();
+    return SocketFailure();
   }
 }

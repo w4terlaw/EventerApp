@@ -32,14 +32,16 @@ class AuthLoginRepositoryIml implements AuthRepository {
       try {
         final remoteAuthLogin = await authLogin();
         return Right(remoteAuthLogin);
-      } on NotFoundError {
-        return Left(NotFoundFailure());
-      } on UnauthorizedError {
-        return Left(UnauthorizedFailure());
+      // } on NotFoundError {
+      //   return Left(NotFoundFailure());
+      // } on UnauthorizedError {
+      //   return Left(UnauthorizedFailure());
       } on ServerError {
         return Left(ServerFailure());
-      } on NetworkError {
-        return Left(NetworkFailure());
+      // } on NetworkError {
+      //   return Left(NetworkFailure());
+      } on EmailAndPassError {
+        return Left(EmailAndPassFailure());
       }
     } else {
       return Left(SocketFailure());

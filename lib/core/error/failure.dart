@@ -1,18 +1,55 @@
 import 'package:equatable/equatable.dart';
 
 abstract class Failure extends Equatable {
+  String getError();
+
   @override
   List<Object?> get props => [];
 }
 
-class ServerFailure extends Failure {}
+class ServerFailure extends Failure {
+  @override
+  String getError() {
+    return 'Не удалось подключиться к серверу';
+  }
+}
 
-class NotFoundFailure extends Failure {}
+class NotFoundFailure extends Failure {
+  @override
+  String getError() {
+    // TODO: implement getError
+    throw UnimplementedError();
+  }
+}
 
-class UnauthorizedFailure extends Failure {}
 
-class CacheFailure extends Failure {}
+class EmailAndPassFailure extends Failure {
+  @override
+  String getError() {
+    return 'Неверный логин или пароль';
+  }
+}
 
-class SocketFailure extends Failure {}
+class UnauthorizedFailure extends Failure {
+  @override
+  String getError() {
+    // TODO: implement getError
+    throw UnimplementedError();
+  }
+}
 
-class NetworkFailure extends Failure {}
+// class CacheFailure extends Failure {}
+
+class SocketFailure extends Failure {
+  @override
+  String getError() {
+    return 'Интернет соединение отсутствует';
+  }
+}
+
+class NetworkFailure extends Failure {
+  @override
+  String getError() {
+    return 'ХЗ';
+  }
+}
