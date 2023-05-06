@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:eventer_app/common/app_colors.dart';
 import 'package:eventer_app/common/date_format.dart';
+import 'package:eventer_app/common/localization.dart';
 import 'package:eventer_app/data/get_list_events/models/event.dart';
 import 'package:eventer_app/presentation/bloc/get_event_bloc/get_event_bloc.dart';
 import 'package:eventer_app/presentation/widgets/loading_widget.dart';
@@ -38,13 +39,13 @@ class Details extends StatelessWidget {
       headerSliverBuilder: (context, innerBoxIsScrolled) {
         return [
           SliverAppBar(
+            automaticallyImplyLeading: false,
             expandedHeight: 250,
-            pinned: true,
-            // floating: true,
-            // snap: true,
+            elevation: 0,
+            backgroundColor: Colors.transparent,
             flexibleSpace: FlexibleSpaceBar(
               background: CachedNetworkImage(
-                imageUrl: event.venues[0].photos[2],
+                imageUrl: event.venues[0].photos[1],
                 fit: BoxFit.cover,
                 placeholder: (context, url) => const SkeletonImage(),
               ),
@@ -53,78 +54,31 @@ class Details extends StatelessWidget {
         ];
       },
       body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const VerticalSpace(18),
-            Padding(
-              padding:
-                  const EdgeInsets.only(left: 24.0, right: 24.0, bottom: 24.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const VerticalSpace(10),
-                  Text(
-                    event.name,
-                    style: Theme.of(context)
-                        .textTheme
-                        .displaySmall!
-                        .copyWith(color: AppColors.mainTextColor),
-                  ),
-                  const VerticalSpace(24),
-                  EventDatesList(eventDates: event.eventDates),
-                  const VerticalSpace(24),
-                  VenuesEventList(venues: event.venues),
-                  const VerticalSpace(24),
-                  OrganizerHeader(organizer: event.organizer),
-                ],
+        child: Padding(
+          padding: const EdgeInsets.all(24.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                event.name,
+                style: Theme.of(context)
+                    .textTheme
+                    .displaySmall!
+                    .copyWith(color: AppColors.mainTextColor),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: AboutEvent(description: event.description),
-            ),
-          ],
+              const VerticalSpace(24),
+              EventDatesList(eventDates: event.eventDates),
+              const VerticalSpace(24),
+              VenuesEventList(venues: event.venues),
+              const VerticalSpace(24),
+              OrganizerHeader(organizer: event.organizer),
+              const VerticalSpace(24),
+              AboutEvent(description: event.description),
+            ],
+          ),
         ),
       ),
     );
-    //   CustomScrollView(
-    //     slivers: [
-    //       SliverAppBar(
-    //         expandedHeight: 250,
-    //         pinned: true,
-    //         flexibleSpace: FlexibleSpaceBar(
-    //           background: CachedNetworkImage(
-    //             imageUrl: event.venues[0].photos[2],
-    //             fit: BoxFit.cover,
-    //             placeholder: (context, url) => const SkeletonImage(),
-    //           ),
-    //         ),
-    //       ),
-    //       SliverToBoxAdapter(
-    //         child: Padding(
-    //           padding: const EdgeInsets.all(24.0),
-    //           child: Column(
-    //             crossAxisAlignment: CrossAxisAlignment.start,
-    //             children: [
-    //               Text(
-    //                 event.name,
-    //                 style: Theme.of(context).textTheme.displayMedium,
-    //               ),
-    //               const VerticalSpace(18),
-    //               EventDatesList(eventDates: event.eventDates),
-    //               const VerticalSpace(18),
-    //               VenuesEventList(venues: event.venues),
-    //               const VerticalSpace(24),
-    //               OrganizerHeader(organizer: event.organizer),
-    //               const VerticalSpace(20),
-    //               AboutEvent(description: event.description),
-    //             ],
-    //           ),
-    //         ),
-    //       ),
-    //     ],
-    // );
   }
 }
 
@@ -136,11 +90,16 @@ class AboutEvent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Описание',
-          style: Theme.of(context).textTheme.headlineMedium,
+          L10n.description,
+          style: Theme.of(context)
+              .textTheme
+              .displaySmall!
+              .copyWith(color: AppColors.mainTextColor),
         ),
+        const VerticalSpace(16),
         ReadMoreText(
           description,
           trimLines: 1,
@@ -153,8 +112,8 @@ class AboutEvent extends StatelessWidget {
             color: AppColors.mainTextColor,
           ),
 
-          trimCollapsedText: 'Показать',
-          trimExpandedText: ' Скрыть',
+          trimCollapsedText: L10n.show,
+          trimExpandedText: L10n.hide,
         ),
       ],
     );
@@ -260,7 +219,7 @@ class OrganizerHeader extends StatelessWidget {
                 Text(organizer.name,
                     style: Theme.of(context).textTheme.bodyMedium),
                 Text(
-                  "Организатор",
+                  L10n.organizer,
                   style: Theme.of(context).textTheme.labelSmall?.copyWith(
                         color: AppColors.secondaryText2Color,
                         fontWeight: FontWeight.bold,
@@ -283,7 +242,7 @@ class OrganizerHeader extends StatelessWidget {
               ),
             ),
             child: Text(
-              "Подписаться",
+              L10n.subscribe,
               style: Theme.of(context).textTheme.labelSmall?.copyWith(
                     color: AppColors.secondaryColor,
                     fontWeight: FontWeight.bold,

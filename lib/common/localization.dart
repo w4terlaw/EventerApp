@@ -25,4 +25,9 @@ class L10n {
   static const settings = 'Настройки';
   static const helpFAQs = 'Помощь и FAQs';
   static const logOut = 'Выйти';
+  static const description = 'Описание';
+  static const show = 'Показать';
+  static const hide = ' Скрыть';
+  static const subscribe = "Подписаться";
+  static const organizer = "Организатор";
 }

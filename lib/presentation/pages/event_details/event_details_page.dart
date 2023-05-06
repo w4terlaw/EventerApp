@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:eventer_app/common/app_colors.dart';
 import 'package:eventer_app/locator_service.dart';
 import 'package:eventer_app/presentation/bloc/get_event_bloc/get_event_bloc.dart';
 import 'package:eventer_app/presentation/pages/event_details/event_details_body.dart';
@@ -14,38 +15,45 @@ class EventDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        // extendBodyBehindAppBar: true,
-        // appBar: AppBar(
-        //   actions: [
-        //     TextButton(
-        //       onPressed: null,
-        //       child: Image.asset(
-        //         'assets/icons/favorite.png',
-        //         width: 22,
-        //         height: 22,
-        //       ),
+      appBar: AppBar(
+        excludeHeaderSemantics: false,
+        title: Text(
+          'Мероприятие',
+          style: Theme.of(context)
+              .textTheme
+              .headlineLarge!
+              .copyWith(color: AppColors.mainTextColor),
+        ),
+        leading: IconButton(
+          icon: Image.asset(
+            'assets/icons/arrow-left.png',
+            color: AppColors.mainTextColor,
+            scale: 20,
+          ),
+          onPressed: () => Navigator.pop(context),
+        ),
+        actions: [
+          TextButton(
+            onPressed: null,
+            child: Image.asset(
+              'assets/icons/favorite.png',
+              color: AppColors.mainTextColor,
+              scale: 22,
+            ),
+          ),
+        ],
+        // flexibleSpace: ClipRRect(
+        //   child: BackdropFilter(
+        //     filter: ImageFilter.blur(sigmaX: 100, sigmaY: 100),
+        //     child: Container(
+        //       color: Colors.transparent,
         //     ),
-        //   ],
-        //   title: Text(
-        //     'Мероприятие',
-        //     style: Theme.of(context)
-        //         .textTheme
-        //         .headlineLarge!
-        //         .copyWith(color: Colors.white),
         //   ),
-        //   backgroundColor: Colors.transparent,
-        //   flexibleSpace: ClipRRect(
-        //     child: BackdropFilter(
-        //       filter: ImageFilter.blur(
-        //           sigmaX: 100, sigmaY: 100),
-        //       child: Container(
-        //         color: Colors.transparent,
-        //       ),
-        //     ),
-        //   ),
-        //   elevation: 0,
         // ),
-        body: Wrapper(id: id),
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+      ),
+      body: Wrapper(id: id),
     );
   }
 }
