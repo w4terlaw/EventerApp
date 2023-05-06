@@ -34,12 +34,14 @@ class Details extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: CustomScrollView(
-        slivers: [
+    return NestedScrollView(
+      headerSliverBuilder: (context, innerBoxIsScrolled) {
+        return [
           SliverAppBar(
             expandedHeight: 250,
             pinned: true,
+            // floating: true,
+            // snap: true,
             flexibleSpace: FlexibleSpaceBar(
               background: CachedNetworkImage(
                 imageUrl: event.venues[0].photos[2],
@@ -48,31 +50,81 @@ class Details extends StatelessWidget {
               ),
             ),
           ),
-          SliverToBoxAdapter(
-            child: Padding(
-              padding: const EdgeInsets.all(24.0),
+        ];
+      },
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const VerticalSpace(18),
+            Padding(
+              padding:
+                  const EdgeInsets.only(left: 24.0, right: 24.0, bottom: 24.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  const VerticalSpace(10),
                   Text(
                     event.name,
-                    style: Theme.of(context).textTheme.displayMedium,
+                    style: Theme.of(context)
+                        .textTheme
+                        .displaySmall!
+                        .copyWith(color: AppColors.mainTextColor),
                   ),
-                  const VerticalSpace(18),
+                  const VerticalSpace(24),
                   EventDatesList(eventDates: event.eventDates),
-                  const VerticalSpace(18),
+                  const VerticalSpace(24),
                   VenuesEventList(venues: event.venues),
                   const VerticalSpace(24),
                   OrganizerHeader(organizer: event.organizer),
-                  const VerticalSpace(20),
-                  AboutEvent(description: event.description),
                 ],
               ),
             ),
-          ),
-        ],
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: AboutEvent(description: event.description),
+            ),
+          ],
+        ),
       ),
     );
+    //   CustomScrollView(
+    //     slivers: [
+    //       SliverAppBar(
+    //         expandedHeight: 250,
+    //         pinned: true,
+    //         flexibleSpace: FlexibleSpaceBar(
+    //           background: CachedNetworkImage(
+    //             imageUrl: event.venues[0].photos[2],
+    //             fit: BoxFit.cover,
+    //             placeholder: (context, url) => const SkeletonImage(),
+    //           ),
+    //         ),
+    //       ),
+    //       SliverToBoxAdapter(
+    //         child: Padding(
+    //           padding: const EdgeInsets.all(24.0),
+    //           child: Column(
+    //             crossAxisAlignment: CrossAxisAlignment.start,
+    //             children: [
+    //               Text(
+    //                 event.name,
+    //                 style: Theme.of(context).textTheme.displayMedium,
+    //               ),
+    //               const VerticalSpace(18),
+    //               EventDatesList(eventDates: event.eventDates),
+    //               const VerticalSpace(18),
+    //               VenuesEventList(venues: event.venues),
+    //               const VerticalSpace(24),
+    //               OrganizerHeader(organizer: event.organizer),
+    //               const VerticalSpace(20),
+    //               AboutEvent(description: event.description),
+    //             ],
+    //           ),
+    //         ),
+    //       ),
+    //     ],
+    // );
   }
 }
 
@@ -89,7 +141,6 @@ class AboutEvent extends StatelessWidget {
           'Описание',
           style: Theme.of(context).textTheme.headlineMedium,
         ),
-
         ReadMoreText(
           description,
           trimLines: 1,
