@@ -1,5 +1,4 @@
 import 'package:eventer_app/common/app_colors.dart';
-import 'package:eventer_app/common/custom_text.dart';
 import 'package:eventer_app/common/localization.dart';
 import 'package:eventer_app/presentation/bloc/user_login_bloc/user_login_bloc.dart';
 import 'package:eventer_app/presentation/widgets/button_widgets.dart';
@@ -49,11 +48,8 @@ class LoginBody extends StatelessWidget {
                     ? const MyLoadingWidget(
                         size: 30,
                       )
-                    : CustomText.title2(
-                        L10n.signInUpperCase,
-                        color: AppColors.whiteColor,
-                        letterSpacing: 1,
-                      ),
+                    : Text(L10n.signInUpperCase,
+                        style: Theme.of(context).textTheme.labelLarge),
                 onPressed: (state is UserLoginLoading)
                     ? null
                     : () {
@@ -97,7 +93,11 @@ class SignIn extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: <Text>[
-        CustomText.headline4(L10n.signIn),
+        Text(
+          L10n.signIn,
+          style: Theme.of(context).textTheme.headline4,
+        )
+        // CustomText.headline4(L10n.signIn),
       ],
     );
   }
@@ -152,11 +152,17 @@ class AfterInputs extends StatelessWidget {
               onToggle: (value) => debugPrint("Switch status: $value"),
             ),
             const HorizontalSpace(10),
-            CustomText.body3(L10n.rememberMe),
+            Text(
+              L10n.rememberMe,
+              style: Theme.of(context).textTheme.bodySmall,
+            )
           ],
         ),
         GestureDetector(
-          child: CustomText.body3(L10n.forgotPassword),
+          child: Text(
+            L10n.forgotPassword,
+            style: Theme.of(context).textTheme.bodySmall,
+          ),
           onTap: () {
             Navigator.pushNamed(context, '/reset_password');
           },
@@ -173,16 +179,30 @@ class OtherActions extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        CustomText.title2(L10n.or),
+        Text(
+          L10n.or,
+          style: Theme.of(context)
+              .textTheme
+              .titleMedium!
+              .copyWith(color: AppColors.secondaryTextColor),
+        ),
         const VerticalSpace(20),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            CustomText.body2(L10n.notAccount),
+            Text(
+              L10n.notAccount,
+              style: Theme.of(context).textTheme.bodyMedium,
+            ),
             const HorizontalSpace(5),
             GestureDetector(
-              child: CustomText.body2(L10n.signUp,
-                  color: AppColors.secondaryColor),
+              child: Text(
+                L10n.signUp,
+                style: Theme.of(context)
+                    .textTheme
+                    .bodyMedium!
+                    .copyWith(color: AppColors.secondaryColor),
+              ),
               onTap: () {
                 Navigator.pushNamed(context, '/registration');
               },

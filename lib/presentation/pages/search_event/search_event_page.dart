@@ -4,7 +4,7 @@ import 'package:eventer_app/presentation/widgets/app_drawer_widget.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
 
-import 'home_body.dart';
+import 'search_event_body.dart';
 
 class SearchPage extends StatelessWidget {
   const SearchPage({Key? key}) : super(key: key);
@@ -17,7 +17,7 @@ class SearchPage extends StatelessWidget {
       body: SafeArea(
         child: BlocProvider<EventsBloc>(
           create: (context) => EventsBloc(getEventsUsecase: sl()),
-          child: const SearchPageBody(),
+          child: const SearchEventPageBody(),
         ),
       ),
     );

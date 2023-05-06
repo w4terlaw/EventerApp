@@ -3,6 +3,7 @@ part of 'event.dart';
 @freezed
 class Venues with _$Venues {
   const factory Venues({
+    required String name,
     required List<String> photos,
     required String address,
     required City city,

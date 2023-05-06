@@ -10,6 +10,7 @@ _$_Events _$$_EventsFromJson(Map<String, dynamic> json) => _$_Events(
       id: json['id'] as int,
       name: json['name'] as String,
       description: json['description'] as String,
+      organizer: Organizer.fromJson(json['organizer'] as Map<String, dynamic>),
       eventDates: (json['eventDates'] as List<dynamic>)
           .map((e) => EventDates.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -22,11 +23,13 @@ Map<String, dynamic> _$$_EventsToJson(_$_Events instance) => <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'description': instance.description,
+      'organizer': instance.organizer,
       'eventDates': instance.eventDates,
       'venues': instance.venues,
     };
 
 _$_Venues _$$_VenuesFromJson(Map<String, dynamic> json) => _$_Venues(
+      name: json['name'] as String,
       photos:
           (json['photos'] as List<dynamic>).map((e) => e as String).toList(),
       address: json['address'] as String,
@@ -34,6 +37,7 @@ _$_Venues _$$_VenuesFromJson(Map<String, dynamic> json) => _$_Venues(
     );
 
 Map<String, dynamic> _$$_VenuesToJson(_$_Venues instance) => <String, dynamic>{
+      'name': instance.name,
       'photos': instance.photos,
       'address': instance.address,
       'city': instance.city,
@@ -84,4 +88,17 @@ Map<String, dynamic> _$$_EventDatesToJson(_$_EventDates instance) =>
     <String, dynamic>{
       'startDateTime': instance.startDateTime.toIso8601String(),
       'endDateTime': instance.endDateTime.toIso8601String(),
+    };
+
+_$_Organizer _$$_OrganizerFromJson(Map<String, dynamic> json) => _$_Organizer(
+      id: json['id'] as int,
+      name: json['name'] as String,
+      logo: json['logo'] as String,
+    );
+
+Map<String, dynamic> _$$_OrganizerToJson(_$_Organizer instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'logo': instance.logo,
     };

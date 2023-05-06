@@ -7,14 +7,14 @@ import 'package:eventer_app/presentation/widgets/space_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class SearchPageBody extends StatefulWidget {
-  const SearchPageBody({Key? key}) : super(key: key);
+class SearchEventPageBody extends StatefulWidget {
+  const SearchEventPageBody({Key? key}) : super(key: key);
 
   @override
-  State<SearchPageBody> createState() => _SearchPageBodyState();
+  State<SearchEventPageBody> createState() => _SearchEventPageBodyState();
 }
 
-class _SearchPageBodyState extends State<SearchPageBody> {
+class _SearchEventPageBodyState extends State<SearchEventPageBody> {
   @override
   void initState() {
     context.read<EventsBloc>().add(const EventsEvent.fetch(page: 1, name: ''));
@@ -57,7 +57,7 @@ class _SearchPageBodyState extends State<SearchPageBody> {
                         padding: const EdgeInsets.only(left: 22.0, right: 22.0),
                         child: GestureDetector(
                           onTap: () {
-                            int id = events[index].id;
+                            final int id = event.id;
                             Navigator.pushNamed(context, '/event_details', arguments: id);
                           },
                           child: EventCompactCard(

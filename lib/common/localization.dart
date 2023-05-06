@@ -16,7 +16,7 @@ class L10n {
   static const firstName = 'Имя';
   static const middleName = 'Отчество';
   static const resetPassword = 'Сбросить пароль';
-  static const resetPasswordDescription = 'Пожалуйста, введите свой адрес электронной почты, чтобы запросить сброс пароля';
+  static const resetPasswordDescription = 'Пожалуйста, введите адрес электронной почты, чтобы запросить сброс пароля';
   static const send = 'Отправить';
   static const sendUpperCase = 'ОТПРАВИТЬ';
   static const search = 'Поиск...';

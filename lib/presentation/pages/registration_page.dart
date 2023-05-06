@@ -6,7 +6,6 @@ import '/common/localization.dart';
 import '/presentation/widgets/button_widgets.dart';
 import '/presentation/widgets/input_field_widgets.dart';
 import '/presentation/widgets/space_widgets.dart';
-import '../../common/custom_text.dart';
 
 class RegistrationPage extends StatelessWidget {
   const RegistrationPage({Key? key}) : super(key: key);
@@ -36,7 +35,8 @@ class RegisterBody extends StatelessWidget {
           const Inputs(),
           const VerticalSpace(40),
           MyElevatedButton(
-            widget: CustomText.title2(L10n.signUpUpperCase, letterSpacing: 1),
+            widget: Text(L10n.signUpUpperCase,
+                style: Theme.of(context).textTheme.labelLarge),
             onPressed: () {},
           ),
           const VerticalSpace(20),
@@ -70,7 +70,11 @@ class SignUp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: <Text>[
-        CustomText.headline4(L10n.registration),
+        Text(
+          L10n.registration,
+          style: Theme.of(context).textTheme.headlineLarge,
+        )
+        // CustomText.headline4(L10n.registration),
       ],
     );
   }
@@ -121,16 +125,30 @@ class OtherActions extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        CustomText.title2(L10n.or),
+        Text(
+          L10n.or,
+          style: Theme.of(context)
+              .textTheme
+              .titleMedium!
+              .copyWith(color: AppColors.secondaryTextColor),
+        ),
         const VerticalSpace(20),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            CustomText.body2(L10n.haveAnAccount),
+            Text(
+              L10n.haveAnAccount,
+              style: Theme.of(context).textTheme.bodyMedium,
+            ),
             const HorizontalSpace(5),
             GestureDetector(
-              child: CustomText.body2(L10n.signIn,
-                  color: AppColors.secondaryColor),
+              child: Text(
+                L10n.signIn,
+                style: Theme.of(context)
+                    .textTheme
+                    .bodyMedium!
+                    .copyWith(color: AppColors.secondaryColor),
+              ),
               onTap: () {
                 Navigator.pop(context);
               },

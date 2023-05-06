@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:eventer_app/core/error/failure.dart';
+// import 'package:eventer_app/core/error/failure.dart';
 import 'package:eventer_app/data/user_auth/usecases/user_login.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';

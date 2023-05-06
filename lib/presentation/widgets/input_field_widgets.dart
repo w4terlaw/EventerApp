@@ -29,7 +29,7 @@ class MyInputField extends StatelessWidget {
         decoration: InputDecoration(
           hintText: hintText,
           prefixIcon: Padding(
-            padding: const EdgeInsets.only(left: 6),
+            padding: const EdgeInsets.only(left: 5),
             child: IconButton(
               icon: Image.asset(
                 prefixIcon,
@@ -53,10 +53,8 @@ class MyInputField extends StatelessWidget {
             ),
           ),
         ),
-        style: const TextStyle(
-          color: AppColors.mainTextColor,
+        style: Theme.of(context).textTheme.bodySmall
         ),
-      ),
     );
   }
 }
@@ -92,7 +90,7 @@ class _MyInputPasswordFieldState extends State<MyInputPasswordField> {
         decoration: InputDecoration(
           hintText: widget.hintText,
           suffixIcon: Padding(
-            padding: const EdgeInsets.only(right: 6),
+            padding: const EdgeInsets.only(right: 5),
             child: IconButton(
               icon: Image.asset(
                 widget.suffixIcon,
@@ -130,10 +128,9 @@ class _MyInputPasswordFieldState extends State<MyInputPasswordField> {
             ),
           ),
         ),
-        style: const TextStyle(
-          color: AppColors.mainTextColor,
+        style: Theme.of(context).textTheme.bodySmall
         ),
-      ),
+
     );
   }
 }

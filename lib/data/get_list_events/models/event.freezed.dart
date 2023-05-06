@@ -23,6 +23,7 @@ mixin _$Event {
   int get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
+  Organizer get organizer => throw _privateConstructorUsedError;
   List<EventDates> get eventDates => throw _privateConstructorUsedError;
   List<Venues> get venues => throw _privateConstructorUsedError;
 
@@ -40,8 +41,11 @@ abstract class $EventCopyWith<$Res> {
       {int id,
       String name,
       String description,
+      Organizer organizer,
       List<EventDates> eventDates,
       List<Venues> venues});
+
+  $OrganizerCopyWith<$Res> get organizer;
 }
 
 /// @nodoc
@@ -60,6 +64,7 @@ class _$EventCopyWithImpl<$Res, $Val extends Event>
     Object? id = null,
     Object? name = null,
     Object? description = null,
+    Object? organizer = null,
     Object? eventDates = null,
     Object? venues = null,
   }) {
@@ -76,6 +81,10 @@ class _$EventCopyWithImpl<$Res, $Val extends Event>
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
+      organizer: null == organizer
+          ? _value.organizer
+          : organizer // ignore: cast_nullable_to_non_nullable
+              as Organizer,
       eventDates: null == eventDates
           ? _value.eventDates
           : eventDates // ignore: cast_nullable_to_non_nullable
@@ -85,6 +94,14 @@ class _$EventCopyWithImpl<$Res, $Val extends Event>
           : venues // ignore: cast_nullable_to_non_nullable
               as List<Venues>,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $OrganizerCopyWith<$Res> get organizer {
+    return $OrganizerCopyWith<$Res>(_value.organizer, (value) {
+      return _then(_value.copyWith(organizer: value) as $Val);
+    });
   }
 }
 
@@ -98,8 +115,12 @@ abstract class _$$_EventsCopyWith<$Res> implements $EventCopyWith<$Res> {
       {int id,
       String name,
       String description,
+      Organizer organizer,
       List<EventDates> eventDates,
       List<Venues> venues});
+
+  @override
+  $OrganizerCopyWith<$Res> get organizer;
 }
 
 /// @nodoc
@@ -114,6 +135,7 @@ class __$$_EventsCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res, _$_Events>
     Object? id = null,
     Object? name = null,
     Object? description = null,
+    Object? organizer = null,
     Object? eventDates = null,
     Object? venues = null,
   }) {
@@ -130,6 +152,10 @@ class __$$_EventsCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res, _$_Events>
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
+      organizer: null == organizer
+          ? _value.organizer
+          : organizer // ignore: cast_nullable_to_non_nullable
+              as Organizer,
       eventDates: null == eventDates
           ? _value._eventDates
           : eventDates // ignore: cast_nullable_to_non_nullable
@@ -149,6 +175,7 @@ class _$_Events implements _Events {
       {required this.id,
       required this.name,
       required this.description,
+      required this.organizer,
       required final List<EventDates> eventDates,
       required final List<Venues> venues})
       : _eventDates = eventDates,
@@ -163,6 +190,8 @@ class _$_Events implements _Events {
   final String name;
   @override
   final String description;
+  @override
+  final Organizer organizer;
   final List<EventDates> _eventDates;
   @override
   List<EventDates> get eventDates {
@@ -181,7 +210,7 @@ class _$_Events implements _Events {
 
   @override
   String toString() {
-    return 'Event(id: $id, name: $name, description: $description, eventDates: $eventDates, venues: $venues)';
+    return 'Event(id: $id, name: $name, description: $description, organizer: $organizer, eventDates: $eventDates, venues: $venues)';
   }
 
   @override
@@ -193,6 +222,8 @@ class _$_Events implements _Events {
             (identical(other.name, name) || other.name == name) &&
             (identical(other.description, description) ||
                 other.description == description) &&
+            (identical(other.organizer, organizer) ||
+                other.organizer == organizer) &&
             const DeepCollectionEquality()
                 .equals(other._eventDates, _eventDates) &&
             const DeepCollectionEquality().equals(other._venues, _venues));
@@ -205,6 +236,7 @@ class _$_Events implements _Events {
       id,
       name,
       description,
+      organizer,
       const DeepCollectionEquality().hash(_eventDates),
       const DeepCollectionEquality().hash(_venues));
 
@@ -227,6 +259,7 @@ abstract class _Events implements Event {
       {required final int id,
       required final String name,
       required final String description,
+      required final Organizer organizer,
       required final List<EventDates> eventDates,
       required final List<Venues> venues}) = _$_Events;
 
@@ -238,6 +271,8 @@ abstract class _Events implements Event {
   String get name;
   @override
   String get description;
+  @override
+  Organizer get organizer;
   @override
   List<EventDates> get eventDates;
   @override
@@ -254,6 +289,7 @@ Venues _$VenuesFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Venues {
+  String get name => throw _privateConstructorUsedError;
   List<String> get photos => throw _privateConstructorUsedError;
   String get address => throw _privateConstructorUsedError;
   City get city => throw _privateConstructorUsedError;
@@ -268,7 +304,7 @@ abstract class $VenuesCopyWith<$Res> {
   factory $VenuesCopyWith(Venues value, $Res Function(Venues) then) =
       _$VenuesCopyWithImpl<$Res, Venues>;
   @useResult
-  $Res call({List<String> photos, String address, City city});
+  $Res call({String name, List<String> photos, String address, City city});
 
   $CityCopyWith<$Res> get city;
 }
@@ -286,11 +322,16 @@ class _$VenuesCopyWithImpl<$Res, $Val extends Venues>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? name = null,
     Object? photos = null,
     Object? address = null,
     Object? city = null,
   }) {
     return _then(_value.copyWith(
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
       photos: null == photos
           ? _value.photos
           : photos // ignore: cast_nullable_to_non_nullable
@@ -321,7 +362,7 @@ abstract class _$$_VenuesCopyWith<$Res> implements $VenuesCopyWith<$Res> {
       __$$_VenuesCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<String> photos, String address, City city});
+  $Res call({String name, List<String> photos, String address, City city});
 
   @override
   $CityCopyWith<$Res> get city;
@@ -337,11 +378,16 @@ class __$$_VenuesCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? name = null,
     Object? photos = null,
     Object? address = null,
     Object? city = null,
   }) {
     return _then(_$_Venues(
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
       photos: null == photos
           ? _value._photos
           : photos // ignore: cast_nullable_to_non_nullable
@@ -362,7 +408,8 @@ class __$$_VenuesCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_Venues implements _Venues {
   const _$_Venues(
-      {required final List<String> photos,
+      {required this.name,
+      required final List<String> photos,
       required this.address,
       required this.city})
       : _photos = photos;
@@ -370,6 +417,8 @@ class _$_Venues implements _Venues {
   factory _$_Venues.fromJson(Map<String, dynamic> json) =>
       _$$_VenuesFromJson(json);
 
+  @override
+  final String name;
   final List<String> _photos;
   @override
   List<String> get photos {
@@ -385,7 +434,7 @@ class _$_Venues implements _Venues {
 
   @override
   String toString() {
-    return 'Venues(photos: $photos, address: $address, city: $city)';
+    return 'Venues(name: $name, photos: $photos, address: $address, city: $city)';
   }
 
   @override
@@ -393,6 +442,7 @@ class _$_Venues implements _Venues {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Venues &&
+            (identical(other.name, name) || other.name == name) &&
             const DeepCollectionEquality().equals(other._photos, _photos) &&
             (identical(other.address, address) || other.address == address) &&
             (identical(other.city, city) || other.city == city));
@@ -400,8 +450,8 @@ class _$_Venues implements _Venues {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_photos), address, city);
+  int get hashCode => Object.hash(runtimeType, name,
+      const DeepCollectionEquality().hash(_photos), address, city);
 
   @JsonKey(ignore: true)
   @override
@@ -419,12 +469,15 @@ class _$_Venues implements _Venues {
 
 abstract class _Venues implements Venues {
   const factory _Venues(
-      {required final List<String> photos,
+      {required final String name,
+      required final List<String> photos,
       required final String address,
       required final City city}) = _$_Venues;
 
   factory _Venues.fromJson(Map<String, dynamic> json) = _$_Venues.fromJson;
 
+  @override
+  String get name;
   @override
   List<String> get photos;
   @override
@@ -1090,5 +1143,175 @@ abstract class _EventDates implements EventDates {
   @override
   @JsonKey(ignore: true)
   _$$_EventDatesCopyWith<_$_EventDates> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+Organizer _$OrganizerFromJson(Map<String, dynamic> json) {
+  return _Organizer.fromJson(json);
+}
+
+/// @nodoc
+mixin _$Organizer {
+  int get id => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  String get logo => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $OrganizerCopyWith<Organizer> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $OrganizerCopyWith<$Res> {
+  factory $OrganizerCopyWith(Organizer value, $Res Function(Organizer) then) =
+      _$OrganizerCopyWithImpl<$Res, Organizer>;
+  @useResult
+  $Res call({int id, String name, String logo});
+}
+
+/// @nodoc
+class _$OrganizerCopyWithImpl<$Res, $Val extends Organizer>
+    implements $OrganizerCopyWith<$Res> {
+  _$OrganizerCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? logo = null,
+  }) {
+    return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      logo: null == logo
+          ? _value.logo
+          : logo // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$_OrganizerCopyWith<$Res> implements $OrganizerCopyWith<$Res> {
+  factory _$$_OrganizerCopyWith(
+          _$_Organizer value, $Res Function(_$_Organizer) then) =
+      __$$_OrganizerCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({int id, String name, String logo});
+}
+
+/// @nodoc
+class __$$_OrganizerCopyWithImpl<$Res>
+    extends _$OrganizerCopyWithImpl<$Res, _$_Organizer>
+    implements _$$_OrganizerCopyWith<$Res> {
+  __$$_OrganizerCopyWithImpl(
+      _$_Organizer _value, $Res Function(_$_Organizer) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? logo = null,
+  }) {
+    return _then(_$_Organizer(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      logo: null == logo
+          ? _value.logo
+          : logo // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_Organizer implements _Organizer {
+  const _$_Organizer(
+      {required this.id, required this.name, required this.logo});
+
+  factory _$_Organizer.fromJson(Map<String, dynamic> json) =>
+      _$$_OrganizerFromJson(json);
+
+  @override
+  final int id;
+  @override
+  final String name;
+  @override
+  final String logo;
+
+  @override
+  String toString() {
+    return 'Organizer(id: $id, name: $name, logo: $logo)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_Organizer &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.logo, logo) || other.logo == logo));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, name, logo);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_OrganizerCopyWith<_$_Organizer> get copyWith =>
+      __$$_OrganizerCopyWithImpl<_$_Organizer>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_OrganizerToJson(
+      this,
+    );
+  }
+}
+
+abstract class _Organizer implements Organizer {
+  const factory _Organizer(
+      {required final int id,
+      required final String name,
+      required final String logo}) = _$_Organizer;
+
+  factory _Organizer.fromJson(Map<String, dynamic> json) =
+      _$_Organizer.fromJson;
+
+  @override
+  int get id;
+  @override
+  String get name;
+  @override
+  String get logo;
+  @override
+  @JsonKey(ignore: true)
+  _$$_OrganizerCopyWith<_$_Organizer> get copyWith =>
       throw _privateConstructorUsedError;
 }

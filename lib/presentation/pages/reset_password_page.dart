@@ -4,7 +4,6 @@ import '/common/localization.dart';
 import '/presentation/widgets/button_widgets.dart';
 import '/presentation/widgets/input_field_widgets.dart';
 import '/presentation/widgets/space_widgets.dart';
-import '../../common/custom_text.dart';
 
 class ResetPasswordPage extends StatelessWidget {
   const ResetPasswordPage({super.key});
@@ -33,7 +32,15 @@ class ResetPasswordBody extends StatelessWidget {
           const VerticalSpace(25),
           const Inputs(),
           const VerticalSpace(40),
-          MyElevatedButton(widget: CustomText.title2(L10n.sendUpperCase, letterSpacing: 1), onPressed: () {})
+          MyElevatedButton(
+            widget: Text(
+              L10n.sendUpperCase,
+              style: Theme.of(context)
+                  .textTheme
+                  .labelLarge
+            ),
+            onPressed: () {},
+          )
         ],
       ),
     );
@@ -66,11 +73,21 @@ class ResetPassword extends StatelessWidget {
       children: <Widget>[
         Row(
           children: <Text>[
-            CustomText.headline4(L10n.resetPassword),
+            Text(
+              L10n.resetPassword,
+              style: Theme.of(context)
+                  .textTheme
+                  .headlineLarge,
+            ),
           ],
         ),
         const VerticalSpace(12),
-        CustomText.body2(L10n.resetPasswordDescription, height: 2.0),
+        Text(
+          L10n.resetPasswordDescription,
+          style: Theme.of(context)
+              .textTheme
+              .bodyMedium!.copyWith(height: 2.0),
+        ),
       ],
     );
   }

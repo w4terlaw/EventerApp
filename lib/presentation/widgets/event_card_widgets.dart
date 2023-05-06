@@ -1,17 +1,13 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:eventer_app/app.dart';
 import 'package:eventer_app/common/app_colors.dart';
-import 'package:eventer_app/presentation/widgets/loading_widget.dart';
 import 'package:eventer_app/presentation/widgets/skeleton_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:intl/intl.dart';
-import 'package:skeletons/skeletons.dart';
 
 import '/common/date_format.dart';
 import '/presentation/widgets/space_widgets.dart';
-import '../../common/custom_text.dart';
 
 final BorderRadius borderRadius = BorderRadius.circular(16);
 
@@ -79,19 +75,35 @@ class EventCompactCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                CustomText.subTitle2(
+                Text(
                   dateTimeFormat(
                     startDateTime,
                     MyDateFormat.compactCardDateFormat,
                   ).toUpperCase(),
-                  color: AppColors.secondaryColor,
-                  weight: FontWeight.w500,
+                  style: Theme.of(context).textTheme.labelSmall!.copyWith(
+                        fontWeight: FontWeight.bold,
+                        color: AppColors.secondaryColor,
+                      ),
                 ),
+                // CustomText.subTitle2(
+                //   dateTimeFormat(
+                //     startDateTime,
+                //     MyDateFormat.compactCardDateFormat,
+                //   ).toUpperCase(),
+                //   color: AppColors.secondaryColor,
+                //   weight: FontWeight.w500,
+                // ),
                 const VerticalSpace(3),
                 SizedBox(
                   height: 55.h,
                   // color: Colors.grey,
-                  child: CustomText.title1(name, height: 1.4),
+                  child: Text(
+                    name,
+                    style: Theme.of(context)
+                        .textTheme
+                        .titleLarge!
+                        .copyWith(height: 1.4, fontSize: 18.0),
+                  ),
                 ),
               ],
             ),
@@ -150,17 +162,26 @@ class EventMiddleCard extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                CustomText.body2(
+                Text(
                   dateTimeFormat(
                     startDateTime,
                     MyDateFormat.middleCardDateFormat,
                   ),
-                  size: 13.0,
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodySmall!
+                      .copyWith(fontSize: 13.0),
                 ),
                 const VerticalSpace(6),
                 SizedBox(
                   // height: 40.h,
-                  child: CustomText.title1(name, size: 15, height: 1.3),
+                  child: Text(
+                    name,
+                    style: Theme.of(context)
+                        .textTheme
+                        .titleLarge!
+                        .copyWith(fontSize: 15.0, height: 1.3),
+                  ),
                 ),
                 const VerticalSpace(8),
                 SizedBox(
@@ -168,7 +189,12 @@ class EventMiddleCard extends StatelessWidget {
                     children: <Widget>[
                       Image.asset('assets/icons/map-pin.png', width: 14.0),
                       const HorizontalSpace(3),
-                      Expanded(child: CustomText.title2(location)),
+                      Expanded(
+                        child: Text(
+                          location,
+                          style: Theme.of(context).textTheme.titleMedium,
+                        ),
+                      ),
                     ],
                   ),
                 ),
@@ -235,16 +261,23 @@ class EventLargeCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const VerticalSpace(6),
-                CustomText.subTitle2(
+                Text(
                   dateTimeFormat(
                     startDateTime,
                     MyDateFormat.largeCardDateFormat,
                   ).toUpperCase(),
+                  style: Theme.of(context).textTheme.labelSmall,
                 ),
                 const VerticalSpace(8),
-                CustomText.title1(
-                  name,
-                  size: 20,
+                Text(
+                  dateTimeFormat(
+                    startDateTime,
+                    MyDateFormat.largeCardDateFormat,
+                  ).toUpperCase(),
+                  style: Theme.of(context)
+                      .textTheme
+                      .titleLarge!
+                      .copyWith(fontSize: 20.0),
                 ),
                 const VerticalSpace(8),
                 SizedBox(
@@ -252,15 +285,21 @@ class EventLargeCard extends StatelessWidget {
                     children: <Widget>[
                       Image.asset('assets/icons/map-pin.png', width: 14.0),
                       const HorizontalSpace(6),
-                      Expanded(child: CustomText.title2(location)),
+                      Expanded(
+                        child: Text(
+                          location,
+                          style: Theme.of(context).textTheme.titleMedium,
+                        ),
+                      ),
                     ],
                   ),
                 ),
                 const VerticalSpace(16),
-                CustomText.body2(
+                Text(
                   '+$numberMembers идут',
-                  size: 14,
-                  weight: FontWeight.bold,
+                  style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                        fontWeight: FontWeight.bold,
+                      ),
                 ),
               ],
             ),

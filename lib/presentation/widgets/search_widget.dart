@@ -10,11 +10,10 @@ class MySearchWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
-      style: const TextStyle(
-        fontSize: 24.0,
-        fontWeight: FontWeight.w300,
-        color: AppColors.secondaryColor,
-      ),
+      style: Theme.of(context)
+          .textTheme
+          .headlineLarge!
+          .copyWith(fontWeight: FontWeight.w500),
       cursorColor: AppColors.secondaryColor,
       decoration: InputDecoration(
         // filled: true,
@@ -34,11 +33,16 @@ class MySearchWidget extends StatelessWidget {
           ),
         ),
         hintText: L10n.search,
-        hintStyle: const TextStyle(
-          fontSize: 24.0,
-          fontWeight: FontWeight.w300,
-          color: AppColors.secondaryTextColor,
-        ),
+        hintStyle: Theme.of(context)
+            .textTheme
+            .headlineLarge
+            ?.copyWith(color: AppColors.secondaryTextColor),
+
+        // const TextStyle(
+        //   fontSize: 24.0,
+        //   fontWeight: FontWeight.w300,
+        //   color: AppColors.secondaryTextColor,
+        // ),
       ),
       onSubmitted: (value) => onSubmitted(value),
     );

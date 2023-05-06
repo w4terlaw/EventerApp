@@ -1,6 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:eventer_app/common/constants.dart';
-import 'package:eventer_app/common/custom_text.dart';
 import 'package:eventer_app/common/localization.dart';
 import 'package:eventer_app/locator_service.dart';
 import 'package:eventer_app/presentation/widgets/skeleton_widgets.dart';
@@ -16,25 +15,25 @@ class AppDrawer extends StatelessWidget {
     return Drawer(
       child: ListView(
         children: <Widget>[
-          _createHeader(),
+          _createHeader(context),
           const VerticalSpace(46),
-          _createDrawerItem(
+          _createDrawerItem(context,
               icon: 'assets/icons/user.png',
               text: L10n.myProfile,
               onTap: () => print('click ${L10n.myProfile}')),
-          _createDrawerItem(
+          _createDrawerItem(context,
               icon: 'assets/icons/calendar.png',
               text: L10n.calendar,
               onTap: () => print('click ${L10n.myProfile}')),
-          _createDrawerItem(
+          _createDrawerItem(context,
               icon: 'assets/icons/settings.png',
               text: 'Настройки',
               onTap: () => print('click ${L10n.settings}')),
-          _createDrawerItem(
+          _createDrawerItem(context,
               icon: 'assets/icons/help-circle.png',
               text: L10n.helpFAQs,
               onTap: () => print('click ${L10n.helpFAQs}')),
-          _createDrawerItem(
+          _createDrawerItem(context,
               icon: 'assets/icons/log-out.png',
               text: L10n.logOut,
               onTap: () => _logOut(context)),
@@ -47,7 +46,7 @@ class AppDrawer extends StatelessWidget {
     );
   }
 
-  Widget _createHeader() {
+  Widget _createHeader(BuildContext context) {
     return Container(
       margin: EdgeInsets.zero,
       padding: const EdgeInsets.only(top: 45, left: 24, right: 24),
@@ -70,7 +69,11 @@ class AppDrawer extends StatelessWidget {
             ),
           ),
           const VerticalSpace(15),
-          CustomText.title1('Эльмир Абкеримов', maxLines: 1),
+          Text(
+            'Эльмир Абкеримов',
+            maxLines: 1,
+            style: Theme.of(context).textTheme.titleLarge,
+          ),
         ],
       ),
     );
@@ -96,7 +99,7 @@ class AppDrawer extends StatelessWidget {
         ]));
   }
 
-  Widget _createDrawerItem(
+  Widget _createDrawerItem(BuildContext context,
       {required String icon,
       required String text,
       required GestureTapCallback onTap}) {
@@ -110,7 +113,10 @@ class AppDrawer extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.only(left: 10.0),
-            child: CustomText.body2(text, weight: FontWeight.w400),
+            child: Text(
+              text,
+              style: Theme.of(context).textTheme.bodyMedium,
+            ),
           )
         ],
       ),
