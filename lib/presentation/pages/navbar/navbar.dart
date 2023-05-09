@@ -6,8 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:persistent_bottom_nav_bar_v2/persistent-tab-view.dart';
 
-class NavBar extends StatelessWidget {
-  NavBar({super.key});
+class Navbar extends StatelessWidget {
+  Navbar({super.key});
 
   final PersistentTabController _controller =
       PersistentTabController(initialIndex: 0);

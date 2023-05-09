@@ -3,17 +3,14 @@ import 'package:eventer_app/common/my_text_theme.dart';
 import 'package:eventer_app/locator_service.dart';
 import 'package:eventer_app/presentation/bloc/authentication_bloc/authentication_bloc.dart';
 import 'package:eventer_app/presentation/pages/event_details/event_details.dart';
-import 'package:eventer_app/presentation/pages/navBar/navBar.dart';
-import 'package:eventer_app/presentation/pages/home/home.dart';
 import 'package:eventer_app/presentation/pages/search_event/search_event_page.dart';
-
-// import 'package:eventer_app/presentation/pages/search_event/search_event_page.dart';
 import 'package:eventer_app/presentation/widgets/loading_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'presentation/pages/login/login.dart';
+import 'presentation/pages/navbar/navbar.dart';
 import 'presentation/pages/registration/registration_page.dart';
 import 'presentation/pages/reset_password/reset_password_page.dart';
 
@@ -53,7 +50,7 @@ class App extends StatelessWidget {
             // initialRoute: '/login',
             routes: {
               '/login': (context) => const Login(),
-              '/home': (context) => NavBar(),
+              '/home': (context) => Navbar(),
               '/registration': (context) => const RegistrationPage(),
               '/reset_password': (context) => const ResetPasswordPage(),
               '/search': (context) => const SearchPage(),
@@ -87,7 +84,7 @@ class AppView extends StatelessWidget {
       bloc: bloc,
       builder: (context, state) {
         if (state is AuthenticationLoadedState) {
-          return NavBar();
+          return Navbar();
         } else if (state is AuthenticationEmptyState) {
           return const Login();
         } else {
