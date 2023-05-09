@@ -33,7 +33,6 @@ class EventCompactCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      // width: 320.w,
       height: 110.h,
       padding: const EdgeInsets.all(8),
       decoration: BoxDecoration(
@@ -41,7 +40,7 @@ class EventCompactCard extends StatelessWidget {
         color: Colors.white,
         boxShadow: [
           BoxShadow(
-            color: Colors.grey.withOpacity(0.3),
+            color: Colors.grey.withOpacity(0.2),
             spreadRadius: 3,
             blurRadius: 10,
             offset: const Offset(0, 8),
@@ -49,7 +48,6 @@ class EventCompactCard extends StatelessWidget {
         ],
       ),
       child: Row(
-        // mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           SizedBox(
             height: double.infinity,
@@ -85,14 +83,6 @@ class EventCompactCard extends StatelessWidget {
                         color: AppColors.secondaryColor,
                       ),
                 ),
-                // CustomText.subTitle2(
-                //   dateTimeFormat(
-                //     startDateTime,
-                //     MyDateFormat.compactCardDateFormat,
-                //   ).toUpperCase(),
-                //   color: AppColors.secondaryColor,
-                //   weight: FontWeight.w500,
-                // ),
                 const VerticalSpace(3),
                 SizedBox(
                   height: 55.h,
@@ -115,14 +105,14 @@ class EventCompactCard extends StatelessWidget {
 }
 
 class EventMiddleCard extends StatelessWidget {
-  final String preview;
+  final String previewUrl;
   final DateTime startDateTime;
   final String name;
   final String location;
 
   const EventMiddleCard({
     Key? key,
-    required this.preview,
+    required this.previewUrl,
     required this.name,
     required this.startDateTime,
     required this.location,
@@ -132,7 +122,7 @@ class EventMiddleCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       // width: 320.w,
-      height: 110.h,
+      height: 120.h,
       padding: const EdgeInsets.all(8),
       decoration: BoxDecoration(
         borderRadius: borderRadius,
@@ -153,7 +143,7 @@ class EventMiddleCard extends StatelessWidget {
             width: 90.w,
             child: ClipRRect(
               borderRadius: BorderRadius.circular(10.0),
-              child: Image.network(preview, fit: BoxFit.cover),
+              child: Image.network(previewUrl, fit: BoxFit.cover),
             ),
           ),
           const HorizontalSpace(18),
@@ -208,7 +198,7 @@ class EventMiddleCard extends StatelessWidget {
 }
 
 class EventLargeCard extends StatelessWidget {
-  final String preview;
+  final String previewUrl;
   final DateTime startDateTime;
   final String name;
   final String location;
@@ -216,7 +206,7 @@ class EventLargeCard extends StatelessWidget {
 
   const EventLargeCard({
     Key? key,
-    required this.preview,
+    required this.previewUrl,
     required this.name,
     required this.startDateTime,
     required this.location,
@@ -250,7 +240,7 @@ class EventLargeCard extends StatelessWidget {
             child: ClipRRect(
               borderRadius: BorderRadius.circular(10.0),
               child: Image.network(
-                preview,
+                previewUrl,
                 fit: BoxFit.cover,
               ),
             ),
@@ -306,6 +296,188 @@ class EventLargeCard extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+}
+
+class EventHomeMiddleCard extends StatelessWidget {
+  final String previewUrl;
+  final DateTime startDateTime;
+  final String name;
+  final int number;
+  final String location;
+
+  const EventHomeMiddleCard({
+    Key? key,
+    required this.previewUrl,
+    required this.name,
+    required this.startDateTime,
+    required this.number,
+    required this.location,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final String day =
+        MyDateFormat.dateTimeFormat(startDateTime, MyDateFormat.dayFormat);
+    final String month =
+        MyDateFormat.dateTimeFormat(startDateTime, MyDateFormat.monthFormat);
+
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Container(
+          height: 250.h,
+          width: 255.w,
+          padding: const EdgeInsets.all(8),
+          decoration: BoxDecoration(
+            borderRadius: borderRadius,
+            color: Colors.white,
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey.withOpacity(0.2),
+                spreadRadius: 3,
+                blurRadius: 10,
+                offset: const Offset(0, 8),
+              ),
+            ],
+          ),
+          child: SizedBox(
+            child: Column(
+              // mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Stack(
+                  children: [
+                    SizedBox(
+                      height: 140.h,
+                      width: double.infinity,
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(10.0),
+                        child: CachedNetworkImage(
+                          imageUrl: previewUrl,
+                          fit: BoxFit.cover,
+                          placeholder: (context, url) => const SkeletonImage(),
+                          errorWidget: (context, url, error) =>
+                              const Center(child: Icon(Icons.error)),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(10),
+                            child: Container(
+                              height: 45,
+                              width: 45,
+                              color: Colors.white.withOpacity(0.9),
+                              child: Column(
+                                children: [
+                                  Text(
+                                    day,
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .labelLarge!
+                                        .copyWith(
+                                          fontWeight: FontWeight.bold,
+                                          color: AppColors.secondaryColor,
+                                          height: null,
+                                        ),
+                                  ),
+                                  Text(
+                                    month,
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .labelMedium!
+                                        .copyWith(
+                                          fontWeight: FontWeight.bold,
+                                          color: AppColors.secondaryColor,
+                                          height: null,
+                                        ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(10),
+                            child: Container(
+                              color: Colors.white.withOpacity(0.9),
+                              height: 30,
+                              width: 30,
+                              child: TextButton(
+                                onPressed: () {},
+                                child: Image.asset(
+                                  'assets/icons/favorite.png',
+                                  color: AppColors.secondaryColor,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+                const VerticalSpace(10),
+                Container(
+                  padding: const EdgeInsets.only(left: 10, right: 10),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        name,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: Theme.of(context)
+                            .textTheme
+                            .titleLarge!
+                            .copyWith(height: 1.4),
+                      ),
+                      const VerticalSpace(10),
+                      Text(
+                        '+${number} Идут',
+                        style: Theme.of(context).textTheme.labelSmall!.copyWith(
+                              fontWeight: FontWeight.bold,
+                              color: AppColors.secondaryColor,
+                            ),
+                      ),
+                      const VerticalSpace(10),
+                      SizedBox(
+                        child: Row(
+                          children: <Widget>[
+                            Image.asset('assets/icons/map-pin.png',
+                                width: 14.0),
+                            const HorizontalSpace(6),
+                            Expanded(
+                              child: Text(
+                                location,
+                                overflow: TextOverflow.ellipsis,
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .labelSmall!
+                                    .copyWith(
+                                      fontWeight: FontWeight.bold,
+                                      color: AppColors.secondaryTextColor,
+                                    ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                )
+              ],
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

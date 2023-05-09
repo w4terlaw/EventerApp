@@ -1,6 +1,7 @@
 import 'dart:async';
 
 // import 'package:eventer_app/core/error/failure.dart';
+import 'package:eventer_app/app.dart';
 import 'package:eventer_app/data/user_auth/usecases/user_login.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -14,8 +15,7 @@ part 'user_login_bloc.freezed.dart';
 class UserLoginBloc extends Bloc<UserLoginEvent, UserLoginState> {
   final UserLogin userLoginUsecase;
 
-  UserLoginBloc(
-      {required this.userLoginUsecase})
+  UserLoginBloc({required this.userLoginUsecase})
       : super(const UserLoginState.userLoginInitial()) {
     // LOGIN - get jwt
     on<_UserLogin>(_userLoginEvent);
@@ -31,20 +31,20 @@ class UserLoginBloc extends Bloc<UserLoginEvent, UserLoginState> {
     failureOrSuccess.fold(
       (failure) =>
           emit(UserLoginState.userLoginError(message: failure.getError())),
-      (events) => emit(const UserLoginState.userLoginSuccess()),
+      (_) => navigatorKey.currentState?.pushReplacementNamed('/home'),
     );
   }
 
-  // String _mapFailure(Failure failure) {
-  //   switch (failure.runtimeType) {
-  //     case ServerFailure:
-  //       return 'Не удалось подключиться к серверу';
-  //     case SocketFailure:
-  //       return 'Нет соединение с интернетом';
-  //     case UnauthorizedFailure:
-  //       return 'Неверный логин или пароль';
-  //     default:
-  //       return 'Unexpected Error';
-  //   }
-  // }
+// String _mapFailure(Failure failure) {
+//   switch (failure.runtimeType) {
+//     case ServerFailure:
+//       return 'Не удалось подключиться к серверу';
+//     case SocketFailure:
+//       return 'Нет соединение с интернетом';
+//     case UnauthorizedFailure:
+//       return 'Неверный логин или пароль';
+//     default:
+//       return 'Unexpected Error';
+//   }
+// }
 }

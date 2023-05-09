@@ -8,10 +8,12 @@ class MyDateFormat {
   static const String tabsDateFormat = 'dd MMMM, y';
   static const String weekDayDateFormat = 'EEEE';
   static const String timeFormat = 'HH:mma';
+  static const String dayFormat = 'dd';
+  static const String monthFormat = 'MMM';
 
   static String dateTimeFormat(DateTime dateTime, String format) {
     initializeDateFormatting('ru', null);
-    final formatter = DateFormat(format, 'ru').format(dateTime);
+    final formatter = DateFormat(format, 'ru').format(dateTime).replaceAll('.', '');
     return formatter;
   }
 }

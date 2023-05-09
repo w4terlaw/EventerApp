@@ -14,10 +14,10 @@ part 'get_list_events_state.dart';
 
 part 'get_list_events_bloc.freezed.dart';
 
-class EventsBloc extends Bloc<EventsEvent, EventsState> {
+class GetListEventsBloc extends Bloc<EventsEvent, EventsState> {
   final GetListEvents getEventsUsecase;
 
-  EventsBloc({
+  GetListEventsBloc({
     required this.getEventsUsecase,
   }) : super(const EventsState.loading()) {
     on<_EventsEventFetch>(_eventsFetch);

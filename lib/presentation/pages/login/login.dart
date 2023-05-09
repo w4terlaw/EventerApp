@@ -4,29 +4,14 @@ import 'package:eventer_app/presentation/pages/login/login_body.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+class Login extends StatelessWidget {
+  const Login({super.key});
 
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
       body: Wrapper(),
     );
-    // final bloc = UserLoginBloc(userLoginUsecase: sl());
-    // return BlocProvider(
-    //   create: (context) => bloc,
-    //   child: BlocBuilder<UserLoginBloc, UserLoginState>(
-    //     builder: (context, state) {
-    //       return state.when(
-    //           userLoginInitial: () => const Scaffold(body: LoginBody()),
-    //           userLoginLoading: () =>
-    //           const Scaffold(body: Center(child: MyPrgoresIndicatorWidget())),
-    //           userLoginSuccess: () => const SearchPage(),
-    //           userLoginError: (message) =>
-    //               Scaffold(body: LoginBody(error: message)));
-    //     },
-    //   ),
-    // );
   }
 }
 

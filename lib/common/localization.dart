@@ -30,4 +30,15 @@ class L10n {
   static const hide = ' Скрыть';
   static const subscribe = "Подписаться";
   static const organizer = "Организатор";
+  static const upcomingEvents = "Предстоящие события";
+  static const seeAll = "Увидеть все";
+
+  static const exploreNavBar = "Главная";
+  static const eventsNavBar = "Мероприятия";
+  static const mapNavBar = "Карта";
+  static const profileNavBar = "Профиль";
+
+  static const tryAgain = 'Попробовать ещё раз';
+
+
 }

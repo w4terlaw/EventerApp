@@ -1,7 +1,6 @@
 import 'package:eventer_app/common/app_colors.dart';
 import 'package:flutter/material.dart';
 
-// import '/common/app_colors.dart';
 import '/common/localization.dart';
 import '/presentation/widgets/button_widgets.dart';
 import '/presentation/widgets/input_field_widgets.dart';

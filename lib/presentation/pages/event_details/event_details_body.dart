@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:eventer_app/common/app_colors.dart';
 import 'package:eventer_app/common/date_format.dart';
@@ -39,10 +41,36 @@ class Details extends StatelessWidget {
       headerSliverBuilder: (context, innerBoxIsScrolled) {
         return [
           SliverAppBar(
-            automaticallyImplyLeading: false,
             expandedHeight: 250,
+            pinned: true,
             elevation: 0,
-            backgroundColor: Colors.transparent,
+            backgroundColor: Colors.white,
+            leading: TextButton(
+              child: CircleAvatar(
+                backgroundColor: Colors.white,
+                child: Image.asset(
+                  'assets/icons/arrow-left.png',
+                  color: AppColors.mainTextColor,
+                  scale: 20,
+                ),
+              ),
+              onPressed: () => Navigator.pop(context),
+            ),
+            actions: [
+              ClipRRect(
+                borderRadius: BorderRadius.circular(100),
+                child: TextButton(
+                  onPressed: () {},
+                  child: CircleAvatar(
+                    backgroundColor: Colors.white,
+                    child: Image.asset(
+                    'assets/icons/favorite.png',
+                    color: AppColors.mainTextColor,
+                    scale: 22,
+                  ),),
+                ),
+              ),
+            ],
             flexibleSpace: FlexibleSpaceBar(
               background: CachedNetworkImage(
                 imageUrl: event.venues[0].photos[1],
@@ -54,6 +82,7 @@ class Details extends StatelessWidget {
         ];
       },
       body: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
         child: Padding(
           padding: const EdgeInsets.all(24.0),
           child: Column(
@@ -128,6 +157,7 @@ class EventDatesList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
+      physics: const BouncingScrollPhysics(),
       scrollDirection: Axis.horizontal,
       child: Row(
         children: eventDates.map((eventDate) {
