@@ -16,7 +16,8 @@ class L10n {
   static const firstName = 'Имя';
   static const middleName = 'Отчество';
   static const resetPassword = 'Сбросить пароль';
-  static const resetPasswordDescription = 'Пожалуйста, введите адрес электронной почты, чтобы запросить сброс пароля';
+  static const resetPasswordDescription =
+      'Пожалуйста, введите адрес электронной почты, чтобы запросить сброс пароля';
   static const send = 'Отправить';
   static const sendUpperCase = 'ОТПРАВИТЬ';
   static const search = 'Поиск...';
@@ -39,6 +40,7 @@ class L10n {
   static const profileNavBar = "Профиль";
 
   static const tryAgain = 'Попробовать ещё раз';
-
-
+  static const getTicket = 'ПОЛУЧИТЬ БИЛЕТ';
+  static const confirm = 'ПОДТВЕРДИТЬ';
+  static const cancel = 'ОТМЕНА';
 }

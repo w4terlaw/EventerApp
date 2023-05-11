@@ -5,13 +5,13 @@ import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'core/platform/network_info.dart';
-import 'data/get_list_events/events_remote_datasource.dart';
-import 'data/get_list_events/events_repository.dart';
-import 'data/get_list_events/usecases/get_event.dart';
-import 'data/get_list_events/usecases/get_list_events.dart';
-import 'data/user_auth/auth_remote_datasource.dart';
-import 'data/user_auth/auth_repository.dart';
-import 'data/user_auth/usecases/user_login.dart';
+import 'feature/data/get_events/data_sources/events_remote_datasource.dart';
+import 'feature/data/get_events/repositories/events_repository.dart';
+import 'feature/data/get_events/use_cases/get_event.dart';
+import 'feature/data/get_events/use_cases/get_list_events.dart';
+import 'feature/data/user_auth/data_sources/auth_remote_datasource.dart';
+import 'feature/data/user_auth/repositories/auth_repository.dart';
+import 'feature/data/user_auth/use_cases/user_login.dart';
 
 final sl = GetIt.instance;
 
