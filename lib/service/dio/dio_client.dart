@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:eventer_app/common/constants.dart';
-import 'package:eventer_app/locator_service.dart';
+import 'package:eventer_app/service/locator_service.dart';
 import 'package:eventer_app/service/dio/jwt_dio_client.dart';
 import 'package:jwt_decoder/jwt_decoder.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';

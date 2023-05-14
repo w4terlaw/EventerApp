@@ -1,18 +1,18 @@
 import 'package:eventer_app/common/app_colors.dart';
 import 'package:eventer_app/common/my_text_theme.dart';
-import 'package:eventer_app/locator_service.dart';
-import 'package:eventer_app/feature/presentation/bloc/authentication_bloc/authentication_bloc.dart';
-import 'package:eventer_app/feature/presentation/pages/event_details/event_details.dart';
-import 'package:eventer_app/feature/presentation/pages/search_event/search_event_page.dart';
-import 'package:eventer_app/feature/presentation/widgets/loading_widget.dart';
+import 'package:eventer_app/service/locator_service.dart';
+import 'package:eventer_app/common/widgets/loading_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'feature/presentation/pages/login/login.dart';
-import 'feature/presentation/pages/navbar/navbar.dart';
-import 'feature/presentation/pages/registration/registration_page.dart';
-import 'feature/presentation/pages/reset_password/reset_password_page.dart';
+import 'feature/user/presentation/widgets/navbar.dart';
+import 'feature/auth/presentation/bloc/authentication_bloc/authentication_bloc.dart';
+import 'feature/auth/presentation/pages/login/login.dart';
+import 'feature/auth/presentation/pages/registration/registration_page.dart';
+import 'feature/auth/presentation/pages/reset_password/reset_password_page.dart';
+import 'feature/events/presentation/pages/event_details/event_details.dart';
+import 'feature/events/presentation/pages/search_event/search_event_page.dart';
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
