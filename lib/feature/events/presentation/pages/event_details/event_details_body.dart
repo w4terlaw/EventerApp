@@ -14,6 +14,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:readmore/readmore.dart';
 
+import '../../../../../common/constants.dart';
 import '../../../../user/data/models/event.dart';
 
 class EventDetailsBody extends StatelessWidget {
@@ -208,7 +209,7 @@ class Details extends StatelessWidget {
                     child: Image.asset(
                       'assets/icons/favorite.png',
                       color: AppColors.mainTextColor,
-                      scale: 22,
+                      scale: 20,
                     ),
                   ),
                 ),
@@ -228,29 +229,37 @@ class Details extends StatelessWidget {
         children: [
           SingleChildScrollView(
             physics: const BouncingScrollPhysics(),
-            child: Padding(
-              padding: const EdgeInsets.all(24.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const VerticalSpace(24),
+                Padding(
+                  padding: MyPadding.LR_24,
+                  child: Text(
                     event.name,
                     style: Theme.of(context)
                         .textTheme
                         .displaySmall!
                         .copyWith(color: AppColors.mainTextColor),
                   ),
-                  const VerticalSpace(24),
-                  EventDatesList(eventDates: event.eventDates),
-                  const VerticalSpace(24),
-                  VenuesEventList(venues: event.venues),
-                  const VerticalSpace(24),
-                  OrganizerHeader(organizer: event.organizer),
-                  const VerticalSpace(24),
-                  AboutEvent(description: event.description),
-                  const VerticalSpace(100),
-                ],
-              ),
+                ),
+                const VerticalSpace(24),
+                EventDatesList(eventDates: event.eventDates),
+                const VerticalSpace(24),
+                VenuesEventList(venues: event.venues),
+                const VerticalSpace(24),
+                Padding(
+                  padding: MyPadding.LR_24,
+                  child: Column(
+                    children: [
+                      OrganizerHeader(organizer: event.organizer),
+                      const VerticalSpace(24),
+                      AboutEvent(description: event.description),
+                      const VerticalSpace(100),
+                    ],
+                  ),
+                )
+              ],
             ),
           ),
           Align(
@@ -423,6 +432,7 @@ class EventDatesList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
+      padding: MyPadding.LR_24,
       physics: const BouncingScrollPhysics(),
       scrollDirection: Axis.horizontal,
       child: Row(
@@ -464,6 +474,8 @@ class VenuesEventList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
+      physics: const BouncingScrollPhysics(),
+      padding: MyPadding.LR_24,
       scrollDirection: Axis.horizontal,
       child: Row(
         children: venues.map((venue) {

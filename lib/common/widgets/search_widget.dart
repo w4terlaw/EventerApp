@@ -3,6 +3,7 @@ import 'package:eventer_app/common/localization.dart';
 import 'package:eventer_app/common/my_text_theme.dart';
 import 'package:flutter/material.dart';
 
+import '../constants.dart';
 import 'space_widgets.dart';
 
 class MySearchWidget extends StatelessWidget {
@@ -18,7 +19,7 @@ class MySearchWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.only(left: 24.0, right: 24.0),
+      padding: MyPadding.LR_24,
       child: Row(
         children: [
           Image.asset(

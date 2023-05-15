@@ -8,6 +8,7 @@ import 'package:eventer_app/common/widgets/event_card_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../../../common/constants.dart';
 import '../../../../data/models/event.dart';
 import '../../../bloc/get_list_events_bloc/get_list_events_bloc.dart';
 
@@ -26,7 +27,7 @@ class UpcomingEventsList extends StatelessWidget {
           children: <Widget>[
             const VerticalSpace(40),
             Padding(
-              padding: const EdgeInsets.only(left: 24.0, right: 24.0),
+              padding: MyPadding.LR_24,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
