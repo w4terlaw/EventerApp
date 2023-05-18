@@ -80,12 +80,14 @@ Map<String, dynamic> _$$_CountryToJson(_$_Country instance) =>
 
 _$_EventDates _$$_EventDatesFromJson(Map<String, dynamic> json) =>
     _$_EventDates(
+      id: json['id'] as int,
       startDateTime: DateTime.parse(json['startDateTime'] as String),
       endDateTime: DateTime.parse(json['endDateTime'] as String),
     );
 
 Map<String, dynamic> _$$_EventDatesToJson(_$_EventDates instance) =>
     <String, dynamic>{
+      'id': instance.id,
       'startDateTime': instance.startDateTime.toIso8601String(),
       'endDateTime': instance.endDateTime.toIso8601String(),
     };

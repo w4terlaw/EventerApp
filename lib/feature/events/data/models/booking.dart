@@ -1,3 +1,4 @@
+import 'package:eventer_app/feature/user/data/models/event.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'booking.freezed.dart';
@@ -9,7 +10,9 @@ class Booking with _$Booking {
   const factory Booking({
     required int id,
     required DateTime dateTime,
-    required Event event,
+    required int eventId,
+    required User user,
+    required EventDates eventDates,
   }) = _Booking;
 
   factory Booking.fromJson(Map<String, dynamic> json) =>
@@ -17,10 +20,14 @@ class Booking with _$Booking {
 }
 
 @freezed
-class Event with _$Event {
-  const factory Event({
+class User with _$User {
+  const factory User({
     required int id,
-  }) = _Event;
+    required String firstName,
+    required String lastName,
+    required String email,
+    required String avatar,
+  }) = _User;
 
-  factory Event.fromJson(Map<String, dynamic> json) => _$EventFromJson(json);
+  factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
 }

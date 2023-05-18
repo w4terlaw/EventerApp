@@ -3,30 +3,27 @@ import 'package:equatable/equatable.dart';
 import 'package:eventer_app/feature/events/data/models/booking.dart';
 import 'package:eventer_app/feature/events/domain/repositories/event_booking_repository.dart';
 
-import '../../data/models/event_dates_checkbox.dart';
 import '/core/error/failure.dart';
 import '/core/usecases/usecase.dart';
 
-class EventBooking extends UseCase<Booking, EventBookingParams> {
+class GetMyEventBookings extends UseCase<List<Booking>, EventBookingParams> {
   final EventBookingRepository eventBookingRepository;
 
-  EventBooking(this.eventBookingRepository);
+  GetMyEventBookings(this.eventBookingRepository);
 
   @override
-  Future<Either<Failure, Booking>> call(EventBookingParams params) async {
-    return await eventBookingRepository.eventBooking(params.eventId, params.eventDates);
+  Future<Either<Failure, List<Booking>>> call(EventBookingParams params) async {
+    return await eventBookingRepository.myEventBookings(params.eventId);
   }
 }
 
 class EventBookingParams extends Equatable {
   final int eventId;
-  final EventDatesCheckbox eventDates;
 
   const EventBookingParams({
-    required this.eventId,
-    required this.eventDates
+    required this.eventId
   });
 
   @override
-  List<Object?> get props => [eventId, eventDates];
+  List<Object?> get props => [eventId];
 }

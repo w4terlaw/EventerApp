@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../user/presentation/bloc/get_list_events_bloc/get_list_events_bloc.dart';
-import 'search_event_page_body.dart';
+import 'search_body.dart';
 
 class SearchPage extends StatelessWidget {
   const SearchPage({Key? key}) : super(key: key);

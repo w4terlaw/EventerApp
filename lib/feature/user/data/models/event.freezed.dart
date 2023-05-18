@@ -996,6 +996,7 @@ EventDates _$EventDatesFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$EventDates {
+  int get id => throw _privateConstructorUsedError;
   DateTime get startDateTime => throw _privateConstructorUsedError;
   DateTime get endDateTime => throw _privateConstructorUsedError;
 
@@ -1011,7 +1012,7 @@ abstract class $EventDatesCopyWith<$Res> {
           EventDates value, $Res Function(EventDates) then) =
       _$EventDatesCopyWithImpl<$Res, EventDates>;
   @useResult
-  $Res call({DateTime startDateTime, DateTime endDateTime});
+  $Res call({int id, DateTime startDateTime, DateTime endDateTime});
 }
 
 /// @nodoc
@@ -1027,10 +1028,15 @@ class _$EventDatesCopyWithImpl<$Res, $Val extends EventDates>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = null,
     Object? startDateTime = null,
     Object? endDateTime = null,
   }) {
     return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
       startDateTime: null == startDateTime
           ? _value.startDateTime
           : startDateTime // ignore: cast_nullable_to_non_nullable
@@ -1051,7 +1057,7 @@ abstract class _$$_EventDatesCopyWith<$Res>
       __$$_EventDatesCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({DateTime startDateTime, DateTime endDateTime});
+  $Res call({int id, DateTime startDateTime, DateTime endDateTime});
 }
 
 /// @nodoc
@@ -1065,10 +1071,15 @@ class __$$_EventDatesCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = null,
     Object? startDateTime = null,
     Object? endDateTime = null,
   }) {
     return _then(_$_EventDates(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
       startDateTime: null == startDateTime
           ? _value.startDateTime
           : startDateTime // ignore: cast_nullable_to_non_nullable
@@ -1084,11 +1095,16 @@ class __$$_EventDatesCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_EventDates implements _EventDates {
-  const _$_EventDates({required this.startDateTime, required this.endDateTime});
+  const _$_EventDates(
+      {required this.id,
+      required this.startDateTime,
+      required this.endDateTime});
 
   factory _$_EventDates.fromJson(Map<String, dynamic> json) =>
       _$$_EventDatesFromJson(json);
 
+  @override
+  final int id;
   @override
   final DateTime startDateTime;
   @override
@@ -1096,7 +1112,7 @@ class _$_EventDates implements _EventDates {
 
   @override
   String toString() {
-    return 'EventDates(startDateTime: $startDateTime, endDateTime: $endDateTime)';
+    return 'EventDates(id: $id, startDateTime: $startDateTime, endDateTime: $endDateTime)';
   }
 
   @override
@@ -1104,6 +1120,7 @@ class _$_EventDates implements _EventDates {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_EventDates &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.startDateTime, startDateTime) ||
                 other.startDateTime == startDateTime) &&
             (identical(other.endDateTime, endDateTime) ||
@@ -1112,7 +1129,7 @@ class _$_EventDates implements _EventDates {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, startDateTime, endDateTime);
+  int get hashCode => Object.hash(runtimeType, id, startDateTime, endDateTime);
 
   @JsonKey(ignore: true)
   @override
@@ -1130,12 +1147,15 @@ class _$_EventDates implements _EventDates {
 
 abstract class _EventDates implements EventDates {
   const factory _EventDates(
-      {required final DateTime startDateTime,
+      {required final int id,
+      required final DateTime startDateTime,
       required final DateTime endDateTime}) = _$_EventDates;
 
   factory _EventDates.fromJson(Map<String, dynamic> json) =
       _$_EventDates.fromJson;
 
+  @override
+  int get id;
   @override
   DateTime get startDateTime;
   @override

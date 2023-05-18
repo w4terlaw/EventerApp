@@ -1,10 +1,9 @@
-import 'package:eventer_app/common/app_colors.dart';
-import 'package:eventer_app/common/localization.dart';
-import 'package:eventer_app/feature/events/presentation/pages/search_event/search_event_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:persistent_bottom_nav_bar_v2/persistent-tab-view.dart';
 
+import '/common/app_colors.dart';
+import '/common/localization.dart';
 import '../pages/home/home.dart';
 
 class Navbar extends StatelessWidget {
@@ -15,10 +14,10 @@ class Navbar extends StatelessWidget {
 
   List<Widget> _buildScreens() {
     return [
-      const Home(),
-      const SearchPage(),
-      const SearchPage(),
-      const SearchPage(),
+      const HomePage(),
+      const Plug(number: 2),
+      const Plug(number: 3),
+      const Plug(number: 4),
     ];
   }
 
@@ -101,5 +100,22 @@ class Navbar extends StatelessWidget {
       _navBarItem(context, 'assets/icons/location_nav.png', L10n.mapNavBar),
       _navBarItem(context, 'assets/icons/profile_nav.png', L10n.profileNavBar),
     ];
+  }
+}
+
+class Plug extends StatelessWidget {
+  final int number;
+
+  const Plug({Key? key, required this.number}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+          child: Text(
+        'Screen $number',
+        style: Theme.of(context).textTheme.displayMedium,
+      )),
+    );
   }
 }

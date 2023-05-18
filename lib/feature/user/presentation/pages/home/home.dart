@@ -5,8 +5,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../bloc/get_list_events_bloc/get_list_events_bloc.dart';
 import 'home_body.dart';
 
-class Home extends StatelessWidget {
-  const Home({Key? key}) : super(key: key);
+class HomePage extends StatelessWidget {
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +29,7 @@ class Wrapper extends StatelessWidget {
           )..add(const EventsEvent.fetch(page: 1, name: '')),
         ),
       ],
-      child: const HomeBody(),
+      child: const HomePageBody(),
     );
   }
 }

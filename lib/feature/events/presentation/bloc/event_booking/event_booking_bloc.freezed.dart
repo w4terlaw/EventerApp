@@ -17,19 +17,21 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$EventBookingEvent {
   int get eventId => throw _privateConstructorUsedError;
+  EventDatesCheckbox get eventDates => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int eventId) eventBooking,
+    required TResult Function(int eventId, EventDatesCheckbox eventDates)
+        eventBooking,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int eventId)? eventBooking,
+    TResult? Function(int eventId, EventDatesCheckbox eventDates)? eventBooking,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int eventId)? eventBooking,
+    TResult Function(int eventId, EventDatesCheckbox eventDates)? eventBooking,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -61,7 +63,7 @@ abstract class $EventBookingEventCopyWith<$Res> {
           EventBookingEvent value, $Res Function(EventBookingEvent) then) =
       _$EventBookingEventCopyWithImpl<$Res, EventBookingEvent>;
   @useResult
-  $Res call({int eventId});
+  $Res call({int eventId, EventDatesCheckbox eventDates});
 }
 
 /// @nodoc
@@ -78,12 +80,17 @@ class _$EventBookingEventCopyWithImpl<$Res, $Val extends EventBookingEvent>
   @override
   $Res call({
     Object? eventId = null,
+    Object? eventDates = null,
   }) {
     return _then(_value.copyWith(
       eventId: null == eventId
           ? _value.eventId
           : eventId // ignore: cast_nullable_to_non_nullable
               as int,
+      eventDates: null == eventDates
+          ? _value.eventDates
+          : eventDates // ignore: cast_nullable_to_non_nullable
+              as EventDatesCheckbox,
     ) as $Val);
   }
 }
@@ -96,7 +103,7 @@ abstract class _$$_EventBookingCopyWith<$Res>
       __$$_EventBookingCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int eventId});
+  $Res call({int eventId, EventDatesCheckbox eventDates});
 }
 
 /// @nodoc
@@ -111,12 +118,17 @@ class __$$_EventBookingCopyWithImpl<$Res>
   @override
   $Res call({
     Object? eventId = null,
+    Object? eventDates = null,
   }) {
     return _then(_$_EventBooking(
       eventId: null == eventId
           ? _value.eventId
           : eventId // ignore: cast_nullable_to_non_nullable
               as int,
+      eventDates: null == eventDates
+          ? _value.eventDates
+          : eventDates // ignore: cast_nullable_to_non_nullable
+              as EventDatesCheckbox,
     ));
   }
 }
@@ -124,14 +136,16 @@ class __$$_EventBookingCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_EventBooking implements _EventBooking {
-  const _$_EventBooking({required this.eventId});
+  const _$_EventBooking({required this.eventId, required this.eventDates});
 
   @override
   final int eventId;
+  @override
+  final EventDatesCheckbox eventDates;
 
   @override
   String toString() {
-    return 'EventBookingEvent.eventBooking(eventId: $eventId)';
+    return 'EventBookingEvent.eventBooking(eventId: $eventId, eventDates: $eventDates)';
   }
 
   @override
@@ -139,11 +153,13 @@ class _$_EventBooking implements _EventBooking {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_EventBooking &&
-            (identical(other.eventId, eventId) || other.eventId == eventId));
+            (identical(other.eventId, eventId) || other.eventId == eventId) &&
+            (identical(other.eventDates, eventDates) ||
+                other.eventDates == eventDates));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, eventId);
+  int get hashCode => Object.hash(runtimeType, eventId, eventDates);
 
   @JsonKey(ignore: true)
   @override
@@ -154,27 +170,28 @@ class _$_EventBooking implements _EventBooking {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int eventId) eventBooking,
+    required TResult Function(int eventId, EventDatesCheckbox eventDates)
+        eventBooking,
   }) {
-    return eventBooking(eventId);
+    return eventBooking(eventId, eventDates);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int eventId)? eventBooking,
+    TResult? Function(int eventId, EventDatesCheckbox eventDates)? eventBooking,
   }) {
-    return eventBooking?.call(eventId);
+    return eventBooking?.call(eventId, eventDates);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int eventId)? eventBooking,
+    TResult Function(int eventId, EventDatesCheckbox eventDates)? eventBooking,
     required TResult orElse(),
   }) {
     if (eventBooking != null) {
-      return eventBooking(eventId);
+      return eventBooking(eventId, eventDates);
     }
     return orElse();
   }
@@ -209,10 +226,14 @@ class _$_EventBooking implements _EventBooking {
 }
 
 abstract class _EventBooking implements EventBookingEvent {
-  const factory _EventBooking({required final int eventId}) = _$_EventBooking;
+  const factory _EventBooking(
+      {required final int eventId,
+      required final EventDatesCheckbox eventDates}) = _$_EventBooking;
 
   @override
   int get eventId;
+  @override
+  EventDatesCheckbox get eventDates;
   @override
   @JsonKey(ignore: true)
   _$$_EventBookingCopyWith<_$_EventBooking> get copyWith =>

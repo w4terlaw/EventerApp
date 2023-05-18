@@ -13,16 +13,16 @@ part 'get_event_event.dart';
 part 'get_event_state.dart';
 
 class GetEventBloc extends Bloc<GetEventEvent, GetEventState> {
-  final GetEvent getEventUsecase;
+  final GetEvent getEventUseCase;
 
-  GetEventBloc({required this.getEventUsecase})
+  GetEventBloc({required this.getEventUseCase})
       : super(const GetEventState.loading()) {
     on<_GetEventById>(_getEventById);
   }
 
   FutureOr<void> _getEventById(
       _GetEventById event, Emitter<GetEventState> emit) async {
-    final eventOrFailure = await getEventUsecase(PageEventParams(id: event.id));
+    final eventOrFailure = await getEventUseCase(PageEventParams(id: event.eventId));
     eventOrFailure.fold(
       (failure) => emit(GetEventError(error: failure.getError())),
       (event) => emit(GetEventLoaded(event: event)),

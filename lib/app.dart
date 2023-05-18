@@ -12,7 +12,7 @@ import 'feature/auth/presentation/pages/login/login.dart';
 import 'feature/auth/presentation/pages/registration/registration_page.dart';
 import 'feature/auth/presentation/pages/reset_password/reset_password_page.dart';
 import 'feature/events/presentation/pages/event_details/event_details.dart';
-import 'feature/events/presentation/pages/search_event/search_event_page.dart';
+import 'feature/user/presentation/pages/search/search.dart';
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
@@ -61,8 +61,8 @@ class App extends StatelessWidget {
                   final int id = settings.arguments as int;
 
                   return MaterialPageRoute(
-                    builder: (context) => EventDetails(
-                      id: id,
+                    builder: (context) => EventDetailsPage(
+                      eventId: id,
                     ),
                   );
               }

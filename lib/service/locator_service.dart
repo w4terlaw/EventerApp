@@ -1,6 +1,7 @@
 import 'package:eventer_app/feature/events/data/data_sources/event_booking_remote_datasource.dart';
 import 'package:eventer_app/feature/events/data/repositories/event_booking_repository_imp.dart';
 import 'package:eventer_app/feature/events/domain/repositories/event_booking_repository.dart';
+import 'package:eventer_app/feature/events/domain/use_cases/get_my_event_bookings.dart';
 import 'package:get_it/get_it.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -27,6 +28,7 @@ Future<void> init() async {
   sl.registerLazySingleton<GetEvent>(() => GetEvent(sl()));
   sl.registerLazySingleton<UserLogin>(() => UserLogin(sl()));
   sl.registerLazySingleton<EventBooking>(() => EventBooking(sl()));
+  sl.registerLazySingleton<GetMyEventBookings>(() => GetMyEventBookings(sl()));
 
 //  Repository
   sl.registerLazySingleton<EventsRepository>(
@@ -44,10 +46,12 @@ Future<void> init() async {
   );
 
   sl.registerLazySingleton<EventBookingRepository>(
-        () => EventBookingRepositoryImpl(eventBookingRemoteDataSource: sl(), networkInfo: sl()),
+    () => EventBookingRepositoryImpl(
+        eventBookingRemoteDataSource: sl(), networkInfo: sl()),
   );
   sl.registerLazySingleton<EventBookingRemoteDataSource>(
-        () => EventBookingRemoteDataSourceImpl(dioClient: sl(), sharedPreferences: sl()),
+    () => EventBookingRemoteDataSourceImpl(
+        dioClient: sl(), sharedPreferences: sl()),
   );
 
 // Core

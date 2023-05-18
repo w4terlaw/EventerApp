@@ -8,8 +8,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../bloc/get_list_events_bloc/get_list_events_bloc.dart';
 import 'component/upcoming_events.dart';
 
-class HomeBody extends StatelessWidget {
-  const HomeBody({Key? key}) : super(key: key);
+class HomePageBody extends StatelessWidget {
+  const HomePageBody({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

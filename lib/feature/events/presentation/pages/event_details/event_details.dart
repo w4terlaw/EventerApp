@@ -4,12 +4,13 @@ import 'package:eventer_app/service/locator_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../bloc/get_my_event_bookings/get_my_event_bookings_bloc.dart';
 import 'event_details_body.dart';
 
-class EventDetails extends StatelessWidget {
-  final int id;
+class EventDetailsPage extends StatelessWidget {
+  final int eventId;
 
-  const EventDetails({Key? key, required this.id}) : super(key: key);
+  const EventDetailsPage({Key? key, required this.eventId}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -119,29 +120,34 @@ class EventDetails extends StatelessWidget {
       //   elevation: 0,
       //   backgroundColor: Colors.transparent,
       // ),
-      body: Wrapper(id: id),
+      body: Wrapper(eventId: eventId),
     );
   }
 }
 
 class Wrapper extends StatelessWidget {
-  final int id;
+  final int eventId;
 
-  const Wrapper({Key? key, required this.id}) : super(key: key);
+  const Wrapper({Key? key, required this.eventId}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (context) => GetEventBloc(getEventUsecase: sl())
-            ..add(GetEventEvent.byId(id: id)),
+          create: (context) => GetEventBloc(getEventUseCase: sl())
+            ..add(GetEventEvent.byId(eventId: eventId)),
         ),
         BlocProvider(
           create: (context) => EventBookingBloc(eventBookingUseCase: sl()),
         ),
+        BlocProvider(
+          create: (context) => GetMyEventBookingsBloc(
+            getMyEventBookings: sl(),
+          )..add(GetMyEventBookingsEvent.fetch(eventId: eventId)),
+        ),
       ],
-      child: const EventDetailsBody(),
+      child: const EventDetailsPageBody(),
     );
   }
 }

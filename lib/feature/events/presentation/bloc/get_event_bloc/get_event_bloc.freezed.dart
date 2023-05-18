@@ -16,20 +16,20 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$GetEventEvent {
-  int get id => throw _privateConstructorUsedError;
+  int get eventId => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int id) byId,
+    required TResult Function(int eventId) byId,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int id)? byId,
+    TResult? Function(int eventId)? byId,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int id)? byId,
+    TResult Function(int eventId)? byId,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -61,7 +61,7 @@ abstract class $GetEventEventCopyWith<$Res> {
           GetEventEvent value, $Res Function(GetEventEvent) then) =
       _$GetEventEventCopyWithImpl<$Res, GetEventEvent>;
   @useResult
-  $Res call({int id});
+  $Res call({int eventId});
 }
 
 /// @nodoc
@@ -77,12 +77,12 @@ class _$GetEventEventCopyWithImpl<$Res, $Val extends GetEventEvent>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? eventId = null,
   }) {
     return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
+      eventId: null == eventId
+          ? _value.eventId
+          : eventId // ignore: cast_nullable_to_non_nullable
               as int,
     ) as $Val);
   }
@@ -96,7 +96,7 @@ abstract class _$$_GetEventByIdCopyWith<$Res>
       __$$_GetEventByIdCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int id});
+  $Res call({int eventId});
 }
 
 /// @nodoc
@@ -110,12 +110,12 @@ class __$$_GetEventByIdCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? eventId = null,
   }) {
     return _then(_$_GetEventById(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
+      eventId: null == eventId
+          ? _value.eventId
+          : eventId // ignore: cast_nullable_to_non_nullable
               as int,
     ));
   }
@@ -124,14 +124,14 @@ class __$$_GetEventByIdCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_GetEventById implements _GetEventById {
-  const _$_GetEventById({required this.id});
+  const _$_GetEventById({required this.eventId});
 
   @override
-  final int id;
+  final int eventId;
 
   @override
   String toString() {
-    return 'GetEventEvent.byId(id: $id)';
+    return 'GetEventEvent.byId(eventId: $eventId)';
   }
 
   @override
@@ -139,11 +139,11 @@ class _$_GetEventById implements _GetEventById {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_GetEventById &&
-            (identical(other.id, id) || other.id == id));
+            (identical(other.eventId, eventId) || other.eventId == eventId));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, id);
+  int get hashCode => Object.hash(runtimeType, eventId);
 
   @JsonKey(ignore: true)
   @override
@@ -154,27 +154,27 @@ class _$_GetEventById implements _GetEventById {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int id) byId,
+    required TResult Function(int eventId) byId,
   }) {
-    return byId(id);
+    return byId(eventId);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int id)? byId,
+    TResult? Function(int eventId)? byId,
   }) {
-    return byId?.call(id);
+    return byId?.call(eventId);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int id)? byId,
+    TResult Function(int eventId)? byId,
     required TResult orElse(),
   }) {
     if (byId != null) {
-      return byId(id);
+      return byId(eventId);
     }
     return orElse();
   }
@@ -209,10 +209,10 @@ class _$_GetEventById implements _GetEventById {
 }
 
 abstract class _GetEventById implements GetEventEvent {
-  const factory _GetEventById({required final int id}) = _$_GetEventById;
+  const factory _GetEventById({required final int eventId}) = _$_GetEventById;
 
   @override
-  int get id;
+  int get eventId;
   @override
   @JsonKey(ignore: true)
   _$$_GetEventByIdCopyWith<_$_GetEventById> get copyWith =>

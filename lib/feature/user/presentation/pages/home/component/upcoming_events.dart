@@ -77,7 +77,7 @@ class UpcomingEventsList extends StatelessWidget {
                             ?.pushNamed('/event_details', arguments: id);
                       },
                       child: EventHomeMiddleCard(
-                        previewUrl: event.venues[0].photos[1],
+                        previewUrl: event.venues[0].photos[0],
                         name: event.name,
                         startDateTime: event.eventDates[0].startDateTime,
                         location: location,
