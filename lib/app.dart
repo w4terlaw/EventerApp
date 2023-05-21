@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'common/on_generete_route.dart';
+import 'feature/organizer/presentation/pages/organizer.dart';
 import 'feature/user/presentation/widgets/navbar.dart';
 import 'feature/auth/presentation/bloc/authentication_bloc/authentication_bloc.dart';
 import 'feature/auth/presentation/pages/login/login.dart';
@@ -47,26 +49,7 @@ class App extends StatelessWidget {
             themeMode: ThemeMode.light,
             debugShowCheckedModeBanner: false,
             home: const AppView(),
-            // initialRoute: '/login',
-            routes: {
-              '/login': (context) => const Login(),
-              '/home': (context) => Navbar(),
-              '/registration': (context) => const RegistrationPage(),
-              '/reset_password': (context) => const ResetPasswordPage(),
-              '/search': (context) => const SearchPage(),
-            },
-            onGenerateRoute: (settings) {
-              switch (settings.name) {
-                case '/event_details':
-                  final int id = settings.arguments as int;
-
-                  return MaterialPageRoute(
-                    builder: (context) => EventDetailsPage(
-                      eventId: id,
-                    ),
-                  );
-              }
-            },
+            onGenerateRoute: MyRouter.generateRoute,
           ),
         );
       },

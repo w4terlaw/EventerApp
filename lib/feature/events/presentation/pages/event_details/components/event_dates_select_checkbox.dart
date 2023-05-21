@@ -1,3 +1,4 @@
+import 'package:eventer_app/common/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -68,16 +69,11 @@ class _EventDatesSelectCheckboxState extends State<EventDatesSelectCheckbox> {
               contentPadding: EdgeInsets.zero,
               checkColor: Colors.white,
               // controlAffinity: ListTileControlAffinity.leading,
-              title: Container(
-                decoration: BoxDecoration(
-                    border: Border.all(color: Colors.teal),
-                    borderRadius: BorderRadius.circular(10)),
-                padding: const EdgeInsets.all(10),
-                child: MiniTab(
-                  title: dateTime,
-                  subTitle: timeRange,
-                ),
+              title: MiniTab(
+                title: dateTime,
+                subTitle: timeRange,
               ),
+              // ),
               value: _eventDatesCheckbox[eventDate.id],
               onChanged: (bool? value) {
                 setState(() {

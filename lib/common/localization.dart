@@ -43,4 +43,14 @@ class L10n {
   static const getTicket = 'ПОЛУЧИТЬ БИЛЕТ';
   static const confirm = 'ПОДТВЕРДИТЬ';
   static const cancel = 'ОТМЕНА';
+
+  // ORGANIZER PAGE
+  static const organizerAbout = 'ОПИСАНИЕ';
+  static const organizerEvents = 'МЕРОПРИЯТИЯ';
+  static const organizerReviews = 'ОТЗЫВЫ';
+
+  static const organizerSubscribe = 'ПОДПИСАТЬСЯ';
+  static const organizerUnsubscribe = 'ОТПИСАТЬСЯ';
+
+  static var aboutOrganizer;
 }

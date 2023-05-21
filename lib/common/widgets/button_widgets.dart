@@ -6,10 +6,12 @@ class MyElevatedButton extends StatelessWidget {
   final Widget widget;
   final VoidCallback? onPressed;
   final double padding;
+
   const MyElevatedButton({
     super.key,
     required this.widget,
-    this.onPressed, this.padding = 22,
+    this.onPressed,
+    this.padding = 22,
   });
 
   @override
@@ -18,7 +20,7 @@ class MyElevatedButton extends StatelessWidget {
       padding: EdgeInsets.only(right: padding, left: padding),
       child: SizedBox(
         width: double.infinity,
-        height: 60,
+        height: 56,
         child: ElevatedButton(
           onPressed: onPressed,
           style: ElevatedButton.styleFrom(
@@ -39,10 +41,12 @@ class MyOutlinedButton extends StatelessWidget {
   final Widget widget;
   final VoidCallback? onPressed;
   final double padding;
+
   const MyOutlinedButton({
     super.key,
     required this.widget,
-    this.onPressed, this.padding = 22,
+    this.onPressed,
+    this.padding = 22,
   });
 
   @override
@@ -67,4 +71,3 @@ class MyOutlinedButton extends StatelessWidget {
     );
   }
 }
-

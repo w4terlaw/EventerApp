@@ -19,6 +19,34 @@ class CacheConstants {
 }
 
 class MyPadding {
-  static const LR_24 = EdgeInsets.only(left: 24.0, right: 24.0);
-  static const LRTB_24 = EdgeInsets.only(left: 24.0, right: 24.0);
+  static const double defaultPadding = 24.0;
+  static const LR_24 =
+      EdgeInsets.only(left: defaultPadding, right: defaultPadding);
+  static const LRTB_24 = EdgeInsets.only(
+    left: defaultPadding,
+    right: defaultPadding,
+    top: defaultPadding,
+    bottom: defaultPadding,
+  );
+
+  static EdgeInsets padding(
+      {double? left, double? right, double top = 0, double bottom = 0}) {
+    return EdgeInsets.only(
+      left: left ?? defaultPadding,
+      right: right ?? defaultPadding,
+      top: top,
+      bottom: bottom,
+      // right: right ?? defaultPadding,
+    );
+  }
+}
+
+class MyRouterConstants {
+  static const String loginRoute = '/login';
+  static const String homeRoute = '/home';
+  static const String registrationRoute = '/registration';
+  static const String resetPasswordRoute = '/reset_password';
+  static const String searchRoute = '/search';
+  static const String eventDetailsRoute = '/event_details';
+  static const String organizerRoute = '/organizer';
 }

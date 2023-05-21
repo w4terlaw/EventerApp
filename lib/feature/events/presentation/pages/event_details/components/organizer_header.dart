@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:eventer_app/common/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -29,28 +30,32 @@ class OrganizerHeader extends StatelessWidget {
                   width: 48.w,
                 )),
             const HorizontalSpace(14),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(organizer.name,
-                    style: Theme.of(context).textTheme.bodyMedium),
-                Text(
-                  L10n.organizer,
-                  style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                        color: AppColors.secondaryText2Color,
-                        fontWeight: FontWeight.bold,
-                      ),
-                ),
-              ],
+            SizedBox(
+              width: 150.w,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(organizer.name,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: Theme.of(context).textTheme.bodyMedium),
+                  Text(
+                    L10n.organizer,
+                    style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                          color: AppColors.secondaryText2Color,
+                          fontWeight: FontWeight.bold,
+                        ),
+                  ),
+                ],
+              ),
             ),
           ],
         ),
         SizedBox(
-          width: 120,
           height: 28,
           child: ElevatedButton(
-            onPressed: () {},
+            onPressed: () {Navigator.pushNamed(context, '/organizer', arguments: organizer.id);},
             style: ElevatedButton.styleFrom(
               elevation: 0.0,
               backgroundColor: AppColors.secondaryColor.withOpacity(0.1),

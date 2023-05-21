@@ -10,7 +10,7 @@ class OrganizerPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Wrapper();
+    return const OrganizerPageBody();
   }
 }
 
