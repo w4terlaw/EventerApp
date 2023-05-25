@@ -30,6 +30,7 @@ class L10n {
   static const show = 'Показать';
   static const hide = ' Скрыть';
   static const subscribe = "Подписаться";
+  static const unsubscribe = "Отписаться";
   static const organizer = "Организатор";
   static const upcomingEvents = "Предстоящие события";
   static const seeAll = "Увидеть все";
@@ -45,12 +46,15 @@ class L10n {
   static const cancel = 'ОТМЕНА';
 
   // ORGANIZER PAGE
-  static const organizerAbout = 'ОПИСАНИЕ';
   static const organizerEvents = 'МЕРОПРИЯТИЯ';
   static const organizerReviews = 'ОТЗЫВЫ';
 
   static const organizerSubscribe = 'ПОДПИСАТЬСЯ';
   static const organizerUnsubscribe = 'ОТПИСАТЬСЯ';
 
-  static var aboutOrganizer;
+  static const organizerAbout = 'Подробнее';
+
+  static const organizerCountSubscribers = 'Подписчиков';
+  static const organizerCountEvents = 'Мероприятия';
+
 }

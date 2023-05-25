@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:eventer_app/core/error/failure.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../../../user/data/models/event.dart';
@@ -22,9 +23,10 @@ class GetEventBloc extends Bloc<GetEventEvent, GetEventState> {
 
   FutureOr<void> _getEventById(
       _GetEventById event, Emitter<GetEventState> emit) async {
+    emit(const GetEventState.loading());
     final eventOrFailure = await getEventUseCase(PageEventParams(id: event.eventId));
     eventOrFailure.fold(
-      (failure) => emit(GetEventError(error: failure.getError())),
+      (failure) => emit(GetEventError(failure: failure)),
       (event) => emit(GetEventLoaded(event: event)),
     );
   }

@@ -7,6 +7,7 @@ import '../../../../../common/app_colors.dart';
 import '../../../../../common/constants.dart';
 import '../../../../../common/localization.dart';
 import '../../../../../common/widgets/button_widgets.dart';
+import '../../../../../common/widgets/error_dialog_widget.dart';
 import '../../../../../common/widgets/loading_widget.dart';
 import '../../../../../common/widgets/skeleton_widgets.dart';
 import '../../../../../common/widgets/space_widgets.dart';
@@ -56,7 +57,7 @@ class _FlexibleSpaceBarHeader extends StatelessWidget {
             CachedNetworkImage(
               imageUrl: eventPhoto,
               fit: BoxFit.cover,
-              placeholder: (context, url) => const SkeletonImage(),
+              placeholder: (context, url) => const MySkeletonImage(),
             ),
           ],
         ),
@@ -103,17 +104,24 @@ class _HeaderSliver extends SliverPersistentHeaderDelegate {
 }
 
 class EventDetailsPageBody extends StatelessWidget {
-  const EventDetailsPageBody({Key? key}) : super(key: key);
+  final int eventId;
+  const EventDetailsPageBody({Key? key, required this.eventId}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final state = context.watch<GetEventBloc>().state;
     return state.when(
-        loading: () => const Center(
-              child: MyLoadingWidget(),
+      loading: () => const Center(
+        child: MyLoadingWidget(),
+      ),
+      loaded: (event) => Details(event: event),
+      error: (failure) => ErrorDialog(
+        failure: failure,
+        onPressed: () => context.read<GetEventBloc>().add(
+              GetEventEvent.byId(eventId: eventId),
             ),
-        loaded: (event) => Details(event: event),
-        error: (error) => Text(error));
+      ),
+    );
   }
 }
 

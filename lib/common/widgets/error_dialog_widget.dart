@@ -1,12 +1,13 @@
 import 'package:eventer_app/common/localization.dart';
+import 'package:eventer_app/core/error/failure.dart';
 import 'package:flutter/material.dart';
 
 
 class ErrorDialog extends StatelessWidget {
-  final String error;
+  final Failure failure;
   final Function() onPressed;
 
-  const ErrorDialog({Key? key, required this.error, required this.onPressed})
+  const ErrorDialog({Key? key, required this.failure, required this.onPressed})
       : super(key: key);
 
   @override
@@ -16,7 +17,7 @@ class ErrorDialog extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text(error),
+          Text(failure.getError()),
           TextButton(
             onPressed: () => onPressed(),
             child: const Text(L10n.tryAgain),

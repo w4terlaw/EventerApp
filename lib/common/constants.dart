@@ -9,6 +9,9 @@ class ApiConstants {
   static const String USER = '/user/';
   static const String BOOKING = '/booking/';
   static const String EVENT = '/event/';
+  static const String ORGANIZER = '/organizer/';
+  static const String ORGANIZER_INFO = '/organizer/info/';
+  static const String FEEDBACK = '/feedback/';
 }
 
 class CacheConstants {

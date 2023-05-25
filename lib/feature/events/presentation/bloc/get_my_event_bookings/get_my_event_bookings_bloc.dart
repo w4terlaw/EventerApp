@@ -26,6 +26,7 @@ class GetMyEventBookingsBloc
     _GetMyEventBookingsFetch event,
     Emitter<GetMyEventBookingsState> emit,
   ) async {
+    emit(const GetMyEventBookingsState.loading());
     final failureOrSuccess =
         await getMyEventBookings(EventBookingParams(eventId: event.eventId));
     failureOrSuccess.fold(

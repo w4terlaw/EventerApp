@@ -57,7 +57,7 @@ class EventCompactCard extends StatelessWidget {
               child: CachedNetworkImage(
                 imageUrl: previewUrl,
                 fit: BoxFit.cover,
-                placeholder: (context, url) => const SkeletonImage(),
+                placeholder: (context, url) => const MySkeletonImage(),
                 errorWidget: (context, url, error) =>
                     const Center(child: Icon(Icons.error)),
               ),
@@ -301,7 +301,7 @@ class EventLargeCard extends StatelessWidget {
 }
 
 class EventHomeMiddleCard extends StatelessWidget {
-  final String previewUrl;
+  final List<String> photos;
   final DateTime startDateTime;
   final String name;
   final int number;
@@ -309,7 +309,7 @@ class EventHomeMiddleCard extends StatelessWidget {
 
   const EventHomeMiddleCard({
     Key? key,
-    required this.previewUrl,
+    required this.photos,
     required this.name,
     required this.startDateTime,
     required this.number,
@@ -338,7 +338,7 @@ class EventHomeMiddleCard extends StatelessWidget {
                 color: Colors.grey.withOpacity(0.2),
                 spreadRadius: 3,
                 blurRadius: 10,
-                offset: const Offset(0, 8),
+                // offset: const Offset(0, 8),
               ),
             ],
           ),
@@ -349,20 +349,7 @@ class EventHomeMiddleCard extends StatelessWidget {
               children: <Widget>[
                 Stack(
                   children: [
-                    SizedBox(
-                      height: 140.h,
-                      width: double.infinity,
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(10.0),
-                        child: CachedNetworkImage(
-                          imageUrl: previewUrl,
-                          fit: BoxFit.cover,
-                          placeholder: (context, url) => const SkeletonImage(),
-                          errorWidget: (context, url, error) =>
-                              const Center(child: Icon(Icons.error)),
-                        ),
-                      ),
-                    ),
+                    ImageCarousel(photos: photos),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Row(
@@ -478,6 +465,77 @@ class EventHomeMiddleCard extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+}
+
+class ImageCarousel extends StatefulWidget {
+  final List<String> photos;
+
+  const ImageCarousel({Key? key, required this.photos}) : super(key: key);
+
+  @override
+  State<ImageCarousel> createState() => _ImageCarouselState();
+}
+
+class _ImageCarouselState extends State<ImageCarousel> {
+  int _currentPage = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 140.h,
+      width: double.infinity,
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(10.0),
+        child: Stack(
+          children: [
+            PageView.builder(
+              itemCount: widget.photos.length,
+              onPageChanged: (value) => setState(() => _currentPage = value),
+              itemBuilder: (context, index) => CachedNetworkImage(
+                imageUrl: widget.photos[index],
+                fit: BoxFit.cover,
+                placeholder: (context, url) => const MySkeletonImage(),
+                errorWidget: (context, url, error) => const Center(
+                  child: Icon(Icons.error),
+                ),
+              ),
+            ),
+            Positioned(
+              bottom: 16,
+              right: 16,
+              child: Row(
+                children: List.generate(
+                  widget.photos.length,
+                  (index) => Padding(
+                    padding: const EdgeInsets.only(left: 4.0),
+                    child: IndicatorDot(isActive: index == _currentPage),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class IndicatorDot extends StatelessWidget {
+  final bool isActive;
+
+  const IndicatorDot({Key? key, required this.isActive}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 8,
+      width: 8,
+      decoration: BoxDecoration(
+        color: isActive ? Colors.white : Colors.white54,
+        borderRadius: BorderRadius.circular(12),
+      ),
     );
   }
 }

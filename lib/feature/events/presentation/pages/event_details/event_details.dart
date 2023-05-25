@@ -147,7 +147,7 @@ class Wrapper extends StatelessWidget {
           )..add(GetMyEventBookingsEvent.fetch(eventId: eventId)),
         ),
       ],
-      child: const EventDetailsPageBody(),
+      child: EventDetailsPageBody(eventId: eventId),
     );
   }
 }

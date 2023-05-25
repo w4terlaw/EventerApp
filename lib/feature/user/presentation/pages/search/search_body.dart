@@ -7,6 +7,7 @@ import 'package:eventer_app/common/widgets/event_card_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../../common/widgets/error_dialog_widget.dart';
 import '../../../../user/presentation/bloc/get_list_events_bloc/get_list_events_bloc.dart';
 
 class SearchEventPageBody extends StatelessWidget {
@@ -26,59 +27,49 @@ class SearchEventPageBody extends StatelessWidget {
         ),
         Expanded(
           child: state.when(
-              loading: () => const SkeletonEventCompactCard(),
-              loaded: (events) {
-                // return const SkeletonEventCompactCard();
-                return RefreshIndicator(
-                  onRefresh: () {
-                    context.read<GetListEventsBloc>().add(
-                          const EventsEvent.fetch(page: 1, name: ''),
-                        );
-                    return Future.value();
-                  },
-                  child: ListView.separated(
-                    physics: const BouncingScrollPhysics(),
-                    separatorBuilder: (_, index) => const VerticalSpace(16.0),
-                    itemCount: events.length,
-                    itemBuilder: (context, index) {
-                      final event = events[index];
-                      return Padding(
-                        padding: const EdgeInsets.only(left: 22.0, right: 22.0),
-                        child: GestureDetector(
-                          onTap: () {
-                            final int id = event.id;
-                            navigatorKey.currentState
-                                ?.pushNamed('/event_details', arguments: id);
-                            // Navigator.pushNamed(context, '/event_details', arguments: id);
-                          },
-                          child: EventCompactCard(
-                            previewUrl: event.venues[0].photos[0],
-                            name: event.name,
-                            startDateTime: event.eventDates[0].startDateTime,
-                          ),
-                        ),
+            loading: () => const MySkeletonEventCompactCard(),
+            loaded: (events) {
+              // return const SkeletonEventCompactCard();
+              return RefreshIndicator(
+                onRefresh: () {
+                  context.read<GetListEventsBloc>().add(
+                        const EventsEvent.fetch(page: 1, name: ''),
                       );
-                    },
-                  ),
-                );
-              },
-              error: (message) {
-                return Center(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    // crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Text(message),
-                      TextButton(
-                        onPressed: () => context.read<GetListEventsBloc>().add(
-                              const EventsEvent.fetch(page: 1, name: ''),
-                            ),
-                        child: const Text('Попробовать ещё раз'),
-                      )
-                    ],
-                  ),
-                );
-              }),
+                  return Future.value();
+                },
+                child: ListView.separated(
+                  physics: const BouncingScrollPhysics(),
+                  separatorBuilder: (_, index) => const VerticalSpace(16.0),
+                  itemCount: events.length,
+                  itemBuilder: (context, index) {
+                    final event = events[index];
+                    return Padding(
+                      padding: const EdgeInsets.only(left: 22.0, right: 22.0),
+                      child: GestureDetector(
+                        onTap: () {
+                          final int id = event.id;
+                          navigatorKey.currentState
+                              ?.pushNamed('/event_details', arguments: id);
+                          // Navigator.pushNamed(context, '/event_details', arguments: id);
+                        },
+                        child: EventCompactCard(
+                          previewUrl: event.venues[0].photos[0],
+                          name: event.name,
+                          startDateTime: event.eventDates[0].startDateTime,
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              );
+            },
+              error: (failure) => ErrorDialog(
+                failure: failure,
+                onPressed: () => context.read<GetListEventsBloc>().add(
+                  const EventsEvent.fetch(page: 1, name: ''),
+                ),
+              ),
+          ),
         ),
       ],
     );

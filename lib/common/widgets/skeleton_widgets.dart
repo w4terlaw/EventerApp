@@ -4,8 +4,8 @@ import 'package:skeletons/skeletons.dart';
 
 import 'space_widgets.dart';
 
-class SkeletonImage extends StatelessWidget {
-  const SkeletonImage({Key? key}) : super(key: key);
+class MySkeletonImage extends StatelessWidget {
+  const MySkeletonImage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,12 +18,33 @@ class SkeletonImage extends StatelessWidget {
   }
 }
 
-class SkeletonEventCompactCard extends StatelessWidget {
-  const SkeletonEventCompactCard({Key? key}) : super(key: key);
+class MySkeletonLine extends StatelessWidget {
+  final double? width;
+  final double? height;
+
+  const MySkeletonLine({Key? key, this.width, this.height}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SkeletonLine(
+      style: SkeletonLineStyle(
+        width: width ?? 40.0,
+        height: height ?? 18.0,
+        borderRadius: BorderRadius.circular(8),
+      ),
+    );
+  }
+}
+
+class MySkeletonEventCompactCard extends StatelessWidget {
+  final EdgeInsetsGeometry? padding;
+
+  const MySkeletonEventCompactCard({Key? key, this.padding}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+      padding: padding,
       physics: const NeverScrollableScrollPhysics(),
       itemCount: 5,
       itemBuilder: (context, index) => Padding(

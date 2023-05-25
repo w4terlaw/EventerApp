@@ -21,7 +21,7 @@ class UpcomingEventsList extends StatelessWidget {
     final state = context.watch<GetListEventsBloc>().state;
     return state.when(
       loading: () =>
-          const SizedBox(height: 260, child: SkeletonEventCompactCard()),
+          const SizedBox(height: 260, child: MySkeletonEventCompactCard()),
       loaded: (events) {
         return Column(
           children: <Widget>[
@@ -77,7 +77,7 @@ class UpcomingEventsList extends StatelessWidget {
                             ?.pushNamed('/event_details', arguments: id);
                       },
                       child: EventHomeMiddleCard(
-                        previewUrl: event.venues[0].photos[0],
+                        photos: event.venues[0].photos,
                         name: event.name,
                         startDateTime: event.eventDates[0].startDateTime,
                         location: location,
@@ -91,8 +91,8 @@ class UpcomingEventsList extends StatelessWidget {
           ],
         );
       },
-      error: (message) => ErrorDialog(
-        error: message,
+      error: (failure) => ErrorDialog(
+        failure: failure,
         onPressed: () {
           context.read<GetListEventsBloc>().add(
                 const EventsEvent.fetch(page: 1, name: ''),

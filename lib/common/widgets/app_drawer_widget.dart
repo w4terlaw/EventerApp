@@ -63,7 +63,7 @@ class AppDrawer extends StatelessWidget {
                 imageUrl:
                     'https://yt3.ggpht.com/ytc/AKedOsLTle_LNhrecRrVJKp6fXIxcfJT2g1SLQhXrfLVT=s900-c-k-c0x00ffffff-no-rj',
                 fit: BoxFit.cover,
-                placeholder: (context, url) => const SkeletonImage(),
+                placeholder: (context, url) => const MySkeletonImage(),
                 errorWidget: (context, url, error) =>
                     Image.asset('assets/images/no_preview.png'),
               ),

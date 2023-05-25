@@ -9,6 +9,6 @@ class GetEventState with _$GetEventState {
   }) = GetEventLoaded;
 
   const factory GetEventState.error({
-    required String error,
+    required Failure failure,
   }) = GetEventError;
 }

@@ -6,12 +6,14 @@ class MyElevatedButton extends StatelessWidget {
   final Widget widget;
   final VoidCallback? onPressed;
   final double padding;
+  final Color? backgroundColor;
 
   const MyElevatedButton({
     super.key,
     required this.widget,
     this.onPressed,
     this.padding = 22,
+    this.backgroundColor,
   });
 
   @override
@@ -25,7 +27,7 @@ class MyElevatedButton extends StatelessWidget {
           onPressed: onPressed,
           style: ElevatedButton.styleFrom(
             elevation: 0.0,
-            backgroundColor: AppColors.secondaryColor,
+            backgroundColor: backgroundColor ?? AppColors.secondaryColor,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(15),
             ),

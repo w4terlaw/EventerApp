@@ -7,14 +7,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'common/on_generete_route.dart';
-import 'feature/organizer/presentation/pages/organizer.dart';
 import 'feature/user/presentation/widgets/navbar.dart';
 import 'feature/auth/presentation/bloc/authentication_bloc/authentication_bloc.dart';
 import 'feature/auth/presentation/pages/login/login.dart';
-import 'feature/auth/presentation/pages/registration/registration_page.dart';
-import 'feature/auth/presentation/pages/reset_password/reset_password_page.dart';
-import 'feature/events/presentation/pages/event_details/event_details.dart';
-import 'feature/user/presentation/pages/search/search.dart';
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 

@@ -55,7 +55,10 @@ class OrganizerHeader extends StatelessWidget {
         SizedBox(
           height: 28,
           child: ElevatedButton(
-            onPressed: () {Navigator.pushNamed(context, '/organizer', arguments: organizer.id);},
+            onPressed: () {
+              Navigator.pushNamed(context, '/organizer',
+                  arguments: organizer.id);
+            },
             style: ElevatedButton.styleFrom(
               elevation: 0.0,
               backgroundColor: AppColors.secondaryColor.withOpacity(0.1),

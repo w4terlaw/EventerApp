@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+import '../../../../../core/error/failure.dart';
 import '../../../data/models/event.dart';
 import '../../../domain/use_cases/get_list_events.dart';
 
@@ -37,7 +38,7 @@ class GetListEventsBloc extends Bloc<EventsEvent, EventsState> {
         PageEventParams(page: event.page, name: event.name));
     failureOrEvents.fold(
       (failure) {
-        emit(EventsState.error(message: failure.getError()));
+        emit(EventsState.error(failure: failure));
       },
       (events) {
         emit(EventsState.loaded(events: events));

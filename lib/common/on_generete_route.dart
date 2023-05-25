@@ -30,15 +30,11 @@ class MyRouter {
       //  EVENT DETAILS
       case MyRouterConstants.eventDetailsRoute:
         final int eventId = settings.arguments as int;
-        return MaterialPageRoute(
-          builder: (_) => EventDetailsPage(eventId: eventId),
-        );
+        return MaterialPageRoute(builder: (_) => EventDetailsPage(eventId: eventId));
       //  ORGANIZER
       case MyRouterConstants.organizerRoute:
         final int organizerId = settings.arguments as int;
-        return MaterialPageRoute(
-          builder: (_) => OrganizerPage(organizerId: organizerId),
-        );
+        return MaterialPageRoute(builder: (_) => OrganizerPage(organizerId: organizerId));
       //  DEFAULT PAGE (if page not exists)
       default:
         return MaterialPageRoute(

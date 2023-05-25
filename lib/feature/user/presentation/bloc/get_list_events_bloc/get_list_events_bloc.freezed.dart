@@ -243,21 +243,21 @@ mixin _$EventsState {
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
     required TResult Function(List<Event> events) loaded,
-    required TResult Function(String message) error,
+    required TResult Function(Failure failure) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
     TResult? Function(List<Event> events)? loaded,
-    TResult? Function(String message)? error,
+    TResult? Function(Failure failure)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function(List<Event> events)? loaded,
-    TResult Function(String message)? error,
+    TResult Function(Failure failure)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -343,7 +343,7 @@ class _$_EventsStateLoading implements _EventsStateLoading {
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
     required TResult Function(List<Event> events) loaded,
-    required TResult Function(String message) error,
+    required TResult Function(Failure failure) error,
   }) {
     return loading();
   }
@@ -353,7 +353,7 @@ class _$_EventsStateLoading implements _EventsStateLoading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
     TResult? Function(List<Event> events)? loaded,
-    TResult? Function(String message)? error,
+    TResult? Function(Failure failure)? error,
   }) {
     return loading?.call();
   }
@@ -363,7 +363,7 @@ class _$_EventsStateLoading implements _EventsStateLoading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function(List<Event> events)? loaded,
-    TResult Function(String message)? error,
+    TResult Function(Failure failure)? error,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -485,7 +485,7 @@ class _$_EventsStateLoaded implements _EventsStateLoaded {
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
     required TResult Function(List<Event> events) loaded,
-    required TResult Function(String message) error,
+    required TResult Function(Failure failure) error,
   }) {
     return loaded(events);
   }
@@ -495,7 +495,7 @@ class _$_EventsStateLoaded implements _EventsStateLoaded {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
     TResult? Function(List<Event> events)? loaded,
-    TResult? Function(String message)? error,
+    TResult? Function(Failure failure)? error,
   }) {
     return loaded?.call(events);
   }
@@ -505,7 +505,7 @@ class _$_EventsStateLoaded implements _EventsStateLoaded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function(List<Event> events)? loaded,
-    TResult Function(String message)? error,
+    TResult Function(Failure failure)? error,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -565,7 +565,7 @@ abstract class _$$_EventsStateErrorCopyWith<$Res> {
           _$_EventsStateError value, $Res Function(_$_EventsStateError) then) =
       __$$_EventsStateErrorCopyWithImpl<$Res>;
   @useResult
-  $Res call({String message});
+  $Res call({Failure failure});
 }
 
 /// @nodoc
@@ -579,13 +579,13 @@ class __$$_EventsStateErrorCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? message = null,
+    Object? failure = null,
   }) {
     return _then(_$_EventsStateError(
-      message: null == message
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String,
+      failure: null == failure
+          ? _value.failure
+          : failure // ignore: cast_nullable_to_non_nullable
+              as Failure,
     ));
   }
 }
@@ -593,14 +593,14 @@ class __$$_EventsStateErrorCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_EventsStateError implements _EventsStateError {
-  const _$_EventsStateError({required this.message});
+  const _$_EventsStateError({required this.failure});
 
   @override
-  final String message;
+  final Failure failure;
 
   @override
   String toString() {
-    return 'EventsState.error(message: $message)';
+    return 'EventsState.error(failure: $failure)';
   }
 
   @override
@@ -608,11 +608,11 @@ class _$_EventsStateError implements _EventsStateError {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_EventsStateError &&
-            (identical(other.message, message) || other.message == message));
+            (identical(other.failure, failure) || other.failure == failure));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, message);
+  int get hashCode => Object.hash(runtimeType, failure);
 
   @JsonKey(ignore: true)
   @override
@@ -625,9 +625,9 @@ class _$_EventsStateError implements _EventsStateError {
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
     required TResult Function(List<Event> events) loaded,
-    required TResult Function(String message) error,
+    required TResult Function(Failure failure) error,
   }) {
-    return error(message);
+    return error(failure);
   }
 
   @override
@@ -635,9 +635,9 @@ class _$_EventsStateError implements _EventsStateError {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
     TResult? Function(List<Event> events)? loaded,
-    TResult? Function(String message)? error,
+    TResult? Function(Failure failure)? error,
   }) {
-    return error?.call(message);
+    return error?.call(failure);
   }
 
   @override
@@ -645,11 +645,11 @@ class _$_EventsStateError implements _EventsStateError {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function(List<Event> events)? loaded,
-    TResult Function(String message)? error,
+    TResult Function(Failure failure)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
-      return error(message);
+      return error(failure);
     }
     return orElse();
   }
@@ -690,10 +690,10 @@ class _$_EventsStateError implements _EventsStateError {
 }
 
 abstract class _EventsStateError implements EventsState {
-  const factory _EventsStateError({required final String message}) =
+  const factory _EventsStateError({required final Failure failure}) =
       _$_EventsStateError;
 
-  String get message;
+  Failure get failure;
   @JsonKey(ignore: true)
   _$$_EventsStateErrorCopyWith<_$_EventsStateError> get copyWith =>
       throw _privateConstructorUsedError;
