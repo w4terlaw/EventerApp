@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
-import 'package:eventer_app/feature/events/data/models/booking.dart';
+import 'package:eventer_app/feature/events/data/models/booking/booking.dart';
 import 'package:eventer_app/feature/events/domain/repositories/event_booking_repository.dart';
 
 import '/core/error/failure.dart';
@@ -13,7 +13,7 @@ class GetMyEventBookings extends UseCase<List<Booking>, EventBookingParams> {
 
   @override
   Future<Either<Failure, List<Booking>>> call(EventBookingParams params) async {
-    return await eventBookingRepository.myEventBookings(params.eventId);
+    return await eventBookingRepository.myBookings(params.eventId);
   }
 }
 

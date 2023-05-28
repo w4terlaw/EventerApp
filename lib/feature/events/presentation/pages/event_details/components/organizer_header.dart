@@ -67,7 +67,7 @@ class OrganizerHeader extends StatelessWidget {
               ),
             ),
             child: Text(
-              L10n.subscribe,
+              L10n.showMore,
               style: Theme.of(context).textTheme.labelSmall?.copyWith(
                     color: AppColors.secondaryColor,
                     fontWeight: FontWeight.bold,

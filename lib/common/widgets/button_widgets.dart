@@ -27,7 +27,7 @@ class MyElevatedButton extends StatelessWidget {
           onPressed: onPressed,
           style: ElevatedButton.styleFrom(
             elevation: 0.0,
-            backgroundColor: backgroundColor ?? AppColors.secondaryColor,
+            backgroundColor: backgroundColor ?? AppColors.buttonColor,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(15),
             ),
@@ -61,8 +61,8 @@ class MyOutlinedButton extends StatelessWidget {
         child: OutlinedButton(
           onPressed: onPressed,
           style: ElevatedButton.styleFrom(
-            elevation: 0.0,
-            // backgroundColor: AppColors.secondaryColor,
+            // elevation: 0.0,
+            backgroundColor: AppColors.whiteColor,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(15),
             ),

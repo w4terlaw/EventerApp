@@ -1,9 +1,6 @@
-import 'package:eventer_app/common/app_colors.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../../common/date_format.dart';
-import '../../../bloc/get_my_event_bookings/get_my_event_bookings_bloc.dart';
 import '../../../widgets/mini_tabs.dart';
 import '../../../../../../common/widgets/space_widgets.dart';
 import '../../../../../user/data/models/event.dart' as model;

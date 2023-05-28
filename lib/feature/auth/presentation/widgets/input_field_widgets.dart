@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '/common/app_colors.dart';
 
@@ -85,52 +86,50 @@ class _MyInputPasswordFieldState extends State<MyInputPasswordField> {
     return SizedBox(
       height: 58,
       child: TextField(
-        controller: widget.controller,
-        obscureText: _hidePass,
-        decoration: InputDecoration(
-          hintText: widget.hintText,
-          suffixIcon: Padding(
-            padding: const EdgeInsets.only(right: 5),
-            child: IconButton(
-              icon: Image.asset(
-                widget.suffixIcon,
-                width: 22.0,
+          controller: widget.controller,
+          obscureText: _hidePass,
+          decoration: InputDecoration(
+            hintText: widget.hintText,
+            suffixIcon: Padding(
+              padding: const EdgeInsets.only(right: 5),
+              child: IconButton(
+                icon: Image.asset(
+                  widget.suffixIcon,
+                  width: 22.0,
+                ),
+                onPressed: () {
+                  setState(() {
+                    _hidePass = !_hidePass;
+                  });
+                },
               ),
-              onPressed: () {
-                setState(() {
-                  _hidePass = !_hidePass;
-                });
-              },
             ),
-          ),
-          prefixIcon: Padding(
-            padding: const EdgeInsets.only(left: 6),
-            child: IconButton(
-              icon: Image.asset(
-                widget.prefixIcon,
-                width: 22.0,
+            prefixIcon: Padding(
+              padding: const EdgeInsets.only(left: 6),
+              child: IconButton(
+                icon: Image.asset(
+                  widget.prefixIcon,
+                  width: 22.0,
+                ),
+                onPressed: null,
               ),
-              onPressed: null,
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderRadius: borderRadius,
+              borderSide: const BorderSide(
+                width: borderSideWidth,
+                color: AppColors.secondaryColor,
+              ),
+            ),
+            enabledBorder: OutlineInputBorder(
+              borderRadius: borderRadius,
+              borderSide: const BorderSide(
+                width: borderSideWidth,
+                color: AppColors.inputBorderColor,
+              ),
             ),
           ),
-          focusedBorder: OutlineInputBorder(
-            borderRadius: borderRadius,
-            borderSide: const BorderSide(
-              width: borderSideWidth,
-              color: AppColors.secondaryColor,
-            ),
-          ),
-          enabledBorder: OutlineInputBorder(
-            borderRadius: borderRadius,
-            borderSide: const BorderSide(
-              width: borderSideWidth,
-              color: AppColors.inputBorderColor,
-            ),
-          ),
-        ),
-        style: Theme.of(context).textTheme.bodySmall
-        ),
-
+          style: Theme.of(context).textTheme.bodySmall),
     );
   }
 }

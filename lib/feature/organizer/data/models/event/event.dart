@@ -14,6 +14,9 @@ class Event with _$Event {
     required int id,
     required String name,
     required String description,
+    required double expectedAmount,
+    required int countOfMembers,
+    required double recommendedDonation,
     required List<EventDates> eventDates,
     required List<Venues> venues,
   }) = _Event;

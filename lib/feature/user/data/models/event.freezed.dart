@@ -24,6 +24,9 @@ mixin _$Event {
   String get name => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
   Organizer get organizer => throw _privateConstructorUsedError;
+  double get expectedAmount => throw _privateConstructorUsedError;
+  int get countOfMembers => throw _privateConstructorUsedError;
+  double get recommendedDonation => throw _privateConstructorUsedError;
   List<EventDates> get eventDates => throw _privateConstructorUsedError;
   List<Venues> get venues => throw _privateConstructorUsedError;
 
@@ -42,6 +45,9 @@ abstract class $EventCopyWith<$Res> {
       String name,
       String description,
       Organizer organizer,
+      double expectedAmount,
+      int countOfMembers,
+      double recommendedDonation,
       List<EventDates> eventDates,
       List<Venues> venues});
 
@@ -65,6 +71,9 @@ class _$EventCopyWithImpl<$Res, $Val extends Event>
     Object? name = null,
     Object? description = null,
     Object? organizer = null,
+    Object? expectedAmount = null,
+    Object? countOfMembers = null,
+    Object? recommendedDonation = null,
     Object? eventDates = null,
     Object? venues = null,
   }) {
@@ -85,6 +94,18 @@ class _$EventCopyWithImpl<$Res, $Val extends Event>
           ? _value.organizer
           : organizer // ignore: cast_nullable_to_non_nullable
               as Organizer,
+      expectedAmount: null == expectedAmount
+          ? _value.expectedAmount
+          : expectedAmount // ignore: cast_nullable_to_non_nullable
+              as double,
+      countOfMembers: null == countOfMembers
+          ? _value.countOfMembers
+          : countOfMembers // ignore: cast_nullable_to_non_nullable
+              as int,
+      recommendedDonation: null == recommendedDonation
+          ? _value.recommendedDonation
+          : recommendedDonation // ignore: cast_nullable_to_non_nullable
+              as double,
       eventDates: null == eventDates
           ? _value.eventDates
           : eventDates // ignore: cast_nullable_to_non_nullable
@@ -116,6 +137,9 @@ abstract class _$$_EventCopyWith<$Res> implements $EventCopyWith<$Res> {
       String name,
       String description,
       Organizer organizer,
+      double expectedAmount,
+      int countOfMembers,
+      double recommendedDonation,
       List<EventDates> eventDates,
       List<Venues> venues});
 
@@ -136,6 +160,9 @@ class __$$_EventCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res, _$_Event>
     Object? name = null,
     Object? description = null,
     Object? organizer = null,
+    Object? expectedAmount = null,
+    Object? countOfMembers = null,
+    Object? recommendedDonation = null,
     Object? eventDates = null,
     Object? venues = null,
   }) {
@@ -156,6 +183,18 @@ class __$$_EventCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res, _$_Event>
           ? _value.organizer
           : organizer // ignore: cast_nullable_to_non_nullable
               as Organizer,
+      expectedAmount: null == expectedAmount
+          ? _value.expectedAmount
+          : expectedAmount // ignore: cast_nullable_to_non_nullable
+              as double,
+      countOfMembers: null == countOfMembers
+          ? _value.countOfMembers
+          : countOfMembers // ignore: cast_nullable_to_non_nullable
+              as int,
+      recommendedDonation: null == recommendedDonation
+          ? _value.recommendedDonation
+          : recommendedDonation // ignore: cast_nullable_to_non_nullable
+              as double,
       eventDates: null == eventDates
           ? _value._eventDates
           : eventDates // ignore: cast_nullable_to_non_nullable
@@ -176,6 +215,9 @@ class _$_Event implements _Event {
       required this.name,
       required this.description,
       required this.organizer,
+      required this.expectedAmount,
+      required this.countOfMembers,
+      required this.recommendedDonation,
       required final List<EventDates> eventDates,
       required final List<Venues> venues})
       : _eventDates = eventDates,
@@ -192,6 +234,12 @@ class _$_Event implements _Event {
   final String description;
   @override
   final Organizer organizer;
+  @override
+  final double expectedAmount;
+  @override
+  final int countOfMembers;
+  @override
+  final double recommendedDonation;
   final List<EventDates> _eventDates;
   @override
   List<EventDates> get eventDates {
@@ -210,7 +258,7 @@ class _$_Event implements _Event {
 
   @override
   String toString() {
-    return 'Event(id: $id, name: $name, description: $description, organizer: $organizer, eventDates: $eventDates, venues: $venues)';
+    return 'Event(id: $id, name: $name, description: $description, organizer: $organizer, expectedAmount: $expectedAmount, countOfMembers: $countOfMembers, recommendedDonation: $recommendedDonation, eventDates: $eventDates, venues: $venues)';
   }
 
   @override
@@ -224,6 +272,12 @@ class _$_Event implements _Event {
                 other.description == description) &&
             (identical(other.organizer, organizer) ||
                 other.organizer == organizer) &&
+            (identical(other.expectedAmount, expectedAmount) ||
+                other.expectedAmount == expectedAmount) &&
+            (identical(other.countOfMembers, countOfMembers) ||
+                other.countOfMembers == countOfMembers) &&
+            (identical(other.recommendedDonation, recommendedDonation) ||
+                other.recommendedDonation == recommendedDonation) &&
             const DeepCollectionEquality()
                 .equals(other._eventDates, _eventDates) &&
             const DeepCollectionEquality().equals(other._venues, _venues));
@@ -237,6 +291,9 @@ class _$_Event implements _Event {
       name,
       description,
       organizer,
+      expectedAmount,
+      countOfMembers,
+      recommendedDonation,
       const DeepCollectionEquality().hash(_eventDates),
       const DeepCollectionEquality().hash(_venues));
 
@@ -260,6 +317,9 @@ abstract class _Event implements Event {
       required final String name,
       required final String description,
       required final Organizer organizer,
+      required final double expectedAmount,
+      required final int countOfMembers,
+      required final double recommendedDonation,
       required final List<EventDates> eventDates,
       required final List<Venues> venues}) = _$_Event;
 
@@ -273,6 +333,12 @@ abstract class _Event implements Event {
   String get description;
   @override
   Organizer get organizer;
+  @override
+  double get expectedAmount;
+  @override
+  int get countOfMembers;
+  @override
+  double get recommendedDonation;
   @override
   List<EventDates> get eventDates;
   @override

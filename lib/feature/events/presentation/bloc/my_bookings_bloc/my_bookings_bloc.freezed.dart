@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'get_my_event_bookings_bloc.dart';
+part of 'my_bookings_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,60 +15,65 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$GetMyEventBookingsEvent {
+mixin _$MyBookingsEvent {
   int get eventId => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(int eventId) fetch,
+    required TResult Function(int bookingId, int eventId) delete,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int eventId)? fetch,
+    TResult? Function(int bookingId, int eventId)? delete,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int eventId)? fetch,
+    TResult Function(int bookingId, int eventId)? delete,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_GetMyEventBookingsFetch value) fetch,
+    required TResult Function(_MyBookingsFetch value) fetch,
+    required TResult Function(_MyBookingsDelete value) delete,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_GetMyEventBookingsFetch value)? fetch,
+    TResult? Function(_MyBookingsFetch value)? fetch,
+    TResult? Function(_MyBookingsDelete value)? delete,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_GetMyEventBookingsFetch value)? fetch,
+    TResult Function(_MyBookingsFetch value)? fetch,
+    TResult Function(_MyBookingsDelete value)? delete,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $GetMyEventBookingsEventCopyWith<GetMyEventBookingsEvent> get copyWith =>
+  $MyBookingsEventCopyWith<MyBookingsEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $GetMyEventBookingsEventCopyWith<$Res> {
-  factory $GetMyEventBookingsEventCopyWith(GetMyEventBookingsEvent value,
-          $Res Function(GetMyEventBookingsEvent) then) =
-      _$GetMyEventBookingsEventCopyWithImpl<$Res, GetMyEventBookingsEvent>;
+abstract class $MyBookingsEventCopyWith<$Res> {
+  factory $MyBookingsEventCopyWith(
+          MyBookingsEvent value, $Res Function(MyBookingsEvent) then) =
+      _$MyBookingsEventCopyWithImpl<$Res, MyBookingsEvent>;
   @useResult
   $Res call({int eventId});
 }
 
 /// @nodoc
-class _$GetMyEventBookingsEventCopyWithImpl<$Res,
-        $Val extends GetMyEventBookingsEvent>
-    implements $GetMyEventBookingsEventCopyWith<$Res> {
-  _$GetMyEventBookingsEventCopyWithImpl(this._value, this._then);
+class _$MyBookingsEventCopyWithImpl<$Res, $Val extends MyBookingsEvent>
+    implements $MyBookingsEventCopyWith<$Res> {
+  _$MyBookingsEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -90,23 +95,22 @@ class _$GetMyEventBookingsEventCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_GetMyEventBookingsFetchCopyWith<$Res>
-    implements $GetMyEventBookingsEventCopyWith<$Res> {
-  factory _$$_GetMyEventBookingsFetchCopyWith(_$_GetMyEventBookingsFetch value,
-          $Res Function(_$_GetMyEventBookingsFetch) then) =
-      __$$_GetMyEventBookingsFetchCopyWithImpl<$Res>;
+abstract class _$$_MyBookingsFetchCopyWith<$Res>
+    implements $MyBookingsEventCopyWith<$Res> {
+  factory _$$_MyBookingsFetchCopyWith(
+          _$_MyBookingsFetch value, $Res Function(_$_MyBookingsFetch) then) =
+      __$$_MyBookingsFetchCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int eventId});
 }
 
 /// @nodoc
-class __$$_GetMyEventBookingsFetchCopyWithImpl<$Res>
-    extends _$GetMyEventBookingsEventCopyWithImpl<$Res,
-        _$_GetMyEventBookingsFetch>
-    implements _$$_GetMyEventBookingsFetchCopyWith<$Res> {
-  __$$_GetMyEventBookingsFetchCopyWithImpl(_$_GetMyEventBookingsFetch _value,
-      $Res Function(_$_GetMyEventBookingsFetch) _then)
+class __$$_MyBookingsFetchCopyWithImpl<$Res>
+    extends _$MyBookingsEventCopyWithImpl<$Res, _$_MyBookingsFetch>
+    implements _$$_MyBookingsFetchCopyWith<$Res> {
+  __$$_MyBookingsFetchCopyWithImpl(
+      _$_MyBookingsFetch _value, $Res Function(_$_MyBookingsFetch) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -114,7 +118,7 @@ class __$$_GetMyEventBookingsFetchCopyWithImpl<$Res>
   $Res call({
     Object? eventId = null,
   }) {
-    return _then(_$_GetMyEventBookingsFetch(
+    return _then(_$_MyBookingsFetch(
       eventId: null == eventId
           ? _value.eventId
           : eventId // ignore: cast_nullable_to_non_nullable
@@ -125,22 +129,32 @@ class __$$_GetMyEventBookingsFetchCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_GetMyEventBookingsFetch implements _GetMyEventBookingsFetch {
-  const _$_GetMyEventBookingsFetch({required this.eventId});
+class _$_MyBookingsFetch
+    with DiagnosticableTreeMixin
+    implements _MyBookingsFetch {
+  const _$_MyBookingsFetch({required this.eventId});
 
   @override
   final int eventId;
 
   @override
-  String toString() {
-    return 'GetMyEventBookingsEvent.fetch(eventId: $eventId)';
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'MyBookingsEvent.fetch(eventId: $eventId)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'MyBookingsEvent.fetch'))
+      ..add(DiagnosticsProperty('eventId', eventId));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_GetMyEventBookingsFetch &&
+            other is _$_MyBookingsFetch &&
             (identical(other.eventId, eventId) || other.eventId == eventId));
   }
 
@@ -150,15 +164,14 @@ class _$_GetMyEventBookingsFetch implements _GetMyEventBookingsFetch {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_GetMyEventBookingsFetchCopyWith<_$_GetMyEventBookingsFetch>
-      get copyWith =>
-          __$$_GetMyEventBookingsFetchCopyWithImpl<_$_GetMyEventBookingsFetch>(
-              this, _$identity);
+  _$$_MyBookingsFetchCopyWith<_$_MyBookingsFetch> get copyWith =>
+      __$$_MyBookingsFetchCopyWithImpl<_$_MyBookingsFetch>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(int eventId) fetch,
+    required TResult Function(int bookingId, int eventId) delete,
   }) {
     return fetch(eventId);
   }
@@ -167,6 +180,7 @@ class _$_GetMyEventBookingsFetch implements _GetMyEventBookingsFetch {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int eventId)? fetch,
+    TResult? Function(int bookingId, int eventId)? delete,
   }) {
     return fetch?.call(eventId);
   }
@@ -175,6 +189,7 @@ class _$_GetMyEventBookingsFetch implements _GetMyEventBookingsFetch {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int eventId)? fetch,
+    TResult Function(int bookingId, int eventId)? delete,
     required TResult orElse(),
   }) {
     if (fetch != null) {
@@ -186,7 +201,8 @@ class _$_GetMyEventBookingsFetch implements _GetMyEventBookingsFetch {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_GetMyEventBookingsFetch value) fetch,
+    required TResult Function(_MyBookingsFetch value) fetch,
+    required TResult Function(_MyBookingsDelete value) delete,
   }) {
     return fetch(this);
   }
@@ -194,7 +210,8 @@ class _$_GetMyEventBookingsFetch implements _GetMyEventBookingsFetch {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_GetMyEventBookingsFetch value)? fetch,
+    TResult? Function(_MyBookingsFetch value)? fetch,
+    TResult? Function(_MyBookingsDelete value)? delete,
   }) {
     return fetch?.call(this);
   }
@@ -202,7 +219,8 @@ class _$_GetMyEventBookingsFetch implements _GetMyEventBookingsFetch {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_GetMyEventBookingsFetch value)? fetch,
+    TResult Function(_MyBookingsFetch value)? fetch,
+    TResult Function(_MyBookingsDelete value)? delete,
     required TResult orElse(),
   }) {
     if (fetch != null) {
@@ -212,20 +230,180 @@ class _$_GetMyEventBookingsFetch implements _GetMyEventBookingsFetch {
   }
 }
 
-abstract class _GetMyEventBookingsFetch implements GetMyEventBookingsEvent {
-  const factory _GetMyEventBookingsFetch({required final int eventId}) =
-      _$_GetMyEventBookingsFetch;
+abstract class _MyBookingsFetch implements MyBookingsEvent {
+  const factory _MyBookingsFetch({required final int eventId}) =
+      _$_MyBookingsFetch;
 
   @override
   int get eventId;
   @override
   @JsonKey(ignore: true)
-  _$$_GetMyEventBookingsFetchCopyWith<_$_GetMyEventBookingsFetch>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$_MyBookingsFetchCopyWith<_$_MyBookingsFetch> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-mixin _$GetMyEventBookingsState {
+abstract class _$$_MyBookingsDeleteCopyWith<$Res>
+    implements $MyBookingsEventCopyWith<$Res> {
+  factory _$$_MyBookingsDeleteCopyWith(
+          _$_MyBookingsDelete value, $Res Function(_$_MyBookingsDelete) then) =
+      __$$_MyBookingsDeleteCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({int bookingId, int eventId});
+}
+
+/// @nodoc
+class __$$_MyBookingsDeleteCopyWithImpl<$Res>
+    extends _$MyBookingsEventCopyWithImpl<$Res, _$_MyBookingsDelete>
+    implements _$$_MyBookingsDeleteCopyWith<$Res> {
+  __$$_MyBookingsDeleteCopyWithImpl(
+      _$_MyBookingsDelete _value, $Res Function(_$_MyBookingsDelete) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? bookingId = null,
+    Object? eventId = null,
+  }) {
+    return _then(_$_MyBookingsDelete(
+      bookingId: null == bookingId
+          ? _value.bookingId
+          : bookingId // ignore: cast_nullable_to_non_nullable
+              as int,
+      eventId: null == eventId
+          ? _value.eventId
+          : eventId // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_MyBookingsDelete
+    with DiagnosticableTreeMixin
+    implements _MyBookingsDelete {
+  const _$_MyBookingsDelete({required this.bookingId, required this.eventId});
+
+  @override
+  final int bookingId;
+  @override
+  final int eventId;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'MyBookingsEvent.delete(bookingId: $bookingId, eventId: $eventId)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'MyBookingsEvent.delete'))
+      ..add(DiagnosticsProperty('bookingId', bookingId))
+      ..add(DiagnosticsProperty('eventId', eventId));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_MyBookingsDelete &&
+            (identical(other.bookingId, bookingId) ||
+                other.bookingId == bookingId) &&
+            (identical(other.eventId, eventId) || other.eventId == eventId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, bookingId, eventId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_MyBookingsDeleteCopyWith<_$_MyBookingsDelete> get copyWith =>
+      __$$_MyBookingsDeleteCopyWithImpl<_$_MyBookingsDelete>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(int eventId) fetch,
+    required TResult Function(int bookingId, int eventId) delete,
+  }) {
+    return delete(bookingId, eventId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(int eventId)? fetch,
+    TResult? Function(int bookingId, int eventId)? delete,
+  }) {
+    return delete?.call(bookingId, eventId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(int eventId)? fetch,
+    TResult Function(int bookingId, int eventId)? delete,
+    required TResult orElse(),
+  }) {
+    if (delete != null) {
+      return delete(bookingId, eventId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_MyBookingsFetch value) fetch,
+    required TResult Function(_MyBookingsDelete value) delete,
+  }) {
+    return delete(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_MyBookingsFetch value)? fetch,
+    TResult? Function(_MyBookingsDelete value)? delete,
+  }) {
+    return delete?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_MyBookingsFetch value)? fetch,
+    TResult Function(_MyBookingsDelete value)? delete,
+    required TResult orElse(),
+  }) {
+    if (delete != null) {
+      return delete(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _MyBookingsDelete implements MyBookingsEvent {
+  const factory _MyBookingsDelete(
+      {required final int bookingId,
+      required final int eventId}) = _$_MyBookingsDelete;
+
+  int get bookingId;
+  @override
+  int get eventId;
+  @override
+  @JsonKey(ignore: true)
+  _$$_MyBookingsDeleteCopyWith<_$_MyBookingsDelete> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+mixin _$MyBookingsState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
@@ -273,17 +451,16 @@ mixin _$GetMyEventBookingsState {
 }
 
 /// @nodoc
-abstract class $GetMyEventBookingsStateCopyWith<$Res> {
-  factory $GetMyEventBookingsStateCopyWith(GetMyEventBookingsState value,
-          $Res Function(GetMyEventBookingsState) then) =
-      _$GetMyEventBookingsStateCopyWithImpl<$Res, GetMyEventBookingsState>;
+abstract class $MyBookingsStateCopyWith<$Res> {
+  factory $MyBookingsStateCopyWith(
+          MyBookingsState value, $Res Function(MyBookingsState) then) =
+      _$MyBookingsStateCopyWithImpl<$Res, MyBookingsState>;
 }
 
 /// @nodoc
-class _$GetMyEventBookingsStateCopyWithImpl<$Res,
-        $Val extends GetMyEventBookingsState>
-    implements $GetMyEventBookingsStateCopyWith<$Res> {
-  _$GetMyEventBookingsStateCopyWithImpl(this._value, this._then);
+class _$MyBookingsStateCopyWithImpl<$Res, $Val extends MyBookingsState>
+    implements $MyBookingsStateCopyWith<$Res> {
+  _$MyBookingsStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -300,7 +477,7 @@ abstract class _$$_LoadingCopyWith<$Res> {
 
 /// @nodoc
 class __$$_LoadingCopyWithImpl<$Res>
-    extends _$GetMyEventBookingsStateCopyWithImpl<$Res, _$_Loading>
+    extends _$MyBookingsStateCopyWithImpl<$Res, _$_Loading>
     implements _$$_LoadingCopyWith<$Res> {
   __$$_LoadingCopyWithImpl(_$_Loading _value, $Res Function(_$_Loading) _then)
       : super(_value, _then);
@@ -308,12 +485,18 @@ class __$$_LoadingCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Loading implements _Loading {
+class _$_Loading with DiagnosticableTreeMixin implements _Loading {
   const _$_Loading();
 
   @override
-  String toString() {
-    return 'GetMyEventBookingsState.loading()';
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'MyBookingsState.loading()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'MyBookingsState.loading'));
   }
 
   @override
@@ -394,7 +577,7 @@ class _$_Loading implements _Loading {
   }
 }
 
-abstract class _Loading implements GetMyEventBookingsState {
+abstract class _Loading implements MyBookingsState {
   const factory _Loading() = _$_Loading;
 }
 
@@ -408,7 +591,7 @@ abstract class _$$_LoadedCopyWith<$Res> {
 
 /// @nodoc
 class __$$_LoadedCopyWithImpl<$Res>
-    extends _$GetMyEventBookingsStateCopyWithImpl<$Res, _$_Loaded>
+    extends _$MyBookingsStateCopyWithImpl<$Res, _$_Loaded>
     implements _$$_LoadedCopyWith<$Res> {
   __$$_LoadedCopyWithImpl(_$_Loaded _value, $Res Function(_$_Loaded) _then)
       : super(_value, _then);
@@ -429,7 +612,7 @@ class __$$_LoadedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Loaded implements _Loaded {
+class _$_Loaded with DiagnosticableTreeMixin implements _Loaded {
   const _$_Loaded({required final List<Booking> bookings})
       : _bookings = bookings;
 
@@ -442,8 +625,16 @@ class _$_Loaded implements _Loaded {
   }
 
   @override
-  String toString() {
-    return 'GetMyEventBookingsState.loaded(bookings: $bookings)';
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'MyBookingsState.loaded(bookings: $bookings)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'MyBookingsState.loaded'))
+      ..add(DiagnosticsProperty('bookings', bookings));
   }
 
   @override
@@ -533,7 +724,7 @@ class _$_Loaded implements _Loaded {
   }
 }
 
-abstract class _Loaded implements GetMyEventBookingsState {
+abstract class _Loaded implements MyBookingsState {
   const factory _Loaded({required final List<Booking> bookings}) = _$_Loaded;
 
   List<Booking> get bookings;
@@ -552,7 +743,7 @@ abstract class _$$_ErrorCopyWith<$Res> {
 
 /// @nodoc
 class __$$_ErrorCopyWithImpl<$Res>
-    extends _$GetMyEventBookingsStateCopyWithImpl<$Res, _$_Error>
+    extends _$MyBookingsStateCopyWithImpl<$Res, _$_Error>
     implements _$$_ErrorCopyWith<$Res> {
   __$$_ErrorCopyWithImpl(_$_Error _value, $Res Function(_$_Error) _then)
       : super(_value, _then);
@@ -573,15 +764,23 @@ class __$$_ErrorCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Error implements _Error {
+class _$_Error with DiagnosticableTreeMixin implements _Error {
   const _$_Error({required this.failure});
 
   @override
   final Failure failure;
 
   @override
-  String toString() {
-    return 'GetMyEventBookingsState.error(failure: $failure)';
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'MyBookingsState.error(failure: $failure)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'MyBookingsState.error'))
+      ..add(DiagnosticsProperty('failure', failure));
   }
 
   @override
@@ -670,7 +869,7 @@ class _$_Error implements _Error {
   }
 }
 
-abstract class _Error implements GetMyEventBookingsState {
+abstract class _Error implements MyBookingsState {
   const factory _Error({required final Failure failure}) = _$_Error;
 
   Failure get failure;

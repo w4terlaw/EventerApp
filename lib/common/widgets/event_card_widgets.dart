@@ -40,7 +40,7 @@ class EventCompactCard extends StatelessWidget {
         color: Colors.white,
         boxShadow: [
           BoxShadow(
-            color: Colors.grey.withOpacity(0.2),
+            color: Colors.grey.withOpacity(0.1),
             spreadRadius: 3,
             blurRadius: 10,
             offset: const Offset(0, 8),
@@ -129,7 +129,7 @@ class EventMiddleCard extends StatelessWidget {
         color: Colors.white,
         boxShadow: [
           BoxShadow(
-            color: Colors.grey.withOpacity(0.2),
+            color: Colors.grey.withOpacity(0.1),
             spreadRadius: 5,
             blurRadius: 15,
             offset: const Offset(0, 3),
@@ -224,7 +224,7 @@ class EventLargeCard extends StatelessWidget {
         color: Colors.white,
         boxShadow: [
           BoxShadow(
-            color: Colors.grey.withOpacity(0.2),
+            color: Colors.grey.withOpacity(0.1),
             spreadRadius: 5,
             blurRadius: 15,
             offset: const Offset(0, 3),
@@ -335,7 +335,7 @@ class EventHomeMiddleCard extends StatelessWidget {
             color: Colors.white,
             boxShadow: [
               BoxShadow(
-                color: Colors.grey.withOpacity(0.2),
+                color: Colors.grey.withOpacity(0.1),
                 spreadRadius: 3,
                 blurRadius: 10,
                 // offset: const Offset(0, 8),

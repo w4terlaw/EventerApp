@@ -6,12 +6,15 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../../../../common/constants.dart';
 import '../../../../core/error/exception.dart';
 import '../../../../service/dio/dio_client.dart';
-import '../models/booking.dart';
+import '../models/booking/booking.dart';
 import '../models/event_dates_checkbox.dart';
 
 abstract class EventBookingRemoteDataSource {
-  Future<Booking> eventBooking(int eventId, EventDatesCheckbox eventDates);
-  Future<List<Booking>> myEventBookings(int eventId);
+  Future<Booking> makeEventBooking(int eventId, EventDatesCheckbox eventDates);
+
+  Future<List<Booking>> myBookings(int eventId);
+
+  Future<bool> deleteBooking(int bookingId);
 }
 
 class EventBookingRemoteDataSourceImpl implements EventBookingRemoteDataSource {
@@ -24,15 +27,19 @@ class EventBookingRemoteDataSourceImpl implements EventBookingRemoteDataSource {
   });
 
   @override
-  Future<Booking> eventBooking(int eventId, EventDatesCheckbox eventDates) async {
+  Future<Booking> makeEventBooking(
+      int eventId, EventDatesCheckbox eventDates) async {
     try {
       final response = await dioClient.dio.post(
         ApiConstants.BOOKING,
         data: {
-          "dateTime": DateTime.now().toIso8601String(),
           "eventId": eventId,
           "userId": sharedPreferences.getString(CacheConstants.CACHED_USER_ID),
-          "eventDatesId": eventDates.getTrueKeys(),
+          "ticket": {
+            "ticketType": "FREE",
+            "seat": 0,
+            "eventDatesId": eventDates.getTrueKeys()[0],
+          }
         },
       );
 
@@ -44,7 +51,8 @@ class EventBookingRemoteDataSourceImpl implements EventBookingRemoteDataSource {
   }
 
   @override
-  Future<List<Booking>> myEventBookings(int eventId) async{
+  Future<List<Booking>> myBookings(int eventId) async {
+    dynamic bookings;
     try {
       final response = await dioClient.dio.get(
         ApiConstants.BOOKING,
@@ -55,7 +63,21 @@ class EventBookingRemoteDataSourceImpl implements EventBookingRemoteDataSource {
       );
 
       final bookings = response.data;
-      return (bookings as List).map((booking) => Booking.fromJson(booking)).toList();
+      return (bookings as List)
+          .map((booking) => Booking.fromJson(booking))
+          .toList();
+    } on DioError catch (e) {
+      throw ServerError();
+    }
+  }
+
+  @override
+  Future<bool> deleteBooking(int bookingId) async {
+    try {
+      await dioClient.dio.delete(
+        '${ApiConstants.BOOKING}/$bookingId',
+      );
+      return true;
     } on DioError catch (e) {
       throw ServerError();
     }

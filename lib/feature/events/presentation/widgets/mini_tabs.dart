@@ -28,7 +28,7 @@ class MiniTab extends StatelessWidget {
                       color: AppColors.secondaryColor.withOpacity(0.1),
                     ),
                     padding: const EdgeInsets.all(9),
-                    child: Image.asset(iconPath!)),
+                    child: Image.asset(iconPath!, color: AppColors.secondaryColor)),
                 const HorizontalSpace(14),
               ],
             )

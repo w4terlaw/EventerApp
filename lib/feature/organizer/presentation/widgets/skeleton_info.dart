@@ -13,13 +13,15 @@ class SkeletonOrganizerInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        TextButton(
-          onPressed: null,
-          child: Text(
-            L10n.unsubscribe,
-            style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                  color: Colors.grey,
-                ),
+        SizedBox(
+          height: 50,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              MySkeletonLine(
+                width: 120,
+              ),
+            ],
           ),
         ),
         Row(
@@ -27,16 +29,19 @@ class SkeletonOrganizerInfo extends StatelessWidget {
           children: [
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const MySkeletonLine(
-                  width: 60,
+              children: const [
+                SizedBox(
+                  height: 19,
+                  child: MySkeletonLine(
+                    width: 40,
+                  ),
                 ),
-                const VerticalSpace(6),
-                Text(
-                  L10n.organizerCountSubscribers,
-                  style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                        color: AppColors.secondaryTextColor,
-                      ),
+                VerticalSpace(6),
+                SizedBox(
+                  height: 20,
+                  child: MySkeletonLine(
+                    width: 90,
+                  ),
                 ),
               ],
             ),
@@ -50,17 +55,19 @@ class SkeletonOrganizerInfo extends StatelessWidget {
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text(
-                  '1',
-                  style: Theme.of(context).textTheme.titleMedium,
+              children: const [
+                SizedBox(
+                  height: 19,
+                  child: MySkeletonLine(
+                    width: 40,
+                  ),
                 ),
-                const VerticalSpace(6),
-                Text(
-                  L10n.organizerCountEvents,
-                  style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                        color: AppColors.secondaryTextColor,
-                      ),
+                VerticalSpace(6),
+                SizedBox(
+                  height: 20,
+                  child: MySkeletonLine(
+                    width: 90,
+                  ),
                 ),
               ],
             ),
@@ -71,43 +78,31 @@ class SkeletonOrganizerInfo extends StatelessWidget {
               color: Colors.black12,
             ),
             const HorizontalSpace(10),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
                 SizedBox(
                   height: 50,
-                  child: InkWell(
-                    onTap: () => print('Подробнее'),
-                    child: Column(
+                  child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        const Icon(
-                          Icons.info_outline,
-                          color: AppColors.mainTextColor,
+                      children: const [
+                        SizedBox(
+                          height: 22,
+                          child: MySkeletonLine(
+                            width: 40,
+                          ),
                         ),
-                        const VerticalSpace(4),
-                        Text(
-                          L10n.organizerAbout,
-                          style:
-                              Theme.of(context).textTheme.bodySmall!.copyWith(
-                                    color: AppColors.secondaryTextColor,
-                                  ),
+                        VerticalSpace(4),
+                        SizedBox(
+                          height: 20,
+                          child: MySkeletonLine(
+                            width: 100,
+                          ),
                         ),
                       ],
-                    ),
                   ),
-                ),
-                Icon(
-                  Icons.chevron_right_outlined,
-                  size: 22,
-                  color: AppColors.secondaryTextColor.withOpacity(0.8),
                 )
               ],
             )
           ],
-        ),
-      ],
     );
   }
 }

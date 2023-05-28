@@ -18,13 +18,33 @@ class SearchEventPageBody extends StatelessWidget {
     final state = context.watch<GetListEventsBloc>().state;
     return Column(
       children: [
-        MySearchWidget(
-          onSubmitted: (value) {
-            context
-                .read<GetListEventsBloc>()
-                .add(EventsEvent.fetch(page: 1, name: value));
-          },
+        Padding(
+          padding: const EdgeInsets.only(top: 20.0, left: 20.0, right: 20.0),
+          child: Container(
+            padding:
+                const EdgeInsets.only(left: 12, right: 12, top: 3, bottom: 3),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(12),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.withOpacity(0.1),
+                  spreadRadius: 3,
+                  blurRadius: 10,
+                  // offset: const Offset(0, 8),
+                ),
+              ],
+            ),
+            child: MySearchWidget(
+              onSubmitted: (value) {
+                context
+                    .read<GetListEventsBloc>()
+                    .add(EventsEvent.fetch(page: 1, name: value));
+              },
+            ),
+          ),
         ),
+        const VerticalSpace(24),
         Expanded(
           child: state.when(
             loading: () => const MySkeletonEventCompactCard(),
@@ -63,12 +83,12 @@ class SearchEventPageBody extends StatelessWidget {
                 ),
               );
             },
-              error: (failure) => ErrorDialog(
-                failure: failure,
-                onPressed: () => context.read<GetListEventsBloc>().add(
-                  const EventsEvent.fetch(page: 1, name: ''),
-                ),
-              ),
+            error: (failure) => ErrorDialog(
+              failure: failure,
+              onPressed: () => context.read<GetListEventsBloc>().add(
+                    const EventsEvent.fetch(page: 1, name: ''),
+                  ),
+            ),
           ),
         ),
       ],

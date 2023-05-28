@@ -25,7 +25,7 @@ class UpcomingEventsList extends StatelessWidget {
       loaded: (events) {
         return Column(
           children: <Widget>[
-            const VerticalSpace(40),
+
             Padding(
               padding: MyPadding.LR_24,
               child: Row(

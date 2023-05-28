@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../../../events/data/models/booking.dart';
+import '../../../../events/data/models/booking/booking.dart';
 import '../../../../user/data/models/event.dart';
 
 part 'feedback.freezed.dart';

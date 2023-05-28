@@ -30,6 +30,7 @@ class L10n {
   static const show = 'Показать';
   static const hide = ' Скрыть';
   static const subscribe = "Подписаться";
+  static const showMore = "Подробнее";
   static const unsubscribe = "Отписаться";
   static const organizer = "Организатор";
   static const upcomingEvents = "Предстоящие события";
@@ -42,6 +43,7 @@ class L10n {
 
   static const tryAgain = 'Попробовать ещё раз';
   static const getTicket = 'ПОЛУЧИТЬ БИЛЕТ';
+  static const outTicket = 'ВЕРНУТЬ БИЛЕТ';
   static const confirm = 'ПОДТВЕРДИТЬ';
   static const cancel = 'ОТМЕНА';
 

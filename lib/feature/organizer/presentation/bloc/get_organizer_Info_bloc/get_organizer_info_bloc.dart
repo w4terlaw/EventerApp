@@ -37,7 +37,6 @@ class GetOrganizerOtherInfoBloc
       emit(
         GetOrganizerOtherInfoState.loaded(organizerInfo: organizerInfo),
       );
-      print(organizerInfo);
     });
   }
 }

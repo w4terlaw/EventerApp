@@ -12,6 +12,7 @@ class ApiConstants {
   static const String ORGANIZER = '/organizer/';
   static const String ORGANIZER_INFO = '/organizer/info/';
   static const String FEEDBACK = '/feedback/';
+  static const String EVENT_DONATION = '/event_donation/';
 }
 
 class CacheConstants {

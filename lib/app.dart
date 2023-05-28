@@ -37,7 +37,7 @@ class App extends StatelessWidget {
                 // primarySwatch: Colors.deepPurple,
                 accentColor: AppColors.secondaryColor,
               ),
-              scaffoldBackgroundColor: Colors.white,
+              scaffoldBackgroundColor: AppColors.backgroundColor,
               brightness: Brightness.light,
               textTheme: myTextTheme(),
             ),

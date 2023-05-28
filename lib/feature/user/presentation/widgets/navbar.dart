@@ -30,19 +30,22 @@ class Navbar extends StatelessWidget {
       items: _navBarsItems(context),
       confineInSafeArea: true,
       navBarHeight: 70,
+      backgroundColor: Color(0xFF2e3842),
       handleAndroidBackButtonPress: true,
       resizeToAvoidBottomInset: true,
       stateManagement: true,
       hideNavigationBarWhenKeyboardShows: true,
       decoration: NavBarDecoration(
-        borderRadius: const BorderRadius.only(
-          topLeft: Radius.circular(16),
-          topRight: Radius.circular(16),
-        ),
+
+        // borderRadius: const BorderRadius.only(
+        //   topLeft: Radius.circular(16),
+        //   topRight: Radius.circular(16),
+        // ),
+
         colorBehindNavBar: Colors.white,
         boxShadow: [
           BoxShadow(
-            color: Colors.grey.withOpacity(0.3),
+            color: Colors.grey.withOpacity(0.1),
             spreadRadius: 10,
             blurRadius: 100,
             offset: const Offset(0, 5),
@@ -77,18 +80,18 @@ class Navbar extends StatelessWidget {
           ),
       icon: Image.asset(
         iconAsset,
-        color: AppColors.activeColorNavBar,
+        color: AppColors.whiteColor,
         height: iconSize,
         width: iconSize,
       ),
       inactiveIcon: Image.asset(
         iconAsset,
-        color: AppColors.inactiveColorNavBar,
+        color: AppColors.secondaryTextColor,
         height: iconSize,
         width: iconSize,
       ),
       title: title,
-      activeColorPrimary: AppColors.activeColorNavBar,
+      activeColorPrimary: AppColors.whiteColor,
       inactiveColorPrimary: AppColors.inactiveColorNavBar,
     );
   }

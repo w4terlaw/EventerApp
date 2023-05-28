@@ -111,7 +111,7 @@ TextTheme myTextTheme() {
       fontSize: 16.sp,
       height: 25 / 16,
       letterSpacing: 1,
-      color: Colors.white,
+      color: AppColors.mainTextColor,
     ),
 
     // SubTitle1 Book 13px Auto 0

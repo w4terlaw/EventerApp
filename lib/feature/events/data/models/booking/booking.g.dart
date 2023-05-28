@@ -8,20 +8,19 @@ part of 'booking.dart';
 
 _$_Booking _$$_BookingFromJson(Map<String, dynamic> json) => _$_Booking(
       id: json['id'] as int,
-      dateTime: DateTime.parse(json['dateTime'] as String),
-      eventId: json['eventId'] as int,
+      event: Event.fromJson(json['event'] as Map<String, dynamic>),
       user: User.fromJson(json['user'] as Map<String, dynamic>),
-      eventDates:
-          EventDates.fromJson(json['eventDates'] as Map<String, dynamic>),
+      tickets: (json['tickets'] as List<dynamic>)
+          .map((e) => Ticket.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$$_BookingToJson(_$_Booking instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'dateTime': instance.dateTime.toIso8601String(),
-      'eventId': instance.eventId,
+      'event': instance.event,
       'user': instance.user,
-      'eventDates': instance.eventDates,
+      'tickets': instance.tickets,
     };
 
 _$_User _$$_UserFromJson(Map<String, dynamic> json) => _$_User(
@@ -38,4 +37,18 @@ Map<String, dynamic> _$$_UserToJson(_$_User instance) => <String, dynamic>{
       'lastName': instance.lastName,
       'email': instance.email,
       'avatar': instance.avatar,
+    };
+
+_$_Ticket _$$_TicketFromJson(Map<String, dynamic> json) => _$_Ticket(
+      id: json['id'] as int,
+      ticketType: json['ticketType'] as String,
+      seat: json['seat'] as int,
+      eventDatesId: json['eventDatesId'] as int,
+    );
+
+Map<String, dynamic> _$$_TicketToJson(_$_Ticket instance) => <String, dynamic>{
+      'id': instance.id,
+      'ticketType': instance.ticketType,
+      'seat': instance.seat,
+      'eventDatesId': instance.eventDatesId,
     };
