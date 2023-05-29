@@ -40,13 +40,13 @@ class MyElevatedButton extends StatelessWidget {
 }
 
 class MyOutlinedButton extends StatelessWidget {
-  final Widget widget;
+  final Widget child;
   final VoidCallback? onPressed;
   final double padding;
 
   const MyOutlinedButton({
     super.key,
-    required this.widget,
+    required this.child,
     this.onPressed,
     this.padding = 22,
   });
@@ -67,7 +67,7 @@ class MyOutlinedButton extends StatelessWidget {
               borderRadius: BorderRadius.circular(15),
             ),
           ),
-          child: widget,
+          child: child,
         ),
       ),
     );

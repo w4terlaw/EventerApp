@@ -21,13 +21,19 @@ Feedback _$FeedbackFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Feedback {
   int get id => throw _privateConstructorUsedError;
+
   String get description => throw _privateConstructorUsedError;
+
   int get rate => throw _privateConstructorUsedError;
+
   DateTime get dateTime => throw _privateConstructorUsedError;
+
   Event get event => throw _privateConstructorUsedError;
+
   User get user => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
   $FeedbackCopyWith<Feedback> get copyWith =>
       throw _privateConstructorUsedError;
@@ -37,6 +43,7 @@ mixin _$Feedback {
 abstract class $FeedbackCopyWith<$Res> {
   factory $FeedbackCopyWith(Feedback value, $Res Function(Feedback) then) =
       _$FeedbackCopyWithImpl<$Res, Feedback>;
+
   @useResult
   $Res call(
       {int id,
@@ -47,6 +54,7 @@ abstract class $FeedbackCopyWith<$Res> {
       User user});
 
   $EventCopyWith<$Res> get event;
+
   $UserCopyWith<$Res> get user;
 }
 
@@ -57,6 +65,7 @@ class _$FeedbackCopyWithImpl<$Res, $Val extends Feedback>
 
   // ignore: unused_field
   final $Val _value;
+
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -120,6 +129,7 @@ abstract class _$$_FeedbackCopyWith<$Res> implements $FeedbackCopyWith<$Res> {
   factory _$$_FeedbackCopyWith(
           _$_Feedback value, $Res Function(_$_Feedback) then) =
       __$$_FeedbackCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call(
@@ -132,6 +142,7 @@ abstract class _$$_FeedbackCopyWith<$Res> implements $FeedbackCopyWith<$Res> {
 
   @override
   $EventCopyWith<$Res> get event;
+
   @override
   $UserCopyWith<$Res> get user;
 }
@@ -262,16 +273,22 @@ abstract class _Feedback implements Feedback {
 
   @override
   int get id;
+
   @override
   String get description;
+
   @override
   int get rate;
+
   @override
   DateTime get dateTime;
+
   @override
   Event get event;
+
   @override
   User get user;
+
   @override
   @JsonKey(ignore: true)
   _$$_FeedbackCopyWith<_$_Feedback> get copyWith =>

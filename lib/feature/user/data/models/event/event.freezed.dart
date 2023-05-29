@@ -21,16 +21,25 @@ Event _$EventFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Event {
   int get id => throw _privateConstructorUsedError;
+
   String get name => throw _privateConstructorUsedError;
+
   String get description => throw _privateConstructorUsedError;
+
   Organizer get organizer => throw _privateConstructorUsedError;
+
   double get expectedAmount => throw _privateConstructorUsedError;
+
   int get countOfMembers => throw _privateConstructorUsedError;
+
   double get recommendedDonation => throw _privateConstructorUsedError;
+
   List<EventDates> get eventDates => throw _privateConstructorUsedError;
+
   List<Venues> get venues => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
   $EventCopyWith<Event> get copyWith => throw _privateConstructorUsedError;
 }
@@ -39,6 +48,7 @@ mixin _$Event {
 abstract class $EventCopyWith<$Res> {
   factory $EventCopyWith(Event value, $Res Function(Event) then) =
       _$EventCopyWithImpl<$Res, Event>;
+
   @useResult
   $Res call(
       {int id,
@@ -61,6 +71,7 @@ class _$EventCopyWithImpl<$Res, $Val extends Event>
 
   // ignore: unused_field
   final $Val _value;
+
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -130,6 +141,7 @@ class _$EventCopyWithImpl<$Res, $Val extends Event>
 abstract class _$$_EventCopyWith<$Res> implements $EventCopyWith<$Res> {
   factory _$$_EventCopyWith(_$_Event value, $Res Function(_$_Event) then) =
       __$$_EventCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call(
@@ -241,6 +253,7 @@ class _$_Event implements _Event {
   @override
   final double recommendedDonation;
   final List<EventDates> _eventDates;
+
   @override
   List<EventDates> get eventDates {
     if (_eventDates is EqualUnmodifiableListView) return _eventDates;
@@ -249,6 +262,7 @@ class _$_Event implements _Event {
   }
 
   final List<Venues> _venues;
+
   @override
   List<Venues> get venues {
     if (_venues is EqualUnmodifiableListView) return _venues;
@@ -327,22 +341,31 @@ abstract class _Event implements Event {
 
   @override
   int get id;
+
   @override
   String get name;
+
   @override
   String get description;
+
   @override
   Organizer get organizer;
+
   @override
   double get expectedAmount;
+
   @override
   int get countOfMembers;
+
   @override
   double get recommendedDonation;
+
   @override
   List<EventDates> get eventDates;
+
   @override
   List<Venues> get venues;
+
   @override
   @JsonKey(ignore: true)
   _$$_EventCopyWith<_$_Event> get copyWith =>
@@ -356,11 +379,15 @@ Venues _$VenuesFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Venues {
   String get name => throw _privateConstructorUsedError;
+
   List<String> get photos => throw _privateConstructorUsedError;
+
   String get address => throw _privateConstructorUsedError;
+
   City get city => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
   $VenuesCopyWith<Venues> get copyWith => throw _privateConstructorUsedError;
 }
@@ -369,6 +396,7 @@ mixin _$Venues {
 abstract class $VenuesCopyWith<$Res> {
   factory $VenuesCopyWith(Venues value, $Res Function(Venues) then) =
       _$VenuesCopyWithImpl<$Res, Venues>;
+
   @useResult
   $Res call({String name, List<String> photos, String address, City city});
 
@@ -382,6 +410,7 @@ class _$VenuesCopyWithImpl<$Res, $Val extends Venues>
 
   // ignore: unused_field
   final $Val _value;
+
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -426,6 +455,7 @@ class _$VenuesCopyWithImpl<$Res, $Val extends Venues>
 abstract class _$$_VenuesCopyWith<$Res> implements $VenuesCopyWith<$Res> {
   factory _$$_VenuesCopyWith(_$_Venues value, $Res Function(_$_Venues) then) =
       __$$_VenuesCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call({String name, List<String> photos, String address, City city});
@@ -486,6 +516,7 @@ class _$_Venues implements _Venues {
   @override
   final String name;
   final List<String> _photos;
+
   @override
   List<String> get photos {
     if (_photos is EqualUnmodifiableListView) return _photos;
@@ -544,12 +575,16 @@ abstract class _Venues implements Venues {
 
   @override
   String get name;
+
   @override
   List<String> get photos;
+
   @override
   String get address;
+
   @override
   City get city;
+
   @override
   @JsonKey(ignore: true)
   _$$_VenuesCopyWith<_$_Venues> get copyWith =>
@@ -563,10 +598,13 @@ City _$CityFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$City {
   int get id => throw _privateConstructorUsedError;
+
   String get name => throw _privateConstructorUsedError;
+
   State get state => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
   $CityCopyWith<City> get copyWith => throw _privateConstructorUsedError;
 }
@@ -575,6 +613,7 @@ mixin _$City {
 abstract class $CityCopyWith<$Res> {
   factory $CityCopyWith(City value, $Res Function(City) then) =
       _$CityCopyWithImpl<$Res, City>;
+
   @useResult
   $Res call({int id, String name, State state});
 
@@ -588,6 +627,7 @@ class _$CityCopyWithImpl<$Res, $Val extends City>
 
   // ignore: unused_field
   final $Val _value;
+
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -627,6 +667,7 @@ class _$CityCopyWithImpl<$Res, $Val extends City>
 abstract class _$$_CityCopyWith<$Res> implements $CityCopyWith<$Res> {
   factory _$$_CityCopyWith(_$_City value, $Res Function(_$_City) then) =
       __$$_CityCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call({int id, String name, State state});
@@ -722,10 +763,13 @@ abstract class _City implements City {
 
   @override
   int get id;
+
   @override
   String get name;
+
   @override
   State get state;
+
   @override
   @JsonKey(ignore: true)
   _$$_CityCopyWith<_$_City> get copyWith => throw _privateConstructorUsedError;
@@ -738,10 +782,13 @@ State _$StateFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$State {
   int get id => throw _privateConstructorUsedError;
+
   String get name => throw _privateConstructorUsedError;
+
   Country get country => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
   $StateCopyWith<State> get copyWith => throw _privateConstructorUsedError;
 }
@@ -750,6 +797,7 @@ mixin _$State {
 abstract class $StateCopyWith<$Res> {
   factory $StateCopyWith(State value, $Res Function(State) then) =
       _$StateCopyWithImpl<$Res, State>;
+
   @useResult
   $Res call({int id, String name, Country country});
 
@@ -763,6 +811,7 @@ class _$StateCopyWithImpl<$Res, $Val extends State>
 
   // ignore: unused_field
   final $Val _value;
+
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -802,6 +851,7 @@ class _$StateCopyWithImpl<$Res, $Val extends State>
 abstract class _$$_StateCopyWith<$Res> implements $StateCopyWith<$Res> {
   factory _$$_StateCopyWith(_$_State value, $Res Function(_$_State) then) =
       __$$_StateCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call({int id, String name, Country country});
@@ -898,10 +948,13 @@ abstract class _State implements State {
 
   @override
   int get id;
+
   @override
   String get name;
+
   @override
   Country get country;
+
   @override
   @JsonKey(ignore: true)
   _$$_StateCopyWith<_$_State> get copyWith =>
@@ -915,9 +968,11 @@ Country _$CountryFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Country {
   int get id => throw _privateConstructorUsedError;
+
   String get name => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
   $CountryCopyWith<Country> get copyWith => throw _privateConstructorUsedError;
 }
@@ -926,6 +981,7 @@ mixin _$Country {
 abstract class $CountryCopyWith<$Res> {
   factory $CountryCopyWith(Country value, $Res Function(Country) then) =
       _$CountryCopyWithImpl<$Res, Country>;
+
   @useResult
   $Res call({int id, String name});
 }
@@ -937,6 +993,7 @@ class _$CountryCopyWithImpl<$Res, $Val extends Country>
 
   // ignore: unused_field
   final $Val _value;
+
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -964,6 +1021,7 @@ abstract class _$$_CountryCopyWith<$Res> implements $CountryCopyWith<$Res> {
   factory _$$_CountryCopyWith(
           _$_Country value, $Res Function(_$_Country) then) =
       __$$_CountryCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call({int id, String name});
@@ -1048,8 +1106,10 @@ abstract class _Country implements Country {
 
   @override
   int get id;
+
   @override
   String get name;
+
   @override
   @JsonKey(ignore: true)
   _$$_CountryCopyWith<_$_Country> get copyWith =>
@@ -1063,10 +1123,13 @@ EventDates _$EventDatesFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$EventDates {
   int get id => throw _privateConstructorUsedError;
+
   DateTime get startDateTime => throw _privateConstructorUsedError;
+
   DateTime get endDateTime => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
   $EventDatesCopyWith<EventDates> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1077,6 +1140,7 @@ abstract class $EventDatesCopyWith<$Res> {
   factory $EventDatesCopyWith(
           EventDates value, $Res Function(EventDates) then) =
       _$EventDatesCopyWithImpl<$Res, EventDates>;
+
   @useResult
   $Res call({int id, DateTime startDateTime, DateTime endDateTime});
 }
@@ -1088,6 +1152,7 @@ class _$EventDatesCopyWithImpl<$Res, $Val extends EventDates>
 
   // ignore: unused_field
   final $Val _value;
+
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -1121,6 +1186,7 @@ abstract class _$$_EventDatesCopyWith<$Res>
   factory _$$_EventDatesCopyWith(
           _$_EventDates value, $Res Function(_$_EventDates) then) =
       __$$_EventDatesCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call({int id, DateTime startDateTime, DateTime endDateTime});
@@ -1222,10 +1288,13 @@ abstract class _EventDates implements EventDates {
 
   @override
   int get id;
+
   @override
   DateTime get startDateTime;
+
   @override
   DateTime get endDateTime;
+
   @override
   @JsonKey(ignore: true)
   _$$_EventDatesCopyWith<_$_EventDates> get copyWith =>
@@ -1239,10 +1308,13 @@ Organizer _$OrganizerFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Organizer {
   int get id => throw _privateConstructorUsedError;
+
   String get name => throw _privateConstructorUsedError;
+
   String get logo => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
   $OrganizerCopyWith<Organizer> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1252,6 +1324,7 @@ mixin _$Organizer {
 abstract class $OrganizerCopyWith<$Res> {
   factory $OrganizerCopyWith(Organizer value, $Res Function(Organizer) then) =
       _$OrganizerCopyWithImpl<$Res, Organizer>;
+
   @useResult
   $Res call({int id, String name, String logo});
 }
@@ -1263,6 +1336,7 @@ class _$OrganizerCopyWithImpl<$Res, $Val extends Organizer>
 
   // ignore: unused_field
   final $Val _value;
+
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -1295,6 +1369,7 @@ abstract class _$$_OrganizerCopyWith<$Res> implements $OrganizerCopyWith<$Res> {
   factory _$$_OrganizerCopyWith(
           _$_Organizer value, $Res Function(_$_Organizer) then) =
       __$$_OrganizerCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call({int id, String name, String logo});
@@ -1392,10 +1467,13 @@ abstract class _Organizer implements Organizer {
 
   @override
   int get id;
+
   @override
   String get name;
+
   @override
   String get logo;
+
   @override
   @JsonKey(ignore: true)
   _$$_OrganizerCopyWith<_$_Organizer> get copyWith =>

@@ -1,10 +1,9 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../../../events/data/models/booking/booking.dart';
-import '../../../../user/data/models/event.dart';
+import '../../../../user/data/models/event/event.dart';
 
 part 'feedback.freezed.dart';
-
 part 'feedback.g.dart';
 
 @freezed
@@ -21,6 +20,3 @@ class Feedback with _$Feedback {
   factory Feedback.fromJson(Map<String, dynamic> json) =>
       _$FeedbackFromJson(json);
 }
-
-
-

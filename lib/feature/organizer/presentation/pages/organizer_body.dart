@@ -6,11 +6,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../common/localization.dart';
+import '../../../../common/my_text_theme.dart';
 import '../../../../common/widgets/loading_widget.dart';
-import '../../../../common/widgets/space_widgets.dart';
 import '../../data/models/organizer/organizer.dart';
 import 'components/organizer_events_tab.dart';
-import 'components/organizer_other_info.dart';
 
 class OrganizerPageBody extends StatelessWidget {
   final int organizerId;
@@ -94,7 +93,7 @@ class _MainCollapsingToolbarState extends State<MainCollapsingToolbar>
                 delegate: _SliverAppBarDelegate(PreferredSize(
                     preferredSize: _tabBar.preferredSize,
                     child: ColoredBox(
-                      color: Colors.white,
+                      color: AppColors.backgroundColor,
                       child: _tabBar,
                     ))),
                 pinned: true,
@@ -109,7 +108,15 @@ class _MainCollapsingToolbarState extends State<MainCollapsingToolbar>
                 organizerId: widget.organizer.id,
               ),
               // Icon(Icons.directions_transit, size: 350),
-              Icon(Icons.directions_transit, size: 350),
+              Center(
+                child: Text(
+                  'Список пуст',
+                  style: appFont(
+                      textStyle: Theme.of(context).textTheme.titleMedium,
+                      fontWeight: FontWeight.w400,
+                      color: AppColors.secondaryTextColor),
+                ),
+              ),
             ],
           ),
         ),

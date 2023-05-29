@@ -3,7 +3,6 @@ import 'package:eventer_app/common/localization.dart';
 import 'package:eventer_app/common/my_text_theme.dart';
 import 'package:flutter/material.dart';
 
-import '../constants.dart';
 import 'space_widgets.dart';
 
 class MySearchWidget extends StatelessWidget {

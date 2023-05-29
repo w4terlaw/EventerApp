@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:skeletons/skeletons.dart';
 
-import '../../../../common/app_colors.dart';
-import '../../../../common/localization.dart';
 import '../../../../common/widgets/skeleton_widgets.dart';
 import '../../../../common/widgets/space_widgets.dart';
 
@@ -78,31 +75,31 @@ class SkeletonOrganizerInfo extends StatelessWidget {
               color: Colors.black12,
             ),
             const HorizontalSpace(10),
-                SizedBox(
-                  height: 50,
-                  child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: const [
-                        SizedBox(
-                          height: 22,
-                          child: MySkeletonLine(
-                            width: 40,
-                          ),
-                        ),
-                        VerticalSpace(4),
-                        SizedBox(
-                          height: 20,
-                          child: MySkeletonLine(
-                            width: 100,
-                          ),
-                        ),
-                      ],
+            SizedBox(
+              height: 50,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: const [
+                  SizedBox(
+                    height: 22,
+                    child: MySkeletonLine(
+                      width: 40,
+                    ),
                   ),
-                )
-              ],
+                  VerticalSpace(4),
+                  SizedBox(
+                    height: 20,
+                    child: MySkeletonLine(
+                      width: 100,
+                    ),
+                  ),
+                ],
+              ),
             )
           ],
+        )
+      ],
     );
   }
 }

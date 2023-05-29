@@ -7,11 +7,9 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import '../../../../../core/error/failure.dart';
 import '../../../domain/use_cases/get_organizer_other_info.dart';
 
-part 'get_organizer_info_event.dart';
-
-part 'get_organizer_info_state.dart';
-
 part 'get_organizer_info_bloc.freezed.dart';
+part 'get_organizer_info_event.dart';
+part 'get_organizer_info_state.dart';
 
 class GetOrganizerOtherInfoBloc
     extends Bloc<GetOrganizerOtherInfoEvent, GetOrganizerOtherInfoState> {

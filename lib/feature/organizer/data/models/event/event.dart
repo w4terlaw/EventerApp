@@ -1,12 +1,9 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+import '../../../../user/data/models/event/event.dart';
+
 part 'event.freezed.dart';
-
 part 'event.g.dart';
-
-part 'venues.dart';
-
-part 'event_dates.dart';
 
 @freezed
 class Event with _$Event {
@@ -17,6 +14,7 @@ class Event with _$Event {
     required double expectedAmount,
     required int countOfMembers,
     required double recommendedDonation,
+    required Organizer organizer,
     required List<EventDates> eventDates,
     required List<Venues> venues,
   }) = _Event;

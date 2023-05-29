@@ -19,19 +19,20 @@ class MiniTab extends StatelessWidget {
       children: [
         (iconPath != null)
             ? Row(
-              children: [
-                Container(
-                    width: 48.w,
-                    height: 48.h,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(12),
-                      color: AppColors.secondaryColor.withOpacity(0.1),
-                    ),
-                    padding: const EdgeInsets.all(9),
-                    child: Image.asset(iconPath!, color: AppColors.secondaryColor)),
-                const HorizontalSpace(14),
-              ],
-            )
+                children: [
+                  Container(
+                      width: 48.w,
+                      height: 48.h,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(12),
+                        color: AppColors.secondaryColor.withOpacity(0.1),
+                      ),
+                      padding: const EdgeInsets.all(9),
+                      child: Image.asset(iconPath!,
+                          color: AppColors.secondaryColor)),
+                  const HorizontalSpace(14),
+                ],
+              )
             : const SizedBox(),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,

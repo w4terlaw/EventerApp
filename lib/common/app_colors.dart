@@ -6,7 +6,8 @@ class AppColors {
   static const Color secondaryText2Color = Color(0xFF6f6d8f);
   static const Color secondaryColor = Color(0xff96630b);
   static const Color buttonColor = Color(0xFFf0bc74);
-  static const Color backgroundColor = Color(0xFFf2f4f6);
+  static const Color backgroundColor = Color(0xFFFFFFFF);
+
   // static const Color backgroundColor = Color(0xFF1a222d);
 
   // static const Color seconda ryColor = Color(0xFF6945b5);
@@ -17,8 +18,9 @@ class AppColors {
   static const Color boxColor = Color(0xFFF0635A);
 
   // Navbar colors
-  static const Color inactiveColorNavBar = Color(0xFF747688);
+  static const Color inactiveColorNavBar = Color(0xFFA9AEB4);
   static const Color activeColorNavBar = Color(0xff96630b);
+  static const Color navbarColor = Color(0xFF2e3842);
 
   static const Color appBarColor = Color(0xFF4A43EC);
   static const Color appBarDeactivateColor = Color(0xff5668ff);

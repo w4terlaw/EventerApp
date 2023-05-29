@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 import '/common/app_colors.dart';
 
@@ -25,37 +24,36 @@ class MyInputField extends StatelessWidget {
     return SizedBox(
       height: 58,
       child: TextField(
-        controller: controller,
-        obscureText: obscureText,
-        decoration: InputDecoration(
-          hintText: hintText,
-          prefixIcon: Padding(
-            padding: const EdgeInsets.only(left: 5),
-            child: IconButton(
-              icon: Image.asset(
-                prefixIcon,
-                width: 22.0,
+          controller: controller,
+          obscureText: obscureText,
+          decoration: InputDecoration(
+            hintText: hintText,
+            prefixIcon: Padding(
+              padding: const EdgeInsets.only(left: 5),
+              child: IconButton(
+                icon: Image.asset(
+                  prefixIcon,
+                  width: 22.0,
+                ),
+                onPressed: null,
               ),
-              onPressed: null,
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderRadius: borderRadius,
+              borderSide: const BorderSide(
+                width: borderSideWidth,
+                color: AppColors.secondaryColor,
+              ),
+            ),
+            enabledBorder: OutlineInputBorder(
+              borderRadius: borderRadius,
+              borderSide: const BorderSide(
+                width: borderSideWidth,
+                color: AppColors.inputBorderColor,
+              ),
             ),
           ),
-          focusedBorder: OutlineInputBorder(
-            borderRadius: borderRadius,
-            borderSide: const BorderSide(
-              width: borderSideWidth,
-              color: AppColors.secondaryColor,
-            ),
-          ),
-          enabledBorder: OutlineInputBorder(
-            borderRadius: borderRadius,
-            borderSide: const BorderSide(
-              width: borderSideWidth,
-              color: AppColors.inputBorderColor,
-            ),
-          ),
-        ),
-        style: Theme.of(context).textTheme.bodySmall
-        ),
+          style: Theme.of(context).textTheme.bodySmall),
     );
   }
 }

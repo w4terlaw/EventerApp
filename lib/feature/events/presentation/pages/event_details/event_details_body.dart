@@ -1,4 +1,3 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:eventer_app/feature/events/presentation/pages/event_details/components/bottom_buttons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -6,10 +5,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../common/app_colors.dart';
 import '../../../../../common/constants.dart';
 import '../../../../../common/widgets/error_dialog_widget.dart';
+import '../../../../../common/widgets/event_card_widgets.dart';
 import '../../../../../common/widgets/loading_widget.dart';
-import '../../../../../common/widgets/skeleton_widgets.dart';
 import '../../../../../common/widgets/space_widgets.dart';
-import '../../../../user/data/models/event.dart' as model;
+import '../../../../user/data/models/event/event.dart' as model;
 import '../../bloc/get_event_bloc/get_event_bloc.dart';
 import 'components/about_event.dart';
 import 'components/event_dates_list.dart';
@@ -17,11 +16,11 @@ import 'components/organizer_header.dart';
 import 'components/venues_event_list.dart';
 
 class _FlexibleSpaceBarHeader extends StatelessWidget {
-  final String eventPhoto;
+  final List<String> photos;
   final String eventName;
 
   const _FlexibleSpaceBarHeader(
-      {Key? key, required this.eventPhoto, required this.eventName})
+      {Key? key, required this.photos, required this.eventName})
       : super(key: key);
 
   @override
@@ -30,7 +29,7 @@ class _FlexibleSpaceBarHeader extends StatelessWidget {
       leading: const BackButton(color: AppColors.mainTextColor),
       pinned: true,
       stretch: true,
-      backgroundColor: Colors.white,
+      backgroundColor: AppColors.backgroundColor,
       elevation: 0,
       actions: [
         IconButton(
@@ -47,16 +46,12 @@ class _FlexibleSpaceBarHeader extends StatelessWidget {
         // centerTitle: true,
         collapseMode: CollapseMode.pin,
         stretchModes: const [StretchMode.zoomBackground, StretchMode.fadeTitle],
-        background: Stack(
-          fit: StackFit.expand,
-          children: [
-            CachedNetworkImage(
-              imageUrl: eventPhoto,
-              fit: BoxFit.cover,
-              placeholder: (context, url) => const MySkeletonImage(),
-            ),
-          ],
-        ),
+        background: ImageCarousel(photos: photos),
+        // background: CachedNetworkImage(
+        //   imageUrl: photos[0],
+        //   fit: BoxFit.cover,
+        //   placeholder: (context, url) => const MySkeletonImage(),
+        // ),
       ),
     );
   }
@@ -97,7 +92,7 @@ class Details extends StatelessWidget {
           physics: const BouncingScrollPhysics(),
           slivers: [
             _FlexibleSpaceBarHeader(
-              eventPhoto: event.venues[0].photos[0],
+              photos: event.venues[0].photos,
               eventName: event.name,
             ),
             // SliverPersistentHeader(

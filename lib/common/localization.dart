@@ -37,8 +37,8 @@ class L10n {
   static const seeAll = "Увидеть все";
 
   static const exploreNavBar = "Главная";
-  static const eventsNavBar = "Мероприятия";
-  static const mapNavBar = "Карта";
+  static const myTicketsNavBar = "Мои билеты";
+  static const favoritesNavBar = "Подписки";
   static const profileNavBar = "Профиль";
 
   static const tryAgain = 'Попробовать ещё раз';
@@ -58,5 +58,4 @@ class L10n {
 
   static const organizerCountSubscribers = 'Подписчиков';
   static const organizerCountEvents = 'Мероприятия';
-
 }

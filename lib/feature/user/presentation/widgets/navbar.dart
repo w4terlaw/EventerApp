@@ -1,10 +1,13 @@
+import 'package:eventer_app/common/my_text_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:persistent_bottom_nav_bar_v2/persistent-tab-view.dart';
 
 import '/common/app_colors.dart';
 import '/common/localization.dart';
+import '../pages/bookings/bookings.dart';
+import '../pages/favorite_organizers/favorite_organizers.dart';
 import '../pages/home/home.dart';
+import '../pages/profile/profile.dart';
 
 class Navbar extends StatelessWidget {
   Navbar({super.key});
@@ -12,12 +15,50 @@ class Navbar extends StatelessWidget {
   final PersistentTabController _controller =
       PersistentTabController(initialIndex: 0);
 
+  PersistentBottomNavBarItem _navBarItem(
+      BuildContext context, String iconAsset, String title) {
+    double iconSize = 24;
+    return PersistentBottomNavBarItem(
+      textStyle: appFont(
+        textStyle: Theme.of(context).textTheme.labelMedium,
+        fontWeight: FontWeight.w400,
+        fontSize: 12,
+      ),
+      icon: Image.asset(
+        iconAsset,
+        color: AppColors.navbarColor,
+        height: iconSize,
+        width: iconSize,
+      ),
+      inactiveIcon: Image.asset(
+        iconAsset,
+        color: AppColors.inactiveColorNavBar,
+        height: iconSize,
+        width: iconSize,
+      ),
+      title: title,
+      activeColorSecondary: AppColors.navbarColor,
+      activeColorPrimary: AppColors.navbarColor,
+      inactiveColorPrimary: AppColors.inactiveColorNavBar,
+    );
+  }
+
+  List<PersistentBottomNavBarItem> _navBarsItems(context) {
+    return [
+      _navBarItem(context, 'assets/icons/home.png', L10n.exploreNavBar),
+      _navBarItem(context, 'assets/icons/tickets.png', L10n.myTicketsNavBar),
+      _navBarItem(context, 'assets/icons/favorite_organizers.png',
+          L10n.favoritesNavBar),
+      _navBarItem(context, 'assets/icons/profile.png', L10n.profileNavBar),
+    ];
+  }
+
   List<Widget> _buildScreens() {
     return [
       const HomePage(),
-      const Plug(number: 2),
-      const Plug(number: 3),
-      const Plug(number: 4),
+      const BookingsPage(),
+      const FavoriteOrganizersPage(),
+      const ProfilePage(),
     ];
   }
 
@@ -30,22 +71,23 @@ class Navbar extends StatelessWidget {
       items: _navBarsItems(context),
       confineInSafeArea: true,
       navBarHeight: 70,
-      backgroundColor: Color(0xFF2e3842),
+      // padding: NavBarPadding.all(16),
+      // backgroundColor: AppColors.navbarColor,
       handleAndroidBackButtonPress: true,
       resizeToAvoidBottomInset: true,
       stateManagement: true,
       hideNavigationBarWhenKeyboardShows: true,
+      // padding: const NavBarPadding.all(24),
       decoration: NavBarDecoration(
-
-        // borderRadius: const BorderRadius.only(
+        // borderRadius: BorderRadius.only(
         //   topLeft: Radius.circular(16),
         //   topRight: Radius.circular(16),
         // ),
 
-        colorBehindNavBar: Colors.white,
+        // colorBehindNavBar: Colors.white,
         boxShadow: [
           BoxShadow(
-            color: Colors.grey.withOpacity(0.1),
+            color: Colors.grey.withOpacity(0.2),
             spreadRadius: 10,
             blurRadius: 100,
             offset: const Offset(0, 5),
@@ -63,46 +105,11 @@ class Navbar extends StatelessWidget {
         // Screen transition animation on change of selected tab.
         animateTabTransition: true,
         curve: Curves.ease,
-        duration: Duration(milliseconds: 500),
+        duration: Duration(milliseconds: 200),
       ),
       navBarStyle:
           NavBarStyle.simple, // Choose the nav bar style with this property.
     );
-  }
-
-  PersistentBottomNavBarItem _navBarItem(
-      BuildContext context, String iconAsset, String title) {
-    double iconSize = 24;
-    return PersistentBottomNavBarItem(
-      textStyle: Theme.of(context).textTheme.labelMedium!.copyWith(
-            fontFamily: GoogleFonts.rubik().fontFamily,
-            fontSize: 12,
-          ),
-      icon: Image.asset(
-        iconAsset,
-        color: AppColors.whiteColor,
-        height: iconSize,
-        width: iconSize,
-      ),
-      inactiveIcon: Image.asset(
-        iconAsset,
-        color: AppColors.secondaryTextColor,
-        height: iconSize,
-        width: iconSize,
-      ),
-      title: title,
-      activeColorPrimary: AppColors.whiteColor,
-      inactiveColorPrimary: AppColors.inactiveColorNavBar,
-    );
-  }
-
-  List<PersistentBottomNavBarItem> _navBarsItems(context) {
-    return [
-      _navBarItem(context, 'assets/icons/compass.png', L10n.exploreNavBar),
-      _navBarItem(context, 'assets/icons/calendar_nav.png', L10n.eventsNavBar),
-      _navBarItem(context, 'assets/icons/location_nav.png', L10n.mapNavBar),
-      _navBarItem(context, 'assets/icons/profile_nav.png', L10n.profileNavBar),
-    ];
   }
 }
 

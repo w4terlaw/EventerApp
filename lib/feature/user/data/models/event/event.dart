@@ -1,20 +1,13 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'event.freezed.dart';
-
-part 'event.g.dart';
-
-part 'venues.dart';
-
 part 'city.dart';
-
-part 'state.dart';
-
 part 'country.dart';
-
+part 'event.freezed.dart';
+part 'event.g.dart';
 part 'event_dates.dart';
-
 part 'organizer.dart';
+part 'state.dart';
+part 'venues.dart';
 
 @freezed
 class Event with _$Event {

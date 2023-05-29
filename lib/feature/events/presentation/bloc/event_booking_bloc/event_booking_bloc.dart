@@ -5,16 +5,14 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../../data/models/event_dates_checkbox.dart';
-import '../../../domain/use_cases/event_booking.dart';
+import '../../../domain/use_cases/create_event_booking.dart';
 
 part 'event_booking_bloc.freezed.dart';
-
 part 'event_booking_event.dart';
-
 part 'event_booking_state.dart';
 
 class EventBookingBloc extends Bloc<EventBookingEvent, EventBookingState> {
-  final EventBooking eventBookingUseCase;
+  final CreateEventBooking eventBookingUseCase;
 
   EventBookingBloc({required this.eventBookingUseCase})
       : super(const EventBookingState.initial()) {
@@ -33,7 +31,6 @@ class EventBookingBloc extends Bloc<EventBookingEvent, EventBookingState> {
       (r) {
         navigatorKey.currentState!.pop();
         emit(const EventBookingState.success());
-
       },
     );
   }

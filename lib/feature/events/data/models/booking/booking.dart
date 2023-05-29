@@ -3,7 +3,6 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import '../../../../organizer/data/models/event/event.dart';
 
 part 'booking.freezed.dart';
-
 part 'booking.g.dart';
 
 @freezed

@@ -6,7 +6,7 @@ class GetOrganizerEventsState with _$GetOrganizerEventsState {
 
   const factory GetOrganizerEventsState.loaded({
     required List<Event> events,
-}) = _Loaded;
+  }) = _Loaded;
 
   const factory GetOrganizerEventsState.error({
     required Failure failure,

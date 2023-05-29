@@ -40,7 +40,7 @@ class EventCompactCard extends StatelessWidget {
         color: Colors.white,
         boxShadow: [
           BoxShadow(
-            color: Colors.grey.withOpacity(0.1),
+            color: Colors.grey.withOpacity(0.2),
             spreadRadius: 3,
             blurRadius: 10,
             offset: const Offset(0, 8),
@@ -104,6 +104,96 @@ class EventCompactCard extends StatelessWidget {
   }
 }
 
+class BookingTicketCard extends StatelessWidget {
+  final String previewUrl;
+  final DateTime startDateTime;
+  final String name;
+
+  const BookingTicketCard({
+    Key? key,
+    required this.previewUrl,
+    required this.name,
+    required this.startDateTime,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      // height: 9.h,
+
+      padding: const EdgeInsets.all(8),
+      decoration: BoxDecoration(
+        borderRadius: borderRadius,
+        color: Colors.white,
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.2),
+            spreadRadius: 3,
+            blurRadius: 10,
+            offset: const Offset(0, 8),
+          ),
+        ],
+      ),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          // SizedBox(
+          //   height: 80.w,
+          //   width: 80.w,
+          //   child: ClipRRect(
+          //     borderRadius: BorderRadius.circular(10.0),
+          //     child: CachedNetworkImage(
+          //       imageUrl: previewUrl,
+          //       fit: BoxFit.cover,
+          //       placeholder: (context, url) => const MySkeletonImage(),
+          //       errorWidget: (context, url, error) => const Center(
+          //         child: Icon(Icons.error),
+          //       ),
+          //     ),
+          //   ),
+          // ),
+          Container(
+            // color: Colors.grey,
+            margin: const EdgeInsets.only(
+              left: 16,
+            ),
+            width: 200.w,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  dateTimeFormat(
+                    startDateTime,
+                    MyDateFormat.compactCardDateFormat,
+                  ).toUpperCase(),
+                  style: Theme.of(context).textTheme.labelSmall!.copyWith(
+                        fontWeight: FontWeight.bold,
+                        color: AppColors.secondaryColor,
+                      ),
+                ),
+                const VerticalSpace(3),
+                SizedBox(
+                  height: 55.h,
+                  // color: Colors.grey,
+                  child: Text(
+                    name,
+                    overflow: TextOverflow.ellipsis,
+                    style: Theme.of(context)
+                        .textTheme
+                        .titleLarge!
+                        .copyWith(height: 1.4, fontSize: 18.0),
+                  ),
+                ),
+              ],
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
+
 class EventMiddleCard extends StatelessWidget {
   final String previewUrl;
   final DateTime startDateTime;
@@ -129,7 +219,7 @@ class EventMiddleCard extends StatelessWidget {
         color: Colors.white,
         boxShadow: [
           BoxShadow(
-            color: Colors.grey.withOpacity(0.1),
+            color: Colors.grey.withOpacity(0.2),
             spreadRadius: 5,
             blurRadius: 15,
             offset: const Offset(0, 3),
@@ -177,7 +267,11 @@ class EventMiddleCard extends StatelessWidget {
                 SizedBox(
                   child: Row(
                     children: <Widget>[
-                      Image.asset('assets/icons/map-pin.png', width: 14.0),
+                      Image.asset(
+                        'assets/icons/location_not_point.png',
+                        width: 14.0,
+                        color: Colors.white,
+                      ),
                       const HorizontalSpace(3),
                       Expanded(
                         child: Text(
@@ -198,7 +292,7 @@ class EventMiddleCard extends StatelessWidget {
 }
 
 class EventLargeCard extends StatelessWidget {
-  final String previewUrl;
+  final List<String> photos;
   final DateTime startDateTime;
   final String name;
   final String location;
@@ -206,7 +300,7 @@ class EventLargeCard extends StatelessWidget {
 
   const EventLargeCard({
     Key? key,
-    required this.previewUrl,
+    required this.photos,
     required this.name,
     required this.startDateTime,
     required this.location,
@@ -217,14 +311,14 @@ class EventLargeCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       // width: 320.w,
-      height: 280.h,
+      // height: 300.h,
       padding: const EdgeInsets.all(8),
       decoration: BoxDecoration(
         borderRadius: borderRadius,
         color: Colors.white,
         boxShadow: [
           BoxShadow(
-            color: Colors.grey.withOpacity(0.1),
+            color: Colors.grey.withOpacity(0.2),
             spreadRadius: 5,
             blurRadius: 15,
             offset: const Offset(0, 3),
@@ -236,14 +330,12 @@ class EventLargeCard extends StatelessWidget {
         children: <Widget>[
           SizedBox(
             width: double.infinity,
-            height: 130.h,
+            height: 135.h,
             child: ClipRRect(
-              borderRadius: BorderRadius.circular(10.0),
-              child: Image.network(
-                previewUrl,
-                fit: BoxFit.cover,
-              ),
-            ),
+                borderRadius: BorderRadius.circular(10.0),
+                child: ImageCarousel(
+                  photos: photos,
+                )),
           ),
           Container(
             margin: const EdgeInsets.all(8.0),
@@ -251,19 +343,30 @@ class EventLargeCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const VerticalSpace(6),
-                Text(
-                  dateTimeFormat(
-                    startDateTime,
-                    MyDateFormat.largeCardDateFormat,
-                  ).toUpperCase(),
-                  style: Theme.of(context).textTheme.labelSmall,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      dateTimeFormat(
+                        startDateTime,
+                        MyDateFormat.largeCardDateFormat,
+                      ).toUpperCase(),
+                      style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                          fontSize: 13.0, color: AppColors.secondaryColor),
+                    ),
+                    Text(
+                      '+$numberMembers Идут',
+                      style: Theme.of(context).textTheme.labelSmall!.copyWith(
+                            fontWeight: FontWeight.bold,
+                            color: AppColors.secondaryColor,
+                          ),
+                    )
+                  ],
                 ),
                 const VerticalSpace(8),
                 Text(
-                  dateTimeFormat(
-                    startDateTime,
-                    MyDateFormat.largeCardDateFormat,
-                  ).toUpperCase(),
+                  name,
+                  overflow: TextOverflow.ellipsis,
                   style: Theme.of(context)
                       .textTheme
                       .titleLarge!
@@ -273,24 +376,24 @@ class EventLargeCard extends StatelessWidget {
                 SizedBox(
                   child: Row(
                     children: <Widget>[
-                      Image.asset('assets/icons/map-pin.png', width: 14.0),
+                      Image.asset('assets/icons/location_not_point.png',
+                          color: AppColors.secondaryTextColor, width: 14.0),
                       const HorizontalSpace(6),
                       Expanded(
                         child: Text(
                           location,
-                          style: Theme.of(context).textTheme.titleMedium,
+                          overflow: TextOverflow.ellipsis,
+                          style:
+                              Theme.of(context).textTheme.labelSmall!.copyWith(
+                                    fontWeight: FontWeight.bold,
+                                    color: AppColors.secondaryTextColor,
+                                  ),
                         ),
                       ),
                     ],
                   ),
                 ),
-                const VerticalSpace(16),
-                Text(
-                  '+$numberMembers идут',
-                  style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                        fontWeight: FontWeight.bold,
-                      ),
-                ),
+                const VerticalSpace(50),
               ],
             ),
           ),
@@ -335,7 +438,7 @@ class EventHomeMiddleCard extends StatelessWidget {
             color: Colors.white,
             boxShadow: [
               BoxShadow(
-                color: Colors.grey.withOpacity(0.1),
+                color: Colors.grey.withOpacity(0.2),
                 spreadRadius: 3,
                 blurRadius: 10,
                 // offset: const Offset(0, 8),
@@ -349,7 +452,23 @@ class EventHomeMiddleCard extends StatelessWidget {
               children: <Widget>[
                 Stack(
                   children: [
-                    ImageCarousel(photos: photos),
+                    SizedBox(
+                      height: 140.h,
+                      width: double.infinity,
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(10.0),
+                        child: CachedNetworkImage(
+                          imageUrl: photos[0],
+                          fit: BoxFit.cover,
+                          placeholder: (context, url) =>
+                              const MySkeletonImage(),
+                          errorWidget: (context, url, error) => const Center(
+                            child: Icon(Icons.error),
+                          ),
+                        ),
+                      ),
+                    ),
+                    // ImageCarousel(photos: photos),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Row(
@@ -438,7 +557,8 @@ class EventHomeMiddleCard extends StatelessWidget {
                       SizedBox(
                         child: Row(
                           children: <Widget>[
-                            Image.asset('assets/icons/map-pin.png',
+                            Image.asset('assets/icons/location_not_point.png',
+                                color: AppColors.secondaryTextColor,
                                 width: 14.0),
                             const HorizontalSpace(6),
                             Expanded(
@@ -483,41 +603,34 @@ class _ImageCarouselState extends State<ImageCarousel> {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 140.h,
-      width: double.infinity,
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(10.0),
-        child: Stack(
-          children: [
-            PageView.builder(
-              itemCount: widget.photos.length,
-              onPageChanged: (value) => setState(() => _currentPage = value),
-              itemBuilder: (context, index) => CachedNetworkImage(
-                imageUrl: widget.photos[index],
-                fit: BoxFit.cover,
-                placeholder: (context, url) => const MySkeletonImage(),
-                errorWidget: (context, url, error) => const Center(
-                  child: Icon(Icons.error),
-                ),
-              ),
+    return Stack(
+      children: [
+        PageView.builder(
+          itemCount: widget.photos.length,
+          onPageChanged: (value) => setState(() => _currentPage = value),
+          itemBuilder: (context, index) => CachedNetworkImage(
+            imageUrl: widget.photos[index],
+            fit: BoxFit.cover,
+            placeholder: (context, url) => const MySkeletonImage(),
+            errorWidget: (context, url, error) => const Center(
+              child: Icon(Icons.error),
             ),
-            Positioned(
-              bottom: 16,
-              right: 16,
-              child: Row(
-                children: List.generate(
-                  widget.photos.length,
-                  (index) => Padding(
-                    padding: const EdgeInsets.only(left: 4.0),
-                    child: IndicatorDot(isActive: index == _currentPage),
-                  ),
-                ),
-              ),
-            ),
-          ],
+          ),
         ),
-      ),
+        Positioned(
+          bottom: 16,
+          right: 16,
+          child: Row(
+            children: List.generate(
+              widget.photos.length,
+              (index) => Padding(
+                padding: const EdgeInsets.only(left: 4.0),
+                child: IndicatorDot(isActive: index == _currentPage),
+              ),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

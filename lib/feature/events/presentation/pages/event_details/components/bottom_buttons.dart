@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:eventer_app/common/my_text_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -12,7 +10,7 @@ import '../../../../../../common/widgets/button_widgets.dart';
 import '../../../../../../common/widgets/error_dialog_widget.dart';
 import '../../../../../../common/widgets/loading_widget.dart';
 import '../../../../../../common/widgets/space_widgets.dart';
-import '../../../../../user/data/models/event.dart' as model;
+import '../../../../../user/data/models/event/event.dart' as model;
 import '../../../../data/models/event_dates_checkbox.dart';
 import '../../../bloc/event_booking_bloc/event_booking_bloc.dart';
 import '../../../bloc/make_donation_bloc/make_donation_bloc.dart';
@@ -52,12 +50,14 @@ class BottomButtons extends StatelessWidget {
                 final myBookingsBloc = context.watch<MyBookingsBloc>();
                 final makeDonationBLoc = context.watch<MakeDonationBloc>();
 
-                eventBookingBloc.state.whenOrNull(success: () {
-                  myBookingsBloc.add(
-                    MyBookingsEvent.fetch(eventId: event.id),
-                  );
-                  eventBookingBloc.emit(const EventBookingState.initial());
-                });
+                eventBookingBloc.state.whenOrNull(
+                  success: () {
+                    myBookingsBloc.add(
+                      MyBookingsEvent.fetch(eventId: event.id),
+                    );
+                    eventBookingBloc.emit(const EventBookingState.initial());
+                  },
+                );
 
                 return myBookingsBloc.state.maybeWhen(
                   error: (failure) => ErrorDialog(
@@ -70,19 +70,19 @@ class BottomButtons extends StatelessWidget {
                     padding: MyPadding.LR_24,
                     child: Row(
                       children: [
-
                         Expanded(
                           child: MyElevatedButton(
-                              backgroundColor: Color(0xFF1a222d),
-                              padding: 0,
-                              widget: const Icon(
-                                Icons.currency_ruble,
-                                color: AppColors.whiteColor,
-                              ),
-                              onPressed: () => _showModalEventDonation(
-                                context,
-                                makeDonationBloc: makeDonationBLoc,
-                              )),
+                            backgroundColor: Color(0xFF1a222d),
+                            padding: 0,
+                            widget: const Icon(
+                              Icons.currency_ruble,
+                              color: AppColors.whiteColor,
+                            ),
+                            onPressed: () => _showModalEventDonation(
+                              context,
+                              makeDonationBloc: makeDonationBLoc,
+                            ),
+                          ),
                         ),
                         const HorizontalSpace(10),
                         Expanded(
@@ -91,7 +91,7 @@ class BottomButtons extends StatelessWidget {
                             backgroundColor: myBookingsBloc.state.maybeWhen(
                               loaded: (bookings) {
                                 if (bookings.isNotEmpty) {
-                                  return Colors.grey;
+                                  return Colors.grey[300];
                                 } else {
                                   return null;
                                 }
@@ -104,14 +104,20 @@ class BottomButtons extends StatelessWidget {
                                 if (bookings.isNotEmpty) {
                                   return Text(
                                     L10n.outTicket,
-                                    style:
-                                        Theme.of(context).textTheme.labelLarge!.copyWith(color: AppColors.mainTextColor),
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .labelLarge!
+                                        .copyWith(
+                                            color: AppColors.mainTextColor),
                                   );
                                 } else {
                                   return Text(
                                     L10n.getTicket,
-                                    style:
-                                        Theme.of(context).textTheme.labelLarge!.copyWith(color: AppColors.mainTextColor),
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .labelLarge!
+                                        .copyWith(
+                                            color: AppColors.mainTextColor),
                                   );
                                 }
                               },
@@ -138,7 +144,6 @@ class BottomButtons extends StatelessWidget {
                             ),
                           ),
                         ),
-
                       ],
                     ),
                   ),
@@ -198,7 +203,7 @@ class BottomButtons extends StatelessWidget {
                   Expanded(
                     child: MyOutlinedButton(
                       padding: 0,
-                      widget: Text(
+                      child: Text(
                         L10n.cancel,
                         style: Theme.of(context)
                             .textTheme
@@ -239,6 +244,8 @@ class BottomButtons extends StatelessWidget {
     BuildContext context, {
     required MakeDonationBloc makeDonationBloc,
   }) {
+    final moneyController =
+        TextEditingController(text: '${event.recommendedDonation.toInt()}');
     return showModalBottomSheet(
       context: context,
       isScrollControlled: true,
@@ -291,75 +298,70 @@ class BottomButtons extends StatelessWidget {
                   ],
                 ),
                 const VerticalSpace(10),
-                SizedBox(
-                  height: 58,
-                  child: TextFormField(
-                    inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                    // controller: controller,
-                    decoration: InputDecoration(
-                      hintText: '',
-                      // prefixIcon: null,
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: borderRadius,
-                        borderSide: const BorderSide(
-                          width: borderSideWidth,
-                          color: AppColors.secondaryColor,
-                        ),
-                      ),
-                      enabledBorder: OutlineInputBorder(
-                        borderRadius: borderRadius,
-                        borderSide: const BorderSide(
-                          width: borderSideWidth,
-                          color: AppColors.inputBorderColor,
-                        ),
-                      ),
-                    ),
-                    initialValue: '${event.recommendedDonation.toInt()}',
-                    keyboardType:
-                        const TextInputType.numberWithOptions(decimal: true),
-                    style: Theme.of(context).textTheme.bodySmall,
-                  ),
-                ),
 
+                MoneyInput(moneyController: moneyController),
                 const VerticalSpace(24),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Row(
-                      children: [
-                        const Icon(
-                          Icons.credit_card_outlined,
-                          color: AppColors.mainTextColor,
-                        ),
-                        const HorizontalSpace(10),
-                        Text(
-                          'Карты',
-                          style: Theme.of(context).textTheme.titleLarge,
-                        ),
-                      ],
+                    Text(
+                      'Карты',
+                      style: Theme.of(context).textTheme.titleLarge,
                     ),
                     const Icon(Icons.add)
                   ],
                 ),
                 const VerticalSpace(10),
-                Container(
-                    padding: const EdgeInsets.all(10),
-                    decoration: BoxDecoration(
+                Row(
+                  children: [
+                    Container(
+                      width: 80,
+                      padding: const EdgeInsets.all(10),
+                      decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
-                        color: AppColors.activeColorNavBar),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        const HorizontalSpace(10),
-                        Text(
-                          '••2123',
-                          style: appFont(
+                        color: AppColors.mainTextColor,
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Text(
+                            '••2123',
+                            style: appFont(
                               textStyle: Theme.of(context).textTheme.titleSmall,
                               fontWeight: FontWeight.w400,
-                              color: AppColors.whiteColor),
-                        ),
-                      ],
-                    )),
+                              color: AppColors.whiteColor,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const HorizontalSpace(10),
+                    Container(
+                      width: 80,
+                      padding: const EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(12),
+                        color: Colors.grey[200],
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Text(
+                            '••3201',
+                            style: appFont(
+                              textStyle: Theme.of(context).textTheme.titleSmall,
+                              fontWeight: FontWeight.w400,
+                              color: AppColors.mainTextColor,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+
                 // TextFormField(
                 //   inputFormatters: [
                 //     FilteringTextInputFormatter.allow(RegExp(r'^\d+\.?\d{0,2}')),
@@ -378,7 +380,7 @@ class BottomButtons extends StatelessWidget {
                     Expanded(
                       child: MyOutlinedButton(
                         padding: 0,
-                        widget: Text(
+                        child: Text(
                           L10n.cancel,
                           style: Theme.of(context)
                               .textTheme
@@ -393,11 +395,15 @@ class BottomButtons extends StatelessWidget {
                       flex: 2,
                       child: MyElevatedButton(
                         padding: 0,
-                        widget: Text('ПОДДЕРЖАТь',
+                        widget: Text('ПОДДЕРЖАТЬ',
                             style: Theme.of(context).textTheme.labelLarge),
                         onPressed: () {
-                          makeDonationBloc.add(MakeDonationEvent.makeDonation(
-                              eventId: event.id, amount: 1000));
+                          print(moneyController.text);
+                          makeDonationBloc.add(
+                            MakeDonationEvent.makeDonation(
+                                eventId: event.id,
+                                amount: double.parse(moneyController.text)),
+                          );
                         },
                       ),
                     ),
@@ -409,6 +415,43 @@ class BottomButtons extends StatelessWidget {
           ),
         );
       },
+    );
+  }
+}
+
+class MoneyInput extends StatelessWidget {
+  final TextEditingController moneyController;
+
+  const MoneyInput({Key? key, required this.moneyController}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 58,
+      child: TextFormField(
+        inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+        controller: moneyController,
+        decoration: InputDecoration(
+          hintText: '',
+          // prefixIcon: null,
+          focusedBorder: OutlineInputBorder(
+            borderRadius: borderRadius,
+            borderSide: const BorderSide(
+              width: borderSideWidth,
+              color: AppColors.secondaryColor,
+            ),
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: borderRadius,
+            borderSide: const BorderSide(
+              width: borderSideWidth,
+              color: AppColors.inputBorderColor,
+            ),
+          ),
+        ),
+        keyboardType: const TextInputType.numberWithOptions(decimal: true),
+        style: Theme.of(context).textTheme.bodySmall,
+      ),
     );
   }
 }

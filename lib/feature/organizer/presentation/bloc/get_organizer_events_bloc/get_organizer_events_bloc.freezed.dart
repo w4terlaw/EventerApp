@@ -17,12 +17,15 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$GetOrganizerEventsEvent {
   int get page => throw _privateConstructorUsedError;
+
   int get organizerId => throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(int page, int organizerId) getEvents,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int page, int organizerId)? getEvents,
@@ -34,11 +37,13 @@ mixin _$GetOrganizerEventsEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_GetEvents value) getEvents,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_GetEvents value)? getEvents,
@@ -71,9 +76,9 @@ class _$GetOrganizerEventsEventCopyWithImpl<$Res,
     implements $GetOrganizerEventsEventCopyWith<$Res> {
   _$GetOrganizerEventsEventCopyWithImpl(this._value, this._then);
 
-  // ignore: unused_field
+// ignore: unused_field
   final $Val _value;
-  // ignore: unused_field
+// ignore: unused_field
   final $Res Function($Val) _then;
 
   @pragma('vm:prefer-inline')
@@ -299,9 +304,9 @@ class _$GetOrganizerEventsStateCopyWithImpl<$Res,
     implements $GetOrganizerEventsStateCopyWith<$Res> {
   _$GetOrganizerEventsStateCopyWithImpl(this._value, this._then);
 
-  // ignore: unused_field
+// ignore: unused_field
   final $Val _value;
-  // ignore: unused_field
+// ignore: unused_field
   final $Res Function($Val) _then;
 }
 
@@ -450,7 +455,7 @@ class _$_Loaded implements _Loaded {
   @override
   List<Event> get events {
     if (_events is EqualUnmodifiableListView) return _events;
-    // ignore: implicit_dynamic_type
+// ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_events);
   }
 

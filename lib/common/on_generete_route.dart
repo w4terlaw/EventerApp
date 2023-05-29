@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 import '../feature/auth/presentation/pages/login/login.dart';
-import '../feature/auth/presentation/pages/registration/registration_page.dart';
+import '../feature/auth/presentation/pages/registration/registration.dart';
 import '../feature/auth/presentation/pages/reset_password/reset_password_page.dart';
+import '../feature/events/presentation/pages/event_details/components/donation_splash_screen.dart';
 import '../feature/events/presentation/pages/event_details/event_details.dart';
 import '../feature/organizer/presentation/pages/organizer.dart';
 import '../feature/user/presentation/pages/search/search.dart';
@@ -20,7 +21,7 @@ class MyRouter {
         return MaterialPageRoute(builder: (_) => Navbar());
       //  REGISTRATION
       case MyRouterConstants.registrationRoute:
-        return MaterialPageRoute(builder: (_) => const RegistrationPage());
+        return MaterialPageRoute(builder: (_) => RegistrationPage());
       //  RESET PASSWORD
       case MyRouterConstants.resetPasswordRoute:
         return MaterialPageRoute(builder: (_) => const ResetPasswordPage());
@@ -30,11 +31,15 @@ class MyRouter {
       //  EVENT DETAILS
       case MyRouterConstants.eventDetailsRoute:
         final int eventId = settings.arguments as int;
-        return MaterialPageRoute(builder: (_) => EventDetailsPage(eventId: eventId));
+        return MaterialPageRoute(
+            builder: (_) => EventDetailsPage(eventId: eventId));
       //  ORGANIZER
       case MyRouterConstants.organizerRoute:
         final int organizerId = settings.arguments as int;
-        return MaterialPageRoute(builder: (_) => OrganizerPage(organizerId: organizerId));
+        return MaterialPageRoute(
+            builder: (_) => OrganizerPage(organizerId: organizerId));
+      case MyRouterConstants.donationSplashScreen:
+        return MaterialPageRoute(builder: (_) => const DonationSplashScreen());
       //  DEFAULT PAGE (if page not exists)
       default:
         return MaterialPageRoute(

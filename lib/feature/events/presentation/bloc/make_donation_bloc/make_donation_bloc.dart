@@ -6,12 +6,11 @@ import 'package:eventer_app/core/error/failure.dart';
 import 'package:eventer_app/feature/events/data/models/event_donation/event_donation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+import '../../../../../common/constants.dart';
 import '../../../domain/use_cases/makeDonation.dart';
 
 part 'make_donation_bloc.freezed.dart';
-
 part 'make_donation_event.dart';
-
 part 'make_donation_state.dart';
 
 class MakeDonationBloc extends Bloc<MakeDonationEvent, MakeDonationState> {
@@ -35,6 +34,8 @@ class MakeDonationBloc extends Bloc<MakeDonationEvent, MakeDonationState> {
       (eventDonation) {
         navigatorKey.currentState!.pop();
         emit(MakeDonationState.loaded(eventDonation: eventDonation));
+        navigatorKey.currentState!
+            .pushNamed(MyRouterConstants.donationSplashScreen);
       },
     );
   }

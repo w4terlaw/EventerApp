@@ -1,20 +1,15 @@
 import 'dart:async';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../../../../core/error/failure.dart';
-import '../../../data/models/event.dart';
+import '../../../data/models/event/event.dart';
 import '../../../domain/use_cases/get_list_events.dart';
 
-
-
-part 'get_list_events_event.dart';
-
-part 'get_list_events_state.dart';
-
 part 'get_list_events_bloc.freezed.dart';
+part 'get_list_events_event.dart';
+part 'get_list_events_state.dart';
 
 class GetListEventsBloc extends Bloc<EventsEvent, EventsState> {
   final GetListEvents getEventsUseCase;
@@ -46,16 +41,16 @@ class GetListEventsBloc extends Bloc<EventsEvent, EventsState> {
     );
   }
 
-  // String _mapFailure(Failure failure) {
-  //   switch (failure.runtimeType) {
-  //     case ServerFailure:
-  //       return 'Не удалось подключиться к серверу';
-  //     case SocketFailure:
-  //       return 'Не удалось подключиться к серверу /socket';
-  //     // case UnauthorizedFailure:
-  //     //   return 'Token has been expired';
-  //     default:
-  //       return 'Unexpected Error';
-  //   }
-  // }
+// String _mapFailure(Failure failure) {
+//   switch (failure.runtimeType) {
+//     case ServerFailure:
+//       return 'Не удалось подключиться к серверу';
+//     case SocketFailure:
+//       return 'Не удалось подключиться к серверу /socket';
+//     // case UnauthorizedFailure:
+//     //   return 'Token has been expired';
+//     default:
+//       return 'Unexpected Error';
+//   }
+// }
 }

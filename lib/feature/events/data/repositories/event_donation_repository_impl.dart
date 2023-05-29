@@ -17,7 +17,8 @@ class EventDonationRepositoryImpl implements EventDonationRepository {
   });
 
   @override
-  Future<Either<Failure, EventDonation>> makeDonation(int eventId, double amount) async{
+  Future<Either<Failure, EventDonation>> makeDonation(
+      int eventId, double amount) async {
     return await _eventDonation(() {
       return eventDonationRepository.makeDonation(eventId, amount);
     });

@@ -1,12 +1,11 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:eventer_app/common/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../../common/app_colors.dart';
 import '../../../../../../common/localization.dart';
 import '../../../../../../common/widgets/space_widgets.dart';
-import '../../../../../user/data/models/event.dart' as model;
+import '../../../../../user/data/models/event/event.dart' as model;
 
 class OrganizerHeader extends StatelessWidget {
   final model.Organizer organizer;

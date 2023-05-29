@@ -4,7 +4,7 @@ import 'package:eventer_app/core/error/exception.dart';
 import 'package:eventer_app/service/dio/dio_client.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../models/event.dart';
+import '../models/event/event.dart';
 
 abstract class EventsRemoteDataSource {
   /// GET - /event?page=<int>&name=<string>

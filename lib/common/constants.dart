@@ -13,6 +13,9 @@ class ApiConstants {
   static const String ORGANIZER_INFO = '/organizer/info/';
   static const String FEEDBACK = '/feedback/';
   static const String EVENT_DONATION = '/event_donation/';
+  static const String FAVORITE_ORGANIZER = '/favorite_organizer/';
+  static const String FAVORITE_ORGANIZER_USER_FAVORITE_ORGANIZERS =
+      '/favourite_organizer/user_favourite_organizers';
 }
 
 class CacheConstants {
@@ -53,4 +56,5 @@ class MyRouterConstants {
   static const String searchRoute = '/search';
   static const String eventDetailsRoute = '/event_details';
   static const String organizerRoute = '/organizer';
+  static const String donationSplashScreen = '/donation_splash_screen';
 }

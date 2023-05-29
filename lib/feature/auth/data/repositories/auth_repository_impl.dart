@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
-import 'package:eventer_app/core/error/failure.dart';
 import 'package:eventer_app/core/error/exception.dart';
+import 'package:eventer_app/core/error/failure.dart';
 import 'package:eventer_app/core/platform/network_info.dart';
 import 'package:eventer_app/feature/auth/domain/repositories/auth_repository.dart';
 
@@ -23,8 +23,17 @@ class AuthLoginRepositoryIml implements AuthRepository {
     });
   }
 
-  Future<Either<Failure, Auth>> _userAuth(
-      Future<Auth> Function() authLogin) async {
+  @override
+  Future<Either<Failure, bool>> userRegistration(
+      String firstName, String lastName, String email, String password) async {
+    return await _userAuth(() {
+      return authRemoteDataSource.userRegistration(
+          firstName, lastName, email, password);
+    });
+  }
+
+  Future<Either<Failure, T>> _userAuth<T>(
+      Future<T> Function() authLogin) async {
     if (await networkInfo.isConnected) {
       try {
         final remoteAuthLogin = await authLogin();

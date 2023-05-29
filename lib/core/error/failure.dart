@@ -22,7 +22,6 @@ class NotFoundFailure extends Failure {
   }
 }
 
-
 class EmailAndPassFailure extends Failure {
   @override
   String getError() {

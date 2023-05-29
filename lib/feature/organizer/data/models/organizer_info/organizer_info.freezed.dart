@@ -21,10 +21,13 @@ OrganizerInfo _$OrganizerInfoFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$OrganizerInfo {
   int get countOfSubscribers => throw _privateConstructorUsedError;
+
   int get countOfEvents => throw _privateConstructorUsedError;
+
   bool get isSubscribed => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
   $OrganizerInfoCopyWith<OrganizerInfo> get copyWith =>
       throw _privateConstructorUsedError;
@@ -35,6 +38,7 @@ abstract class $OrganizerInfoCopyWith<$Res> {
   factory $OrganizerInfoCopyWith(
           OrganizerInfo value, $Res Function(OrganizerInfo) then) =
       _$OrganizerInfoCopyWithImpl<$Res, OrganizerInfo>;
+
   @useResult
   $Res call({int countOfSubscribers, int countOfEvents, bool isSubscribed});
 }
@@ -46,6 +50,7 @@ class _$OrganizerInfoCopyWithImpl<$Res, $Val extends OrganizerInfo>
 
   // ignore: unused_field
   final $Val _value;
+
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -79,6 +84,7 @@ abstract class _$$_OrganizerInfoCopyWith<$Res>
   factory _$$_OrganizerInfoCopyWith(
           _$_OrganizerInfo value, $Res Function(_$_OrganizerInfo) then) =
       __$$_OrganizerInfoCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call({int countOfSubscribers, int countOfEvents, bool isSubscribed});
@@ -182,10 +188,13 @@ abstract class _OrganizerInfo implements OrganizerInfo {
 
   @override
   int get countOfSubscribers;
+
   @override
   int get countOfEvents;
+
   @override
   bool get isSubscribed;
+
   @override
   @JsonKey(ignore: true)
   _$$_OrganizerInfoCopyWith<_$_OrganizerInfo> get copyWith =>

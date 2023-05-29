@@ -21,9 +21,11 @@ Auth _$AuthFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Auth {
   String get accessToken => throw _privateConstructorUsedError;
+
   String get refreshToken => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
   $AuthCopyWith<Auth> get copyWith => throw _privateConstructorUsedError;
 }
@@ -32,6 +34,7 @@ mixin _$Auth {
 abstract class $AuthCopyWith<$Res> {
   factory $AuthCopyWith(Auth value, $Res Function(Auth) then) =
       _$AuthCopyWithImpl<$Res, Auth>;
+
   @useResult
   $Res call({String accessToken, String refreshToken});
 }
@@ -43,6 +46,7 @@ class _$AuthCopyWithImpl<$Res, $Val extends Auth>
 
   // ignore: unused_field
   final $Val _value;
+
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -69,6 +73,7 @@ class _$AuthCopyWithImpl<$Res, $Val extends Auth>
 abstract class _$$_AuthCopyWith<$Res> implements $AuthCopyWith<$Res> {
   factory _$$_AuthCopyWith(_$_Auth value, $Res Function(_$_Auth) then) =
       __$$_AuthCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call({String accessToken, String refreshToken});
@@ -154,8 +159,10 @@ abstract class _Auth implements Auth {
 
   @override
   String get accessToken;
+
   @override
   String get refreshToken;
+
   @override
   @JsonKey(ignore: true)
   _$$_AuthCopyWith<_$_Auth> get copyWith => throw _privateConstructorUsedError;

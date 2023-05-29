@@ -9,6 +9,7 @@ import 'failure.dart';
 abstract class Error implements Exception {
   Failure getFailure();
 }
+
 class ServerError implements Error {
   @override
   getFailure() {
@@ -53,7 +54,6 @@ class NetworkError implements Error {
 // }
 
 class SocketError implements Error {
-
   @override
   getFailure() {
     return SocketFailure();

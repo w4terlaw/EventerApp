@@ -17,13 +17,16 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$EventBookingEvent {
   int get eventId => throw _privateConstructorUsedError;
+
   EventDatesCheckbox get eventDates => throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(int eventId, EventDatesCheckbox eventDates)
         eventBooking,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int eventId, EventDatesCheckbox eventDates)? eventBooking,
@@ -35,11 +38,13 @@ mixin _$EventBookingEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_EventBooking value) eventBooking,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_EventBooking value)? eventBooking,
@@ -71,9 +76,9 @@ class _$EventBookingEventCopyWithImpl<$Res, $Val extends EventBookingEvent>
     implements $EventBookingEventCopyWith<$Res> {
   _$EventBookingEventCopyWithImpl(this._value, this._then);
 
-  // ignore: unused_field
+// ignore: unused_field
   final $Val _value;
-  // ignore: unused_field
+// ignore: unused_field
   final $Res Function($Val) _then;
 
   @pragma('vm:prefer-inline')
@@ -306,9 +311,9 @@ class _$EventBookingStateCopyWithImpl<$Res, $Val extends EventBookingState>
     implements $EventBookingStateCopyWith<$Res> {
   _$EventBookingStateCopyWithImpl(this._value, this._then);
 
-  // ignore: unused_field
+// ignore: unused_field
   final $Val _value;
-  // ignore: unused_field
+// ignore: unused_field
   final $Res Function($Val) _then;
 }
 

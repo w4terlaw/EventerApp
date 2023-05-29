@@ -1,23 +1,21 @@
 import 'package:eventer_app/common/app_colors.dart';
+import 'package:eventer_app/common/constants.dart';
+import 'package:eventer_app/common/localization.dart';
 import 'package:eventer_app/common/widgets/space_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:eventer_app/common/localization.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../../bloc/user_login_bloc/user_login_bloc.dart';
 
 class OtherActions extends StatelessWidget {
   const OtherActions({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final logBloc = context.watch<UserLoginBloc>();
     return Column(
       children: [
-        Text(
-          L10n.or,
-          style: Theme.of(context)
-              .textTheme
-              .titleMedium!
-              .copyWith(color: AppColors.secondaryTextColor),
-        ),
-        const VerticalSpace(20),
+        // const VerticalSpace(10),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
@@ -35,7 +33,16 @@ class OtherActions extends StatelessWidget {
                     .copyWith(color: AppColors.secondaryColor),
               ),
               onTap: () {
-                Navigator.pushNamed(context, '/registration');
+                Navigator.pushNamed(
+                        context, MyRouterConstants.registrationRoute)
+                    .whenComplete(
+                  () {
+                    logBloc.emit(
+                      const UserLoginState.error(
+                          message: 'Вы успешно зарегистрировались'),
+                    );
+                  },
+                );
               },
             )
           ],

@@ -1,9 +1,9 @@
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
 
-import '../../data/models/event.dart';
 import '/core/error/failure.dart';
 import '/core/usecases/usecase.dart';
+import '../../data/models/event/event.dart';
 import '../repositories/events_repository.dart';
 
 class GetEvent extends UseCase<Event, PageEventParams> {

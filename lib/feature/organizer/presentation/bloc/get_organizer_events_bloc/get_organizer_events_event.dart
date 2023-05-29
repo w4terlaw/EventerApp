@@ -5,5 +5,5 @@ class GetOrganizerEventsEvent with _$GetOrganizerEventsEvent {
   const factory GetOrganizerEventsEvent.getEvents({
     required int page,
     required int organizerId,
-}) = _GetEvents;
+  }) = _GetEvents;
 }

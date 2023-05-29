@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 import '../../../../../../common/constants.dart';
 import '../../../../../../common/date_format.dart';
-import '../../../widgets/mini_tabs.dart';
 import '../../../../../../common/widgets/space_widgets.dart';
-import '../../../../../user/data/models/event.dart' as model;
+import '../../../../../user/data/models/event/event.dart' as model;
+import '../../../widgets/mini_tabs.dart';
 
 class EventDatesList extends StatelessWidget {
   final List<model.EventDates> eventDates;

@@ -1,7 +1,7 @@
 import 'package:eventer_app/common/app_colors.dart';
 import 'package:eventer_app/service/locator_service.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../user/presentation/bloc/get_list_events_bloc/get_list_events_bloc.dart';
 import 'search_body.dart';
@@ -14,21 +14,19 @@ class SearchPage extends StatelessWidget {
     return Scaffold(
       // drawer: const AppDrawer(),
       appBar: AppBar(
-        backgroundColor: Colors.white,
         elevation: 0,
         centerTitle: false,
-        leading: TextButton(
-          child: Image.asset(
-            'assets/icons/arrow-left.png',
-            color: AppColors.mainTextColor,
-            height: 24,
-            width: 24,
-            // scale: 20,
-          ),
-          onPressed: () => Navigator.pop(context),
+        leading: BackButton(
+          color: Colors.white,
         ),
         titleSpacing: 0,
-        title: Text('Поиск', style: Theme.of(context).textTheme.headlineLarge),
+        backgroundColor: AppColors.navbarColor,
+        title: Text(
+          'Поиск мероприятий',
+          style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                color: Colors.white,
+              ),
+        ),
       ),
       body: const SafeArea(
         child: Wrapper(),

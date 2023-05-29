@@ -7,11 +7,9 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import '../../../../../core/error/failure.dart';
 import '../../../domain/use_cases/get_organizer_feedbacks.dart';
 
-part 'get_organizer_feedbacks_event.dart';
-
-part 'get_organizer_feedbacks_state.dart';
-
 part 'get_organizer_feedbacks_bloc.freezed.dart';
+part 'get_organizer_feedbacks_event.dart';
+part 'get_organizer_feedbacks_state.dart';
 
 class GetOrganizerFeedbacksBloc
     extends Bloc<GetOrganizerFeedbacksEvent, GetOrganizerFeedbacksState> {

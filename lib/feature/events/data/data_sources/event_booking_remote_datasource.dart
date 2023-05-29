@@ -15,6 +15,8 @@ abstract class EventBookingRemoteDataSource {
   Future<List<Booking>> myBookings(int eventId);
 
   Future<bool> deleteBooking(int bookingId);
+
+  Future<List<Booking>> userBookings();
 }
 
 class EventBookingRemoteDataSourceImpl implements EventBookingRemoteDataSource {
@@ -52,7 +54,6 @@ class EventBookingRemoteDataSourceImpl implements EventBookingRemoteDataSource {
 
   @override
   Future<List<Booking>> myBookings(int eventId) async {
-    dynamic bookings;
     try {
       final response = await dioClient.dio.get(
         ApiConstants.BOOKING,
@@ -78,6 +79,25 @@ class EventBookingRemoteDataSourceImpl implements EventBookingRemoteDataSource {
         '${ApiConstants.BOOKING}/$bookingId',
       );
       return true;
+    } on DioError catch (e) {
+      throw ServerError();
+    }
+  }
+
+  @override
+  Future<List<Booking>> userBookings() async {
+    try {
+      final response = await dioClient.dio.get(
+        ApiConstants.BOOKING,
+        queryParameters: {
+          "userId": sharedPreferences.getString(CacheConstants.CACHED_USER_ID),
+        },
+      );
+
+      final bookings = response.data;
+      return (bookings as List)
+          .map((booking) => Booking.fromJson(booking))
+          .toList();
     } on DioError catch (e) {
       throw ServerError();
     }

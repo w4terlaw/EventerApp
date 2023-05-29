@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../../common/date_format.dart';
-import '../../../widgets/mini_tabs.dart';
 import '../../../../../../common/widgets/space_widgets.dart';
-import '../../../../../user/data/models/event.dart' as model;
+import '../../../../../user/data/models/event/event.dart' as model;
 import '../../../../data/models/event_dates_checkbox.dart';
+import '../../../widgets/mini_tabs.dart';
 
 class EventDatesSelectCheckbox extends StatefulWidget {
   final EventDatesCheckbox eventDatesCheckbox;

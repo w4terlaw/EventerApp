@@ -7,11 +7,9 @@ import '../../../../../core/error/failure.dart';
 import '../../../data/models/organizer/organizer.dart';
 import '../../../domain/use_cases/get_organizer.dart';
 
-part 'get_organizer_event.dart';
-
-part 'get_organizer_state.dart';
-
 part 'get_organizer_bloc.freezed.dart';
+part 'get_organizer_event.dart';
+part 'get_organizer_state.dart';
 
 class GetOrganizerBloc extends Bloc<GetOrganizerEvent, GetOrganizerState> {
   final GetOrganizer getOrganizerUseCase;

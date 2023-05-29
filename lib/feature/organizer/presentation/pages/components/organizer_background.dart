@@ -4,8 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../common/app_colors.dart';
-import '../../../../../common/localization.dart';
-import '../../../../../common/widgets/button_widgets.dart';
 import '../../../../../common/widgets/skeleton_widgets.dart';
 import '../../../../../common/widgets/space_widgets.dart';
 import '../../../data/models/organizer/organizer.dart';
@@ -22,7 +20,7 @@ class OrganizerBackground extends StatelessWidget {
       leading: const BackButton(color: AppColors.mainTextColor),
       title: Text(
         organizer.name,
-        style: const TextStyle(color: Colors.black),
+        style: Theme.of(context).textTheme.titleLarge,
       ),
       titleSpacing: 0,
       actions: [
@@ -34,11 +32,11 @@ class OrganizerBackground extends StatelessWidget {
           onPressed: () {},
         ),
       ],
-      expandedHeight: 370.0.h,
+      expandedHeight: 380.h,
       // floating: false,
       pinned: true,
       elevation: 0,
-      backgroundColor: Colors.white,
+      backgroundColor: AppColors.backgroundColor,
       stretch: true,
       flexibleSpace: FlexibleSpaceBar(
         centerTitle: true,
@@ -51,7 +49,7 @@ class OrganizerBackground extends StatelessWidget {
               children: [
                 SizedBox(
                   width: double.infinity,
-                  height: 240,
+                  height: 235.h,
                   child: CachedNetworkImage(
                     fit: BoxFit.cover,
                     imageUrl: organizer.background,
@@ -60,17 +58,23 @@ class OrganizerBackground extends StatelessWidget {
                 ),
                 Center(
                   child: Container(
-                    margin: const EdgeInsets.only(top: 195),
+                    margin: const EdgeInsets.only(top: 180),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(200),
-                      child: SizedBox(
-                        width: 80,
-                        height: 80,
-                        child: CachedNetworkImage(
-                          fit: BoxFit.cover,
-                          imageUrl: organizer.logo,
-                          placeholder: (context, url) =>
-                              const MySkeletonImage(),
+                      child: Container(
+                        decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            border: Border.all(width: 5, color: Colors.white)),
+                        width: 100.w,
+                        height: 100.w,
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(200),
+                          child: CachedNetworkImage(
+                            fit: BoxFit.cover,
+                            imageUrl: organizer.logo,
+                            placeholder: (context, url) =>
+                                const MySkeletonImage(),
+                          ),
                         ),
                       ),
                     ),
@@ -88,7 +92,9 @@ class OrganizerBackground extends StatelessWidget {
             //   style: Theme.of(context).textTheme.headlineLarge,
             // ),
             // const VerticalSpace(15),
-            OrganizerOtherInfo(organizerId: organizer.id,)
+            OrganizerOtherInfo(
+              organizerId: organizer.id,
+            )
           ],
         ),
       ),

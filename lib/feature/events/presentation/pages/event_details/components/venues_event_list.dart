@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../../../common/constants.dart';
 import '../../../../../../common/widgets/space_widgets.dart';
-import '../../../../../user/data/models/event.dart' as model;
+import '../../../../../user/data/models/event/event.dart' as model;
 import '../../../widgets/mini_tabs.dart';
 
 class VenuesEventList extends StatelessWidget {
@@ -24,7 +24,7 @@ class VenuesEventList extends StatelessWidget {
           return Row(
             children: [
               MiniTab(
-                iconPath: 'assets/icons/location.png',
+                iconPath: 'assets/icons/location_not_point.png',
                 title: name,
                 subTitle: location,
               ),

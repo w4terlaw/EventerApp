@@ -3,7 +3,6 @@ import 'package:eventer_app/common/widgets/space_widgets.dart';
 import 'package:eventer_app/common/widgets/switch_toggle_widget.dart';
 import 'package:flutter/material.dart';
 
-
 class AfterInputs extends StatelessWidget {
   const AfterInputs({Key? key}) : super(key: key);
 

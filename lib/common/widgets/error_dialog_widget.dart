@@ -2,7 +2,6 @@ import 'package:eventer_app/common/localization.dart';
 import 'package:eventer_app/core/error/failure.dart';
 import 'package:flutter/material.dart';
 
-
 class ErrorDialog extends StatelessWidget {
   final Failure failure;
   final Function() onPressed;

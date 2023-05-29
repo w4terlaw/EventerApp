@@ -13,7 +13,8 @@ class MyDateFormat {
 
   static String dateTimeFormat(DateTime dateTime, String format) {
     initializeDateFormatting('ru', null);
-    final formatter = DateFormat(format, 'ru').format(dateTime).replaceAll('.', '');
+    final formatter =
+        DateFormat(format, 'ru').format(dateTime).replaceAll('.', '');
     return formatter;
   }
 }

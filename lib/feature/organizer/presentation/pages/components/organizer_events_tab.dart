@@ -52,7 +52,9 @@ class OrganizerEventsTab extends StatelessWidget {
         failure: failure,
         onPressed: () => context.read<GetOrganizerEventsBloc>().add(
               GetOrganizerEventsEvent.getEvents(
-                  page: 1, organizerId: organizerId),
+                page: 1,
+                organizerId: organizerId,
+              ),
             ),
       ),
     );

@@ -4,7 +4,6 @@ import '../../../../organizer/data/models/event/event.dart';
 import '../booking/booking.dart';
 
 part 'event_donation.freezed.dart';
-
 part 'event_donation.g.dart';
 
 @freezed

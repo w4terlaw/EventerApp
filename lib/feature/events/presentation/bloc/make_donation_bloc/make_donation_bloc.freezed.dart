@@ -17,12 +17,15 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$MakeDonationEvent {
   int get eventId => throw _privateConstructorUsedError;
+
   double get amount => throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(int eventId, double amount) makeDonation,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int eventId, double amount)? makeDonation,
@@ -34,11 +37,13 @@ mixin _$MakeDonationEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_MakeDonation value) makeDonation,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_MakeDonation value)? makeDonation,
@@ -70,9 +75,9 @@ class _$MakeDonationEventCopyWithImpl<$Res, $Val extends MakeDonationEvent>
     implements $MakeDonationEventCopyWith<$Res> {
   _$MakeDonationEventCopyWithImpl(this._value, this._then);
 
-  // ignore: unused_field
+// ignore: unused_field
   final $Val _value;
-  // ignore: unused_field
+// ignore: unused_field
   final $Res Function($Val) _then;
 
   @pragma('vm:prefer-inline')
@@ -297,9 +302,9 @@ class _$MakeDonationStateCopyWithImpl<$Res, $Val extends MakeDonationState>
     implements $MakeDonationStateCopyWith<$Res> {
   _$MakeDonationStateCopyWithImpl(this._value, this._then);
 
-  // ignore: unused_field
+// ignore: unused_field
   final $Val _value;
-  // ignore: unused_field
+// ignore: unused_field
   final $Res Function($Val) _then;
 }
 

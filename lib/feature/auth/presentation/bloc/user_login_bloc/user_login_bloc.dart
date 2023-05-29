@@ -6,11 +6,9 @@ import 'package:eventer_app/feature/auth/domain/use_cases/user_login.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'user_login_event.dart';
-
-part 'user_login_state.dart';
-
 part 'user_login_bloc.freezed.dart';
+part 'user_login_event.dart';
+part 'user_login_state.dart';
 
 class UserLoginBloc extends Bloc<UserLoginEvent, UserLoginState> {
   final UserLogin userLoginUseCase;
@@ -29,8 +27,7 @@ class UserLoginBloc extends Bloc<UserLoginEvent, UserLoginState> {
         UserLoginParams(email: event.email, password: event.password));
 
     failureOrSuccess.fold(
-      (failure) =>
-          emit(UserLoginState.error(message: failure.getError())),
+      (failure) => emit(UserLoginState.error(message: failure.getError())),
       (_) => navigatorKey.currentState?.pushReplacementNamed('/home'),
     );
   }

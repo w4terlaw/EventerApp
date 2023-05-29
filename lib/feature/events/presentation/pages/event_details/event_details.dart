@@ -41,7 +41,7 @@ class Wrapper extends StatelessWidget {
         ),
         BlocProvider<MyBookingsBloc>(
           create: (context) => MyBookingsBloc(
-            getMyEventBookingsUseCase: sl(),
+            userEventBookingsByEventUseCase: sl(),
             deleteBookingsUseCase: sl(),
           )..add(MyBookingsEvent.fetch(eventId: eventId)),
         ),

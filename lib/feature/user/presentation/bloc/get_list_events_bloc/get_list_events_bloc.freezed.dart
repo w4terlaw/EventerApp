@@ -17,12 +17,15 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$EventsEvent {
   int get page => throw _privateConstructorUsedError;
+
   String get name => throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(int page, String name) fetch,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int page, String name)? fetch,
@@ -34,11 +37,13 @@ mixin _$EventsEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_EventsEventFetch value) fetch,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_EventsEventFetch value)? fetch,
@@ -70,9 +75,9 @@ class _$EventsEventCopyWithImpl<$Res, $Val extends EventsEvent>
     implements $EventsEventCopyWith<$Res> {
   _$EventsEventCopyWithImpl(this._value, this._then);
 
-  // ignore: unused_field
+// ignore: unused_field
   final $Val _value;
-  // ignore: unused_field
+// ignore: unused_field
   final $Res Function($Val) _then;
 
   @pragma('vm:prefer-inline')
@@ -297,9 +302,9 @@ class _$EventsStateCopyWithImpl<$Res, $Val extends EventsState>
     implements $EventsStateCopyWith<$Res> {
   _$EventsStateCopyWithImpl(this._value, this._then);
 
-  // ignore: unused_field
+// ignore: unused_field
   final $Val _value;
-  // ignore: unused_field
+// ignore: unused_field
   final $Res Function($Val) _then;
 }
 
@@ -452,7 +457,7 @@ class _$_EventsStateLoaded implements _EventsStateLoaded {
   @override
   List<Event> get events {
     if (_events is EqualUnmodifiableListView) return _events;
-    // ignore: implicit_dynamic_type
+// ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_events);
   }
 

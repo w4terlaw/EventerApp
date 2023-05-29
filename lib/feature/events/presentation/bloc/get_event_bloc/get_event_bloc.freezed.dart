@@ -17,11 +17,13 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$GetEventEvent {
   int get eventId => throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(int eventId) byId,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int eventId)? byId,
@@ -33,11 +35,13 @@ mixin _$GetEventEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_GetEventById value) byId,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_GetEventById value)? byId,
@@ -69,9 +73,9 @@ class _$GetEventEventCopyWithImpl<$Res, $Val extends GetEventEvent>
     implements $GetEventEventCopyWith<$Res> {
   _$GetEventEventCopyWithImpl(this._value, this._then);
 
-  // ignore: unused_field
+// ignore: unused_field
   final $Val _value;
-  // ignore: unused_field
+// ignore: unused_field
   final $Res Function($Val) _then;
 
   @pragma('vm:prefer-inline')
@@ -279,9 +283,9 @@ class _$GetEventStateCopyWithImpl<$Res, $Val extends GetEventState>
     implements $GetEventStateCopyWith<$Res> {
   _$GetEventStateCopyWithImpl(this._value, this._then);
 
-  // ignore: unused_field
+// ignore: unused_field
   final $Val _value;
-  // ignore: unused_field
+// ignore: unused_field
   final $Res Function($Val) _then;
 }
 

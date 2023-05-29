@@ -14,7 +14,8 @@ abstract class OrganizerRemoteDataSource {
   Future<Organizer> getOrganizer(int organizerId);
 
   /// GET - /organizer/info/<id>
-  Future<OrganizerInfo> getOrganizerOtherInfo(int organizerId, bool toggleSubscribe);
+  Future<OrganizerInfo> getOrganizerOtherInfo(
+      int organizerId, bool toggleSubscribe);
 
   /// GET - /event/?page=<int>&organizerId=<id>
   Future<List<Event>> getOrganizerEvents(int page, int organizerId);
@@ -39,11 +40,11 @@ class OrganizerRemoteDataSourceImpl implements OrganizerRemoteDataSource {
   }
 
   @override
-  Future<OrganizerInfo> getOrganizerOtherInfo(int organizerId, bool toggleSubscribe) async {
+  Future<OrganizerInfo> getOrganizerOtherInfo(
+      int organizerId, bool toggleSubscribe) async {
     final organizerInfo = await _getEndPoint(
-      endpoint: '${ApiConstants.ORGANIZER_INFO}/$organizerId',
-      queryParameters: {'toggle_subscribe': toggleSubscribe}
-    );
+        endpoint: '${ApiConstants.ORGANIZER_INFO}/$organizerId',
+        queryParameters: {'toggle_subscribe': toggleSubscribe});
     return OrganizerInfo.fromJson(organizerInfo);
   }
 

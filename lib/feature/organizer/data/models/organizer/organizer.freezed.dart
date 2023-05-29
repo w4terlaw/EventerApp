@@ -21,19 +21,31 @@ Organizer _$OrganizerFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Organizer {
   int get id => throw _privateConstructorUsedError;
+
   String get name => throw _privateConstructorUsedError;
+
   String get logo => throw _privateConstructorUsedError;
+
   String get background => throw _privateConstructorUsedError;
+
   String get description => throw _privateConstructorUsedError;
+
   String get cardNumber => throw _privateConstructorUsedError;
+
   String get cardHolderName => throw _privateConstructorUsedError;
+
   String? get facebook => throw _privateConstructorUsedError;
+
   String? get telegram => throw _privateConstructorUsedError;
+
   String? get vk => throw _privateConstructorUsedError;
+
   String? get twitter => throw _privateConstructorUsedError;
+
   String? get instagram => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
   $OrganizerCopyWith<Organizer> get copyWith =>
       throw _privateConstructorUsedError;
@@ -43,6 +55,7 @@ mixin _$Organizer {
 abstract class $OrganizerCopyWith<$Res> {
   factory $OrganizerCopyWith(Organizer value, $Res Function(Organizer) then) =
       _$OrganizerCopyWithImpl<$Res, Organizer>;
+
   @useResult
   $Res call(
       {int id,
@@ -66,6 +79,7 @@ class _$OrganizerCopyWithImpl<$Res, $Val extends Organizer>
 
   // ignore: unused_field
   final $Val _value;
+
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -143,6 +157,7 @@ abstract class _$$_OrganizerCopyWith<$Res> implements $OrganizerCopyWith<$Res> {
   factory _$$_OrganizerCopyWith(
           _$_Organizer value, $Res Function(_$_Organizer) then) =
       __$$_OrganizerCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call(
@@ -364,28 +379,40 @@ abstract class _Organizer implements Organizer {
 
   @override
   int get id;
+
   @override
   String get name;
+
   @override
   String get logo;
+
   @override
   String get background;
+
   @override
   String get description;
+
   @override
   String get cardNumber;
+
   @override
   String get cardHolderName;
+
   @override
   String? get facebook;
+
   @override
   String? get telegram;
+
   @override
   String? get vk;
+
   @override
   String? get twitter;
+
   @override
   String? get instagram;
+
   @override
   @JsonKey(ignore: true)
   _$$_OrganizerCopyWith<_$_Organizer> get copyWith =>

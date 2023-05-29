@@ -25,7 +25,7 @@ class AboutEvent extends StatelessWidget {
             style: appFont(
                 textStyle: Theme.of(context)
                     .textTheme
-                    .headlineMedium!
+                    .titleLarge!
                     .copyWith(color: AppColors.mainTextColor),
                 height: 0),
           ),

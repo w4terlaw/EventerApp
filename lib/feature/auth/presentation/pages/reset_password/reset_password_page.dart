@@ -33,12 +33,8 @@ class ResetPasswordBody extends StatelessWidget {
           const Inputs(),
           const VerticalSpace(40),
           MyElevatedButton(
-            widget: Text(
-              L10n.sendUpperCase,
-              style: Theme.of(context)
-                  .textTheme
-                  .labelLarge
-            ),
+            widget: Text(L10n.sendUpperCase,
+                style: Theme.of(context).textTheme.labelLarge),
             onPressed: () {},
           )
         ],
@@ -75,18 +71,14 @@ class ResetPassword extends StatelessWidget {
           children: <Text>[
             Text(
               L10n.resetPassword,
-              style: Theme.of(context)
-                  .textTheme
-                  .headlineLarge,
+              style: Theme.of(context).textTheme.headlineLarge,
             ),
           ],
         ),
         const VerticalSpace(12),
         Text(
           L10n.resetPasswordDescription,
-          style: Theme.of(context)
-              .textTheme
-              .bodyMedium!.copyWith(height: 2.0),
+          style: Theme.of(context).textTheme.bodyMedium!.copyWith(height: 2.0),
         ),
       ],
     );

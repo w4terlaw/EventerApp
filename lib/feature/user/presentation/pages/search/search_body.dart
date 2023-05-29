@@ -1,9 +1,9 @@
 import 'package:eventer_app/app.dart';
+import 'package:eventer_app/common/constants.dart';
+import 'package:eventer_app/common/widgets/event_card_widgets.dart';
 import 'package:eventer_app/common/widgets/search_widget.dart';
 import 'package:eventer_app/common/widgets/skeleton_widgets.dart';
 import 'package:eventer_app/common/widgets/space_widgets.dart';
-import 'package:eventer_app/common/widgets/event_card_widgets.dart';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -28,7 +28,7 @@ class SearchEventPageBody extends StatelessWidget {
               borderRadius: BorderRadius.circular(12),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.grey.withOpacity(0.1),
+                  color: Colors.grey.withOpacity(0.2),
                   spreadRadius: 3,
                   blurRadius: 10,
                   // offset: const Offset(0, 8),
@@ -65,12 +65,13 @@ class SearchEventPageBody extends StatelessWidget {
                     final event = events[index];
                     return Padding(
                       padding: const EdgeInsets.only(left: 22.0, right: 22.0),
-                      child: GestureDetector(
+                      child: InkWell(
+                        borderRadius: BorderRadius.circular(16),
                         onTap: () {
                           final int id = event.id;
-                          navigatorKey.currentState
-                              ?.pushNamed('/event_details', arguments: id);
-                          // Navigator.pushNamed(context, '/event_details', arguments: id);
+                          navigatorKey.currentState?.pushNamed(
+                              MyRouterConstants.eventDetailsRoute,
+                              arguments: id);
                         },
                         child: EventCompactCard(
                           previewUrl: event.venues[0].photos[0],

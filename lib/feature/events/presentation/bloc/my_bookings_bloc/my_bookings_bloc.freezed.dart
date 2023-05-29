@@ -17,12 +17,14 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$MyBookingsEvent {
   int get eventId => throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(int eventId) fetch,
     required TResult Function(int bookingId, int eventId) delete,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int eventId)? fetch,
@@ -36,12 +38,14 @@ mixin _$MyBookingsEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_MyBookingsFetch value) fetch,
     required TResult Function(_MyBookingsDelete value) delete,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_MyBookingsFetch value)? fetch,
@@ -75,9 +79,9 @@ class _$MyBookingsEventCopyWithImpl<$Res, $Val extends MyBookingsEvent>
     implements $MyBookingsEventCopyWith<$Res> {
   _$MyBookingsEventCopyWithImpl(this._value, this._then);
 
-  // ignore: unused_field
+// ignore: unused_field
   final $Val _value;
-  // ignore: unused_field
+// ignore: unused_field
   final $Res Function($Val) _then;
 
   @pragma('vm:prefer-inline')
@@ -462,9 +466,9 @@ class _$MyBookingsStateCopyWithImpl<$Res, $Val extends MyBookingsState>
     implements $MyBookingsStateCopyWith<$Res> {
   _$MyBookingsStateCopyWithImpl(this._value, this._then);
 
-  // ignore: unused_field
+// ignore: unused_field
   final $Val _value;
-  // ignore: unused_field
+// ignore: unused_field
   final $Res Function($Val) _then;
 }
 
@@ -620,7 +624,7 @@ class _$_Loaded with DiagnosticableTreeMixin implements _Loaded {
   @override
   List<Booking> get bookings {
     if (_bookings is EqualUnmodifiableListView) return _bookings;
-    // ignore: implicit_dynamic_type
+// ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_bookings);
   }
 

@@ -1,10 +1,10 @@
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
 
-import '../../data/models/auth.dart';
-import '../repositories/auth_repository.dart';
 import '/core/error/failure.dart';
 import '/core/usecases/usecase.dart';
+import '../../data/models/auth.dart';
+import '../repositories/auth_repository.dart';
 
 class UserLogin extends UseCase<Auth, UserLoginParams> {
   final AuthRepository authLoginRepository;

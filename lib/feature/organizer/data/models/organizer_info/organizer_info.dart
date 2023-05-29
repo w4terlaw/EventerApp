@@ -1,7 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'organizer_info.freezed.dart';
-
 part 'organizer_info.g.dart';
 
 @freezed

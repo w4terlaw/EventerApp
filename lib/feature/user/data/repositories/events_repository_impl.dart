@@ -5,7 +5,7 @@ import 'package:eventer_app/core/platform/network_info.dart';
 
 import '../../domain/repositories/events_repository.dart';
 import '../data_sources/events_remote_datasource.dart';
-import '../models/event.dart';
+import '../models/event/event.dart';
 
 class EventsRepositoryImpl implements EventsRepository {
   final EventsRemoteDataSource eventsRemoteDataSource;

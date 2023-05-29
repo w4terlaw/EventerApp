@@ -7,8 +7,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../../../../common/constants.dart';
 import '../../../../core/error/exception.dart';
 import '../../../../service/dio/dio_client.dart';
-import '../models/booking/booking.dart';
-import '../models/event_dates_checkbox.dart';
 
 abstract class EventDonationRemoteDataSource {
   Future<EventDonation> makeDonation(

@@ -6,23 +6,21 @@ import 'package:eventer_app/feature/events/domain/repositories/event_booking_rep
 import '/core/error/failure.dart';
 import '/core/usecases/usecase.dart';
 
-class GetMyEventBookings extends UseCase<List<Booking>, EventBookingParams> {
+class UserBookingsByEvent extends UseCase<List<Booking>, EventBookingParams> {
   final EventBookingRepository eventBookingRepository;
 
-  GetMyEventBookings(this.eventBookingRepository);
+  UserBookingsByEvent(this.eventBookingRepository);
 
   @override
   Future<Either<Failure, List<Booking>>> call(EventBookingParams params) async {
-    return await eventBookingRepository.myBookings(params.eventId);
+    return await eventBookingRepository.userBookingsByEvent(params.eventId);
   }
 }
 
 class EventBookingParams extends Equatable {
   final int eventId;
 
-  const EventBookingParams({
-    required this.eventId
-  });
+  const EventBookingParams({required this.eventId});
 
   @override
   List<Object?> get props => [eventId];

@@ -21,12 +21,17 @@ EventDonation _$EventDonationFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$EventDonation {
   int get id => throw _privateConstructorUsedError;
+
   DateTime get dateTime => throw _privateConstructorUsedError;
+
   double get amount => throw _privateConstructorUsedError;
+
   User get user => throw _privateConstructorUsedError;
+
   Event get event => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
   $EventDonationCopyWith<EventDonation> get copyWith =>
       throw _privateConstructorUsedError;
@@ -37,10 +42,12 @@ abstract class $EventDonationCopyWith<$Res> {
   factory $EventDonationCopyWith(
           EventDonation value, $Res Function(EventDonation) then) =
       _$EventDonationCopyWithImpl<$Res, EventDonation>;
+
   @useResult
   $Res call({int id, DateTime dateTime, double amount, User user, Event event});
 
   $UserCopyWith<$Res> get user;
+
   $EventCopyWith<$Res> get event;
 }
 
@@ -51,6 +58,7 @@ class _$EventDonationCopyWithImpl<$Res, $Val extends EventDonation>
 
   // ignore: unused_field
   final $Val _value;
+
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -110,12 +118,14 @@ abstract class _$$_EventDonationCopyWith<$Res>
   factory _$$_EventDonationCopyWith(
           _$_EventDonation value, $Res Function(_$_EventDonation) then) =
       __$$_EventDonationCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call({int id, DateTime dateTime, double amount, User user, Event event});
 
   @override
   $UserCopyWith<$Res> get user;
+
   @override
   $EventCopyWith<$Res> get event;
 }
@@ -236,14 +246,19 @@ abstract class _EventDonation implements EventDonation {
 
   @override
   int get id;
+
   @override
   DateTime get dateTime;
+
   @override
   double get amount;
+
   @override
   User get user;
+
   @override
   Event get event;
+
   @override
   @JsonKey(ignore: true)
   _$$_EventDonationCopyWith<_$_EventDonation> get copyWith =>

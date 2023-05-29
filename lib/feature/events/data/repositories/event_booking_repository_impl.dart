@@ -18,7 +18,7 @@ class EventBookingRepositoryImpl implements EventBookingRepository {
   });
 
   @override
-  Future<Either<Failure, Booking>> makeEventBooking(
+  Future<Either<Failure, Booking>> createEventBooking(
       int eventId, EventDatesCheckbox eventDates) async {
     return await _eventBooking(() {
       return eventBookingRemoteDataSource.makeEventBooking(eventId, eventDates);
@@ -26,7 +26,8 @@ class EventBookingRepositoryImpl implements EventBookingRepository {
   }
 
   @override
-  Future<Either<Failure, List<Booking>>> myBookings(int eventId) async {
+  Future<Either<Failure, List<Booking>>> userBookingsByEvent(
+      int eventId) async {
     return await _eventBooking(() {
       return eventBookingRemoteDataSource.myBookings(eventId);
     });
@@ -36,6 +37,13 @@ class EventBookingRepositoryImpl implements EventBookingRepository {
   Future<Either<Failure, bool>> deleteBooking(int bookingId) async {
     return await _eventBooking(() {
       return eventBookingRemoteDataSource.deleteBooking(bookingId);
+    });
+  }
+
+  @override
+  Future<Either<Failure, List<Booking>>> userBookings() async {
+    return await _eventBooking(() {
+      return eventBookingRemoteDataSource.userBookings();
     });
   }
 

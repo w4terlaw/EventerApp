@@ -128,6 +128,9 @@ class AppDrawer extends StatelessWidget {
   void _logOut(BuildContext context) {
     final SharedPreferences sharedPreferences = sl();
     sharedPreferences.remove(CacheConstants.CACHED_ACCESS_TOKEN);
+    sharedPreferences.remove(CacheConstants.CACHED_REFRESH_TOKEN);
+    sharedPreferences.remove(CacheConstants.CACHED_ROLE_ID);
+    sharedPreferences.remove(CacheConstants.CACHED_USER_ID);
     Navigator.pushReplacementNamed(context, '/login');
   }
 }

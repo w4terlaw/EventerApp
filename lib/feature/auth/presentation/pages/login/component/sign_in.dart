@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:eventer_app/common/localization.dart';
+import 'package:flutter/material.dart';
 
 class SignIn extends StatelessWidget {
   const SignIn({Key? key}) : super(key: key);

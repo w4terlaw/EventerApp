@@ -7,21 +7,19 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import '../../../../../core/error/failure.dart';
 import '../../../data/models/booking/booking.dart';
 import '../../../domain/use_cases/deleteBooking.dart';
-import '../../../domain/use_cases/get_my_event_bookings.dart';
-
-part 'my_bookings_event.dart';
-
-part 'my_bookings_state.dart';
+import '../../../domain/use_cases/user_bookings_by_event.dart';
 
 part 'my_bookings_bloc.freezed.dart';
+part 'my_bookings_event.dart';
+part 'my_bookings_state.dart';
 
-class MyBookingsBloc
-    extends Bloc<MyBookingsEvent, MyBookingsState> {
-  final GetMyEventBookings getMyEventBookingsUseCase;
+class MyBookingsBloc extends Bloc<MyBookingsEvent, MyBookingsState> {
+  final UserBookingsByEvent userEventBookingsByEventUseCase;
   final DeleteBooking deleteBookingsUseCase;
 
   MyBookingsBloc(
-      {required this.getMyEventBookingsUseCase, required this.deleteBookingsUseCase})
+      {required this.userEventBookingsByEventUseCase,
+      required this.deleteBookingsUseCase})
       : super(const MyBookingsState.loading()) {
     on<_MyBookingsFetch>(_getMyBookings);
     on<_MyBookingsDelete>(_deleteBooking);
@@ -32,8 +30,8 @@ class MyBookingsBloc
     Emitter<MyBookingsState> emit,
   ) async {
     emit(const MyBookingsState.loading());
-    final failureOrSuccess =
-        await getMyEventBookingsUseCase(EventBookingParams(eventId: event.eventId));
+    final failureOrSuccess = await userEventBookingsByEventUseCase(
+        EventBookingParams(eventId: event.eventId));
     failureOrSuccess.fold(
       (failure) {
         emit(MyBookingsState.error(failure: failure));

@@ -17,11 +17,13 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$GetOrganizerFeedbacksEvent {
   int get organizerId => throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(int organizerId) getFeedbacks,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int organizerId)? getFeedbacks,
@@ -33,11 +35,13 @@ mixin _$GetOrganizerFeedbacksEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_GetFeedbacks value) getFeedbacks,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_GetFeedbacks value)? getFeedbacks,
@@ -71,9 +75,9 @@ class _$GetOrganizerFeedbacksEventCopyWithImpl<$Res,
     implements $GetOrganizerFeedbacksEventCopyWith<$Res> {
   _$GetOrganizerFeedbacksEventCopyWithImpl(this._value, this._then);
 
-  // ignore: unused_field
+// ignore: unused_field
   final $Val _value;
-  // ignore: unused_field
+// ignore: unused_field
   final $Res Function($Val) _then;
 
   @pragma('vm:prefer-inline')
@@ -285,9 +289,9 @@ class _$GetOrganizerFeedbacksStateCopyWithImpl<$Res,
     implements $GetOrganizerFeedbacksStateCopyWith<$Res> {
   _$GetOrganizerFeedbacksStateCopyWithImpl(this._value, this._then);
 
-  // ignore: unused_field
+// ignore: unused_field
   final $Val _value;
-  // ignore: unused_field
+// ignore: unused_field
   final $Res Function($Val) _then;
 }
 
@@ -437,7 +441,7 @@ class _$_Loaded implements _Loaded {
   @override
   List<Feedback> get feedbacks {
     if (_feedbacks is EqualUnmodifiableListView) return _feedbacks;
-    // ignore: implicit_dynamic_type
+// ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_feedbacks);
   }
 

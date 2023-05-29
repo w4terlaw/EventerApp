@@ -2,16 +2,16 @@ import 'package:eventer_app/app.dart';
 import 'package:eventer_app/common/app_colors.dart';
 import 'package:eventer_app/common/localization.dart';
 import 'package:eventer_app/common/widgets/error_dialog_widget.dart';
-import 'package:eventer_app/common/widgets/skeleton_widgets.dart';
-import 'package:eventer_app/common/widgets/space_widgets.dart';
 import 'package:eventer_app/common/widgets/event_card_widgets.dart';
+import 'package:eventer_app/common/widgets/loading_widget.dart';
+import 'package:eventer_app/common/widgets/space_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../../common/constants.dart';
-import '../../../../data/models/event.dart';
+import '../../../../data/models/event/event.dart';
 import '../../../bloc/get_list_events_bloc/get_list_events_bloc.dart';
-
 
 class UpcomingEventsList extends StatelessWidget {
   const UpcomingEventsList({Key? key}) : super(key: key);
@@ -21,11 +21,10 @@ class UpcomingEventsList extends StatelessWidget {
     final state = context.watch<GetListEventsBloc>().state;
     return state.when(
       loading: () =>
-          const SizedBox(height: 260, child: MySkeletonEventCompactCard()),
+          const SizedBox(height: 260, child: Center(child: MyLoadingWidget())),
       loaded: (events) {
         return Column(
           children: <Widget>[
-
             Padding(
               padding: MyPadding.LR_24,
               child: Row(
@@ -55,9 +54,10 @@ class UpcomingEventsList extends StatelessWidget {
             ),
             const VerticalSpace(10),
             SizedBox(
-              height: 270,
+              height: 280.h,
               child: ListView.builder(
-                physics: const BouncingScrollPhysics(),
+                physics: const BouncingScrollPhysics(
+                    parent: AlwaysScrollableScrollPhysics()),
                 padding: const EdgeInsets.only(left: 16.0, right: 16.0),
                 scrollDirection: Axis.horizontal,
                 itemCount: events.length,

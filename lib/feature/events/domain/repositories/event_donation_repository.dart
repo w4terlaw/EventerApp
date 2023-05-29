@@ -4,5 +4,6 @@ import 'package:eventer_app/feature/events/data/models/event_donation/event_dona
 import '../../../../core/error/failure.dart';
 
 abstract class EventDonationRepository {
-  Future<Either<Failure, EventDonation>> makeDonation(int eventId, double amount);
+  Future<Either<Failure, EventDonation>> makeDonation(
+      int eventId, double amount);
 }

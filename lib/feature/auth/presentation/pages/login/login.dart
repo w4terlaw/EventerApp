@@ -22,9 +22,9 @@ class Wrapper extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(
+        BlocProvider<UserLoginBloc>(
           create: (context) => UserLoginBloc(userLoginUseCase: sl()),
-        )
+        ),
       ],
       child: const LoginBody(),
     );

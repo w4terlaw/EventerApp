@@ -9,10 +9,12 @@ import '../../data/models/organizer_info/organizer_info.dart';
 abstract class OrganizerRepository {
   Future<Either<Failure, Organizer>> getOrganizer(int organizerId);
 
-  Future<Either<Failure, OrganizerInfo>> getOrganizerOtherInfo(int organizerId, bool toggleSubscribe);
+  Future<Either<Failure, OrganizerInfo>> getOrganizerOtherInfo(
+      int organizerId, bool toggleSubscribe);
 
   Future<Either<Failure, List<Event>>> getOrganizerEvents(
       int page, int organizerId);
 
-  Future<Either<Failure, List<Feedback>>> getOrganizerFeedbacks(int organizerId);
+  Future<Either<Failure, List<Feedback>>> getOrganizerFeedbacks(
+      int organizerId);
 }

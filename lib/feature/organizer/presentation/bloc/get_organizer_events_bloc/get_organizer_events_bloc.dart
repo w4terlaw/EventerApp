@@ -7,11 +7,9 @@ import '../../../../../core/error/failure.dart';
 import '../../../data/models/event/event.dart';
 import '../../../domain/use_cases/get_organizer_events.dart';
 
-part 'get_organizer_events_event.dart';
-
-part 'get_organizer_events_state.dart';
-
 part 'get_organizer_events_bloc.freezed.dart';
+part 'get_organizer_events_event.dart';
+part 'get_organizer_events_state.dart';
 
 class GetOrganizerEventsBloc
     extends Bloc<GetOrganizerEventsEvent, GetOrganizerEventsState> {

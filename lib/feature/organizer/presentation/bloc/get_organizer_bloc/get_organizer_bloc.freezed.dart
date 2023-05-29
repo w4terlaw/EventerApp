@@ -17,11 +17,13 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$GetOrganizerEvent {
   int get organizerId => throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(int organizerId) get,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int organizerId)? get,
@@ -33,11 +35,13 @@ mixin _$GetOrganizerEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Get value) get,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Get value)? get,
@@ -69,9 +73,9 @@ class _$GetOrganizerEventCopyWithImpl<$Res, $Val extends GetOrganizerEvent>
     implements $GetOrganizerEventCopyWith<$Res> {
   _$GetOrganizerEventCopyWithImpl(this._value, this._then);
 
-  // ignore: unused_field
+// ignore: unused_field
   final $Val _value;
-  // ignore: unused_field
+// ignore: unused_field
   final $Res Function($Val) _then;
 
   @pragma('vm:prefer-inline')
@@ -277,9 +281,9 @@ class _$GetOrganizerStateCopyWithImpl<$Res, $Val extends GetOrganizerState>
     implements $GetOrganizerStateCopyWith<$Res> {
   _$GetOrganizerStateCopyWithImpl(this._value, this._then);
 
-  // ignore: unused_field
+// ignore: unused_field
   final $Val _value;
-  // ignore: unused_field
+// ignore: unused_field
   final $Res Function($Val) _then;
 }
 

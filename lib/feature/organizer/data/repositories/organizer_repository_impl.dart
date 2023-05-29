@@ -30,7 +30,8 @@ class OrganizerRepositoryImpl implements OrganizerRepository {
   Future<Either<Failure, OrganizerInfo>> getOrganizerOtherInfo(
       int organizerId, bool toggleSubscribe) async {
     return await _getRemoteData(() {
-      return organizerRemoteDataSource.getOrganizerOtherInfo(organizerId, toggleSubscribe);
+      return organizerRemoteDataSource.getOrganizerOtherInfo(
+          organizerId, toggleSubscribe);
     });
   }
 
