@@ -6,14 +6,14 @@ part of 'organizer_info.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_OrganizerInfo _$$_OrganizerInfoFromJson(Map<String, dynamic> json) =>
-    _$_OrganizerInfo(
+_$OrganizerInfoImpl _$$OrganizerInfoImplFromJson(Map<String, dynamic> json) =>
+    _$OrganizerInfoImpl(
       countOfSubscribers: json['countOfSubscribers'] as int,
       countOfEvents: json['countOfEvents'] as int,
       isSubscribed: json['isSubscribed'] as bool,
     );
 
-Map<String, dynamic> _$$_OrganizerInfoToJson(_$_OrganizerInfo instance) =>
+Map<String, dynamic> _$$OrganizerInfoImplToJson(_$OrganizerInfoImpl instance) =>
     <String, dynamic>{
       'countOfSubscribers': instance.countOfSubscribers,
       'countOfEvents': instance.countOfEvents,

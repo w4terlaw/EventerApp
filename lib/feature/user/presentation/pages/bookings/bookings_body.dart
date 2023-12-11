@@ -113,7 +113,7 @@ class UserBookingsList extends StatelessWidget {
                       color: AppColors.mainTextColor,
                     ),
                     width: 300.w,
-                    height: 140.h,
+                    height: 160.h,
                     padding: const EdgeInsets.all(16),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,

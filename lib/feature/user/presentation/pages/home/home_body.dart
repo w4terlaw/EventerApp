@@ -103,16 +103,12 @@ class HomePageBody extends StatelessWidget {
           ],
         ),
         SliverToBoxAdapter(
-          child: MyRefreshIndicator(
-            onRefresh: () => context
-                .read<GetListEventsBloc>()
-                .add(const EventsEvent.fetch(page: 1, name: '')),
-            child: Column(
-              children: const <Widget>[
-                VerticalSpace(24),
-                UpcomingEventsList(),
-              ],
-            ),
+          child: Column(
+            children: const <Widget>[
+              VerticalSpace(24),
+              EventsList(),
+              // EventsList(),
+            ],
           ),
         )
       ],

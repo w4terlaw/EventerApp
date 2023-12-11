@@ -21,7 +21,6 @@ mixin _$GetUserFavoriteOrganizersEvent {
     required TResult Function() getFavoriteOrganizers,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getFavoriteOrganizers,
@@ -33,14 +32,12 @@ mixin _$GetUserFavoriteOrganizersEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_GetFavoriteOrganizers value)
         getFavoriteOrganizers,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_GetFavoriteOrganizers value)? getFavoriteOrganizers,
@@ -69,33 +66,34 @@ class _$GetUserFavoriteOrganizersEventCopyWithImpl<$Res,
     implements $GetUserFavoriteOrganizersEventCopyWith<$Res> {
   _$GetUserFavoriteOrganizersEventCopyWithImpl(this._value, this._then);
 
-// ignore: unused_field
+  // ignore: unused_field
   final $Val _value;
-// ignore: unused_field
+  // ignore: unused_field
   final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$$_GetFavoriteOrganizersCopyWith<$Res> {
-  factory _$$_GetFavoriteOrganizersCopyWith(_$_GetFavoriteOrganizers value,
-          $Res Function(_$_GetFavoriteOrganizers) then) =
-      __$$_GetFavoriteOrganizersCopyWithImpl<$Res>;
+abstract class _$$GetFavoriteOrganizersImplCopyWith<$Res> {
+  factory _$$GetFavoriteOrganizersImplCopyWith(
+          _$GetFavoriteOrganizersImpl value,
+          $Res Function(_$GetFavoriteOrganizersImpl) then) =
+      __$$GetFavoriteOrganizersImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_GetFavoriteOrganizersCopyWithImpl<$Res>
+class __$$GetFavoriteOrganizersImplCopyWithImpl<$Res>
     extends _$GetUserFavoriteOrganizersEventCopyWithImpl<$Res,
-        _$_GetFavoriteOrganizers>
-    implements _$$_GetFavoriteOrganizersCopyWith<$Res> {
-  __$$_GetFavoriteOrganizersCopyWithImpl(_$_GetFavoriteOrganizers _value,
-      $Res Function(_$_GetFavoriteOrganizers) _then)
+        _$GetFavoriteOrganizersImpl>
+    implements _$$GetFavoriteOrganizersImplCopyWith<$Res> {
+  __$$GetFavoriteOrganizersImplCopyWithImpl(_$GetFavoriteOrganizersImpl _value,
+      $Res Function(_$GetFavoriteOrganizersImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_GetFavoriteOrganizers implements _GetFavoriteOrganizers {
-  const _$_GetFavoriteOrganizers();
+class _$GetFavoriteOrganizersImpl implements _GetFavoriteOrganizers {
+  const _$GetFavoriteOrganizersImpl();
 
   @override
   String toString() {
@@ -105,7 +103,8 @@ class _$_GetFavoriteOrganizers implements _GetFavoriteOrganizers {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_GetFavoriteOrganizers);
+        (other.runtimeType == runtimeType &&
+            other is _$GetFavoriteOrganizersImpl);
   }
 
   @override
@@ -171,7 +170,7 @@ class _$_GetFavoriteOrganizers implements _GetFavoriteOrganizers {
 
 abstract class _GetFavoriteOrganizers
     implements GetUserFavoriteOrganizersEvent {
-  const factory _GetFavoriteOrganizers() = _$_GetFavoriteOrganizers;
+  const factory _GetFavoriteOrganizers() = _$GetFavoriteOrganizersImpl;
 }
 
 /// @nodoc
@@ -238,31 +237,32 @@ class _$GetUserFavoriteOrganizersStateCopyWithImpl<$Res,
     implements $GetUserFavoriteOrganizersStateCopyWith<$Res> {
   _$GetUserFavoriteOrganizersStateCopyWithImpl(this._value, this._then);
 
-// ignore: unused_field
+  // ignore: unused_field
   final $Val _value;
-// ignore: unused_field
+  // ignore: unused_field
   final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$$_InitialCopyWith<$Res> {
-  factory _$$_InitialCopyWith(
-          _$_Initial value, $Res Function(_$_Initial) then) =
-      __$$_InitialCopyWithImpl<$Res>;
+abstract class _$$InitialImplCopyWith<$Res> {
+  factory _$$InitialImplCopyWith(
+          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
+      __$$InitialImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_InitialCopyWithImpl<$Res>
-    extends _$GetUserFavoriteOrganizersStateCopyWithImpl<$Res, _$_Initial>
-    implements _$$_InitialCopyWith<$Res> {
-  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
+class __$$InitialImplCopyWithImpl<$Res>
+    extends _$GetUserFavoriteOrganizersStateCopyWithImpl<$Res, _$InitialImpl>
+    implements _$$InitialImplCopyWith<$Res> {
+  __$$InitialImplCopyWithImpl(
+      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_Initial implements _Initial {
-  const _$_Initial();
+class _$InitialImpl implements _Initial {
+  const _$InitialImpl();
 
   @override
   String toString() {
@@ -272,7 +272,7 @@ class _$_Initial implements _Initial {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Initial);
+        (other.runtimeType == runtimeType && other is _$InitialImpl);
   }
 
   @override
@@ -349,22 +349,24 @@ class _$_Initial implements _Initial {
 }
 
 abstract class _Initial implements GetUserFavoriteOrganizersState {
-  const factory _Initial() = _$_Initial;
+  const factory _Initial() = _$InitialImpl;
 }
 
 /// @nodoc
-abstract class _$$_LoadedCopyWith<$Res> {
-  factory _$$_LoadedCopyWith(_$_Loaded value, $Res Function(_$_Loaded) then) =
-      __$$_LoadedCopyWithImpl<$Res>;
+abstract class _$$LoadedImplCopyWith<$Res> {
+  factory _$$LoadedImplCopyWith(
+          _$LoadedImpl value, $Res Function(_$LoadedImpl) then) =
+      __$$LoadedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({List<FavoriteOrganizer> favoriteOrganizers});
 }
 
 /// @nodoc
-class __$$_LoadedCopyWithImpl<$Res>
-    extends _$GetUserFavoriteOrganizersStateCopyWithImpl<$Res, _$_Loaded>
-    implements _$$_LoadedCopyWith<$Res> {
-  __$$_LoadedCopyWithImpl(_$_Loaded _value, $Res Function(_$_Loaded) _then)
+class __$$LoadedImplCopyWithImpl<$Res>
+    extends _$GetUserFavoriteOrganizersStateCopyWithImpl<$Res, _$LoadedImpl>
+    implements _$$LoadedImplCopyWith<$Res> {
+  __$$LoadedImplCopyWithImpl(
+      _$LoadedImpl _value, $Res Function(_$LoadedImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -372,7 +374,7 @@ class __$$_LoadedCopyWithImpl<$Res>
   $Res call({
     Object? favoriteOrganizers = null,
   }) {
-    return _then(_$_Loaded(
+    return _then(_$LoadedImpl(
       favoriteOrganizers: null == favoriteOrganizers
           ? _value._favoriteOrganizers
           : favoriteOrganizers // ignore: cast_nullable_to_non_nullable
@@ -383,8 +385,9 @@ class __$$_LoadedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Loaded implements _Loaded {
-  const _$_Loaded({required final List<FavoriteOrganizer> favoriteOrganizers})
+class _$LoadedImpl implements _Loaded {
+  const _$LoadedImpl(
+      {required final List<FavoriteOrganizer> favoriteOrganizers})
       : _favoriteOrganizers = favoriteOrganizers;
 
   final List<FavoriteOrganizer> _favoriteOrganizers;
@@ -392,7 +395,7 @@ class _$_Loaded implements _Loaded {
   List<FavoriteOrganizer> get favoriteOrganizers {
     if (_favoriteOrganizers is EqualUnmodifiableListView)
       return _favoriteOrganizers;
-// ignore: implicit_dynamic_type
+    // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_favoriteOrganizers);
   }
 
@@ -405,7 +408,7 @@ class _$_Loaded implements _Loaded {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Loaded &&
+            other is _$LoadedImpl &&
             const DeepCollectionEquality()
                 .equals(other._favoriteOrganizers, _favoriteOrganizers));
   }
@@ -417,8 +420,8 @@ class _$_Loaded implements _Loaded {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_LoadedCopyWith<_$_Loaded> get copyWith =>
-      __$$_LoadedCopyWithImpl<_$_Loaded>(this, _$identity);
+  _$$LoadedImplCopyWith<_$LoadedImpl> get copyWith =>
+      __$$LoadedImplCopyWithImpl<_$LoadedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -492,27 +495,30 @@ class _$_Loaded implements _Loaded {
 
 abstract class _Loaded implements GetUserFavoriteOrganizersState {
   const factory _Loaded(
-      {required final List<FavoriteOrganizer> favoriteOrganizers}) = _$_Loaded;
+          {required final List<FavoriteOrganizer> favoriteOrganizers}) =
+      _$LoadedImpl;
 
   List<FavoriteOrganizer> get favoriteOrganizers;
   @JsonKey(ignore: true)
-  _$$_LoadedCopyWith<_$_Loaded> get copyWith =>
+  _$$LoadedImplCopyWith<_$LoadedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_ErrorCopyWith<$Res> {
-  factory _$$_ErrorCopyWith(_$_Error value, $Res Function(_$_Error) then) =
-      __$$_ErrorCopyWithImpl<$Res>;
+abstract class _$$ErrorImplCopyWith<$Res> {
+  factory _$$ErrorImplCopyWith(
+          _$ErrorImpl value, $Res Function(_$ErrorImpl) then) =
+      __$$ErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Failure failure});
 }
 
 /// @nodoc
-class __$$_ErrorCopyWithImpl<$Res>
-    extends _$GetUserFavoriteOrganizersStateCopyWithImpl<$Res, _$_Error>
-    implements _$$_ErrorCopyWith<$Res> {
-  __$$_ErrorCopyWithImpl(_$_Error _value, $Res Function(_$_Error) _then)
+class __$$ErrorImplCopyWithImpl<$Res>
+    extends _$GetUserFavoriteOrganizersStateCopyWithImpl<$Res, _$ErrorImpl>
+    implements _$$ErrorImplCopyWith<$Res> {
+  __$$ErrorImplCopyWithImpl(
+      _$ErrorImpl _value, $Res Function(_$ErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -520,7 +526,7 @@ class __$$_ErrorCopyWithImpl<$Res>
   $Res call({
     Object? failure = null,
   }) {
-    return _then(_$_Error(
+    return _then(_$ErrorImpl(
       failure: null == failure
           ? _value.failure
           : failure // ignore: cast_nullable_to_non_nullable
@@ -531,8 +537,8 @@ class __$$_ErrorCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Error implements _Error {
-  const _$_Error({required this.failure});
+class _$ErrorImpl implements _Error {
+  const _$ErrorImpl({required this.failure});
 
   @override
   final Failure failure;
@@ -546,7 +552,7 @@ class _$_Error implements _Error {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Error &&
+            other is _$ErrorImpl &&
             (identical(other.failure, failure) || other.failure == failure));
   }
 
@@ -556,8 +562,8 @@ class _$_Error implements _Error {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ErrorCopyWith<_$_Error> get copyWith =>
-      __$$_ErrorCopyWithImpl<_$_Error>(this, _$identity);
+  _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith =>
+      __$$ErrorImplCopyWithImpl<_$ErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -630,10 +636,10 @@ class _$_Error implements _Error {
 }
 
 abstract class _Error implements GetUserFavoriteOrganizersState {
-  const factory _Error({required final Failure failure}) = _$_Error;
+  const factory _Error({required final Failure failure}) = _$ErrorImpl;
 
   Failure get failure;
   @JsonKey(ignore: true)
-  _$$_ErrorCopyWith<_$_Error> get copyWith =>
+  _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

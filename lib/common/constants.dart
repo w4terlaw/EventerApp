@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 
 class ApiConstants {
-  static const String API_URL = 'http://77.222.43.213:5000/api/v1/';
+  static const String API_URL = 'http://192.168.0.240:5000/api/v1/';
   static const String AUTH_LOGIN = '/auth/login';
   static const String AUTH_REFRESH_TOKEN = '/auth/refresh_token';
   static const String USER = '/user/';

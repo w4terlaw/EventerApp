@@ -5,6 +5,7 @@ import 'package:eventer_app/common/widgets/space_widgets.dart';
 import 'package:eventer_app/feature/user/presentation/bloc/get_user_info_bloc/get_user_info_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../common/my_text_theme.dart';
 import '../../../../../common/widgets/skeleton_widgets.dart';
@@ -83,30 +84,30 @@ class ProfilePageBody extends StatelessWidget {
                                     width: 80,
                                   )),
                           const VerticalSpace(24),
-                          SizedBox(
-                            width: 280,
-                            child: MyOutlinedButton(
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Image.asset(
-                                    'assets/icons/redact.png',
-                                    height: 20,
-                                    width: 20,
-                                    color: AppColors.mainTextColor,
-                                  ),
-                                  const HorizontalSpace(10),
-                                  Text(
-                                    'РЕДАКТИРОВАТЬ',
-                                    style:
-                                        Theme.of(context).textTheme.labelLarge,
-                                  ),
-                                ],
-                              ),
-                              onPressed: () {},
-                            ),
-                          ),
-                          const VerticalSpace(24),
+                          // SizedBox(
+                          //   width: 280.h,
+                          //   child: MyOutlinedButton(
+                          //     child: Row(
+                          //       mainAxisAlignment: MainAxisAlignment.center,
+                          //       children: [
+                          //         Image.asset(
+                          //           'assets/icons/redact.png',
+                          //           height: 20,
+                          //           width: 20,
+                          //           color: AppColors.mainTextColor,
+                          //         ),
+                          //         const HorizontalSpace(10),
+                          //         Text(
+                          //           'РЕДАКТИРОВАТЬ',
+                          //           style:
+                          //               Theme.of(context).textTheme.labelLarge,
+                          //         ),
+                          //       ],
+                          //     ),
+                          //     onPressed: () {},
+                          //   ),
+                          // ),
+                          // const VerticalSpace(24),
                         ],
                       ),
                     ],

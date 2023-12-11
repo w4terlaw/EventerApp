@@ -2,9 +2,11 @@ import 'package:eventer_app/common/widgets/error_dialog_widget.dart';
 import 'package:eventer_app/feature/organizer/data/models/organizer_info/organizer_info.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../common/app_colors.dart';
 import '../../../../../common/localization.dart';
+import '../../../../../common/widgets/button_widgets.dart';
 import '../../../../../common/widgets/space_widgets.dart';
 import '../../bloc/get_organizer_Info_bloc/get_organizer_info_bloc.dart';
 import '../../widgets/skeleton_info.dart';
@@ -169,69 +171,7 @@ class OrganizerOtherInfoBody extends StatelessWidget {
             )
           ],
         ),
-        const VerticalSpace(15),
-
-        // Row(
-        //   mainAxisAlignment: MainAxisAlignment.center,
-        //   children: [
-        //     SizedBox(
-        //       width: 200.w,
-        //       child: (organizerInfo.isSubscribed)
-        //           ? MyOutlinedButton(
-        //               widget: Row(
-        //                 mainAxisSize: MainAxisSize.min,
-        //                 crossAxisAlignment: CrossAxisAlignment.center,
-        //                 mainAxisAlignment: MainAxisAlignment.center,
-        //                 children: [
-        //                   Image.asset(
-        //                     'assets/icons/subsribe.png',
-        //                     width: 22.w,
-        //                     height: 22.w,
-        //                   ),
-        //                   const HorizontalSpace(10),
-        //                   Text(
-        //                     L10n.organizerUnsubscribe,
-        //                     style: Theme.of(context).textTheme.labelLarge,
-        //                   ),
-        //                 ],
-        //               ),
-        //               onPressed: () {},
-        //               padding: 0,
-        //             )
-        //           : MyElevatedButton(
-        //               widget: Row(
-        //                 mainAxisSize: MainAxisSize.min,
-        //                 crossAxisAlignment: CrossAxisAlignment.center,
-        //                 mainAxisAlignment: MainAxisAlignment.center,
-        //                 children: [
-        //                   Image.asset(
-        //                     'assets/icons/subsribe.png',
-        //                     width: 22.w,
-        //                     height: 22.w,
-        //                   ),
-        //                   const HorizontalSpace(10),
-        //                   Text(
-        //                     L10n.organizerSubscribe,
-        //                     style: Theme.of(context).textTheme.labelLarge,
-        //                   ),
-        //                 ],
-        //               ),
-        //               onPressed: () {},
-        //               padding: 0,
-        //             ),
-        //     ),
-        //     const HorizontalSpace(10),
-        //     SizedBox(
-        //       width: 56,
-        //       child: MyElevatedButton(
-        //         backgroundColor: Colors.grey,
-        //         widget: const Icon(Icons.report_problem_outlined),
-        //         onPressed: () {},
-        //         padding: 0,
-        //       ),
-        //     )
-        //   ],
-        // ),
+        const VerticalSpace(15)
       ],
     );
   }

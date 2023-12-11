@@ -17,16 +17,13 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$EventBookingEvent {
   int get eventId => throw _privateConstructorUsedError;
-
   EventDatesCheckbox get eventDates => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(int eventId, EventDatesCheckbox eventDates)
         eventBooking,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int eventId, EventDatesCheckbox eventDates)? eventBooking,
@@ -38,13 +35,11 @@ mixin _$EventBookingEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_EventBooking value) eventBooking,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_EventBooking value)? eventBooking,
@@ -76,9 +71,9 @@ class _$EventBookingEventCopyWithImpl<$Res, $Val extends EventBookingEvent>
     implements $EventBookingEventCopyWith<$Res> {
   _$EventBookingEventCopyWithImpl(this._value, this._then);
 
-// ignore: unused_field
+  // ignore: unused_field
   final $Val _value;
-// ignore: unused_field
+  // ignore: unused_field
   final $Res Function($Val) _then;
 
   @pragma('vm:prefer-inline')
@@ -101,22 +96,22 @@ class _$EventBookingEventCopyWithImpl<$Res, $Val extends EventBookingEvent>
 }
 
 /// @nodoc
-abstract class _$$_EventBookingCopyWith<$Res>
+abstract class _$$EventBookingImplCopyWith<$Res>
     implements $EventBookingEventCopyWith<$Res> {
-  factory _$$_EventBookingCopyWith(
-          _$_EventBooking value, $Res Function(_$_EventBooking) then) =
-      __$$_EventBookingCopyWithImpl<$Res>;
+  factory _$$EventBookingImplCopyWith(
+          _$EventBookingImpl value, $Res Function(_$EventBookingImpl) then) =
+      __$$EventBookingImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int eventId, EventDatesCheckbox eventDates});
 }
 
 /// @nodoc
-class __$$_EventBookingCopyWithImpl<$Res>
-    extends _$EventBookingEventCopyWithImpl<$Res, _$_EventBooking>
-    implements _$$_EventBookingCopyWith<$Res> {
-  __$$_EventBookingCopyWithImpl(
-      _$_EventBooking _value, $Res Function(_$_EventBooking) _then)
+class __$$EventBookingImplCopyWithImpl<$Res>
+    extends _$EventBookingEventCopyWithImpl<$Res, _$EventBookingImpl>
+    implements _$$EventBookingImplCopyWith<$Res> {
+  __$$EventBookingImplCopyWithImpl(
+      _$EventBookingImpl _value, $Res Function(_$EventBookingImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -125,7 +120,7 @@ class __$$_EventBookingCopyWithImpl<$Res>
     Object? eventId = null,
     Object? eventDates = null,
   }) {
-    return _then(_$_EventBooking(
+    return _then(_$EventBookingImpl(
       eventId: null == eventId
           ? _value.eventId
           : eventId // ignore: cast_nullable_to_non_nullable
@@ -140,8 +135,8 @@ class __$$_EventBookingCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_EventBooking implements _EventBooking {
-  const _$_EventBooking({required this.eventId, required this.eventDates});
+class _$EventBookingImpl implements _EventBooking {
+  const _$EventBookingImpl({required this.eventId, required this.eventDates});
 
   @override
   final int eventId;
@@ -157,7 +152,7 @@ class _$_EventBooking implements _EventBooking {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_EventBooking &&
+            other is _$EventBookingImpl &&
             (identical(other.eventId, eventId) || other.eventId == eventId) &&
             (identical(other.eventDates, eventDates) ||
                 other.eventDates == eventDates));
@@ -169,8 +164,8 @@ class _$_EventBooking implements _EventBooking {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_EventBookingCopyWith<_$_EventBooking> get copyWith =>
-      __$$_EventBookingCopyWithImpl<_$_EventBooking>(this, _$identity);
+  _$$EventBookingImplCopyWith<_$EventBookingImpl> get copyWith =>
+      __$$EventBookingImplCopyWithImpl<_$EventBookingImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -233,7 +228,7 @@ class _$_EventBooking implements _EventBooking {
 abstract class _EventBooking implements EventBookingEvent {
   const factory _EventBooking(
       {required final int eventId,
-      required final EventDatesCheckbox eventDates}) = _$_EventBooking;
+      required final EventDatesCheckbox eventDates}) = _$EventBookingImpl;
 
   @override
   int get eventId;
@@ -241,7 +236,7 @@ abstract class _EventBooking implements EventBookingEvent {
   EventDatesCheckbox get eventDates;
   @override
   @JsonKey(ignore: true)
-  _$$_EventBookingCopyWith<_$_EventBooking> get copyWith =>
+  _$$EventBookingImplCopyWith<_$EventBookingImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -311,32 +306,32 @@ class _$EventBookingStateCopyWithImpl<$Res, $Val extends EventBookingState>
     implements $EventBookingStateCopyWith<$Res> {
   _$EventBookingStateCopyWithImpl(this._value, this._then);
 
-// ignore: unused_field
+  // ignore: unused_field
   final $Val _value;
-// ignore: unused_field
+  // ignore: unused_field
   final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$$EventBookingInitialCopyWith<$Res> {
-  factory _$$EventBookingInitialCopyWith(_$EventBookingInitial value,
-          $Res Function(_$EventBookingInitial) then) =
-      __$$EventBookingInitialCopyWithImpl<$Res>;
+abstract class _$$EventBookingInitialImplCopyWith<$Res> {
+  factory _$$EventBookingInitialImplCopyWith(_$EventBookingInitialImpl value,
+          $Res Function(_$EventBookingInitialImpl) then) =
+      __$$EventBookingInitialImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$EventBookingInitialCopyWithImpl<$Res>
-    extends _$EventBookingStateCopyWithImpl<$Res, _$EventBookingInitial>
-    implements _$$EventBookingInitialCopyWith<$Res> {
-  __$$EventBookingInitialCopyWithImpl(
-      _$EventBookingInitial _value, $Res Function(_$EventBookingInitial) _then)
+class __$$EventBookingInitialImplCopyWithImpl<$Res>
+    extends _$EventBookingStateCopyWithImpl<$Res, _$EventBookingInitialImpl>
+    implements _$$EventBookingInitialImplCopyWith<$Res> {
+  __$$EventBookingInitialImplCopyWithImpl(_$EventBookingInitialImpl _value,
+      $Res Function(_$EventBookingInitialImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$EventBookingInitial implements EventBookingInitial {
-  const _$EventBookingInitial();
+class _$EventBookingInitialImpl implements EventBookingInitial {
+  const _$EventBookingInitialImpl();
 
   @override
   String toString() {
@@ -346,7 +341,8 @@ class _$EventBookingInitial implements EventBookingInitial {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$EventBookingInitial);
+        (other.runtimeType == runtimeType &&
+            other is _$EventBookingInitialImpl);
   }
 
   @override
@@ -428,29 +424,29 @@ class _$EventBookingInitial implements EventBookingInitial {
 }
 
 abstract class EventBookingInitial implements EventBookingState {
-  const factory EventBookingInitial() = _$EventBookingInitial;
+  const factory EventBookingInitial() = _$EventBookingInitialImpl;
 }
 
 /// @nodoc
-abstract class _$$EventBookingLoadingCopyWith<$Res> {
-  factory _$$EventBookingLoadingCopyWith(_$EventBookingLoading value,
-          $Res Function(_$EventBookingLoading) then) =
-      __$$EventBookingLoadingCopyWithImpl<$Res>;
+abstract class _$$EventBookingLoadingImplCopyWith<$Res> {
+  factory _$$EventBookingLoadingImplCopyWith(_$EventBookingLoadingImpl value,
+          $Res Function(_$EventBookingLoadingImpl) then) =
+      __$$EventBookingLoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$EventBookingLoadingCopyWithImpl<$Res>
-    extends _$EventBookingStateCopyWithImpl<$Res, _$EventBookingLoading>
-    implements _$$EventBookingLoadingCopyWith<$Res> {
-  __$$EventBookingLoadingCopyWithImpl(
-      _$EventBookingLoading _value, $Res Function(_$EventBookingLoading) _then)
+class __$$EventBookingLoadingImplCopyWithImpl<$Res>
+    extends _$EventBookingStateCopyWithImpl<$Res, _$EventBookingLoadingImpl>
+    implements _$$EventBookingLoadingImplCopyWith<$Res> {
+  __$$EventBookingLoadingImplCopyWithImpl(_$EventBookingLoadingImpl _value,
+      $Res Function(_$EventBookingLoadingImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$EventBookingLoading implements EventBookingLoading {
-  const _$EventBookingLoading();
+class _$EventBookingLoadingImpl implements EventBookingLoading {
+  const _$EventBookingLoadingImpl();
 
   @override
   String toString() {
@@ -460,7 +456,8 @@ class _$EventBookingLoading implements EventBookingLoading {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$EventBookingLoading);
+        (other.runtimeType == runtimeType &&
+            other is _$EventBookingLoadingImpl);
   }
 
   @override
@@ -542,29 +539,29 @@ class _$EventBookingLoading implements EventBookingLoading {
 }
 
 abstract class EventBookingLoading implements EventBookingState {
-  const factory EventBookingLoading() = _$EventBookingLoading;
+  const factory EventBookingLoading() = _$EventBookingLoadingImpl;
 }
 
 /// @nodoc
-abstract class _$$EventBookingSuccessCopyWith<$Res> {
-  factory _$$EventBookingSuccessCopyWith(_$EventBookingSuccess value,
-          $Res Function(_$EventBookingSuccess) then) =
-      __$$EventBookingSuccessCopyWithImpl<$Res>;
+abstract class _$$EventBookingSuccessImplCopyWith<$Res> {
+  factory _$$EventBookingSuccessImplCopyWith(_$EventBookingSuccessImpl value,
+          $Res Function(_$EventBookingSuccessImpl) then) =
+      __$$EventBookingSuccessImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$EventBookingSuccessCopyWithImpl<$Res>
-    extends _$EventBookingStateCopyWithImpl<$Res, _$EventBookingSuccess>
-    implements _$$EventBookingSuccessCopyWith<$Res> {
-  __$$EventBookingSuccessCopyWithImpl(
-      _$EventBookingSuccess _value, $Res Function(_$EventBookingSuccess) _then)
+class __$$EventBookingSuccessImplCopyWithImpl<$Res>
+    extends _$EventBookingStateCopyWithImpl<$Res, _$EventBookingSuccessImpl>
+    implements _$$EventBookingSuccessImplCopyWith<$Res> {
+  __$$EventBookingSuccessImplCopyWithImpl(_$EventBookingSuccessImpl _value,
+      $Res Function(_$EventBookingSuccessImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$EventBookingSuccess implements EventBookingSuccess {
-  const _$EventBookingSuccess();
+class _$EventBookingSuccessImpl implements EventBookingSuccess {
+  const _$EventBookingSuccessImpl();
 
   @override
   String toString() {
@@ -574,7 +571,8 @@ class _$EventBookingSuccess implements EventBookingSuccess {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$EventBookingSuccess);
+        (other.runtimeType == runtimeType &&
+            other is _$EventBookingSuccessImpl);
   }
 
   @override
@@ -656,29 +654,29 @@ class _$EventBookingSuccess implements EventBookingSuccess {
 }
 
 abstract class EventBookingSuccess implements EventBookingState {
-  const factory EventBookingSuccess() = _$EventBookingSuccess;
+  const factory EventBookingSuccess() = _$EventBookingSuccessImpl;
 }
 
 /// @nodoc
-abstract class _$$EventBookingErrorCopyWith<$Res> {
-  factory _$$EventBookingErrorCopyWith(
-          _$EventBookingError value, $Res Function(_$EventBookingError) then) =
-      __$$EventBookingErrorCopyWithImpl<$Res>;
+abstract class _$$EventBookingErrorImplCopyWith<$Res> {
+  factory _$$EventBookingErrorImplCopyWith(_$EventBookingErrorImpl value,
+          $Res Function(_$EventBookingErrorImpl) then) =
+      __$$EventBookingErrorImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$EventBookingErrorCopyWithImpl<$Res>
-    extends _$EventBookingStateCopyWithImpl<$Res, _$EventBookingError>
-    implements _$$EventBookingErrorCopyWith<$Res> {
-  __$$EventBookingErrorCopyWithImpl(
-      _$EventBookingError _value, $Res Function(_$EventBookingError) _then)
+class __$$EventBookingErrorImplCopyWithImpl<$Res>
+    extends _$EventBookingStateCopyWithImpl<$Res, _$EventBookingErrorImpl>
+    implements _$$EventBookingErrorImplCopyWith<$Res> {
+  __$$EventBookingErrorImplCopyWithImpl(_$EventBookingErrorImpl _value,
+      $Res Function(_$EventBookingErrorImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$EventBookingError implements EventBookingError {
-  const _$EventBookingError();
+class _$EventBookingErrorImpl implements EventBookingError {
+  const _$EventBookingErrorImpl();
 
   @override
   String toString() {
@@ -688,7 +686,7 @@ class _$EventBookingError implements EventBookingError {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$EventBookingError);
+        (other.runtimeType == runtimeType && other is _$EventBookingErrorImpl);
   }
 
   @override
@@ -770,5 +768,5 @@ class _$EventBookingError implements EventBookingError {
 }
 
 abstract class EventBookingError implements EventBookingState {
-  const factory EventBookingError() = _$EventBookingError;
+  const factory EventBookingError() = _$EventBookingErrorImpl;
 }

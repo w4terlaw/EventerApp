@@ -6,8 +6,8 @@ part of 'event_donation.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_EventDonation _$$_EventDonationFromJson(Map<String, dynamic> json) =>
-    _$_EventDonation(
+_$EventDonationImpl _$$EventDonationImplFromJson(Map<String, dynamic> json) =>
+    _$EventDonationImpl(
       id: json['id'] as int,
       dateTime: DateTime.parse(json['dateTime'] as String),
       amount: (json['amount'] as num).toDouble(),
@@ -15,7 +15,7 @@ _$_EventDonation _$$_EventDonationFromJson(Map<String, dynamic> json) =>
       event: Event.fromJson(json['event'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_EventDonationToJson(_$_EventDonation instance) =>
+Map<String, dynamic> _$$EventDonationImplToJson(_$EventDonationImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'dateTime': instance.dateTime.toIso8601String(),

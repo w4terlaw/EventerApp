@@ -21,13 +21,10 @@ FavoriteOrganizer _$FavoriteOrganizerFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$FavoriteOrganizer {
   int get id => throw _privateConstructorUsedError;
-
   DateTime get dateTime => throw _privateConstructorUsedError;
-
   Organizer get organizer => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $FavoriteOrganizerCopyWith<FavoriteOrganizer> get copyWith =>
       throw _privateConstructorUsedError;
@@ -38,7 +35,6 @@ abstract class $FavoriteOrganizerCopyWith<$Res> {
   factory $FavoriteOrganizerCopyWith(
           FavoriteOrganizer value, $Res Function(FavoriteOrganizer) then) =
       _$FavoriteOrganizerCopyWithImpl<$Res, FavoriteOrganizer>;
-
   @useResult
   $Res call({int id, DateTime dateTime, Organizer organizer});
 
@@ -52,7 +48,6 @@ class _$FavoriteOrganizerCopyWithImpl<$Res, $Val extends FavoriteOrganizer>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -89,12 +84,11 @@ class _$FavoriteOrganizerCopyWithImpl<$Res, $Val extends FavoriteOrganizer>
 }
 
 /// @nodoc
-abstract class _$$_FavoriteOrganizerCopyWith<$Res>
+abstract class _$$FavoriteOrganizerImplCopyWith<$Res>
     implements $FavoriteOrganizerCopyWith<$Res> {
-  factory _$$_FavoriteOrganizerCopyWith(_$_FavoriteOrganizer value,
-          $Res Function(_$_FavoriteOrganizer) then) =
-      __$$_FavoriteOrganizerCopyWithImpl<$Res>;
-
+  factory _$$FavoriteOrganizerImplCopyWith(_$FavoriteOrganizerImpl value,
+          $Res Function(_$FavoriteOrganizerImpl) then) =
+      __$$FavoriteOrganizerImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int id, DateTime dateTime, Organizer organizer});
@@ -104,11 +98,11 @@ abstract class _$$_FavoriteOrganizerCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_FavoriteOrganizerCopyWithImpl<$Res>
-    extends _$FavoriteOrganizerCopyWithImpl<$Res, _$_FavoriteOrganizer>
-    implements _$$_FavoriteOrganizerCopyWith<$Res> {
-  __$$_FavoriteOrganizerCopyWithImpl(
-      _$_FavoriteOrganizer _value, $Res Function(_$_FavoriteOrganizer) _then)
+class __$$FavoriteOrganizerImplCopyWithImpl<$Res>
+    extends _$FavoriteOrganizerCopyWithImpl<$Res, _$FavoriteOrganizerImpl>
+    implements _$$FavoriteOrganizerImplCopyWith<$Res> {
+  __$$FavoriteOrganizerImplCopyWithImpl(_$FavoriteOrganizerImpl _value,
+      $Res Function(_$FavoriteOrganizerImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -118,7 +112,7 @@ class __$$_FavoriteOrganizerCopyWithImpl<$Res>
     Object? dateTime = null,
     Object? organizer = null,
   }) {
-    return _then(_$_FavoriteOrganizer(
+    return _then(_$FavoriteOrganizerImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -137,12 +131,12 @@ class __$$_FavoriteOrganizerCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_FavoriteOrganizer implements _FavoriteOrganizer {
-  const _$_FavoriteOrganizer(
+class _$FavoriteOrganizerImpl implements _FavoriteOrganizer {
+  const _$FavoriteOrganizerImpl(
       {required this.id, required this.dateTime, required this.organizer});
 
-  factory _$_FavoriteOrganizer.fromJson(Map<String, dynamic> json) =>
-      _$$_FavoriteOrganizerFromJson(json);
+  factory _$FavoriteOrganizerImpl.fromJson(Map<String, dynamic> json) =>
+      _$$FavoriteOrganizerImplFromJson(json);
 
   @override
   final int id;
@@ -160,7 +154,7 @@ class _$_FavoriteOrganizer implements _FavoriteOrganizer {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_FavoriteOrganizer &&
+            other is _$FavoriteOrganizerImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.dateTime, dateTime) ||
                 other.dateTime == dateTime) &&
@@ -175,13 +169,13 @@ class _$_FavoriteOrganizer implements _FavoriteOrganizer {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_FavoriteOrganizerCopyWith<_$_FavoriteOrganizer> get copyWith =>
-      __$$_FavoriteOrganizerCopyWithImpl<_$_FavoriteOrganizer>(
+  _$$FavoriteOrganizerImplCopyWith<_$FavoriteOrganizerImpl> get copyWith =>
+      __$$FavoriteOrganizerImplCopyWithImpl<_$FavoriteOrganizerImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_FavoriteOrganizerToJson(
+    return _$$FavoriteOrganizerImplToJson(
       this,
     );
   }
@@ -191,22 +185,19 @@ abstract class _FavoriteOrganizer implements FavoriteOrganizer {
   const factory _FavoriteOrganizer(
       {required final int id,
       required final DateTime dateTime,
-      required final Organizer organizer}) = _$_FavoriteOrganizer;
+      required final Organizer organizer}) = _$FavoriteOrganizerImpl;
 
   factory _FavoriteOrganizer.fromJson(Map<String, dynamic> json) =
-      _$_FavoriteOrganizer.fromJson;
+      _$FavoriteOrganizerImpl.fromJson;
 
   @override
   int get id;
-
   @override
   DateTime get dateTime;
-
   @override
   Organizer get organizer;
-
   @override
   @JsonKey(ignore: true)
-  _$$_FavoriteOrganizerCopyWith<_$_FavoriteOrganizer> get copyWith =>
+  _$$FavoriteOrganizerImplCopyWith<_$FavoriteOrganizerImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -21,11 +21,9 @@ Auth _$AuthFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Auth {
   String get accessToken => throw _privateConstructorUsedError;
-
   String get refreshToken => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $AuthCopyWith<Auth> get copyWith => throw _privateConstructorUsedError;
 }
@@ -34,7 +32,6 @@ mixin _$Auth {
 abstract class $AuthCopyWith<$Res> {
   factory $AuthCopyWith(Auth value, $Res Function(Auth) then) =
       _$AuthCopyWithImpl<$Res, Auth>;
-
   @useResult
   $Res call({String accessToken, String refreshToken});
 }
@@ -46,7 +43,6 @@ class _$AuthCopyWithImpl<$Res, $Val extends Auth>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -70,19 +66,20 @@ class _$AuthCopyWithImpl<$Res, $Val extends Auth>
 }
 
 /// @nodoc
-abstract class _$$_AuthCopyWith<$Res> implements $AuthCopyWith<$Res> {
-  factory _$$_AuthCopyWith(_$_Auth value, $Res Function(_$_Auth) then) =
-      __$$_AuthCopyWithImpl<$Res>;
-
+abstract class _$$AuthImplCopyWith<$Res> implements $AuthCopyWith<$Res> {
+  factory _$$AuthImplCopyWith(
+          _$AuthImpl value, $Res Function(_$AuthImpl) then) =
+      __$$AuthImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String accessToken, String refreshToken});
 }
 
 /// @nodoc
-class __$$_AuthCopyWithImpl<$Res> extends _$AuthCopyWithImpl<$Res, _$_Auth>
-    implements _$$_AuthCopyWith<$Res> {
-  __$$_AuthCopyWithImpl(_$_Auth _value, $Res Function(_$_Auth) _then)
+class __$$AuthImplCopyWithImpl<$Res>
+    extends _$AuthCopyWithImpl<$Res, _$AuthImpl>
+    implements _$$AuthImplCopyWith<$Res> {
+  __$$AuthImplCopyWithImpl(_$AuthImpl _value, $Res Function(_$AuthImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -91,7 +88,7 @@ class __$$_AuthCopyWithImpl<$Res> extends _$AuthCopyWithImpl<$Res, _$_Auth>
     Object? accessToken = null,
     Object? refreshToken = null,
   }) {
-    return _then(_$_Auth(
+    return _then(_$AuthImpl(
       accessToken: null == accessToken
           ? _value.accessToken
           : accessToken // ignore: cast_nullable_to_non_nullable
@@ -106,10 +103,11 @@ class __$$_AuthCopyWithImpl<$Res> extends _$AuthCopyWithImpl<$Res, _$_Auth>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Auth implements _Auth {
-  const _$_Auth({required this.accessToken, required this.refreshToken});
+class _$AuthImpl implements _Auth {
+  const _$AuthImpl({required this.accessToken, required this.refreshToken});
 
-  factory _$_Auth.fromJson(Map<String, dynamic> json) => _$$_AuthFromJson(json);
+  factory _$AuthImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AuthImplFromJson(json);
 
   @override
   final String accessToken;
@@ -125,7 +123,7 @@ class _$_Auth implements _Auth {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Auth &&
+            other is _$AuthImpl &&
             (identical(other.accessToken, accessToken) ||
                 other.accessToken == accessToken) &&
             (identical(other.refreshToken, refreshToken) ||
@@ -139,12 +137,12 @@ class _$_Auth implements _Auth {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_AuthCopyWith<_$_Auth> get copyWith =>
-      __$$_AuthCopyWithImpl<_$_Auth>(this, _$identity);
+  _$$AuthImplCopyWith<_$AuthImpl> get copyWith =>
+      __$$AuthImplCopyWithImpl<_$AuthImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_AuthToJson(
+    return _$$AuthImplToJson(
       this,
     );
   }
@@ -153,17 +151,16 @@ class _$_Auth implements _Auth {
 abstract class _Auth implements Auth {
   const factory _Auth(
       {required final String accessToken,
-      required final String refreshToken}) = _$_Auth;
+      required final String refreshToken}) = _$AuthImpl;
 
-  factory _Auth.fromJson(Map<String, dynamic> json) = _$_Auth.fromJson;
+  factory _Auth.fromJson(Map<String, dynamic> json) = _$AuthImpl.fromJson;
 
   @override
   String get accessToken;
-
   @override
   String get refreshToken;
-
   @override
   @JsonKey(ignore: true)
-  _$$_AuthCopyWith<_$_Auth> get copyWith => throw _privateConstructorUsedError;
+  _$$AuthImplCopyWith<_$AuthImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

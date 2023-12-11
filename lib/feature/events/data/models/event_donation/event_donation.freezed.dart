@@ -21,17 +21,12 @@ EventDonation _$EventDonationFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$EventDonation {
   int get id => throw _privateConstructorUsedError;
-
   DateTime get dateTime => throw _privateConstructorUsedError;
-
   double get amount => throw _privateConstructorUsedError;
-
   User get user => throw _privateConstructorUsedError;
-
   Event get event => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $EventDonationCopyWith<EventDonation> get copyWith =>
       throw _privateConstructorUsedError;
@@ -42,12 +37,10 @@ abstract class $EventDonationCopyWith<$Res> {
   factory $EventDonationCopyWith(
           EventDonation value, $Res Function(EventDonation) then) =
       _$EventDonationCopyWithImpl<$Res, EventDonation>;
-
   @useResult
   $Res call({int id, DateTime dateTime, double amount, User user, Event event});
 
   $UserCopyWith<$Res> get user;
-
   $EventCopyWith<$Res> get event;
 }
 
@@ -58,7 +51,6 @@ class _$EventDonationCopyWithImpl<$Res, $Val extends EventDonation>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -113,29 +105,27 @@ class _$EventDonationCopyWithImpl<$Res, $Val extends EventDonation>
 }
 
 /// @nodoc
-abstract class _$$_EventDonationCopyWith<$Res>
+abstract class _$$EventDonationImplCopyWith<$Res>
     implements $EventDonationCopyWith<$Res> {
-  factory _$$_EventDonationCopyWith(
-          _$_EventDonation value, $Res Function(_$_EventDonation) then) =
-      __$$_EventDonationCopyWithImpl<$Res>;
-
+  factory _$$EventDonationImplCopyWith(
+          _$EventDonationImpl value, $Res Function(_$EventDonationImpl) then) =
+      __$$EventDonationImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int id, DateTime dateTime, double amount, User user, Event event});
 
   @override
   $UserCopyWith<$Res> get user;
-
   @override
   $EventCopyWith<$Res> get event;
 }
 
 /// @nodoc
-class __$$_EventDonationCopyWithImpl<$Res>
-    extends _$EventDonationCopyWithImpl<$Res, _$_EventDonation>
-    implements _$$_EventDonationCopyWith<$Res> {
-  __$$_EventDonationCopyWithImpl(
-      _$_EventDonation _value, $Res Function(_$_EventDonation) _then)
+class __$$EventDonationImplCopyWithImpl<$Res>
+    extends _$EventDonationCopyWithImpl<$Res, _$EventDonationImpl>
+    implements _$$EventDonationImplCopyWith<$Res> {
+  __$$EventDonationImplCopyWithImpl(
+      _$EventDonationImpl _value, $Res Function(_$EventDonationImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -147,7 +137,7 @@ class __$$_EventDonationCopyWithImpl<$Res>
     Object? user = null,
     Object? event = null,
   }) {
-    return _then(_$_EventDonation(
+    return _then(_$EventDonationImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -174,16 +164,16 @@ class __$$_EventDonationCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_EventDonation implements _EventDonation {
-  const _$_EventDonation(
+class _$EventDonationImpl implements _EventDonation {
+  const _$EventDonationImpl(
       {required this.id,
       required this.dateTime,
       required this.amount,
       required this.user,
       required this.event});
 
-  factory _$_EventDonation.fromJson(Map<String, dynamic> json) =>
-      _$$_EventDonationFromJson(json);
+  factory _$EventDonationImpl.fromJson(Map<String, dynamic> json) =>
+      _$$EventDonationImplFromJson(json);
 
   @override
   final int id;
@@ -205,7 +195,7 @@ class _$_EventDonation implements _EventDonation {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_EventDonation &&
+            other is _$EventDonationImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.dateTime, dateTime) ||
                 other.dateTime == dateTime) &&
@@ -222,12 +212,12 @@ class _$_EventDonation implements _EventDonation {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_EventDonationCopyWith<_$_EventDonation> get copyWith =>
-      __$$_EventDonationCopyWithImpl<_$_EventDonation>(this, _$identity);
+  _$$EventDonationImplCopyWith<_$EventDonationImpl> get copyWith =>
+      __$$EventDonationImplCopyWithImpl<_$EventDonationImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_EventDonationToJson(
+    return _$$EventDonationImplToJson(
       this,
     );
   }
@@ -239,28 +229,23 @@ abstract class _EventDonation implements EventDonation {
       required final DateTime dateTime,
       required final double amount,
       required final User user,
-      required final Event event}) = _$_EventDonation;
+      required final Event event}) = _$EventDonationImpl;
 
   factory _EventDonation.fromJson(Map<String, dynamic> json) =
-      _$_EventDonation.fromJson;
+      _$EventDonationImpl.fromJson;
 
   @override
   int get id;
-
   @override
   DateTime get dateTime;
-
   @override
   double get amount;
-
   @override
   User get user;
-
   @override
   Event get event;
-
   @override
   @JsonKey(ignore: true)
-  _$$_EventDonationCopyWith<_$_EventDonation> get copyWith =>
+  _$$EventDonationImplCopyWith<_$EventDonationImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

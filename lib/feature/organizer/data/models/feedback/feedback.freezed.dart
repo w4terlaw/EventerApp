@@ -21,19 +21,13 @@ Feedback _$FeedbackFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Feedback {
   int get id => throw _privateConstructorUsedError;
-
   String get description => throw _privateConstructorUsedError;
-
   int get rate => throw _privateConstructorUsedError;
-
   DateTime get dateTime => throw _privateConstructorUsedError;
-
   Event get event => throw _privateConstructorUsedError;
-
   User get user => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $FeedbackCopyWith<Feedback> get copyWith =>
       throw _privateConstructorUsedError;
@@ -43,7 +37,6 @@ mixin _$Feedback {
 abstract class $FeedbackCopyWith<$Res> {
   factory $FeedbackCopyWith(Feedback value, $Res Function(Feedback) then) =
       _$FeedbackCopyWithImpl<$Res, Feedback>;
-
   @useResult
   $Res call(
       {int id,
@@ -54,7 +47,6 @@ abstract class $FeedbackCopyWith<$Res> {
       User user});
 
   $EventCopyWith<$Res> get event;
-
   $UserCopyWith<$Res> get user;
 }
 
@@ -65,7 +57,6 @@ class _$FeedbackCopyWithImpl<$Res, $Val extends Feedback>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -125,11 +116,11 @@ class _$FeedbackCopyWithImpl<$Res, $Val extends Feedback>
 }
 
 /// @nodoc
-abstract class _$$_FeedbackCopyWith<$Res> implements $FeedbackCopyWith<$Res> {
-  factory _$$_FeedbackCopyWith(
-          _$_Feedback value, $Res Function(_$_Feedback) then) =
-      __$$_FeedbackCopyWithImpl<$Res>;
-
+abstract class _$$FeedbackImplCopyWith<$Res>
+    implements $FeedbackCopyWith<$Res> {
+  factory _$$FeedbackImplCopyWith(
+          _$FeedbackImpl value, $Res Function(_$FeedbackImpl) then) =
+      __$$FeedbackImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -142,17 +133,16 @@ abstract class _$$_FeedbackCopyWith<$Res> implements $FeedbackCopyWith<$Res> {
 
   @override
   $EventCopyWith<$Res> get event;
-
   @override
   $UserCopyWith<$Res> get user;
 }
 
 /// @nodoc
-class __$$_FeedbackCopyWithImpl<$Res>
-    extends _$FeedbackCopyWithImpl<$Res, _$_Feedback>
-    implements _$$_FeedbackCopyWith<$Res> {
-  __$$_FeedbackCopyWithImpl(
-      _$_Feedback _value, $Res Function(_$_Feedback) _then)
+class __$$FeedbackImplCopyWithImpl<$Res>
+    extends _$FeedbackCopyWithImpl<$Res, _$FeedbackImpl>
+    implements _$$FeedbackImplCopyWith<$Res> {
+  __$$FeedbackImplCopyWithImpl(
+      _$FeedbackImpl _value, $Res Function(_$FeedbackImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -165,7 +155,7 @@ class __$$_FeedbackCopyWithImpl<$Res>
     Object? event = null,
     Object? user = null,
   }) {
-    return _then(_$_Feedback(
+    return _then(_$FeedbackImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -196,8 +186,8 @@ class __$$_FeedbackCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Feedback implements _Feedback {
-  const _$_Feedback(
+class _$FeedbackImpl implements _Feedback {
+  const _$FeedbackImpl(
       {required this.id,
       required this.description,
       required this.rate,
@@ -205,8 +195,8 @@ class _$_Feedback implements _Feedback {
       required this.event,
       required this.user});
 
-  factory _$_Feedback.fromJson(Map<String, dynamic> json) =>
-      _$$_FeedbackFromJson(json);
+  factory _$FeedbackImpl.fromJson(Map<String, dynamic> json) =>
+      _$$FeedbackImplFromJson(json);
 
   @override
   final int id;
@@ -230,7 +220,7 @@ class _$_Feedback implements _Feedback {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Feedback &&
+            other is _$FeedbackImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.description, description) ||
                 other.description == description) &&
@@ -249,12 +239,12 @@ class _$_Feedback implements _Feedback {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_FeedbackCopyWith<_$_Feedback> get copyWith =>
-      __$$_FeedbackCopyWithImpl<_$_Feedback>(this, _$identity);
+  _$$FeedbackImplCopyWith<_$FeedbackImpl> get copyWith =>
+      __$$FeedbackImplCopyWithImpl<_$FeedbackImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_FeedbackToJson(
+    return _$$FeedbackImplToJson(
       this,
     );
   }
@@ -267,30 +257,25 @@ abstract class _Feedback implements Feedback {
       required final int rate,
       required final DateTime dateTime,
       required final Event event,
-      required final User user}) = _$_Feedback;
+      required final User user}) = _$FeedbackImpl;
 
-  factory _Feedback.fromJson(Map<String, dynamic> json) = _$_Feedback.fromJson;
+  factory _Feedback.fromJson(Map<String, dynamic> json) =
+      _$FeedbackImpl.fromJson;
 
   @override
   int get id;
-
   @override
   String get description;
-
   @override
   int get rate;
-
   @override
   DateTime get dateTime;
-
   @override
   Event get event;
-
   @override
   User get user;
-
   @override
   @JsonKey(ignore: true)
-  _$$_FeedbackCopyWith<_$_Feedback> get copyWith =>
+  _$$FeedbackImplCopyWith<_$FeedbackImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -32,7 +32,7 @@ class App extends StatelessWidget {
           child: MaterialApp(
             navigatorKey: navigatorKey,
             theme: ThemeData(
-              // useMaterial3: true,
+              useMaterial3: false,
               colorScheme: ColorScheme.fromSwatch(
                 // primarySwatch: Colors.deepPurple,
                 accentColor: AppColors.secondaryColor,
@@ -42,6 +42,7 @@ class App extends StatelessWidget {
               textTheme: myTextTheme(),
             ),
             themeMode: ThemeMode.light,
+
             debugShowCheckedModeBanner: false,
             home: const AppView(),
             onGenerateRoute: MyRouter.generateRoute,

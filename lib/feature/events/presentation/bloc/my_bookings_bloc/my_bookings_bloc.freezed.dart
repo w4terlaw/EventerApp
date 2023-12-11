@@ -17,14 +17,12 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$MyBookingsEvent {
   int get eventId => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(int eventId) fetch,
     required TResult Function(int bookingId, int eventId) delete,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int eventId)? fetch,
@@ -38,14 +36,12 @@ mixin _$MyBookingsEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_MyBookingsFetch value) fetch,
     required TResult Function(_MyBookingsDelete value) delete,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_MyBookingsFetch value)? fetch,
@@ -79,9 +75,9 @@ class _$MyBookingsEventCopyWithImpl<$Res, $Val extends MyBookingsEvent>
     implements $MyBookingsEventCopyWith<$Res> {
   _$MyBookingsEventCopyWithImpl(this._value, this._then);
 
-// ignore: unused_field
+  // ignore: unused_field
   final $Val _value;
-// ignore: unused_field
+  // ignore: unused_field
   final $Res Function($Val) _then;
 
   @pragma('vm:prefer-inline')
@@ -99,22 +95,22 @@ class _$MyBookingsEventCopyWithImpl<$Res, $Val extends MyBookingsEvent>
 }
 
 /// @nodoc
-abstract class _$$_MyBookingsFetchCopyWith<$Res>
+abstract class _$$MyBookingsFetchImplCopyWith<$Res>
     implements $MyBookingsEventCopyWith<$Res> {
-  factory _$$_MyBookingsFetchCopyWith(
-          _$_MyBookingsFetch value, $Res Function(_$_MyBookingsFetch) then) =
-      __$$_MyBookingsFetchCopyWithImpl<$Res>;
+  factory _$$MyBookingsFetchImplCopyWith(_$MyBookingsFetchImpl value,
+          $Res Function(_$MyBookingsFetchImpl) then) =
+      __$$MyBookingsFetchImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int eventId});
 }
 
 /// @nodoc
-class __$$_MyBookingsFetchCopyWithImpl<$Res>
-    extends _$MyBookingsEventCopyWithImpl<$Res, _$_MyBookingsFetch>
-    implements _$$_MyBookingsFetchCopyWith<$Res> {
-  __$$_MyBookingsFetchCopyWithImpl(
-      _$_MyBookingsFetch _value, $Res Function(_$_MyBookingsFetch) _then)
+class __$$MyBookingsFetchImplCopyWithImpl<$Res>
+    extends _$MyBookingsEventCopyWithImpl<$Res, _$MyBookingsFetchImpl>
+    implements _$$MyBookingsFetchImplCopyWith<$Res> {
+  __$$MyBookingsFetchImplCopyWithImpl(
+      _$MyBookingsFetchImpl _value, $Res Function(_$MyBookingsFetchImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -122,7 +118,7 @@ class __$$_MyBookingsFetchCopyWithImpl<$Res>
   $Res call({
     Object? eventId = null,
   }) {
-    return _then(_$_MyBookingsFetch(
+    return _then(_$MyBookingsFetchImpl(
       eventId: null == eventId
           ? _value.eventId
           : eventId // ignore: cast_nullable_to_non_nullable
@@ -133,10 +129,10 @@ class __$$_MyBookingsFetchCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_MyBookingsFetch
+class _$MyBookingsFetchImpl
     with DiagnosticableTreeMixin
     implements _MyBookingsFetch {
-  const _$_MyBookingsFetch({required this.eventId});
+  const _$MyBookingsFetchImpl({required this.eventId});
 
   @override
   final int eventId;
@@ -158,7 +154,7 @@ class _$_MyBookingsFetch
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_MyBookingsFetch &&
+            other is _$MyBookingsFetchImpl &&
             (identical(other.eventId, eventId) || other.eventId == eventId));
   }
 
@@ -168,8 +164,9 @@ class _$_MyBookingsFetch
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_MyBookingsFetchCopyWith<_$_MyBookingsFetch> get copyWith =>
-      __$$_MyBookingsFetchCopyWithImpl<_$_MyBookingsFetch>(this, _$identity);
+  _$$MyBookingsFetchImplCopyWith<_$MyBookingsFetchImpl> get copyWith =>
+      __$$MyBookingsFetchImplCopyWithImpl<_$MyBookingsFetchImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -236,33 +233,33 @@ class _$_MyBookingsFetch
 
 abstract class _MyBookingsFetch implements MyBookingsEvent {
   const factory _MyBookingsFetch({required final int eventId}) =
-      _$_MyBookingsFetch;
+      _$MyBookingsFetchImpl;
 
   @override
   int get eventId;
   @override
   @JsonKey(ignore: true)
-  _$$_MyBookingsFetchCopyWith<_$_MyBookingsFetch> get copyWith =>
+  _$$MyBookingsFetchImplCopyWith<_$MyBookingsFetchImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_MyBookingsDeleteCopyWith<$Res>
+abstract class _$$MyBookingsDeleteImplCopyWith<$Res>
     implements $MyBookingsEventCopyWith<$Res> {
-  factory _$$_MyBookingsDeleteCopyWith(
-          _$_MyBookingsDelete value, $Res Function(_$_MyBookingsDelete) then) =
-      __$$_MyBookingsDeleteCopyWithImpl<$Res>;
+  factory _$$MyBookingsDeleteImplCopyWith(_$MyBookingsDeleteImpl value,
+          $Res Function(_$MyBookingsDeleteImpl) then) =
+      __$$MyBookingsDeleteImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int bookingId, int eventId});
 }
 
 /// @nodoc
-class __$$_MyBookingsDeleteCopyWithImpl<$Res>
-    extends _$MyBookingsEventCopyWithImpl<$Res, _$_MyBookingsDelete>
-    implements _$$_MyBookingsDeleteCopyWith<$Res> {
-  __$$_MyBookingsDeleteCopyWithImpl(
-      _$_MyBookingsDelete _value, $Res Function(_$_MyBookingsDelete) _then)
+class __$$MyBookingsDeleteImplCopyWithImpl<$Res>
+    extends _$MyBookingsEventCopyWithImpl<$Res, _$MyBookingsDeleteImpl>
+    implements _$$MyBookingsDeleteImplCopyWith<$Res> {
+  __$$MyBookingsDeleteImplCopyWithImpl(_$MyBookingsDeleteImpl _value,
+      $Res Function(_$MyBookingsDeleteImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -271,7 +268,7 @@ class __$$_MyBookingsDeleteCopyWithImpl<$Res>
     Object? bookingId = null,
     Object? eventId = null,
   }) {
-    return _then(_$_MyBookingsDelete(
+    return _then(_$MyBookingsDeleteImpl(
       bookingId: null == bookingId
           ? _value.bookingId
           : bookingId // ignore: cast_nullable_to_non_nullable
@@ -286,10 +283,11 @@ class __$$_MyBookingsDeleteCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_MyBookingsDelete
+class _$MyBookingsDeleteImpl
     with DiagnosticableTreeMixin
     implements _MyBookingsDelete {
-  const _$_MyBookingsDelete({required this.bookingId, required this.eventId});
+  const _$MyBookingsDeleteImpl(
+      {required this.bookingId, required this.eventId});
 
   @override
   final int bookingId;
@@ -314,7 +312,7 @@ class _$_MyBookingsDelete
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_MyBookingsDelete &&
+            other is _$MyBookingsDeleteImpl &&
             (identical(other.bookingId, bookingId) ||
                 other.bookingId == bookingId) &&
             (identical(other.eventId, eventId) || other.eventId == eventId));
@@ -326,8 +324,9 @@ class _$_MyBookingsDelete
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_MyBookingsDeleteCopyWith<_$_MyBookingsDelete> get copyWith =>
-      __$$_MyBookingsDeleteCopyWithImpl<_$_MyBookingsDelete>(this, _$identity);
+  _$$MyBookingsDeleteImplCopyWith<_$MyBookingsDeleteImpl> get copyWith =>
+      __$$MyBookingsDeleteImplCopyWithImpl<_$MyBookingsDeleteImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -395,14 +394,14 @@ class _$_MyBookingsDelete
 abstract class _MyBookingsDelete implements MyBookingsEvent {
   const factory _MyBookingsDelete(
       {required final int bookingId,
-      required final int eventId}) = _$_MyBookingsDelete;
+      required final int eventId}) = _$MyBookingsDeleteImpl;
 
   int get bookingId;
   @override
   int get eventId;
   @override
   @JsonKey(ignore: true)
-  _$$_MyBookingsDeleteCopyWith<_$_MyBookingsDelete> get copyWith =>
+  _$$MyBookingsDeleteImplCopyWith<_$MyBookingsDeleteImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -466,31 +465,32 @@ class _$MyBookingsStateCopyWithImpl<$Res, $Val extends MyBookingsState>
     implements $MyBookingsStateCopyWith<$Res> {
   _$MyBookingsStateCopyWithImpl(this._value, this._then);
 
-// ignore: unused_field
+  // ignore: unused_field
   final $Val _value;
-// ignore: unused_field
+  // ignore: unused_field
   final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$$_LoadingCopyWith<$Res> {
-  factory _$$_LoadingCopyWith(
-          _$_Loading value, $Res Function(_$_Loading) then) =
-      __$$_LoadingCopyWithImpl<$Res>;
+abstract class _$$LoadingImplCopyWith<$Res> {
+  factory _$$LoadingImplCopyWith(
+          _$LoadingImpl value, $Res Function(_$LoadingImpl) then) =
+      __$$LoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_LoadingCopyWithImpl<$Res>
-    extends _$MyBookingsStateCopyWithImpl<$Res, _$_Loading>
-    implements _$$_LoadingCopyWith<$Res> {
-  __$$_LoadingCopyWithImpl(_$_Loading _value, $Res Function(_$_Loading) _then)
+class __$$LoadingImplCopyWithImpl<$Res>
+    extends _$MyBookingsStateCopyWithImpl<$Res, _$LoadingImpl>
+    implements _$$LoadingImplCopyWith<$Res> {
+  __$$LoadingImplCopyWithImpl(
+      _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_Loading with DiagnosticableTreeMixin implements _Loading {
-  const _$_Loading();
+class _$LoadingImpl with DiagnosticableTreeMixin implements _Loading {
+  const _$LoadingImpl();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -506,7 +506,7 @@ class _$_Loading with DiagnosticableTreeMixin implements _Loading {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Loading);
+        (other.runtimeType == runtimeType && other is _$LoadingImpl);
   }
 
   @override
@@ -582,22 +582,24 @@ class _$_Loading with DiagnosticableTreeMixin implements _Loading {
 }
 
 abstract class _Loading implements MyBookingsState {
-  const factory _Loading() = _$_Loading;
+  const factory _Loading() = _$LoadingImpl;
 }
 
 /// @nodoc
-abstract class _$$_LoadedCopyWith<$Res> {
-  factory _$$_LoadedCopyWith(_$_Loaded value, $Res Function(_$_Loaded) then) =
-      __$$_LoadedCopyWithImpl<$Res>;
+abstract class _$$LoadedImplCopyWith<$Res> {
+  factory _$$LoadedImplCopyWith(
+          _$LoadedImpl value, $Res Function(_$LoadedImpl) then) =
+      __$$LoadedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({List<Booking> bookings});
 }
 
 /// @nodoc
-class __$$_LoadedCopyWithImpl<$Res>
-    extends _$MyBookingsStateCopyWithImpl<$Res, _$_Loaded>
-    implements _$$_LoadedCopyWith<$Res> {
-  __$$_LoadedCopyWithImpl(_$_Loaded _value, $Res Function(_$_Loaded) _then)
+class __$$LoadedImplCopyWithImpl<$Res>
+    extends _$MyBookingsStateCopyWithImpl<$Res, _$LoadedImpl>
+    implements _$$LoadedImplCopyWith<$Res> {
+  __$$LoadedImplCopyWithImpl(
+      _$LoadedImpl _value, $Res Function(_$LoadedImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -605,7 +607,7 @@ class __$$_LoadedCopyWithImpl<$Res>
   $Res call({
     Object? bookings = null,
   }) {
-    return _then(_$_Loaded(
+    return _then(_$LoadedImpl(
       bookings: null == bookings
           ? _value._bookings
           : bookings // ignore: cast_nullable_to_non_nullable
@@ -616,15 +618,15 @@ class __$$_LoadedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Loaded with DiagnosticableTreeMixin implements _Loaded {
-  const _$_Loaded({required final List<Booking> bookings})
+class _$LoadedImpl with DiagnosticableTreeMixin implements _Loaded {
+  const _$LoadedImpl({required final List<Booking> bookings})
       : _bookings = bookings;
 
   final List<Booking> _bookings;
   @override
   List<Booking> get bookings {
     if (_bookings is EqualUnmodifiableListView) return _bookings;
-// ignore: implicit_dynamic_type
+    // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_bookings);
   }
 
@@ -645,7 +647,7 @@ class _$_Loaded with DiagnosticableTreeMixin implements _Loaded {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Loaded &&
+            other is _$LoadedImpl &&
             const DeepCollectionEquality().equals(other._bookings, _bookings));
   }
 
@@ -656,8 +658,8 @@ class _$_Loaded with DiagnosticableTreeMixin implements _Loaded {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_LoadedCopyWith<_$_Loaded> get copyWith =>
-      __$$_LoadedCopyWithImpl<_$_Loaded>(this, _$identity);
+  _$$LoadedImplCopyWith<_$LoadedImpl> get copyWith =>
+      __$$LoadedImplCopyWithImpl<_$LoadedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -729,27 +731,29 @@ class _$_Loaded with DiagnosticableTreeMixin implements _Loaded {
 }
 
 abstract class _Loaded implements MyBookingsState {
-  const factory _Loaded({required final List<Booking> bookings}) = _$_Loaded;
+  const factory _Loaded({required final List<Booking> bookings}) = _$LoadedImpl;
 
   List<Booking> get bookings;
   @JsonKey(ignore: true)
-  _$$_LoadedCopyWith<_$_Loaded> get copyWith =>
+  _$$LoadedImplCopyWith<_$LoadedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_ErrorCopyWith<$Res> {
-  factory _$$_ErrorCopyWith(_$_Error value, $Res Function(_$_Error) then) =
-      __$$_ErrorCopyWithImpl<$Res>;
+abstract class _$$ErrorImplCopyWith<$Res> {
+  factory _$$ErrorImplCopyWith(
+          _$ErrorImpl value, $Res Function(_$ErrorImpl) then) =
+      __$$ErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Failure failure});
 }
 
 /// @nodoc
-class __$$_ErrorCopyWithImpl<$Res>
-    extends _$MyBookingsStateCopyWithImpl<$Res, _$_Error>
-    implements _$$_ErrorCopyWith<$Res> {
-  __$$_ErrorCopyWithImpl(_$_Error _value, $Res Function(_$_Error) _then)
+class __$$ErrorImplCopyWithImpl<$Res>
+    extends _$MyBookingsStateCopyWithImpl<$Res, _$ErrorImpl>
+    implements _$$ErrorImplCopyWith<$Res> {
+  __$$ErrorImplCopyWithImpl(
+      _$ErrorImpl _value, $Res Function(_$ErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -757,7 +761,7 @@ class __$$_ErrorCopyWithImpl<$Res>
   $Res call({
     Object? failure = null,
   }) {
-    return _then(_$_Error(
+    return _then(_$ErrorImpl(
       failure: null == failure
           ? _value.failure
           : failure // ignore: cast_nullable_to_non_nullable
@@ -768,8 +772,8 @@ class __$$_ErrorCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Error with DiagnosticableTreeMixin implements _Error {
-  const _$_Error({required this.failure});
+class _$ErrorImpl with DiagnosticableTreeMixin implements _Error {
+  const _$ErrorImpl({required this.failure});
 
   @override
   final Failure failure;
@@ -791,7 +795,7 @@ class _$_Error with DiagnosticableTreeMixin implements _Error {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Error &&
+            other is _$ErrorImpl &&
             (identical(other.failure, failure) || other.failure == failure));
   }
 
@@ -801,8 +805,8 @@ class _$_Error with DiagnosticableTreeMixin implements _Error {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ErrorCopyWith<_$_Error> get copyWith =>
-      __$$_ErrorCopyWithImpl<_$_Error>(this, _$identity);
+  _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith =>
+      __$$ErrorImplCopyWithImpl<_$ErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -874,10 +878,10 @@ class _$_Error with DiagnosticableTreeMixin implements _Error {
 }
 
 abstract class _Error implements MyBookingsState {
-  const factory _Error({required final Failure failure}) = _$_Error;
+  const factory _Error({required final Failure failure}) = _$ErrorImpl;
 
   Failure get failure;
   @JsonKey(ignore: true)
-  _$$_ErrorCopyWith<_$_Error> get copyWith =>
+  _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

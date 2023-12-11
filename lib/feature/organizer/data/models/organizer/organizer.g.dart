@@ -6,7 +6,8 @@ part of 'organizer.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Organizer _$$_OrganizerFromJson(Map<String, dynamic> json) => _$_Organizer(
+_$OrganizerImpl _$$OrganizerImplFromJson(Map<String, dynamic> json) =>
+    _$OrganizerImpl(
       id: json['id'] as int,
       name: json['name'] as String,
       logo: json['logo'] as String,
@@ -21,7 +22,7 @@ _$_Organizer _$$_OrganizerFromJson(Map<String, dynamic> json) => _$_Organizer(
       instagram: json['instagram'] as String?,
     );
 
-Map<String, dynamic> _$$_OrganizerToJson(_$_Organizer instance) =>
+Map<String, dynamic> _$$OrganizerImplToJson(_$OrganizerImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,

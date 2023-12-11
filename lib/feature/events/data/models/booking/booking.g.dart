@@ -6,7 +6,8 @@ part of 'booking.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Booking _$$_BookingFromJson(Map<String, dynamic> json) => _$_Booking(
+_$BookingImpl _$$BookingImplFromJson(Map<String, dynamic> json) =>
+    _$BookingImpl(
       id: json['id'] as int,
       event: Event.fromJson(json['event'] as Map<String, dynamic>),
       user: User.fromJson(json['user'] as Map<String, dynamic>),
@@ -15,7 +16,7 @@ _$_Booking _$$_BookingFromJson(Map<String, dynamic> json) => _$_Booking(
           .toList(),
     );
 
-Map<String, dynamic> _$$_BookingToJson(_$_Booking instance) =>
+Map<String, dynamic> _$$BookingImplToJson(_$BookingImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'event': instance.event,
@@ -23,7 +24,7 @@ Map<String, dynamic> _$$_BookingToJson(_$_Booking instance) =>
       'tickets': instance.tickets,
     };
 
-_$_User _$$_UserFromJson(Map<String, dynamic> json) => _$_User(
+_$UserImpl _$$UserImplFromJson(Map<String, dynamic> json) => _$UserImpl(
       id: json['id'] as int,
       firstName: json['firstName'] as String,
       lastName: json['lastName'] as String,
@@ -31,7 +32,8 @@ _$_User _$$_UserFromJson(Map<String, dynamic> json) => _$_User(
       avatar: json['avatar'] as String,
     );
 
-Map<String, dynamic> _$$_UserToJson(_$_User instance) => <String, dynamic>{
+Map<String, dynamic> _$$UserImplToJson(_$UserImpl instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'firstName': instance.firstName,
       'lastName': instance.lastName,
@@ -39,14 +41,15 @@ Map<String, dynamic> _$$_UserToJson(_$_User instance) => <String, dynamic>{
       'avatar': instance.avatar,
     };
 
-_$_Ticket _$$_TicketFromJson(Map<String, dynamic> json) => _$_Ticket(
+_$TicketImpl _$$TicketImplFromJson(Map<String, dynamic> json) => _$TicketImpl(
       id: json['id'] as int,
       ticketType: json['ticketType'] as String,
       seat: json['seat'] as int,
       eventDatesId: json['eventDatesId'] as int,
     );
 
-Map<String, dynamic> _$$_TicketToJson(_$_Ticket instance) => <String, dynamic>{
+Map<String, dynamic> _$$TicketImplToJson(_$TicketImpl instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'ticketType': instance.ticketType,
       'seat': instance.seat,

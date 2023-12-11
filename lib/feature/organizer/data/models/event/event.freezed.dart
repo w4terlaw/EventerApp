@@ -21,25 +21,16 @@ Event _$EventFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Event {
   int get id => throw _privateConstructorUsedError;
-
   String get name => throw _privateConstructorUsedError;
-
   String get description => throw _privateConstructorUsedError;
-
   double get expectedAmount => throw _privateConstructorUsedError;
-
   int get countOfMembers => throw _privateConstructorUsedError;
-
   double get recommendedDonation => throw _privateConstructorUsedError;
-
   Organizer get organizer => throw _privateConstructorUsedError;
-
   List<EventDates> get eventDates => throw _privateConstructorUsedError;
-
   List<Venues> get venues => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $EventCopyWith<Event> get copyWith => throw _privateConstructorUsedError;
 }
@@ -48,7 +39,6 @@ mixin _$Event {
 abstract class $EventCopyWith<$Res> {
   factory $EventCopyWith(Event value, $Res Function(Event) then) =
       _$EventCopyWithImpl<$Res, Event>;
-
   @useResult
   $Res call(
       {int id,
@@ -71,7 +61,6 @@ class _$EventCopyWithImpl<$Res, $Val extends Event>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -138,10 +127,10 @@ class _$EventCopyWithImpl<$Res, $Val extends Event>
 }
 
 /// @nodoc
-abstract class _$$_EventCopyWith<$Res> implements $EventCopyWith<$Res> {
-  factory _$$_EventCopyWith(_$_Event value, $Res Function(_$_Event) then) =
-      __$$_EventCopyWithImpl<$Res>;
-
+abstract class _$$EventImplCopyWith<$Res> implements $EventCopyWith<$Res> {
+  factory _$$EventImplCopyWith(
+          _$EventImpl value, $Res Function(_$EventImpl) then) =
+      __$$EventImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -160,9 +149,11 @@ abstract class _$$_EventCopyWith<$Res> implements $EventCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_EventCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res, _$_Event>
-    implements _$$_EventCopyWith<$Res> {
-  __$$_EventCopyWithImpl(_$_Event _value, $Res Function(_$_Event) _then)
+class __$$EventImplCopyWithImpl<$Res>
+    extends _$EventCopyWithImpl<$Res, _$EventImpl>
+    implements _$$EventImplCopyWith<$Res> {
+  __$$EventImplCopyWithImpl(
+      _$EventImpl _value, $Res Function(_$EventImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -178,7 +169,7 @@ class __$$_EventCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res, _$_Event>
     Object? eventDates = null,
     Object? venues = null,
   }) {
-    return _then(_$_Event(
+    return _then(_$EventImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -221,8 +212,8 @@ class __$$_EventCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res, _$_Event>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Event implements _Event {
-  const _$_Event(
+class _$EventImpl implements _Event {
+  const _$EventImpl(
       {required this.id,
       required this.name,
       required this.description,
@@ -235,8 +226,8 @@ class _$_Event implements _Event {
       : _eventDates = eventDates,
         _venues = venues;
 
-  factory _$_Event.fromJson(Map<String, dynamic> json) =>
-      _$$_EventFromJson(json);
+  factory _$EventImpl.fromJson(Map<String, dynamic> json) =>
+      _$$EventImplFromJson(json);
 
   @override
   final int id;
@@ -253,7 +244,6 @@ class _$_Event implements _Event {
   @override
   final Organizer organizer;
   final List<EventDates> _eventDates;
-
   @override
   List<EventDates> get eventDates {
     if (_eventDates is EqualUnmodifiableListView) return _eventDates;
@@ -262,7 +252,6 @@ class _$_Event implements _Event {
   }
 
   final List<Venues> _venues;
-
   @override
   List<Venues> get venues {
     if (_venues is EqualUnmodifiableListView) return _venues;
@@ -279,7 +268,7 @@ class _$_Event implements _Event {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Event &&
+            other is _$EventImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.description, description) ||
@@ -314,12 +303,12 @@ class _$_Event implements _Event {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_EventCopyWith<_$_Event> get copyWith =>
-      __$$_EventCopyWithImpl<_$_Event>(this, _$identity);
+  _$$EventImplCopyWith<_$EventImpl> get copyWith =>
+      __$$EventImplCopyWithImpl<_$EventImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_EventToJson(
+    return _$$EventImplToJson(
       this,
     );
   }
@@ -335,39 +324,30 @@ abstract class _Event implements Event {
       required final double recommendedDonation,
       required final Organizer organizer,
       required final List<EventDates> eventDates,
-      required final List<Venues> venues}) = _$_Event;
+      required final List<Venues> venues}) = _$EventImpl;
 
-  factory _Event.fromJson(Map<String, dynamic> json) = _$_Event.fromJson;
+  factory _Event.fromJson(Map<String, dynamic> json) = _$EventImpl.fromJson;
 
   @override
   int get id;
-
   @override
   String get name;
-
   @override
   String get description;
-
   @override
   double get expectedAmount;
-
   @override
   int get countOfMembers;
-
   @override
   double get recommendedDonation;
-
   @override
   Organizer get organizer;
-
   @override
   List<EventDates> get eventDates;
-
   @override
   List<Venues> get venues;
-
   @override
   @JsonKey(ignore: true)
-  _$$_EventCopyWith<_$_Event> get copyWith =>
+  _$$EventImplCopyWith<_$EventImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -21,31 +21,19 @@ Organizer _$OrganizerFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Organizer {
   int get id => throw _privateConstructorUsedError;
-
   String get name => throw _privateConstructorUsedError;
-
   String get logo => throw _privateConstructorUsedError;
-
   String get background => throw _privateConstructorUsedError;
-
   String get description => throw _privateConstructorUsedError;
-
   String get cardNumber => throw _privateConstructorUsedError;
-
   String get cardHolderName => throw _privateConstructorUsedError;
-
   String? get facebook => throw _privateConstructorUsedError;
-
   String? get telegram => throw _privateConstructorUsedError;
-
   String? get vk => throw _privateConstructorUsedError;
-
   String? get twitter => throw _privateConstructorUsedError;
-
   String? get instagram => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $OrganizerCopyWith<Organizer> get copyWith =>
       throw _privateConstructorUsedError;
@@ -55,7 +43,6 @@ mixin _$Organizer {
 abstract class $OrganizerCopyWith<$Res> {
   factory $OrganizerCopyWith(Organizer value, $Res Function(Organizer) then) =
       _$OrganizerCopyWithImpl<$Res, Organizer>;
-
   @useResult
   $Res call(
       {int id,
@@ -79,7 +66,6 @@ class _$OrganizerCopyWithImpl<$Res, $Val extends Organizer>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -153,11 +139,11 @@ class _$OrganizerCopyWithImpl<$Res, $Val extends Organizer>
 }
 
 /// @nodoc
-abstract class _$$_OrganizerCopyWith<$Res> implements $OrganizerCopyWith<$Res> {
-  factory _$$_OrganizerCopyWith(
-          _$_Organizer value, $Res Function(_$_Organizer) then) =
-      __$$_OrganizerCopyWithImpl<$Res>;
-
+abstract class _$$OrganizerImplCopyWith<$Res>
+    implements $OrganizerCopyWith<$Res> {
+  factory _$$OrganizerImplCopyWith(
+          _$OrganizerImpl value, $Res Function(_$OrganizerImpl) then) =
+      __$$OrganizerImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -176,11 +162,11 @@ abstract class _$$_OrganizerCopyWith<$Res> implements $OrganizerCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_OrganizerCopyWithImpl<$Res>
-    extends _$OrganizerCopyWithImpl<$Res, _$_Organizer>
-    implements _$$_OrganizerCopyWith<$Res> {
-  __$$_OrganizerCopyWithImpl(
-      _$_Organizer _value, $Res Function(_$_Organizer) _then)
+class __$$OrganizerImplCopyWithImpl<$Res>
+    extends _$OrganizerCopyWithImpl<$Res, _$OrganizerImpl>
+    implements _$$OrganizerImplCopyWith<$Res> {
+  __$$OrganizerImplCopyWithImpl(
+      _$OrganizerImpl _value, $Res Function(_$OrganizerImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -199,7 +185,7 @@ class __$$_OrganizerCopyWithImpl<$Res>
     Object? twitter = freezed,
     Object? instagram = freezed,
   }) {
-    return _then(_$_Organizer(
+    return _then(_$OrganizerImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -254,8 +240,8 @@ class __$$_OrganizerCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Organizer implements _Organizer {
-  const _$_Organizer(
+class _$OrganizerImpl implements _Organizer {
+  const _$OrganizerImpl(
       {required this.id,
       required this.name,
       required this.logo,
@@ -269,8 +255,8 @@ class _$_Organizer implements _Organizer {
       required this.twitter,
       required this.instagram});
 
-  factory _$_Organizer.fromJson(Map<String, dynamic> json) =>
-      _$$_OrganizerFromJson(json);
+  factory _$OrganizerImpl.fromJson(Map<String, dynamic> json) =>
+      _$$OrganizerImplFromJson(json);
 
   @override
   final int id;
@@ -306,7 +292,7 @@ class _$_Organizer implements _Organizer {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Organizer &&
+            other is _$OrganizerImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.logo, logo) || other.logo == logo) &&
@@ -348,12 +334,12 @@ class _$_Organizer implements _Organizer {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_OrganizerCopyWith<_$_Organizer> get copyWith =>
-      __$$_OrganizerCopyWithImpl<_$_Organizer>(this, _$identity);
+  _$$OrganizerImplCopyWith<_$OrganizerImpl> get copyWith =>
+      __$$OrganizerImplCopyWithImpl<_$OrganizerImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_OrganizerToJson(
+    return _$$OrganizerImplToJson(
       this,
     );
   }
@@ -372,49 +358,37 @@ abstract class _Organizer implements Organizer {
       required final String? telegram,
       required final String? vk,
       required final String? twitter,
-      required final String? instagram}) = _$_Organizer;
+      required final String? instagram}) = _$OrganizerImpl;
 
   factory _Organizer.fromJson(Map<String, dynamic> json) =
-      _$_Organizer.fromJson;
+      _$OrganizerImpl.fromJson;
 
   @override
   int get id;
-
   @override
   String get name;
-
   @override
   String get logo;
-
   @override
   String get background;
-
   @override
   String get description;
-
   @override
   String get cardNumber;
-
   @override
   String get cardHolderName;
-
   @override
   String? get facebook;
-
   @override
   String? get telegram;
-
   @override
   String? get vk;
-
   @override
   String? get twitter;
-
   @override
   String? get instagram;
-
   @override
   @JsonKey(ignore: true)
-  _$$_OrganizerCopyWith<_$_Organizer> get copyWith =>
+  _$$OrganizerImplCopyWith<_$OrganizerImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

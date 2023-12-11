@@ -13,8 +13,8 @@ import '../../../../../../common/constants.dart';
 import '../../../../data/models/event/event.dart';
 import '../../../bloc/get_list_events_bloc/get_list_events_bloc.dart';
 
-class UpcomingEventsList extends StatelessWidget {
-  const UpcomingEventsList({Key? key}) : super(key: key);
+class EventsList extends StatelessWidget {
+  const EventsList({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -74,7 +74,7 @@ class UpcomingEventsList extends StatelessWidget {
                       onTap: () {
                         final int id = event.id;
                         navigatorKey.currentState
-                            ?.pushNamed('/event_details', arguments: id);
+                            ?.pushNamed(MyRouterConstants.eventDetailsRoute, arguments: id);
                       },
                       child: EventHomeMiddleCard(
                         photos: event.venues[0].photos,

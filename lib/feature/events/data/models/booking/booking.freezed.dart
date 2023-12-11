@@ -21,15 +21,11 @@ Booking _$BookingFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Booking {
   int get id => throw _privateConstructorUsedError;
-
   Event get event => throw _privateConstructorUsedError;
-
   User get user => throw _privateConstructorUsedError;
-
   List<Ticket> get tickets => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $BookingCopyWith<Booking> get copyWith => throw _privateConstructorUsedError;
 }
@@ -38,12 +34,10 @@ mixin _$Booking {
 abstract class $BookingCopyWith<$Res> {
   factory $BookingCopyWith(Booking value, $Res Function(Booking) then) =
       _$BookingCopyWithImpl<$Res, Booking>;
-
   @useResult
   $Res call({int id, Event event, User user, List<Ticket> tickets});
 
   $EventCopyWith<$Res> get event;
-
   $UserCopyWith<$Res> get user;
 }
 
@@ -54,7 +48,6 @@ class _$BookingCopyWithImpl<$Res, $Val extends Booking>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -104,27 +97,26 @@ class _$BookingCopyWithImpl<$Res, $Val extends Booking>
 }
 
 /// @nodoc
-abstract class _$$_BookingCopyWith<$Res> implements $BookingCopyWith<$Res> {
-  factory _$$_BookingCopyWith(
-          _$_Booking value, $Res Function(_$_Booking) then) =
-      __$$_BookingCopyWithImpl<$Res>;
-
+abstract class _$$BookingImplCopyWith<$Res> implements $BookingCopyWith<$Res> {
+  factory _$$BookingImplCopyWith(
+          _$BookingImpl value, $Res Function(_$BookingImpl) then) =
+      __$$BookingImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int id, Event event, User user, List<Ticket> tickets});
 
   @override
   $EventCopyWith<$Res> get event;
-
   @override
   $UserCopyWith<$Res> get user;
 }
 
 /// @nodoc
-class __$$_BookingCopyWithImpl<$Res>
-    extends _$BookingCopyWithImpl<$Res, _$_Booking>
-    implements _$$_BookingCopyWith<$Res> {
-  __$$_BookingCopyWithImpl(_$_Booking _value, $Res Function(_$_Booking) _then)
+class __$$BookingImplCopyWithImpl<$Res>
+    extends _$BookingCopyWithImpl<$Res, _$BookingImpl>
+    implements _$$BookingImplCopyWith<$Res> {
+  __$$BookingImplCopyWithImpl(
+      _$BookingImpl _value, $Res Function(_$BookingImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -135,7 +127,7 @@ class __$$_BookingCopyWithImpl<$Res>
     Object? user = null,
     Object? tickets = null,
   }) {
-    return _then(_$_Booking(
+    return _then(_$BookingImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -158,16 +150,16 @@ class __$$_BookingCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Booking implements _Booking {
-  const _$_Booking(
+class _$BookingImpl implements _Booking {
+  const _$BookingImpl(
       {required this.id,
       required this.event,
       required this.user,
       required final List<Ticket> tickets})
       : _tickets = tickets;
 
-  factory _$_Booking.fromJson(Map<String, dynamic> json) =>
-      _$$_BookingFromJson(json);
+  factory _$BookingImpl.fromJson(Map<String, dynamic> json) =>
+      _$$BookingImplFromJson(json);
 
   @override
   final int id;
@@ -176,7 +168,6 @@ class _$_Booking implements _Booking {
   @override
   final User user;
   final List<Ticket> _tickets;
-
   @override
   List<Ticket> get tickets {
     if (_tickets is EqualUnmodifiableListView) return _tickets;
@@ -193,7 +184,7 @@ class _$_Booking implements _Booking {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Booking &&
+            other is _$BookingImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.event, event) || other.event == event) &&
             (identical(other.user, user) || other.user == user) &&
@@ -208,12 +199,12 @@ class _$_Booking implements _Booking {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_BookingCopyWith<_$_Booking> get copyWith =>
-      __$$_BookingCopyWithImpl<_$_Booking>(this, _$identity);
+  _$$BookingImplCopyWith<_$BookingImpl> get copyWith =>
+      __$$BookingImplCopyWithImpl<_$BookingImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_BookingToJson(
+    return _$$BookingImplToJson(
       this,
     );
   }
@@ -224,25 +215,21 @@ abstract class _Booking implements Booking {
       {required final int id,
       required final Event event,
       required final User user,
-      required final List<Ticket> tickets}) = _$_Booking;
+      required final List<Ticket> tickets}) = _$BookingImpl;
 
-  factory _Booking.fromJson(Map<String, dynamic> json) = _$_Booking.fromJson;
+  factory _Booking.fromJson(Map<String, dynamic> json) = _$BookingImpl.fromJson;
 
   @override
   int get id;
-
   @override
   Event get event;
-
   @override
   User get user;
-
   @override
   List<Ticket> get tickets;
-
   @override
   @JsonKey(ignore: true)
-  _$$_BookingCopyWith<_$_Booking> get copyWith =>
+  _$$BookingImplCopyWith<_$BookingImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -253,17 +240,12 @@ User _$UserFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$User {
   int get id => throw _privateConstructorUsedError;
-
   String get firstName => throw _privateConstructorUsedError;
-
   String get lastName => throw _privateConstructorUsedError;
-
   String get email => throw _privateConstructorUsedError;
-
   String get avatar => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $UserCopyWith<User> get copyWith => throw _privateConstructorUsedError;
 }
@@ -272,7 +254,6 @@ mixin _$User {
 abstract class $UserCopyWith<$Res> {
   factory $UserCopyWith(User value, $Res Function(User) then) =
       _$UserCopyWithImpl<$Res, User>;
-
   @useResult
   $Res call(
       {int id, String firstName, String lastName, String email, String avatar});
@@ -285,7 +266,6 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -324,10 +304,10 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
 }
 
 /// @nodoc
-abstract class _$$_UserCopyWith<$Res> implements $UserCopyWith<$Res> {
-  factory _$$_UserCopyWith(_$_User value, $Res Function(_$_User) then) =
-      __$$_UserCopyWithImpl<$Res>;
-
+abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
+  factory _$$UserImplCopyWith(
+          _$UserImpl value, $Res Function(_$UserImpl) then) =
+      __$$UserImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -335,9 +315,10 @@ abstract class _$$_UserCopyWith<$Res> implements $UserCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$_User>
-    implements _$$_UserCopyWith<$Res> {
-  __$$_UserCopyWithImpl(_$_User _value, $Res Function(_$_User) _then)
+class __$$UserImplCopyWithImpl<$Res>
+    extends _$UserCopyWithImpl<$Res, _$UserImpl>
+    implements _$$UserImplCopyWith<$Res> {
+  __$$UserImplCopyWithImpl(_$UserImpl _value, $Res Function(_$UserImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -349,7 +330,7 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$_User>
     Object? email = null,
     Object? avatar = null,
   }) {
-    return _then(_$_User(
+    return _then(_$UserImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -376,15 +357,16 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$_User>
 
 /// @nodoc
 @JsonSerializable()
-class _$_User implements _User {
-  const _$_User(
+class _$UserImpl implements _User {
+  const _$UserImpl(
       {required this.id,
       required this.firstName,
       required this.lastName,
       required this.email,
       required this.avatar});
 
-  factory _$_User.fromJson(Map<String, dynamic> json) => _$$_UserFromJson(json);
+  factory _$UserImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UserImplFromJson(json);
 
   @override
   final int id;
@@ -406,7 +388,7 @@ class _$_User implements _User {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_User &&
+            other is _$UserImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.firstName, firstName) ||
                 other.firstName == firstName) &&
@@ -424,12 +406,12 @@ class _$_User implements _User {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UserCopyWith<_$_User> get copyWith =>
-      __$$_UserCopyWithImpl<_$_User>(this, _$identity);
+  _$$UserImplCopyWith<_$UserImpl> get copyWith =>
+      __$$UserImplCopyWithImpl<_$UserImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UserToJson(
+    return _$$UserImplToJson(
       this,
     );
   }
@@ -441,28 +423,24 @@ abstract class _User implements User {
       required final String firstName,
       required final String lastName,
       required final String email,
-      required final String avatar}) = _$_User;
+      required final String avatar}) = _$UserImpl;
 
-  factory _User.fromJson(Map<String, dynamic> json) = _$_User.fromJson;
+  factory _User.fromJson(Map<String, dynamic> json) = _$UserImpl.fromJson;
 
   @override
   int get id;
-
   @override
   String get firstName;
-
   @override
   String get lastName;
-
   @override
   String get email;
-
   @override
   String get avatar;
-
   @override
   @JsonKey(ignore: true)
-  _$$_UserCopyWith<_$_User> get copyWith => throw _privateConstructorUsedError;
+  _$$UserImplCopyWith<_$UserImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 Ticket _$TicketFromJson(Map<String, dynamic> json) {
@@ -472,15 +450,11 @@ Ticket _$TicketFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Ticket {
   int get id => throw _privateConstructorUsedError;
-
   String get ticketType => throw _privateConstructorUsedError;
-
   int get seat => throw _privateConstructorUsedError;
-
   int get eventDatesId => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $TicketCopyWith<Ticket> get copyWith => throw _privateConstructorUsedError;
 }
@@ -489,7 +463,6 @@ mixin _$Ticket {
 abstract class $TicketCopyWith<$Res> {
   factory $TicketCopyWith(Ticket value, $Res Function(Ticket) then) =
       _$TicketCopyWithImpl<$Res, Ticket>;
-
   @useResult
   $Res call({int id, String ticketType, int seat, int eventDatesId});
 }
@@ -501,7 +474,6 @@ class _$TicketCopyWithImpl<$Res, $Val extends Ticket>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -535,20 +507,21 @@ class _$TicketCopyWithImpl<$Res, $Val extends Ticket>
 }
 
 /// @nodoc
-abstract class _$$_TicketCopyWith<$Res> implements $TicketCopyWith<$Res> {
-  factory _$$_TicketCopyWith(_$_Ticket value, $Res Function(_$_Ticket) then) =
-      __$$_TicketCopyWithImpl<$Res>;
-
+abstract class _$$TicketImplCopyWith<$Res> implements $TicketCopyWith<$Res> {
+  factory _$$TicketImplCopyWith(
+          _$TicketImpl value, $Res Function(_$TicketImpl) then) =
+      __$$TicketImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int id, String ticketType, int seat, int eventDatesId});
 }
 
 /// @nodoc
-class __$$_TicketCopyWithImpl<$Res>
-    extends _$TicketCopyWithImpl<$Res, _$_Ticket>
-    implements _$$_TicketCopyWith<$Res> {
-  __$$_TicketCopyWithImpl(_$_Ticket _value, $Res Function(_$_Ticket) _then)
+class __$$TicketImplCopyWithImpl<$Res>
+    extends _$TicketCopyWithImpl<$Res, _$TicketImpl>
+    implements _$$TicketImplCopyWith<$Res> {
+  __$$TicketImplCopyWithImpl(
+      _$TicketImpl _value, $Res Function(_$TicketImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -559,7 +532,7 @@ class __$$_TicketCopyWithImpl<$Res>
     Object? seat = null,
     Object? eventDatesId = null,
   }) {
-    return _then(_$_Ticket(
+    return _then(_$TicketImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -582,15 +555,15 @@ class __$$_TicketCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Ticket implements _Ticket {
-  const _$_Ticket(
+class _$TicketImpl implements _Ticket {
+  const _$TicketImpl(
       {required this.id,
       required this.ticketType,
       required this.seat,
       required this.eventDatesId});
 
-  factory _$_Ticket.fromJson(Map<String, dynamic> json) =>
-      _$$_TicketFromJson(json);
+  factory _$TicketImpl.fromJson(Map<String, dynamic> json) =>
+      _$$TicketImplFromJson(json);
 
   @override
   final int id;
@@ -610,7 +583,7 @@ class _$_Ticket implements _Ticket {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Ticket &&
+            other is _$TicketImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.ticketType, ticketType) ||
                 other.ticketType == ticketType) &&
@@ -627,12 +600,12 @@ class _$_Ticket implements _Ticket {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_TicketCopyWith<_$_Ticket> get copyWith =>
-      __$$_TicketCopyWithImpl<_$_Ticket>(this, _$identity);
+  _$$TicketImplCopyWith<_$TicketImpl> get copyWith =>
+      __$$TicketImplCopyWithImpl<_$TicketImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_TicketToJson(
+    return _$$TicketImplToJson(
       this,
     );
   }
@@ -643,24 +616,20 @@ abstract class _Ticket implements Ticket {
       {required final int id,
       required final String ticketType,
       required final int seat,
-      required final int eventDatesId}) = _$_Ticket;
+      required final int eventDatesId}) = _$TicketImpl;
 
-  factory _Ticket.fromJson(Map<String, dynamic> json) = _$_Ticket.fromJson;
+  factory _Ticket.fromJson(Map<String, dynamic> json) = _$TicketImpl.fromJson;
 
   @override
   int get id;
-
   @override
   String get ticketType;
-
   @override
   int get seat;
-
   @override
   int get eventDatesId;
-
   @override
   @JsonKey(ignore: true)
-  _$$_TicketCopyWith<_$_Ticket> get copyWith =>
+  _$$TicketImplCopyWith<_$TicketImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

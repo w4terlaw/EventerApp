@@ -32,7 +32,7 @@ class OrganizerBackground extends StatelessWidget {
           onPressed: () {},
         ),
       ],
-      expandedHeight: 380.h,
+      expandedHeight: 400.w,
       // floating: false,
       pinned: true,
       elevation: 0,

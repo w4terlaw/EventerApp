@@ -17,13 +17,11 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$GetEventEvent {
   int get eventId => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(int eventId) byId,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int eventId)? byId,
@@ -35,13 +33,11 @@ mixin _$GetEventEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_GetEventById value) byId,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_GetEventById value)? byId,
@@ -73,9 +69,9 @@ class _$GetEventEventCopyWithImpl<$Res, $Val extends GetEventEvent>
     implements $GetEventEventCopyWith<$Res> {
   _$GetEventEventCopyWithImpl(this._value, this._then);
 
-// ignore: unused_field
+  // ignore: unused_field
   final $Val _value;
-// ignore: unused_field
+  // ignore: unused_field
   final $Res Function($Val) _then;
 
   @pragma('vm:prefer-inline')
@@ -93,22 +89,22 @@ class _$GetEventEventCopyWithImpl<$Res, $Val extends GetEventEvent>
 }
 
 /// @nodoc
-abstract class _$$_GetEventByIdCopyWith<$Res>
+abstract class _$$GetEventByIdImplCopyWith<$Res>
     implements $GetEventEventCopyWith<$Res> {
-  factory _$$_GetEventByIdCopyWith(
-          _$_GetEventById value, $Res Function(_$_GetEventById) then) =
-      __$$_GetEventByIdCopyWithImpl<$Res>;
+  factory _$$GetEventByIdImplCopyWith(
+          _$GetEventByIdImpl value, $Res Function(_$GetEventByIdImpl) then) =
+      __$$GetEventByIdImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int eventId});
 }
 
 /// @nodoc
-class __$$_GetEventByIdCopyWithImpl<$Res>
-    extends _$GetEventEventCopyWithImpl<$Res, _$_GetEventById>
-    implements _$$_GetEventByIdCopyWith<$Res> {
-  __$$_GetEventByIdCopyWithImpl(
-      _$_GetEventById _value, $Res Function(_$_GetEventById) _then)
+class __$$GetEventByIdImplCopyWithImpl<$Res>
+    extends _$GetEventEventCopyWithImpl<$Res, _$GetEventByIdImpl>
+    implements _$$GetEventByIdImplCopyWith<$Res> {
+  __$$GetEventByIdImplCopyWithImpl(
+      _$GetEventByIdImpl _value, $Res Function(_$GetEventByIdImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -116,7 +112,7 @@ class __$$_GetEventByIdCopyWithImpl<$Res>
   $Res call({
     Object? eventId = null,
   }) {
-    return _then(_$_GetEventById(
+    return _then(_$GetEventByIdImpl(
       eventId: null == eventId
           ? _value.eventId
           : eventId // ignore: cast_nullable_to_non_nullable
@@ -127,8 +123,8 @@ class __$$_GetEventByIdCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_GetEventById implements _GetEventById {
-  const _$_GetEventById({required this.eventId});
+class _$GetEventByIdImpl implements _GetEventById {
+  const _$GetEventByIdImpl({required this.eventId});
 
   @override
   final int eventId;
@@ -142,7 +138,7 @@ class _$_GetEventById implements _GetEventById {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_GetEventById &&
+            other is _$GetEventByIdImpl &&
             (identical(other.eventId, eventId) || other.eventId == eventId));
   }
 
@@ -152,8 +148,8 @@ class _$_GetEventById implements _GetEventById {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_GetEventByIdCopyWith<_$_GetEventById> get copyWith =>
-      __$$_GetEventByIdCopyWithImpl<_$_GetEventById>(this, _$identity);
+  _$$GetEventByIdImplCopyWith<_$GetEventByIdImpl> get copyWith =>
+      __$$GetEventByIdImplCopyWithImpl<_$GetEventByIdImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -213,13 +209,14 @@ class _$_GetEventById implements _GetEventById {
 }
 
 abstract class _GetEventById implements GetEventEvent {
-  const factory _GetEventById({required final int eventId}) = _$_GetEventById;
+  const factory _GetEventById({required final int eventId}) =
+      _$GetEventByIdImpl;
 
   @override
   int get eventId;
   @override
   @JsonKey(ignore: true)
-  _$$_GetEventByIdCopyWith<_$_GetEventById> get copyWith =>
+  _$$GetEventByIdImplCopyWith<_$GetEventByIdImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -283,32 +280,32 @@ class _$GetEventStateCopyWithImpl<$Res, $Val extends GetEventState>
     implements $GetEventStateCopyWith<$Res> {
   _$GetEventStateCopyWithImpl(this._value, this._then);
 
-// ignore: unused_field
+  // ignore: unused_field
   final $Val _value;
-// ignore: unused_field
+  // ignore: unused_field
   final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$$GetEventLoadingCopyWith<$Res> {
-  factory _$$GetEventLoadingCopyWith(
-          _$GetEventLoading value, $Res Function(_$GetEventLoading) then) =
-      __$$GetEventLoadingCopyWithImpl<$Res>;
+abstract class _$$GetEventLoadingImplCopyWith<$Res> {
+  factory _$$GetEventLoadingImplCopyWith(_$GetEventLoadingImpl value,
+          $Res Function(_$GetEventLoadingImpl) then) =
+      __$$GetEventLoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$GetEventLoadingCopyWithImpl<$Res>
-    extends _$GetEventStateCopyWithImpl<$Res, _$GetEventLoading>
-    implements _$$GetEventLoadingCopyWith<$Res> {
-  __$$GetEventLoadingCopyWithImpl(
-      _$GetEventLoading _value, $Res Function(_$GetEventLoading) _then)
+class __$$GetEventLoadingImplCopyWithImpl<$Res>
+    extends _$GetEventStateCopyWithImpl<$Res, _$GetEventLoadingImpl>
+    implements _$$GetEventLoadingImplCopyWith<$Res> {
+  __$$GetEventLoadingImplCopyWithImpl(
+      _$GetEventLoadingImpl _value, $Res Function(_$GetEventLoadingImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$GetEventLoading implements GetEventLoading {
-  const _$GetEventLoading();
+class _$GetEventLoadingImpl implements GetEventLoading {
+  const _$GetEventLoadingImpl();
 
   @override
   String toString() {
@@ -318,7 +315,7 @@ class _$GetEventLoading implements GetEventLoading {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$GetEventLoading);
+        (other.runtimeType == runtimeType && other is _$GetEventLoadingImpl);
   }
 
   @override
@@ -394,14 +391,14 @@ class _$GetEventLoading implements GetEventLoading {
 }
 
 abstract class GetEventLoading implements GetEventState {
-  const factory GetEventLoading() = _$GetEventLoading;
+  const factory GetEventLoading() = _$GetEventLoadingImpl;
 }
 
 /// @nodoc
-abstract class _$$GetEventLoadedCopyWith<$Res> {
-  factory _$$GetEventLoadedCopyWith(
-          _$GetEventLoaded value, $Res Function(_$GetEventLoaded) then) =
-      __$$GetEventLoadedCopyWithImpl<$Res>;
+abstract class _$$GetEventLoadedImplCopyWith<$Res> {
+  factory _$$GetEventLoadedImplCopyWith(_$GetEventLoadedImpl value,
+          $Res Function(_$GetEventLoadedImpl) then) =
+      __$$GetEventLoadedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Event event});
 
@@ -409,11 +406,11 @@ abstract class _$$GetEventLoadedCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$GetEventLoadedCopyWithImpl<$Res>
-    extends _$GetEventStateCopyWithImpl<$Res, _$GetEventLoaded>
-    implements _$$GetEventLoadedCopyWith<$Res> {
-  __$$GetEventLoadedCopyWithImpl(
-      _$GetEventLoaded _value, $Res Function(_$GetEventLoaded) _then)
+class __$$GetEventLoadedImplCopyWithImpl<$Res>
+    extends _$GetEventStateCopyWithImpl<$Res, _$GetEventLoadedImpl>
+    implements _$$GetEventLoadedImplCopyWith<$Res> {
+  __$$GetEventLoadedImplCopyWithImpl(
+      _$GetEventLoadedImpl _value, $Res Function(_$GetEventLoadedImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -421,7 +418,7 @@ class __$$GetEventLoadedCopyWithImpl<$Res>
   $Res call({
     Object? event = null,
   }) {
-    return _then(_$GetEventLoaded(
+    return _then(_$GetEventLoadedImpl(
       event: null == event
           ? _value.event
           : event // ignore: cast_nullable_to_non_nullable
@@ -440,8 +437,8 @@ class __$$GetEventLoadedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$GetEventLoaded implements GetEventLoaded {
-  const _$GetEventLoaded({required this.event});
+class _$GetEventLoadedImpl implements GetEventLoaded {
+  const _$GetEventLoadedImpl({required this.event});
 
   @override
   final Event event;
@@ -455,7 +452,7 @@ class _$GetEventLoaded implements GetEventLoaded {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GetEventLoaded &&
+            other is _$GetEventLoadedImpl &&
             (identical(other.event, event) || other.event == event));
   }
 
@@ -465,8 +462,9 @@ class _$GetEventLoaded implements GetEventLoaded {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$GetEventLoadedCopyWith<_$GetEventLoaded> get copyWith =>
-      __$$GetEventLoadedCopyWithImpl<_$GetEventLoaded>(this, _$identity);
+  _$$GetEventLoadedImplCopyWith<_$GetEventLoadedImpl> get copyWith =>
+      __$$GetEventLoadedImplCopyWithImpl<_$GetEventLoadedImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -538,29 +536,30 @@ class _$GetEventLoaded implements GetEventLoaded {
 }
 
 abstract class GetEventLoaded implements GetEventState {
-  const factory GetEventLoaded({required final Event event}) = _$GetEventLoaded;
+  const factory GetEventLoaded({required final Event event}) =
+      _$GetEventLoadedImpl;
 
   Event get event;
   @JsonKey(ignore: true)
-  _$$GetEventLoadedCopyWith<_$GetEventLoaded> get copyWith =>
+  _$$GetEventLoadedImplCopyWith<_$GetEventLoadedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$GetEventErrorCopyWith<$Res> {
-  factory _$$GetEventErrorCopyWith(
-          _$GetEventError value, $Res Function(_$GetEventError) then) =
-      __$$GetEventErrorCopyWithImpl<$Res>;
+abstract class _$$GetEventErrorImplCopyWith<$Res> {
+  factory _$$GetEventErrorImplCopyWith(
+          _$GetEventErrorImpl value, $Res Function(_$GetEventErrorImpl) then) =
+      __$$GetEventErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Failure failure});
 }
 
 /// @nodoc
-class __$$GetEventErrorCopyWithImpl<$Res>
-    extends _$GetEventStateCopyWithImpl<$Res, _$GetEventError>
-    implements _$$GetEventErrorCopyWith<$Res> {
-  __$$GetEventErrorCopyWithImpl(
-      _$GetEventError _value, $Res Function(_$GetEventError) _then)
+class __$$GetEventErrorImplCopyWithImpl<$Res>
+    extends _$GetEventStateCopyWithImpl<$Res, _$GetEventErrorImpl>
+    implements _$$GetEventErrorImplCopyWith<$Res> {
+  __$$GetEventErrorImplCopyWithImpl(
+      _$GetEventErrorImpl _value, $Res Function(_$GetEventErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -568,7 +567,7 @@ class __$$GetEventErrorCopyWithImpl<$Res>
   $Res call({
     Object? failure = null,
   }) {
-    return _then(_$GetEventError(
+    return _then(_$GetEventErrorImpl(
       failure: null == failure
           ? _value.failure
           : failure // ignore: cast_nullable_to_non_nullable
@@ -579,8 +578,8 @@ class __$$GetEventErrorCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$GetEventError implements GetEventError {
-  const _$GetEventError({required this.failure});
+class _$GetEventErrorImpl implements GetEventError {
+  const _$GetEventErrorImpl({required this.failure});
 
   @override
   final Failure failure;
@@ -594,7 +593,7 @@ class _$GetEventError implements GetEventError {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GetEventError &&
+            other is _$GetEventErrorImpl &&
             (identical(other.failure, failure) || other.failure == failure));
   }
 
@@ -604,8 +603,8 @@ class _$GetEventError implements GetEventError {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$GetEventErrorCopyWith<_$GetEventError> get copyWith =>
-      __$$GetEventErrorCopyWithImpl<_$GetEventError>(this, _$identity);
+  _$$GetEventErrorImplCopyWith<_$GetEventErrorImpl> get copyWith =>
+      __$$GetEventErrorImplCopyWithImpl<_$GetEventErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -678,10 +677,10 @@ class _$GetEventError implements GetEventError {
 
 abstract class GetEventError implements GetEventState {
   const factory GetEventError({required final Failure failure}) =
-      _$GetEventError;
+      _$GetEventErrorImpl;
 
   Failure get failure;
   @JsonKey(ignore: true)
-  _$$GetEventErrorCopyWith<_$GetEventError> get copyWith =>
+  _$$GetEventErrorImplCopyWith<_$GetEventErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

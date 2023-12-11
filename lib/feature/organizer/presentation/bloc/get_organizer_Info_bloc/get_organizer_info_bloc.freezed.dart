@@ -17,15 +17,12 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$GetOrganizerOtherInfoEvent {
   int get organizerId => throw _privateConstructorUsedError;
-
   bool get toggleSubscribe => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(int organizerId, bool toggleSubscribe) getInfo,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int organizerId, bool toggleSubscribe)? getInfo,
@@ -37,13 +34,11 @@ mixin _$GetOrganizerOtherInfoEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_GetInfo value) getInfo,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_GetInfo value)? getInfo,
@@ -77,9 +72,9 @@ class _$GetOrganizerOtherInfoEventCopyWithImpl<$Res,
     implements $GetOrganizerOtherInfoEventCopyWith<$Res> {
   _$GetOrganizerOtherInfoEventCopyWithImpl(this._value, this._then);
 
-// ignore: unused_field
+  // ignore: unused_field
   final $Val _value;
-// ignore: unused_field
+  // ignore: unused_field
   final $Res Function($Val) _then;
 
   @pragma('vm:prefer-inline')
@@ -102,21 +97,22 @@ class _$GetOrganizerOtherInfoEventCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_GetInfoCopyWith<$Res>
+abstract class _$$GetInfoImplCopyWith<$Res>
     implements $GetOrganizerOtherInfoEventCopyWith<$Res> {
-  factory _$$_GetInfoCopyWith(
-          _$_GetInfo value, $Res Function(_$_GetInfo) then) =
-      __$$_GetInfoCopyWithImpl<$Res>;
+  factory _$$GetInfoImplCopyWith(
+          _$GetInfoImpl value, $Res Function(_$GetInfoImpl) then) =
+      __$$GetInfoImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int organizerId, bool toggleSubscribe});
 }
 
 /// @nodoc
-class __$$_GetInfoCopyWithImpl<$Res>
-    extends _$GetOrganizerOtherInfoEventCopyWithImpl<$Res, _$_GetInfo>
-    implements _$$_GetInfoCopyWith<$Res> {
-  __$$_GetInfoCopyWithImpl(_$_GetInfo _value, $Res Function(_$_GetInfo) _then)
+class __$$GetInfoImplCopyWithImpl<$Res>
+    extends _$GetOrganizerOtherInfoEventCopyWithImpl<$Res, _$GetInfoImpl>
+    implements _$$GetInfoImplCopyWith<$Res> {
+  __$$GetInfoImplCopyWithImpl(
+      _$GetInfoImpl _value, $Res Function(_$GetInfoImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -125,7 +121,7 @@ class __$$_GetInfoCopyWithImpl<$Res>
     Object? organizerId = null,
     Object? toggleSubscribe = null,
   }) {
-    return _then(_$_GetInfo(
+    return _then(_$GetInfoImpl(
       organizerId: null == organizerId
           ? _value.organizerId
           : organizerId // ignore: cast_nullable_to_non_nullable
@@ -140,8 +136,9 @@ class __$$_GetInfoCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_GetInfo implements _GetInfo {
-  const _$_GetInfo({required this.organizerId, this.toggleSubscribe = false});
+class _$GetInfoImpl implements _GetInfo {
+  const _$GetInfoImpl(
+      {required this.organizerId, this.toggleSubscribe = false});
 
   @override
   final int organizerId;
@@ -158,7 +155,7 @@ class _$_GetInfo implements _GetInfo {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_GetInfo &&
+            other is _$GetInfoImpl &&
             (identical(other.organizerId, organizerId) ||
                 other.organizerId == organizerId) &&
             (identical(other.toggleSubscribe, toggleSubscribe) ||
@@ -171,8 +168,8 @@ class _$_GetInfo implements _GetInfo {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_GetInfoCopyWith<_$_GetInfo> get copyWith =>
-      __$$_GetInfoCopyWithImpl<_$_GetInfo>(this, _$identity);
+  _$$GetInfoImplCopyWith<_$GetInfoImpl> get copyWith =>
+      __$$GetInfoImplCopyWithImpl<_$GetInfoImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -234,7 +231,7 @@ class _$_GetInfo implements _GetInfo {
 abstract class _GetInfo implements GetOrganizerOtherInfoEvent {
   const factory _GetInfo(
       {required final int organizerId,
-      final bool toggleSubscribe}) = _$_GetInfo;
+      final bool toggleSubscribe}) = _$GetInfoImpl;
 
   @override
   int get organizerId;
@@ -242,7 +239,7 @@ abstract class _GetInfo implements GetOrganizerOtherInfoEvent {
   bool get toggleSubscribe;
   @override
   @JsonKey(ignore: true)
-  _$$_GetInfoCopyWith<_$_GetInfo> get copyWith =>
+  _$$GetInfoImplCopyWith<_$GetInfoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -308,31 +305,32 @@ class _$GetOrganizerOtherInfoStateCopyWithImpl<$Res,
     implements $GetOrganizerOtherInfoStateCopyWith<$Res> {
   _$GetOrganizerOtherInfoStateCopyWithImpl(this._value, this._then);
 
-// ignore: unused_field
+  // ignore: unused_field
   final $Val _value;
-// ignore: unused_field
+  // ignore: unused_field
   final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$$_LoadingCopyWith<$Res> {
-  factory _$$_LoadingCopyWith(
-          _$_Loading value, $Res Function(_$_Loading) then) =
-      __$$_LoadingCopyWithImpl<$Res>;
+abstract class _$$LoadingImplCopyWith<$Res> {
+  factory _$$LoadingImplCopyWith(
+          _$LoadingImpl value, $Res Function(_$LoadingImpl) then) =
+      __$$LoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_LoadingCopyWithImpl<$Res>
-    extends _$GetOrganizerOtherInfoStateCopyWithImpl<$Res, _$_Loading>
-    implements _$$_LoadingCopyWith<$Res> {
-  __$$_LoadingCopyWithImpl(_$_Loading _value, $Res Function(_$_Loading) _then)
+class __$$LoadingImplCopyWithImpl<$Res>
+    extends _$GetOrganizerOtherInfoStateCopyWithImpl<$Res, _$LoadingImpl>
+    implements _$$LoadingImplCopyWith<$Res> {
+  __$$LoadingImplCopyWithImpl(
+      _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_Loading implements _Loading {
-  const _$_Loading();
+class _$LoadingImpl implements _Loading {
+  const _$LoadingImpl();
 
   @override
   String toString() {
@@ -342,7 +340,7 @@ class _$_Loading implements _Loading {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Loading);
+        (other.runtimeType == runtimeType && other is _$LoadingImpl);
   }
 
   @override
@@ -418,13 +416,14 @@ class _$_Loading implements _Loading {
 }
 
 abstract class _Loading implements GetOrganizerOtherInfoState {
-  const factory _Loading() = _$_Loading;
+  const factory _Loading() = _$LoadingImpl;
 }
 
 /// @nodoc
-abstract class _$$_LoadedCopyWith<$Res> {
-  factory _$$_LoadedCopyWith(_$_Loaded value, $Res Function(_$_Loaded) then) =
-      __$$_LoadedCopyWithImpl<$Res>;
+abstract class _$$LoadedImplCopyWith<$Res> {
+  factory _$$LoadedImplCopyWith(
+          _$LoadedImpl value, $Res Function(_$LoadedImpl) then) =
+      __$$LoadedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({OrganizerInfo organizerInfo});
 
@@ -432,10 +431,11 @@ abstract class _$$_LoadedCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_LoadedCopyWithImpl<$Res>
-    extends _$GetOrganizerOtherInfoStateCopyWithImpl<$Res, _$_Loaded>
-    implements _$$_LoadedCopyWith<$Res> {
-  __$$_LoadedCopyWithImpl(_$_Loaded _value, $Res Function(_$_Loaded) _then)
+class __$$LoadedImplCopyWithImpl<$Res>
+    extends _$GetOrganizerOtherInfoStateCopyWithImpl<$Res, _$LoadedImpl>
+    implements _$$LoadedImplCopyWith<$Res> {
+  __$$LoadedImplCopyWithImpl(
+      _$LoadedImpl _value, $Res Function(_$LoadedImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -443,7 +443,7 @@ class __$$_LoadedCopyWithImpl<$Res>
   $Res call({
     Object? organizerInfo = null,
   }) {
-    return _then(_$_Loaded(
+    return _then(_$LoadedImpl(
       organizerInfo: null == organizerInfo
           ? _value.organizerInfo
           : organizerInfo // ignore: cast_nullable_to_non_nullable
@@ -462,8 +462,8 @@ class __$$_LoadedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Loaded implements _Loaded {
-  const _$_Loaded({required this.organizerInfo});
+class _$LoadedImpl implements _Loaded {
+  const _$LoadedImpl({required this.organizerInfo});
 
   @override
   final OrganizerInfo organizerInfo;
@@ -477,7 +477,7 @@ class _$_Loaded implements _Loaded {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Loaded &&
+            other is _$LoadedImpl &&
             (identical(other.organizerInfo, organizerInfo) ||
                 other.organizerInfo == organizerInfo));
   }
@@ -488,8 +488,8 @@ class _$_Loaded implements _Loaded {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_LoadedCopyWith<_$_Loaded> get copyWith =>
-      __$$_LoadedCopyWithImpl<_$_Loaded>(this, _$identity);
+  _$$LoadedImplCopyWith<_$LoadedImpl> get copyWith =>
+      __$$LoadedImplCopyWithImpl<_$LoadedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -562,27 +562,29 @@ class _$_Loaded implements _Loaded {
 
 abstract class _Loaded implements GetOrganizerOtherInfoState {
   const factory _Loaded({required final OrganizerInfo organizerInfo}) =
-      _$_Loaded;
+      _$LoadedImpl;
 
   OrganizerInfo get organizerInfo;
   @JsonKey(ignore: true)
-  _$$_LoadedCopyWith<_$_Loaded> get copyWith =>
+  _$$LoadedImplCopyWith<_$LoadedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_ErrorCopyWith<$Res> {
-  factory _$$_ErrorCopyWith(_$_Error value, $Res Function(_$_Error) then) =
-      __$$_ErrorCopyWithImpl<$Res>;
+abstract class _$$ErrorImplCopyWith<$Res> {
+  factory _$$ErrorImplCopyWith(
+          _$ErrorImpl value, $Res Function(_$ErrorImpl) then) =
+      __$$ErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Failure failure});
 }
 
 /// @nodoc
-class __$$_ErrorCopyWithImpl<$Res>
-    extends _$GetOrganizerOtherInfoStateCopyWithImpl<$Res, _$_Error>
-    implements _$$_ErrorCopyWith<$Res> {
-  __$$_ErrorCopyWithImpl(_$_Error _value, $Res Function(_$_Error) _then)
+class __$$ErrorImplCopyWithImpl<$Res>
+    extends _$GetOrganizerOtherInfoStateCopyWithImpl<$Res, _$ErrorImpl>
+    implements _$$ErrorImplCopyWith<$Res> {
+  __$$ErrorImplCopyWithImpl(
+      _$ErrorImpl _value, $Res Function(_$ErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -590,7 +592,7 @@ class __$$_ErrorCopyWithImpl<$Res>
   $Res call({
     Object? failure = null,
   }) {
-    return _then(_$_Error(
+    return _then(_$ErrorImpl(
       failure: null == failure
           ? _value.failure
           : failure // ignore: cast_nullable_to_non_nullable
@@ -601,8 +603,8 @@ class __$$_ErrorCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Error implements _Error {
-  const _$_Error({required this.failure});
+class _$ErrorImpl implements _Error {
+  const _$ErrorImpl({required this.failure});
 
   @override
   final Failure failure;
@@ -616,7 +618,7 @@ class _$_Error implements _Error {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Error &&
+            other is _$ErrorImpl &&
             (identical(other.failure, failure) || other.failure == failure));
   }
 
@@ -626,8 +628,8 @@ class _$_Error implements _Error {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ErrorCopyWith<_$_Error> get copyWith =>
-      __$$_ErrorCopyWithImpl<_$_Error>(this, _$identity);
+  _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith =>
+      __$$ErrorImplCopyWithImpl<_$ErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -699,10 +701,10 @@ class _$_Error implements _Error {
 }
 
 abstract class _Error implements GetOrganizerOtherInfoState {
-  const factory _Error({required final Failure failure}) = _$_Error;
+  const factory _Error({required final Failure failure}) = _$ErrorImpl;
 
   Failure get failure;
   @JsonKey(ignore: true)
-  _$$_ErrorCopyWith<_$_Error> get copyWith =>
+  _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

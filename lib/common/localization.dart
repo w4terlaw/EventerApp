@@ -33,7 +33,7 @@ class L10n {
   static const showMore = "Подробнее";
   static const unsubscribe = "Отписаться";
   static const organizer = "Организатор";
-  static const upcomingEvents = "Предстоящие события";
+  static const upcomingEvents = "Мероприятия";
   static const seeAll = "Увидеть все";
 
   static const exploreNavBar = "Главная";

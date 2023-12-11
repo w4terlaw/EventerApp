@@ -21,13 +21,10 @@ OrganizerInfo _$OrganizerInfoFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$OrganizerInfo {
   int get countOfSubscribers => throw _privateConstructorUsedError;
-
   int get countOfEvents => throw _privateConstructorUsedError;
-
   bool get isSubscribed => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $OrganizerInfoCopyWith<OrganizerInfo> get copyWith =>
       throw _privateConstructorUsedError;
@@ -38,7 +35,6 @@ abstract class $OrganizerInfoCopyWith<$Res> {
   factory $OrganizerInfoCopyWith(
           OrganizerInfo value, $Res Function(OrganizerInfo) then) =
       _$OrganizerInfoCopyWithImpl<$Res, OrganizerInfo>;
-
   @useResult
   $Res call({int countOfSubscribers, int countOfEvents, bool isSubscribed});
 }
@@ -50,7 +46,6 @@ class _$OrganizerInfoCopyWithImpl<$Res, $Val extends OrganizerInfo>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -79,23 +74,22 @@ class _$OrganizerInfoCopyWithImpl<$Res, $Val extends OrganizerInfo>
 }
 
 /// @nodoc
-abstract class _$$_OrganizerInfoCopyWith<$Res>
+abstract class _$$OrganizerInfoImplCopyWith<$Res>
     implements $OrganizerInfoCopyWith<$Res> {
-  factory _$$_OrganizerInfoCopyWith(
-          _$_OrganizerInfo value, $Res Function(_$_OrganizerInfo) then) =
-      __$$_OrganizerInfoCopyWithImpl<$Res>;
-
+  factory _$$OrganizerInfoImplCopyWith(
+          _$OrganizerInfoImpl value, $Res Function(_$OrganizerInfoImpl) then) =
+      __$$OrganizerInfoImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int countOfSubscribers, int countOfEvents, bool isSubscribed});
 }
 
 /// @nodoc
-class __$$_OrganizerInfoCopyWithImpl<$Res>
-    extends _$OrganizerInfoCopyWithImpl<$Res, _$_OrganizerInfo>
-    implements _$$_OrganizerInfoCopyWith<$Res> {
-  __$$_OrganizerInfoCopyWithImpl(
-      _$_OrganizerInfo _value, $Res Function(_$_OrganizerInfo) _then)
+class __$$OrganizerInfoImplCopyWithImpl<$Res>
+    extends _$OrganizerInfoCopyWithImpl<$Res, _$OrganizerInfoImpl>
+    implements _$$OrganizerInfoImplCopyWith<$Res> {
+  __$$OrganizerInfoImplCopyWithImpl(
+      _$OrganizerInfoImpl _value, $Res Function(_$OrganizerInfoImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -105,7 +99,7 @@ class __$$_OrganizerInfoCopyWithImpl<$Res>
     Object? countOfEvents = null,
     Object? isSubscribed = null,
   }) {
-    return _then(_$_OrganizerInfo(
+    return _then(_$OrganizerInfoImpl(
       countOfSubscribers: null == countOfSubscribers
           ? _value.countOfSubscribers
           : countOfSubscribers // ignore: cast_nullable_to_non_nullable
@@ -124,14 +118,14 @@ class __$$_OrganizerInfoCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_OrganizerInfo implements _OrganizerInfo {
-  const _$_OrganizerInfo(
+class _$OrganizerInfoImpl implements _OrganizerInfo {
+  const _$OrganizerInfoImpl(
       {required this.countOfSubscribers,
       required this.countOfEvents,
       required this.isSubscribed});
 
-  factory _$_OrganizerInfo.fromJson(Map<String, dynamic> json) =>
-      _$$_OrganizerInfoFromJson(json);
+  factory _$OrganizerInfoImpl.fromJson(Map<String, dynamic> json) =>
+      _$$OrganizerInfoImplFromJson(json);
 
   @override
   final int countOfSubscribers;
@@ -149,7 +143,7 @@ class _$_OrganizerInfo implements _OrganizerInfo {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_OrganizerInfo &&
+            other is _$OrganizerInfoImpl &&
             (identical(other.countOfSubscribers, countOfSubscribers) ||
                 other.countOfSubscribers == countOfSubscribers) &&
             (identical(other.countOfEvents, countOfEvents) ||
@@ -166,12 +160,12 @@ class _$_OrganizerInfo implements _OrganizerInfo {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_OrganizerInfoCopyWith<_$_OrganizerInfo> get copyWith =>
-      __$$_OrganizerInfoCopyWithImpl<_$_OrganizerInfo>(this, _$identity);
+  _$$OrganizerInfoImplCopyWith<_$OrganizerInfoImpl> get copyWith =>
+      __$$OrganizerInfoImplCopyWithImpl<_$OrganizerInfoImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_OrganizerInfoToJson(
+    return _$$OrganizerInfoImplToJson(
       this,
     );
   }
@@ -181,22 +175,19 @@ abstract class _OrganizerInfo implements OrganizerInfo {
   const factory _OrganizerInfo(
       {required final int countOfSubscribers,
       required final int countOfEvents,
-      required final bool isSubscribed}) = _$_OrganizerInfo;
+      required final bool isSubscribed}) = _$OrganizerInfoImpl;
 
   factory _OrganizerInfo.fromJson(Map<String, dynamic> json) =
-      _$_OrganizerInfo.fromJson;
+      _$OrganizerInfoImpl.fromJson;
 
   @override
   int get countOfSubscribers;
-
   @override
   int get countOfEvents;
-
   @override
   bool get isSubscribed;
-
   @override
   @JsonKey(ignore: true)
-  _$$_OrganizerInfoCopyWith<_$_OrganizerInfo> get copyWith =>
+  _$$OrganizerInfoImplCopyWith<_$OrganizerInfoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
