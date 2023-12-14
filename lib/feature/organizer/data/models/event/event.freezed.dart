@@ -29,6 +29,7 @@ mixin _$Event {
   Organizer get organizer => throw _privateConstructorUsedError;
   List<EventDates> get eventDates => throw _privateConstructorUsedError;
   List<Venues> get venues => throw _privateConstructorUsedError;
+  int get number => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -49,7 +50,8 @@ abstract class $EventCopyWith<$Res> {
       double recommendedDonation,
       Organizer organizer,
       List<EventDates> eventDates,
-      List<Venues> venues});
+      List<Venues> venues,
+      int number});
 
   $OrganizerCopyWith<$Res> get organizer;
 }
@@ -76,6 +78,7 @@ class _$EventCopyWithImpl<$Res, $Val extends Event>
     Object? organizer = null,
     Object? eventDates = null,
     Object? venues = null,
+    Object? number = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -114,6 +117,10 @@ class _$EventCopyWithImpl<$Res, $Val extends Event>
           ? _value.venues
           : venues // ignore: cast_nullable_to_non_nullable
               as List<Venues>,
+      number: null == number
+          ? _value.number
+          : number // ignore: cast_nullable_to_non_nullable
+              as int,
     ) as $Val);
   }
 
@@ -142,7 +149,8 @@ abstract class _$$EventImplCopyWith<$Res> implements $EventCopyWith<$Res> {
       double recommendedDonation,
       Organizer organizer,
       List<EventDates> eventDates,
-      List<Venues> venues});
+      List<Venues> venues,
+      int number});
 
   @override
   $OrganizerCopyWith<$Res> get organizer;
@@ -168,6 +176,7 @@ class __$$EventImplCopyWithImpl<$Res>
     Object? organizer = null,
     Object? eventDates = null,
     Object? venues = null,
+    Object? number = null,
   }) {
     return _then(_$EventImpl(
       id: null == id
@@ -206,6 +215,10 @@ class __$$EventImplCopyWithImpl<$Res>
           ? _value._venues
           : venues // ignore: cast_nullable_to_non_nullable
               as List<Venues>,
+      number: null == number
+          ? _value.number
+          : number // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -222,7 +235,8 @@ class _$EventImpl implements _Event {
       required this.recommendedDonation,
       required this.organizer,
       required final List<EventDates> eventDates,
-      required final List<Venues> venues})
+      required final List<Venues> venues,
+      required this.number})
       : _eventDates = eventDates,
         _venues = venues;
 
@@ -260,8 +274,11 @@ class _$EventImpl implements _Event {
   }
 
   @override
+  final int number;
+
+  @override
   String toString() {
-    return 'Event(id: $id, name: $name, description: $description, expectedAmount: $expectedAmount, countOfMembers: $countOfMembers, recommendedDonation: $recommendedDonation, organizer: $organizer, eventDates: $eventDates, venues: $venues)';
+    return 'Event(id: $id, name: $name, description: $description, expectedAmount: $expectedAmount, countOfMembers: $countOfMembers, recommendedDonation: $recommendedDonation, organizer: $organizer, eventDates: $eventDates, venues: $venues, number: $number)';
   }
 
   @override
@@ -283,7 +300,8 @@ class _$EventImpl implements _Event {
                 other.organizer == organizer) &&
             const DeepCollectionEquality()
                 .equals(other._eventDates, _eventDates) &&
-            const DeepCollectionEquality().equals(other._venues, _venues));
+            const DeepCollectionEquality().equals(other._venues, _venues) &&
+            (identical(other.number, number) || other.number == number));
   }
 
   @JsonKey(ignore: true)
@@ -298,7 +316,8 @@ class _$EventImpl implements _Event {
       recommendedDonation,
       organizer,
       const DeepCollectionEquality().hash(_eventDates),
-      const DeepCollectionEquality().hash(_venues));
+      const DeepCollectionEquality().hash(_venues),
+      number);
 
   @JsonKey(ignore: true)
   @override
@@ -324,7 +343,8 @@ abstract class _Event implements Event {
       required final double recommendedDonation,
       required final Organizer organizer,
       required final List<EventDates> eventDates,
-      required final List<Venues> venues}) = _$EventImpl;
+      required final List<Venues> venues,
+      required final int number}) = _$EventImpl;
 
   factory _Event.fromJson(Map<String, dynamic> json) = _$EventImpl.fromJson;
 
@@ -346,6 +366,8 @@ abstract class _Event implements Event {
   List<EventDates> get eventDates;
   @override
   List<Venues> get venues;
+  @override
+  int get number;
   @override
   @JsonKey(ignore: true)
   _$$EventImplCopyWith<_$EventImpl> get copyWith =>

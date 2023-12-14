@@ -152,6 +152,7 @@ class BookingTicketCard extends StatelessWidget {
           //     ),
           //   ),
           // ),
+
           Container(
             // color: Colors.grey,
             margin: const EdgeInsets.only(
@@ -296,7 +297,7 @@ class EventLargeCard extends StatelessWidget {
   final DateTime startDateTime;
   final String name;
   final String location;
-  final int numberMembers;
+  final int number;
 
   const EventLargeCard({
     Key? key,
@@ -304,7 +305,7 @@ class EventLargeCard extends StatelessWidget {
     required this.name,
     required this.startDateTime,
     required this.location,
-    required this.numberMembers,
+    required this.number,
   }) : super(key: key);
 
   @override
@@ -354,12 +355,19 @@ class EventLargeCard extends StatelessWidget {
                       style: Theme.of(context).textTheme.bodySmall!.copyWith(
                           fontSize: 13.0, color: AppColors.secondaryColor),
                     ),
-                    Text(
-                      '+$numberMembers Идут',
-                      style: Theme.of(context).textTheme.labelSmall!.copyWith(
-                            fontWeight: FontWeight.bold,
-                            color: AppColors.secondaryColor,
-                          ),
+                    Row(
+                      children: [
+
+                        Text(
+                          '$number ',
+                          style: Theme.of(context).textTheme.labelSmall!.copyWith(
+                                fontWeight: FontWeight.bold,
+                                color: AppColors.secondaryColor,
+                              ),
+                        ),
+                      Icon(Icons.supervisor_account, size: 24, color: AppColors.secondaryColor)
+
+                      ],
                     )
                   ],
                 ),
@@ -393,7 +401,7 @@ class EventLargeCard extends StatelessWidget {
                     ],
                   ),
                 ),
-                const VerticalSpace(50),
+                const VerticalSpace(10),
               ],
             ),
           ),

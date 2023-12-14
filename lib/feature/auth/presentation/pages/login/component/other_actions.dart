@@ -34,14 +34,7 @@ class OtherActions extends StatelessWidget {
               ),
               onTap: () {
                 Navigator.pushNamed(
-                        context, MyRouterConstants.registrationRoute)
-                    .whenComplete(
-                  () {
-                    logBloc.emit(
-                      const UserLoginState.error(
-                          message: 'Вы успешно зарегистрировались'),
-                    );
-                  },
+                        context, MyRouterConstants.registrationRoute
                 );
               },
             )

@@ -6,6 +6,8 @@ import 'package:eventer_app/common/widgets/search_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../../common/constants.dart';
+import '../../../../../common/localization.dart';
 import '../../../../../common/widgets/space_widgets.dart';
 import '../../bloc/get_list_events_bloc/get_list_events_bloc.dart';
 import 'component/upcoming_events.dart';
@@ -16,9 +18,11 @@ class HomePageBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
+
       physics: const BouncingScrollPhysics(),
       slivers: <Widget>[
         SliverAppBar(
+          pinned: true,
           centerTitle: true,
           title: SizedBox(
             // TODO: Брать реальное местоположение и выводить на экран
@@ -66,10 +70,10 @@ class HomePageBody extends StatelessWidget {
           floating: true,
           snap: true,
           bottom: PreferredSize(
-            preferredSize: const Size.fromHeight(90),
+            preferredSize: const Size.fromHeight(80),
             child: Padding(
               padding:
-                  const EdgeInsets.only(left: 20.0, right: 20.0, bottom: 24),
+                  const EdgeInsets.only(left: 20.0, right: 20.0, bottom: 16),
               child: GestureDetector(
                 onTap: () => navigatorKey.currentState!.pushNamed('/search'),
                 child: Container(
@@ -103,14 +107,12 @@ class HomePageBody extends StatelessWidget {
           ],
         ),
         SliverToBoxAdapter(
-          child: Column(
-            children: const <Widget>[
-              VerticalSpace(24),
-              EventsList(),
-              // EventsList(),
-            ],
-          ),
-        )
+          child: Column(children: [
+            VerticalSpace(8),
+            EventListHeader(),
+            EventsList(),
+          ]),
+        ),
       ],
     );
   }

@@ -200,14 +200,24 @@ class UserBookingsList extends StatelessWidget {
                                                         AppColors.whiteColor),
                                           ),
                                           Text(
-                                            'Место: ${booking.tickets[0].ticketType == "TicketTypeEnum.FREE" ? "Нет" : booking.tickets[0].seat.toString()}',
+                                            'Идут: ${booking.event.number}',
                                             style: Theme.of(context)
                                                 .textTheme
                                                 .labelMedium!
                                                 .copyWith(
-                                                    color:
-                                                        AppColors.whiteColor),
-                                          ),
+                                                color:
+                                                AppColors.whiteColor),
+                                          )
+
+                                          // Text(
+                                          //   'Идут: ${booking.event[0].ticketType == "TicketTypeEnum.FREE" ? "Нет" : booking.tickets[0].seat.toString()}',
+                                          //   style: Theme.of(context)
+                                          //       .textTheme
+                                          //       .labelMedium!
+                                          //       .copyWith(
+                                          //           color:
+                                          //               AppColors.whiteColor),
+                                          // ),
                                         ],
                                       ),
                                     ],

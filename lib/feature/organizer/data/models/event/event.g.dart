@@ -20,6 +20,7 @@ _$EventImpl _$$EventImplFromJson(Map<String, dynamic> json) => _$EventImpl(
       venues: (json['venues'] as List<dynamic>)
           .map((e) => Venues.fromJson(e as Map<String, dynamic>))
           .toList(),
+      number: json['number'] as int,
     );
 
 Map<String, dynamic> _$$EventImplToJson(_$EventImpl instance) =>
@@ -33,4 +34,5 @@ Map<String, dynamic> _$$EventImplToJson(_$EventImpl instance) =>
       'organizer': instance.organizer,
       'eventDates': instance.eventDates,
       'venues': instance.venues,
+      'number': instance.number,
     };

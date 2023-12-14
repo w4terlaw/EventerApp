@@ -17,6 +17,7 @@ class Event with _$Event {
     required Organizer organizer,
     required List<EventDates> eventDates,
     required List<Venues> venues,
+    required int number,
   }) = _Event;
 
   factory Event.fromJson(Map<String, dynamic> json) => _$EventFromJson(json);
